@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" fill="none">
+  <!-- Symbol: Abstract Scales/Shield -->
+  <path d="M50 20L20 80H80L50 20Z" fill="#e67e22" opacity="0.9"/>
+  <path d="M50 20L35 80H65L50 20Z" fill="#d35400"/>
+  <rect x="45" y="15" width="10" height="70" fill="#e67e22"/>
+  
+  <!-- Text: Gratia Legalities -->
+  <text x="100" y="65" font-family="serif" font-weight="bold" font-size="48" fill="#ffffff">Gratial</text>
+  <text x="250" y="65" font-family="sans-serif" font-weight="300" font-size="48" fill="#e67e22">Legalities</text>
+</svg>

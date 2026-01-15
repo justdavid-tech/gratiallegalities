@@ -1,0 +1,273 @@
+import React from 'react';
+import { 
+  Briefcase, 
+  Scale, 
+  Home, 
+  Users, 
+  Globe, 
+  FileText,
+  Shield,
+  Building,
+  Car,
+  Heart,
+  Plane,
+  Banknote,
+  ArrowRight
+} from 'lucide-react';
+import { Link } from 'react-router-dom'; // or your routing method
+
+const PracticeAreas = () => {
+  const practiceAreas = [
+    {
+      id: 'corporate',
+      icon: <Briefcase className="w-6 h-6" />,
+      title: 'Corporate Law',
+      description: 'Business formation, mergers & acquisitions, contracts, and corporate governance for companies of all sizes.',
+      gradient: 'from-primary/20 to-primary/10',
+      stats: '500+ Clients',
+      features: ['Business Formation', 'M&A', 'Contracts', 'Compliance']
+    },
+    {
+      id: 'criminal',
+      icon: <Scale className="w-6 h-6" />,
+      title: 'Criminal Defense',
+      description: 'Aggressive defense representation for felony, misdemeanor, and white-collar criminal cases.',
+      gradient: 'from-primary/20 to-primary/10',
+      stats: '98% Success Rate',
+      features: ['Felony Defense', 'Misdemeanors', 'DUI', 'Appeals']
+    },
+    {
+      id: 'family',
+      icon: <Users className="w-6 h-6" />,
+      title: 'Family Law',
+      description: 'Compassionate guidance through divorce, child custody, adoption, and family dispute resolution.',
+      gradient: 'from-primary/20 to-primary/10',
+      stats: '20+ Years Experience',
+      features: ['Divorce', 'Child Custody', 'Adoption', 'Support']
+    },
+    {
+      id: 'real-estate',
+      icon: <Home className="w-6 h-6" />,
+      title: 'Real Estate Law',
+      description: 'Property transactions, zoning issues, landlord-tenant disputes, and real estate development.',
+      gradient: 'from-primary/20 to-primary/10',
+      stats: '$2B+ in Transactions',
+      features: ['Transactions', 'Zoning', 'Disputes', 'Development']
+    },
+    {
+      id: 'immigration',
+      icon: <Globe className="w-6 h-6" />,
+      title: 'Immigration Law',
+      description: 'Visa applications, green cards, citizenship, deportation defense, and asylum cases.',
+      gradient: 'from-primary/20 to-primary/10',
+      stats: '1000+ Cases',
+      features: ['Visas', 'Citizenship', 'Asylum', 'Defense']
+    },
+    {
+      id: 'civil-litigation',
+      icon: <FileText className="w-6 h-6" />,
+      title: 'Civil Litigation',
+      description: 'Representation in disputes involving contracts, personal injury, employment, and business conflicts.',
+      gradient: 'from-primary/20 to-primary/10',
+      stats: '95% Settlement Rate',
+      features: ['Contracts', 'Personal Injury', 'Employment', 'Disputes']
+    },
+    {
+      id: 'employment',
+      icon: <Building className="w-6 h-6" />,
+      title: 'Employment Law',
+      description: 'Workplace discrimination, wrongful termination, wage disputes, and employment contracts.',
+      gradient: 'from-primary/20 to-primary/10',
+      stats: '300+ Resolved',
+      features: ['Discrimination', 'Termination', 'Wages', 'Contracts']
+    },
+    {
+      id: 'personal-injury',
+      icon: <Car className="w-6 h-6" />,
+      title: 'Personal Injury',
+      description: 'Compensation for accidents, medical malpractice, workplace injuries, and product liability.',
+      gradient: 'from-primary/20 to-primary/10',
+      stats: '$50M+ Recovered',
+      features: ['Accidents', 'Malpractice', 'Work Injury', 'Liability']
+    },
+    {
+      id: 'estate-planning',
+      icon: <Heart className="w-6 h-6" />,
+      title: 'Estate Planning',
+      description: 'Wills, trusts, probate administration, and estate tax planning for comprehensive asset protection.',
+      gradient: 'from-primary/20 to-primary/10',
+      stats: '25+ Years Expertise',
+      features: ['Wills', 'Trusts', 'Probate', 'Tax Planning']
+    },
+    {
+      id: 'intellectual-property',
+      icon: <Shield className="w-6 h-6" />,
+      title: 'Intellectual Property',
+      description: 'Trademarks, patents, copyrights, and trade secret protection for creators and businesses.',
+      gradient: 'from-primary/20 to-primary/10',
+      stats: '400+ IP Filings',
+      features: ['Trademarks', 'Patents', 'Copyrights', 'Protection']
+    },
+    {
+      id: 'tax',
+      icon: <Banknote className="w-6 h-6" />,
+      title: 'Tax Law',
+      description: 'Tax planning, controversy resolution, audits, and international tax compliance services.',
+      gradient: 'from-primary/20 to-primary/10',
+      stats: 'IRS Specialist',
+      features: ['Planning', 'Audits', 'Controversy', 'Compliance']
+    },
+    {
+      id: 'international',
+      icon: <Plane className="w-6 h-6" />,
+      title: 'International Law',
+      description: 'Cross-border transactions, international disputes, trade law, and diplomatic relations.',
+      gradient: 'from-primary/20 to-primary/10',
+      stats: 'Global Network',
+      features: ['Transactions', 'Disputes', 'Trade', 'Diplomacy']
+    }
+  ];
+
+  return (
+    <div className="relative py-20 bg-gradient-to-b from-black to-secondary-950 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-primary/10 rounded-full"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-48 h-48 border border-primary/10 rounded-full"></div>
+        </div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
+            <Scale className="w-4 h-4 text-primary" />
+            <span className="text-primary text-sm font-medium">Legal Expertise</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Comprehensive <span className="text-primary">Legal Services</span>
+          </h2>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+            Specialized legal representation across multiple practice areas with proven results
+          </p>
+          
+          {/* Practice Areas Stats */}
+          <div className="flex flex-wrap justify-center gap-6 mb-12">
+            <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
+              <div className="text-2xl font-bold text-primary">12</div>
+              <div className="text-sm text-gray-400">Practice Areas</div>
+            </div>
+            <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
+              <div className="text-2xl font-bold text-primary">50+</div>
+              <div className="text-sm text-gray-400">Expert Attorneys</div>
+            </div>
+            <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
+              <div className="text-2xl font-bold text-primary">1000+</div>
+              <div className="text-sm text-gray-400">Cases Yearly</div>
+            </div>
+            <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
+              <div className="text-2xl font-bold text-primary">98%</div>
+              <div className="text-sm text-gray-400">Client Satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Practice Areas Grid - 3 rows, 2 columns on lg, 1 column on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-16">
+          {practiceAreas.map((area, index) => (
+            <Link 
+              key={area.id}
+              to={`/practice-areas/${area.id}`}
+              className="group block"
+            >
+              <div className="h-full relative bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-brand-lg">
+                {/* Hover Gradient Background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${area.gradient} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                
+                <div className="relative z-10">
+                  {/* Icon and Title Row */}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all">
+                        <div className="text-primary">
+                          {area.icon}
+                        </div>
+                      </div>
+                      <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">
+                        {area.title}
+                      </h3>
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-primary group-hover:translate-x-2 transition-all" />
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-gray-400 mb-6 leading-relaxed">
+                    {area.description}
+                  </p>
+
+                  {/* Features and Stats Row */}
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 border-t border-white/10">
+                    <div className="flex flex-wrap gap-2">
+                      {area.features.map((feature, idx) => (
+                        <span 
+                          key={idx}
+                          className="px-3 py-1 bg-white/5 text-xs text-gray-400 rounded-full border border-white/10 group-hover:border-primary/20 group-hover:text-primary transition-all"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="text-sm font-semibold text-primary bg-primary/10 px-3 py-1 rounded-lg">
+                      {area.stats}
+                    </div>
+                  </div>
+
+                  {/* Consultation CTA */}
+                  <div className="mt-6 pt-6 border-t border-white/10 flex items-center justify-between">
+                    <span className="text-sm text-gray-500 group-hover:text-gray-400 transition-colors">
+                      Click for detailed information
+                    </span>
+                    <button className="text-sm font-medium text-primary hover:text-primary-600 transition-colors">
+                      Free Consultation →
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Consultation Banner */}
+        <div className="relative bg-gradient-to-r from-primary/10 via-primary/5 to-transparent rounded-2xl p-8 border border-primary/20 overflow-hidden">
+          <div className="absolute -left-20 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="relative z-10">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="text-center lg:text-left">
+                <h3 className="text-3xl font-bold text-white mb-3">
+                  Not Sure Which Service You Need?
+                </h3>
+                <p className="text-gray-400 text-lg">
+                  Schedule a free consultation with our legal experts to discuss your specific case
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="group px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2 whitespace-nowrap">
+                  Book Free Consultation
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button className="px-8 py-4 bg-white/5 backdrop-blur-sm text-white rounded-lg font-semibold border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all duration-300 flex items-center justify-center gap-2">
+                  Call Now: (555) 123-4567
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PracticeAreas;
