@@ -19,34 +19,19 @@ const Navbar = () => {
 
   const practiceAreas = {
     column1: [
-      { name: 'AML/CFT Reporting and Compliance', path: '/practices/aml-cft-compliance' },
-      { name: 'Banking', path: '/practices/banking' },
-      { name: 'Capital Markets', path: '/practices/capital-markets' },
-      { name: 'Competition & Antitrust', path: '/practices/competition-antitrust' },
-      { name: 'Corporate Services', path: '/practices/corporate-services' },
-      { name: 'Data Protection & Privacy', path: '/practices/data-protection-privacy' },
-      { name: 'Employment, Immigration & Incentives', path: '/practices/employment-immigration-incentives' },
-      { name: 'Energy & Natural Resources', path: '/practices/energy-natural-resources' },
-      { name: 'Environmental, Social and Corporate Governance (ESG)', path: '/practices/esg' },
-      { name: 'Financial Institutions Advisory', path: '/practices/financial-institutions-advisory' },
-      { name: 'Financial Restructuring Insolvency', path: '/practices/financial-restructuring-insolvency' },
-      { name: 'Governance, Risk and Compliance', path: '/practices/governance-risk-compliance' },
-      { name: 'Infrastructure Finance & PPP', path: '/practices/infrastructure-finance-ppp' }
+      { name: 'Commercial Law', path: '/practices/commercial' },
+      { name: 'Commercial Advisory', path: '/practices/commercial-advisory' },
+      { name: 'Commercial Documentation', path: '/practices/commercial-documentation' },
+      { name: 'Contract Drafting', path: '/practices/contract-drafting' },
+      { name: 'Corporate Law', path: '/practices/corporate-law' },
+      { name: 'Employment & Labour', path: '/practices/employment' }
     ],
     column2: [
-      { name: 'Intellectual Property', path: '/practices/intellectual-property' },
-      { name: 'International Trade', path: '/practices/international-trade' },
-      { name: 'Litigation, Dispute Resolution & Arbitration', path: '/practices/litigation-dispute-resolution' },
-      { name: 'Mergers & Acquisitions', path: '/practices/mergers-acquisitions' },
-      { name: 'Private Equity', path: '/practices/private-equity' },
-      { name: 'Private Wealth Services', path: '/practices/private-wealth-services' },
-      { name: 'Privatisation & Public Procurement', path: '/practices/privatisation-public-procurement' },
-      { name: 'Real Estate', path: '/practices/real-estate' },
-      { name: 'Reporting and Whistleblowing', path: '/practices/reporting-whistleblowing' },
-      { name: 'Tax', path: '/practices/tax' },
-      { name: 'Telecommunication, Media, Entertainment & Technology', path: '/practices/tmet' },
-      { name: 'Venture Technology & Emerging Growth Companies', path: '/practices/venture-technology' },
-      { name: 'White Collar & Business Crime Investigations', path: '/practices/white-collar-crime' }
+      { name: 'General Legal Advisory', path: '/practices/legal-advisory' },
+      { name: 'Legal Due Diligence', path: '/practices/legal-due-diligence' },
+      { name: 'Online Business & E-Commerce', path: '/practices/online-business' },
+      { name: 'Property Dispute Resolution', path: '/practices/property-dispute' },
+      { name: 'Real Estate Law', path: '/practices/real-estate' }
     ]
   };
 

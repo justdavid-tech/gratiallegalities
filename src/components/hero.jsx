@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Scale, Shield, Users, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [currentWord, setCurrentWord] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [isPracticeDropdownOpen, setIsPracticeDropdownOpen] = useState(false);
   
   const rotatingWords = [
     'Excellence',
@@ -11,6 +13,24 @@ const Hero = () => {
     'Innovation',
     'Results'
   ];
+
+  const practiceAreas = {
+    column1: [
+      { name: 'Commercial Law', path: '/practices/commercial' },
+      { name: 'Commercial Advisory', path: '/practices/commercial-advisory' },
+      { name: 'Commercial Documentation', path: '/practices/commercial-documentation' },
+      { name: 'Contract Drafting', path: '/practices/contract-drafting' },
+      { name: 'Corporate Law', path: '/practices/corporate-law' },
+      { name: 'Employment & Labour', path: '/practices/employment' }
+    ],
+    column2: [
+      { name: 'General Legal Advisory', path: '/practices/legal-advisory' },
+      { name: 'Legal Due Diligence', path: '/practices/legal-due-diligence' },
+      { name: 'Online Business & E-Commerce', path: '/practices/online-business' },
+      { name: 'Property Dispute Resolution', path: '/practices/property-dispute' },
+      { name: 'Real Estate Law', path: '/practices/real-estate' }
+    ]
+  };
 
   useEffect(() => {
     setIsVisible(true);
@@ -66,13 +86,72 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="group px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2">
+              <Link to = "/contact" className="group px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2">
                 Schedule Consultation
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="px-8 py-4 bg-white/5 backdrop-blur-sm text-white rounded-lg font-semibold border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all duration-300 flex items-center justify-center gap-2">
-                Our Practice Areas
-              </button>
+              </Link>
+              
+              {/* Practice Areas Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsPracticeDropdownOpen(true)}
+                onMouseLeave={() => setIsPracticeDropdownOpen(false)}
+              >
+                <Link
+                  className="px-8 py-4 bg-white/5 backdrop-blur-sm text-white rounded-lg font-semibold border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all duration-300 flex items-center justify-center gap-2"
+                  aria-expanded={isPracticeDropdownOpen}
+                  aria-haspopup="menu"
+                >
+                  Our Practice Areas
+                  <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isPracticeDropdownOpen ? 'rotate-180' : ''}`} />
+                </Link>
+
+                {/* Dropdown Menu */}
+                {isPracticeDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-[600px] bg-secondary-950 border border-primary/20 rounded-xl shadow-2xl overflow-hidden z-50 animate-fadeIn">
+                    <div className="p-6">
+                      <div className="grid grid-cols-2 gap-6">
+                        {/* Column 1 */}
+                        <div className="space-y-2">
+                          {practiceAreas.column1.map((area, index) => (
+                            <Link
+                              key={index}
+                              to={area.path}
+                              className="block px-4 py-3 rounded-lg text-gray-300 hover:bg-primary/10 hover:text-primary transition-all duration-200 text-sm"
+                            >
+                              {area.name}
+                            </Link>
+                          ))}
+                        </div>
+                        
+                        {/* Column 2 */}
+                        <div className="space-y-2">
+                          {practiceAreas.column2.map((area, index) => (
+                            <Link
+                              key={index}
+                              to={area.path}
+                              className="block px-4 py-3 rounded-lg text-gray-300 hover:bg-primary/10 hover:text-primary transition-all duration-200 text-sm"
+                            >
+                              {area.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* View All Link */}
+                      <div className="mt-4 pt-4 border-t border-white/10">
+                        <Link
+                          to="/practice-areas"
+                          className="flex items-center justify-center gap-2 text-primary hover:text-primary-400 transition-colors text-sm font-medium"
+                        >
+                          View All Practice Areas
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Stats */}
@@ -153,6 +232,10 @@ const Hero = () => {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
         }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
         .animate-float {
           animation: float 6s ease-in-out infinite;
         }
@@ -162,6 +245,9 @@ const Hero = () => {
         .animate-gradient {
           background-size: 200% auto;
           animation: gradient 3s ease infinite;
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
         }
       `}</style>
     </div>
