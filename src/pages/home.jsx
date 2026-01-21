@@ -6,6 +6,7 @@ import AboutFirm from "../components/aboutfirm";
 import WhyChooseUs from "../components/whychooseus";
 import Testimonials from "../components/testimonies";
 import CallToAction from "../components/calltoaction";
+import Footer from "../components/footer";
 
 function Home() {
     return (
@@ -18,6 +19,7 @@ function Home() {
             <WhyChooseUs />
             <Testimonials />
             <CallToAction />
+            <Footer />
         </>
     );
 }

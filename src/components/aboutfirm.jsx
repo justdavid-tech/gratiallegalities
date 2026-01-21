@@ -14,40 +14,6 @@ import {
 import { Link } from 'react-router-dom'; // or your routing method
 
 const AboutFirm = () => {
-  const coreValues = [
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: 'Integrity First',
-      description: 'Unwavering honesty in all our dealings',
-      color: 'text-primary'
-    },
-    {
-      icon: <Target className="w-6 h-6" />,
-      title: 'Excellence',
-      description: 'Pursuing the highest standards in legal practice',
-      color: 'text-primary'
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: 'Client-Centered',
-      description: 'Your success is our ultimate measure',
-      color: 'text-primary'
-    },
-    {
-      icon: <HeartHandshake className="w-6 h-6" />,
-      title: 'Compassion',
-      description: 'Understanding with empathy and care',
-      color: 'text-primary'
-    }
-  ];
-
-  const milestones = [
-    { year: '1998', event: 'Firm Founded', highlight: true },
-    { year: '2005', event: 'First Major Case Win', highlight: false },
-    { year: '2012', event: 'Expanded to National Practice', highlight: false },
-    { year: '2020', event: 'Digital Transformation', highlight: false },
-    { year: '2024', event: 'Industry Recognition Award', highlight: true }
-  ];
 
   return (
     <div className="relative py-20 bg-black overflow-hidden">
@@ -85,39 +51,21 @@ const AboutFirm = () => {
               <h3 className="text-2xl font-bold text-white mb-6 pt-2">Our Foundation</h3>
               <div className="space-y-4">
                 <p className="text-gray-300 leading-relaxed">
-                  Founded in 1998 by Johnathan Sterling, our firm began as a small practice dedicated to providing 
-                  exceptional legal representation with personal attention. What started with just three attorneys 
-                  has grown into a nationally recognized firm with over 50 legal experts.
+                  Founded in 1998, my practice was established with a singular focus: providing 
+                  exceptional legal representation with direct, personal attention. As a solo 
+                  practitioner, I provide a level of accountability and dedicated focus that 
+                  ensures every client receives my full expertise and one-on-one advocacy.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  Over the past 25+ years, we've built our reputation on successfully handling complex cases while 
-                  maintaining the personal touch of a boutique firm. Our growth has been strategic, always focused 
-                  on enhancing our ability to serve clients better.
+                  Over the past 6+ years, I have built my reputation on successfully handling complex 
+                  cases while maintaining the personal touch and direct accountability of a solo practice. 
+                  My professional growth has been intentional, always focused on enhancing my ability to 
+                  provide superior legal counsel and results for my clients.
                 </p>
                 <div className="flex items-center gap-2 text-primary mt-6">
                   <CheckCircle className="w-5 h-5" />
-                  <span className="font-semibold">Serving clients for 25+ years</span>
+                  <span className="font-semibold">Serving clients for 6+ years</span>
                 </div>
-              </div>
-            </div>
-
-            {/* Milestones */}
-            <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-              <h4 className="text-xl font-bold text-white mb-6">Key Milestones</h4>
-              <div className="space-y-4">
-                {milestones.map((milestone, index) => (
-                  <div 
-                    key={index}
-                    className={`flex items-center gap-4 p-3 rounded-lg ${milestone.highlight ? 'bg-primary/10 border border-primary/20' : 'bg-white/5'}`}
-                  >
-                    <div className={`w-16 h-12 flex items-center justify-center rounded-lg ${milestone.highlight ? 'bg-primary text-white' : 'bg-white/10 text-gray-300'}`}>
-                      <span className="font-bold">{milestone.year}</span>
-                    </div>
-                    <span className={`${milestone.highlight ? 'text-white font-semibold' : 'text-gray-300'}`}>
-                      {milestone.event}
-                    </span>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
@@ -145,62 +93,6 @@ const AboutFirm = () => {
                   </div>
                 </div>
                 <div className="text-sm text-primary font-medium">Since 1998</div>
-              </div>
-            </div>
-
-            {/* Core Values Grid */}
-            <div>
-              <h4 className="text-2xl font-bold text-white mb-6">Our Core Values</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {coreValues.map((value, index) => (
-                  <div 
-                    key={index}
-                    className="group bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/50 transition-all duration-300 hover:scale-105"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all">
-                        <div className={value.color}>
-                          {value.icon}
-                        </div>
-                      </div>
-                      <div>
-                        <h5 className="text-lg font-bold text-white group-hover:text-primary transition-colors mb-2">
-                          {value.title}
-                        </h5>
-                        <p className="text-gray-400 text-sm">
-                          {value.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Community Impact */}
-            <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                  <Leaf className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white">Community Impact</h4>
-                  <p className="text-gray-400 text-sm">Beyond the courtroom</p>
-                </div>
-              </div>
-              <div className="grid grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">5000+</div>
-                  <div className="text-xs text-gray-400">Pro Bono Hours</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">50+</div>
-                  <div className="text-xs text-gray-400">Charity Partners</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">$2M+</div>
-                  <div className="text-xs text-gray-400">Community Giving</div>
-                </div>
               </div>
             </div>
           </div>
@@ -234,14 +126,18 @@ const AboutFirm = () => {
         <div className="mt-12 text-center">
           <div className="inline-block max-w-2xl">
             <div className="text-gray-400 text-lg italic mb-4">
-              "Great legal counsel is more than just knowledge of the law—it's about understanding people, 
+              "Great legal counsel is more than just knowledge of the law, it's about understanding people, 
               anticipating challenges, and being there when it matters most."
             </div>
             <div className="flex items-center justify-center gap-3">
-              <div className="w-10 h-10 bg-gradient-primary rounded-full"></div>
+              <img 
+                src="/team/sarah-chen.jpg" 
+                alt="Sarah Chen" 
+                className="w-16 h-16 rounded-full object-cover" 
+              />
               <div>
                 <div className="text-white font-semibold">Sarah Chen</div>
-                <div className="text-gray-400 text-sm">Managing Partner</div>
+                <div className="text-gray-400 text-sm">CEO Gratial Legalities</div>
               </div>
             </div>
           </div>

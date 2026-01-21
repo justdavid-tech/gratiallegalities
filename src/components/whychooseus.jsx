@@ -29,8 +29,8 @@ const WhyChooseUs = () => {
       icon: <Award className="w-6 h-6" />,
       title: 'Proven Track Record',
       description: 'Results that speak for themselves. Our success stories are your assurance.',
-      features: ['500+ Cases Won', '25+ Years Experience', 'Industry Recognition', 'Repeat Clients'],
-      metric: '95% Success Rate',
+      features: ['56+ Cases Won', '6+ Years Experience', 'Industry Recognition', 'Repeat Clients'],
+      metric: '96% Success Rate',
       gradient: 'from-primary/20 to-primary/10'
     },
     {
@@ -123,8 +123,6 @@ const WhyChooseUs = () => {
               key={index}
               className="group relative bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-brand-lg"
             >
-              {/* Hover Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${advantage.gradient} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
               
               <div className="relative z-10">
                 {/* Icon and Title */}
@@ -186,7 +184,7 @@ const WhyChooseUs = () => {
             <h3 className="text-3xl font-bold text-white mb-2">
               How We <span className="text-primary">Compare</span>
             </h3>
-            <p className="text-gray-400">See the difference in black and white</p>
+            <p className="text-gray-400">A side-by-side look at how our client-first approach stacks up against industry standards.</p>
           </div>
 
           <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10">

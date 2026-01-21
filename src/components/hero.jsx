@@ -82,7 +82,7 @@ const Hero = () => {
                 <div className="text-sm text-gray-400 mt-1">Cases Won</div>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-3xl font-bold text-primary">98%</div>
+                <div className="text-3xl font-bold text-primary">96%</div>
                 <div className="text-sm text-gray-400 mt-1">Success Rate</div>
               </div>
               <div className="text-center sm:text-left">
@@ -101,9 +101,9 @@ const Hero = () => {
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <Scale className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">Expert Legal Counsel</h3>
+                <h3 className="text`-2xl font-bold text-white mb-3">Expert Legal Counsel</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Our seasoned attorneys provide comprehensive legal guidance across multiple practice areas with proven track records.
+                  We provide comprehensive legal guidance across multiple practice areas with proven track records.
                 </p>
               </div>
             </div>

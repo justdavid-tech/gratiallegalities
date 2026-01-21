@@ -24,7 +24,6 @@ const PracticeAreas = () => {
       title: 'Corporate Law',
       description: 'Business formation, mergers & acquisitions, contracts, and corporate governance for companies of all sizes.',
       gradient: 'from-primary/20 to-primary/10',
-      stats: '500+ Clients',
       features: ['Business Formation', 'M&A', 'Contracts', 'Compliance']
     },
     {
@@ -33,7 +32,6 @@ const PracticeAreas = () => {
       title: 'Criminal Defense',
       description: 'Aggressive defense representation for felony, misdemeanor, and white-collar criminal cases.',
       gradient: 'from-primary/20 to-primary/10',
-      stats: '98% Success Rate',
       features: ['Felony Defense', 'Misdemeanors', 'DUI', 'Appeals']
     },
     {
@@ -42,7 +40,6 @@ const PracticeAreas = () => {
       title: 'Family Law',
       description: 'Compassionate guidance through divorce, child custody, adoption, and family dispute resolution.',
       gradient: 'from-primary/20 to-primary/10',
-      stats: '20+ Years Experience',
       features: ['Divorce', 'Child Custody', 'Adoption', 'Support']
     },
     {
@@ -51,26 +48,7 @@ const PracticeAreas = () => {
       title: 'Real Estate Law',
       description: 'Property transactions, zoning issues, landlord-tenant disputes, and real estate development.',
       gradient: 'from-primary/20 to-primary/10',
-      stats: '$2B+ in Transactions',
       features: ['Transactions', 'Zoning', 'Disputes', 'Development']
-    },
-    {
-      id: 'immigration',
-      icon: <Globe className="w-6 h-6" />,
-      title: 'Immigration Law',
-      description: 'Visa applications, green cards, citizenship, deportation defense, and asylum cases.',
-      gradient: 'from-primary/20 to-primary/10',
-      stats: '1000+ Cases',
-      features: ['Visas', 'Citizenship', 'Asylum', 'Defense']
-    },
-    {
-      id: 'civil-litigation',
-      icon: <FileText className="w-6 h-6" />,
-      title: 'Civil Litigation',
-      description: 'Representation in disputes involving contracts, personal injury, employment, and business conflicts.',
-      gradient: 'from-primary/20 to-primary/10',
-      stats: '95% Settlement Rate',
-      features: ['Contracts', 'Personal Injury', 'Employment', 'Disputes']
     },
     {
       id: 'employment',
@@ -78,17 +56,7 @@ const PracticeAreas = () => {
       title: 'Employment Law',
       description: 'Workplace discrimination, wrongful termination, wage disputes, and employment contracts.',
       gradient: 'from-primary/20 to-primary/10',
-      stats: '300+ Resolved',
       features: ['Discrimination', 'Termination', 'Wages', 'Contracts']
-    },
-    {
-      id: 'personal-injury',
-      icon: <Car className="w-6 h-6" />,
-      title: 'Personal Injury',
-      description: 'Compensation for accidents, medical malpractice, workplace injuries, and product liability.',
-      gradient: 'from-primary/20 to-primary/10',
-      stats: '$50M+ Recovered',
-      features: ['Accidents', 'Malpractice', 'Work Injury', 'Liability']
     },
     {
       id: 'estate-planning',
@@ -96,35 +64,7 @@ const PracticeAreas = () => {
       title: 'Estate Planning',
       description: 'Wills, trusts, probate administration, and estate tax planning for comprehensive asset protection.',
       gradient: 'from-primary/20 to-primary/10',
-      stats: '25+ Years Expertise',
       features: ['Wills', 'Trusts', 'Probate', 'Tax Planning']
-    },
-    {
-      id: 'intellectual-property',
-      icon: <Shield className="w-6 h-6" />,
-      title: 'Intellectual Property',
-      description: 'Trademarks, patents, copyrights, and trade secret protection for creators and businesses.',
-      gradient: 'from-primary/20 to-primary/10',
-      stats: '400+ IP Filings',
-      features: ['Trademarks', 'Patents', 'Copyrights', 'Protection']
-    },
-    {
-      id: 'tax',
-      icon: <Banknote className="w-6 h-6" />,
-      title: 'Tax Law',
-      description: 'Tax planning, controversy resolution, audits, and international tax compliance services.',
-      gradient: 'from-primary/20 to-primary/10',
-      stats: 'IRS Specialist',
-      features: ['Planning', 'Audits', 'Controversy', 'Compliance']
-    },
-    {
-      id: 'international',
-      icon: <Plane className="w-6 h-6" />,
-      title: 'International Law',
-      description: 'Cross-border transactions, international disputes, trade law, and diplomatic relations.',
-      gradient: 'from-primary/20 to-primary/10',
-      stats: 'Global Network',
-      features: ['Transactions', 'Disputes', 'Trade', 'Diplomacy']
     }
   ];
 
@@ -157,19 +97,15 @@ const PracticeAreas = () => {
           {/* Practice Areas Stats */}
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-2xl font-bold text-primary">12</div>
+              <div className="text-2xl font-bold text-primary">15+</div>
               <div className="text-sm text-gray-400">Practice Areas</div>
             </div>
             <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-2xl font-bold text-primary">50+</div>
-              <div className="text-sm text-gray-400">Expert Attorneys</div>
-            </div>
-            <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-2xl font-bold text-primary">1000+</div>
+              <div className="text-2xl font-bold text-primary">250+</div>
               <div className="text-sm text-gray-400">Cases Yearly</div>
             </div>
             <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-2xl font-bold text-primary">98%</div>
+              <div className="text-2xl font-bold text-primary">96%</div>
               <div className="text-sm text-gray-400">Client Satisfaction</div>
             </div>
           </div>
@@ -259,7 +195,7 @@ const PracticeAreas = () => {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button className="px-8 py-4 bg-white/5 backdrop-blur-sm text-white rounded-lg font-semibold border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all duration-300 flex items-center justify-center gap-2">
-                  Call Now: (555) 123-4567
+                  Call Now: (+234) 813 893 9107
                 </button>
               </div>
             </div>

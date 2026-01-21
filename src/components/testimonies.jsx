@@ -86,10 +86,10 @@ const Testimonials = () => {
   ];
 
   const stats = [
-    { value: "500+", label: "5-Star Reviews" },
-    { value: "98%", label: "Recommendation Rate" },
+    { value: "120+", label: "5-Star Reviews" },
+    { value: "94%", label: "Recommendation Rate" },
     { value: "4.9/5", label: "Average Rating" },
-    { value: "24h", label: "Response Time" }
+    { value: "1h", label: "Response Time" }
   ];
 
   const nextTestimonial = () => {

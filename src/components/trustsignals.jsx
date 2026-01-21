@@ -17,28 +17,28 @@ const TrustSignals = () => {
   const trustMetrics = [
     {
       icon: <Briefcase className="w-6 h-6" />,
-      value: "25+",
+      value: "6+",
       label: "Years Experience",
-      description: "Decades of proven legal expertise",
+      description: "Dedication years of proven legal expertise",
       gradient: "from-primary/20 to-primary/10"
     },
     {
       icon: <Trophy className="w-6 h-6" />,
-      value: "500+",
+      value: "54+",
       label: "Cases Won",
       description: "Successful outcomes for our clients",
       gradient: "from-primary/20 to-primary/10"
     },
     {
       icon: <Award className="w-6 h-6" />,
-      value: "50+",
+      value: "5+",
       label: "Awards",
       description: "Industry recognition & excellence",
       gradient: "from-primary/20 to-primary/10"
     },
     {
       icon: <Users className="w-6 h-6" />,
-      value: "98%",
+      value: "96%",
       label: "Client Satisfaction",
       description: "Positive feedback & referrals",
       gradient: "from-primary/20 to-primary/10"
