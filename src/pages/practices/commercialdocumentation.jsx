@@ -56,7 +56,6 @@ const CommercialDocumentation = () => {
     {
       category: 'Transaction Documentation',
       items: [
-        'M&A documentation suites',
         'Joint venture and partnership agreements',
         'Shareholder and investment agreements',
         'Asset purchase documentation',
@@ -68,7 +67,6 @@ const CommercialDocumentation = () => {
       category: 'Operational Documentation',
       items: [
         'Internal governance documents',
-        'Employee handbooks and policies',
         'Operational procedure manuals',
         'Quality management documentation',
         'Health and safety documentation'
@@ -100,16 +98,8 @@ const CommercialDocumentation = () => {
     }
   ];
 
-  const documentationStats = [
-    { value: '10,000+', label: 'Documents Drafted', description: 'Commercial agreements and documents' },
-    { value: '99.9%', label: 'Accuracy Rate', description: 'Error-free documentation' },
-    { value: '48h', label: 'Standard Turnaround', description: 'Document preparation time' },
-    { value: '200+', label: 'Template Library', description: 'Pre-approved document templates' }
-  ];
-
   const industriesServed = [
     'Financial Services',
-    'Technology & SaaS',
     'Manufacturing',
     'Healthcare',
     'Retail & E-commerce',
@@ -153,23 +143,6 @@ const CommercialDocumentation = () => {
         deliver documents that protect your interests while facilitating smooth business operations 
         and transactions.
       </p>
-
-      <div className="pt-4">
-        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-          <FileText className="w-5 h-5 text-primary" />
-          Documentation Excellence
-        </h3>
-        <div className="flex flex-wrap gap-2">
-          {['Precision Drafting', 'Risk Mitigation', 'Regulatory Compliance', 'Commercial Clarity', 'Timely Delivery'].map((item, index) => (
-            <span 
-              key={index}
-              className="px-3 py-1 bg-white/5 text-sm text-gray-300 rounded-full border border-white/10 hover:border-primary/20 hover:text-primary transition-all"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-      </div>
     </div>
   );
 
@@ -192,8 +165,8 @@ const CommercialDocumentation = () => {
           "Multi-jurisdictional documentation support"
         ]}
         stats={[
-          { value: "10,000+", label: "Documents" },
-          { value: "99.9%", label: "Accuracy" },
+          { value: "80+", label: "Documents" },
+          { value: "97.3%", label: "Accuracy" },
           { value: "48h", label: "Turnaround" }
         ]}
       />
@@ -286,76 +259,6 @@ const CommercialDocumentation = () => {
             </div>
           </div>
 
-          {/* Stats & Quality Assurance */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <div>
-              <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                    <BarChart3 className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Documentation Excellence</h3>
-                    <p className="text-gray-400">Our commitment to quality and efficiency</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-6">
-                  {documentationStats.map((stat, index) => (
-                    <div 
-                      key={index}
-                      className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 text-center border border-primary/20"
-                    >
-                      <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                      <div className="text-lg text-white font-medium mb-1">{stat.label}</div>
-                      <div className="text-sm text-gray-400">{stat.description}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/20 h-full">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                    <Award className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Quality Assurance Process</h3>
-                    <p className="text-gray-400">Multi-stage review for document perfection</p>
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  {qualityAssurance.map((step, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-start gap-4 p-4 bg-white/5 rounded-xl border border-white/10 hover:border-primary/20 transition-colors"
-                    >
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <div className="text-primary">
-                          {step.icon}
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-bold text-white mb-2">{step.step}</h4>
-                        <p className="text-gray-300 text-sm mb-3">{step.process}</p>
-                        <div className="flex flex-wrap gap-2">
-                          {step.checks.map((check, idx) => (
-                            <span key={idx} className="px-2 py-1 bg-white/5 text-xs text-gray-400 rounded">
-                              {check}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Industries Served */}
           <div className="mb-16">
             <div className="text-center mb-8">
@@ -402,7 +305,7 @@ const CommercialDocumentation = () => {
                   step: 'Requirement Analysis',
                   description: 'Understanding your documentation needs and objectives',
                   icon: <Search className="w-8 h-8" />,
-                  color: 'from-blue-500/20 to-blue-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 },
                 {
                   step: 'Document Drafting',
@@ -414,13 +317,13 @@ const CommercialDocumentation = () => {
                   step: 'Quality Review',
                   description: 'Multi-layer review for accuracy, compliance, and clarity',
                   icon: <FileSearch className="w-8 h-8" />,
-                  color: 'from-green-500/20 to-green-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 },
                 {
                   step: 'Delivery & Support',
                   description: 'Timely delivery with implementation guidance and support',
                   icon: <FileCheck className="w-8 h-8" />,
-                  color: 'from-purple-500/20 to-purple-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 }
               ].map((item, index) => (
                 <div 
@@ -434,133 +337,6 @@ const CommercialDocumentation = () => {
                   <p className="text-gray-400 text-sm">{item.description}</p>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Template Management */}
-          <div className="mb-16">
-            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/20">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-6">Template Management System</h3>
-                  <p className="text-gray-300 mb-6">
-                    Our extensive library of pre-approved document templates ensures consistency, 
-                    efficiency, and compliance across all your documentation needs.
-                  </p>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                        <Layers className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-white font-medium">200+ Templates</div>
-                        <div className="text-sm text-gray-400">Pre-approved document templates</div>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                        <Clock className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-white font-medium">Regular Updates</div>
-                        <div className="text-sm text-gray-400">Templates updated for regulatory changes</div>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                        <Lock className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-white font-medium">Secure Access</div>
-                        <div className="text-sm text-gray-400">Protected client portal access</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white/5 rounded-xl p-6">
-                  <h4 className="text-lg font-bold text-white mb-4">Template Categories</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { category: 'Commercial', count: '75+' },
-                      { category: 'Corporate', count: '45+' },
-                      { category: 'Employment', count: '35+' },
-                      { category: 'Compliance', count: '55+' }
-                    ].map((cat, index) => (
-                      <div key={index} className="p-4 bg-white/10 rounded-lg">
-                        <div className="text-white font-bold text-lg mb-1">{cat.count}</div>
-                        <div className="text-sm text-gray-400">{cat.category} Templates</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Technology & Tools */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">
-              Documentation <span className="text-primary">Technology & Tools</span>
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 rounded-xl p-6 border border-blue-500/20">
-                <h4 className="text-lg font-bold text-white mb-3">Document Automation</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
-                    <span>Automated document assembly</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt=2"></div>
-                    <span>Clause library management</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt=2"></div>
-                    <span>Version control systems</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
-                <h4 className="text-lg font-bold text-white mb-3">Quality Control Tools</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt=2"></div>
-                    <span>Automated consistency checks</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt=2"></div>
-                    <span>Compliance verification tools</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt=2"></div>
-                    <span>Error detection systems</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-gradient-to-br from-green-500/10 to-green-600/5 rounded-xl p-6 border border-green-500/20">
-                <h4 className="text-lg font-bold text-white mb-3">Client Collaboration</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt=2"></div>
-                    <span>Secure document portals</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt=2"></div>
-                    <span>Real-time collaboration tools</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt=2"></div>
-                    <span>Electronic signature integration</span>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
 
@@ -608,16 +384,6 @@ const CommercialDocumentation = () => {
                       Proactive identification and management of documentation-related risks.
                     </p>
                   </div>
-                  
-                  <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Globe className="w-6 h-6 text-primary" />
-                      <h4 className="text-lg font-bold text-white">Global Standards</h4>
-                    </div>
-                    <p className="text-gray-400 text-sm">
-                      International best practices adapted to Nigeria's legal and business environment.
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -647,12 +413,6 @@ const CommercialDocumentation = () => {
                     className="block w-full py-3 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center"
                   >
                     Request Document Drafting
-                  </a>
-                  <a 
-                    href="#"
-                    className="block w-full py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors text-center"
-                  >
-                    Access Template Library
                   </a>
                 </div>
               </div>

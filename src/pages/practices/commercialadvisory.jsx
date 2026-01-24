@@ -247,7 +247,7 @@ const CommercialAdvisory = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {industrySolutions.map((solution, index) => (
                 <div 
                   key={index}
@@ -369,56 +369,6 @@ const CommercialAdvisory = () => {
                     {advantage.title}
                   </h4>
                   <p className="text-gray-400 text-sm">{advantage.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Case Study Highlights */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">
-              Advisory <span className="text-primary">Success Stories</span>
-            </h2>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  challenge: 'Market Entry Strategy',
-                  solution: 'Developed comprehensive market entry roadmap for European fintech',
-                  outcome: 'Successful Nigerian launch with 50K+ users in first year',
-                  industry: 'Financial Technology'
-                },
-                {
-                  challenge: 'Distribution Optimization',
-                  solution: 'Redesigned distribution network for consumer goods company',
-                  outcome: '30% cost reduction and 25% market reach expansion',
-                  industry: 'FMCG'
-                },
-                {
-                  challenge: 'Digital Transformation',
-                  solution: 'Created phased digital transformation strategy for traditional retailer',
-                  outcome: '40% increase in online revenue within 18 months',
-                  industry: 'Retail'
-                }
-              ].map((caseStudy, index) => (
-                <div 
-                  key={index}
-                  className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-colors"
-                >
-                  <div className="text-sm text-primary font-semibold mb-2">{caseStudy.industry}</div>
-                  <h4 className="text-lg font-bold text-white mb-4">{caseStudy.challenge}</h4>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <div className="text-sm text-gray-400 mb-1">Our Solution</div>
-                      <p className="text-gray-300 text-sm">{caseStudy.solution}</p>
-                    </div>
-                    
-                    <div>
-                      <div className="text-sm text-gray-400 mb-1">Business Outcome</div>
-                      <p className="text-gray-300 text-sm">{caseStudy.outcome}</p>
-                    </div>
-                  </div>
                 </div>
               ))}
             </div>
