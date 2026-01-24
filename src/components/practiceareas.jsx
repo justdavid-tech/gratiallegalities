@@ -6,67 +6,116 @@ import {
   Users, 
   Globe, 
   FileText,
-  Shield,
   Building,
-  Car,
-  Heart,
-  Plane,
-  Banknote,
+  FileEdit,
+  MessageSquare,
+  Search,
   ArrowRight
 } from 'lucide-react';
-import { Link } from 'react-router-dom'; // or your routing method
+import { Link } from 'react-router-dom'; 
 
 const PracticeAreas = () => {
-  const practiceAreas = [
-    {
-      id: 'corporate',
-      icon: <Briefcase className="w-6 h-6" />,
-      title: 'Corporate Law',
-      description: 'Business formation, mergers & acquisitions, contracts, and corporate governance for companies of all sizes.',
-      gradient: 'from-primary/20 to-primary/10',
-      features: ['Business Formation', 'M&A', 'Contracts', 'Compliance']
-    },
-    {
-      id: 'criminal',
-      icon: <Scale className="w-6 h-6" />,
-      title: 'Criminal Defense',
-      description: 'Aggressive defense representation for felony, misdemeanor, and white-collar criminal cases.',
-      gradient: 'from-primary/20 to-primary/10',
-      features: ['Felony Defense', 'Misdemeanors', 'DUI', 'Appeals']
-    },
-    {
-      id: 'family',
-      icon: <Users className="w-6 h-6" />,
-      title: 'Family Law',
-      description: 'Compassionate guidance through divorce, child custody, adoption, and family dispute resolution.',
-      gradient: 'from-primary/20 to-primary/10',
-      features: ['Divorce', 'Child Custody', 'Adoption', 'Support']
-    },
-    {
-      id: 'real-estate',
-      icon: <Home className="w-6 h-6" />,
-      title: 'Real Estate Law',
-      description: 'Property transactions, zoning issues, landlord-tenant disputes, and real estate development.',
-      gradient: 'from-primary/20 to-primary/10',
-      features: ['Transactions', 'Zoning', 'Disputes', 'Development']
-    },
-    {
-      id: 'employment',
-      icon: <Building className="w-6 h-6" />,
-      title: 'Employment Law',
-      description: 'Workplace discrimination, wrongful termination, wage disputes, and employment contracts.',
-      gradient: 'from-primary/20 to-primary/10',
-      features: ['Discrimination', 'Termination', 'Wages', 'Contracts']
-    },
-    {
-      id: 'estate-planning',
-      icon: <Heart className="w-6 h-6" />,
-      title: 'Estate Planning',
-      description: 'Wills, trusts, probate administration, and estate tax planning for comprehensive asset protection.',
-      gradient: 'from-primary/20 to-primary/10',
-      features: ['Wills', 'Trusts', 'Probate', 'Tax Planning']
-    }
-  ];
+const practiceAreas = [
+  {
+    id: 'corporate-law',
+    slug: 'corporate-law',
+    icon: <Briefcase className="w-6 h-6" />,
+    title: 'Corporate Law',
+    description: 'Business formation, mergers & acquisitions, contracts, and corporate governance for companies of all sizes.',
+    gradient: 'from-primary/20 to-primary/10',
+    features: ['Business Formation', 'M&A', 'Contracts', 'Compliance']
+  },
+  {
+    id: 'commercial',
+    slug: 'commercial',
+    icon: <Building className="w-6 h-6" />,
+    title: 'Commercial Law',
+    description: 'Legal services for commercial transactions, business operations, and commercial disputes.',
+    gradient: 'from-primary/20 to-primary/10',
+    features: ['Transactions', 'Operations', 'Disputes', 'Regulations']
+  },
+  {
+    id: 'commercial-advisory',
+    slug: 'commercialadvisory',
+    icon: <Scale className="w-6 h-6" />,
+    title: 'Commercial Advisory',
+    description: 'Strategic legal advice for business decisions, risk management, and commercial strategy.',
+    gradient: 'from-primary/20 to-primary/10',
+    features: ['Strategic Advice', 'Risk Management', 'Business Decisions', 'Compliance']
+  },
+  {
+    id: 'commercial-documentation',
+    slug: 'commercialdocumentation',
+    icon: <FileText className="w-6 h-6" />,
+    title: 'Commercial Documentation',
+    description: 'Drafting and reviewing commercial agreements, contracts, and business documentation.',
+    gradient: 'from-primary/20 to-primary/10',
+    features: ['Agreements', 'Contracts', 'Documentation', 'Reviews']
+  },
+  {
+    id: 'contract-drafting',
+    slug: 'contractdrafting',
+    icon: <FileEdit className="w-6 h-6" />,
+    title: 'Contract Drafting',
+    description: 'Professional drafting, review, and negotiation of various types of contracts and agreements.',
+    gradient: 'from-primary/20 to-primary/10',
+    features: ['Drafting', 'Review', 'Negotiation', 'Enforcement']
+  },
+  {
+    id: 'employment',
+    slug: 'employment',
+    icon: <Users className="w-6 h-6" />,
+    title: 'Employment Law',
+    description: 'Workplace discrimination, wrongful termination, wage disputes, and employment contracts.',
+    gradient: 'from-primary/20 to-primary/10',
+    features: ['Discrimination', 'Termination', 'Wages', 'Contracts']
+  },
+  {
+    id: 'legal-advisory',
+    slug: 'legaladvisory',
+    icon: <MessageSquare className="w-6 h-6" />,
+    title: 'Legal Advisory',
+    description: 'Comprehensive legal advice and counsel for various personal and business matters.',
+    gradient: 'from-primary/20 to-primary/10',
+    features: ['Legal Counsel', 'Advice', 'Guidance', 'Consultation']
+  },
+  {
+    id: 'legal-due-diligence',
+    slug: 'legalDueDiligence',
+    icon: <Search className="w-6 h-6" />,
+    title: 'Legal Due Diligence',
+    description: 'Thorough investigation and assessment of legal risks in transactions and business operations.',
+    gradient: 'from-primary/20 to-primary/10',
+    features: ['Risk Assessment', 'Investigations', 'Compliance', 'Reporting']
+  },
+  {
+    id: 'online-business',
+    slug: 'onlinebusiness',
+    icon: <Globe className="w-6 h-6" />,
+    title: 'Online Business Law',
+    description: 'Legal services for e-commerce, digital businesses, online contracts, and internet law.',
+    gradient: 'from-primary/20 to-primary/10',
+    features: ['E-commerce', 'Digital Contracts', 'Online Compliance', 'Internet Law']
+  },
+  {
+    id: 'property-dispute',
+    slug: 'propertydispute',
+    icon: <Home className="w-6 h-6" />,
+    title: 'Property Dispute Resolution',
+    description: 'Resolution of property conflicts, boundary disputes, title issues, and real estate litigation.',
+    gradient: 'from-primary/20 to-primary/10',
+    features: ['Dispute Resolution', 'Boundary Issues', 'Title Disputes', 'Litigation']
+  },
+  {
+    id: 'real-estate',
+    slug: 'realestate',
+    icon: <Building className="w-6 h-6" />,
+    title: 'Real Estate Law',
+    description: 'Property transactions, zoning issues, landlord-tenant disputes, and real estate development.',
+    gradient: 'from-primary/20 to-primary/10',
+    features: ['Transactions', 'Zoning', 'Disputes', 'Development']
+  }
+];
 
   return (
     <div className="relative py-20 bg-gradient-to-b from-black to-secondary-950 overflow-hidden">
@@ -97,11 +146,11 @@ const PracticeAreas = () => {
           {/* Practice Areas Stats */}
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-2xl font-bold text-primary">15+</div>
+              <div className="text-2xl font-bold text-primary">10+</div>
               <div className="text-sm text-gray-400">Practice Areas</div>
             </div>
             <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-2xl font-bold text-primary">250+</div>
+              <div className="text-2xl font-bold text-primary">210+</div>
               <div className="text-sm text-gray-400">Cases Yearly</div>
             </div>
             <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
@@ -116,7 +165,7 @@ const PracticeAreas = () => {
           {practiceAreas.map((area, index) => (
             <Link 
               key={area.id}
-              to={`/practice-areas/${area.id}`}
+              to={`/practices/${area.slug}`}
               className="group block"
             >
               <div className="h-full relative bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-brand-lg">
@@ -190,10 +239,10 @@ const PracticeAreas = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2 whitespace-nowrap">
+                <Link to="/contact" className="group px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2 whitespace-nowrap">
                   Book Free Consultation
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
                 <button className="px-8 py-4 bg-white/5 backdrop-blur-sm text-white rounded-lg font-semibold border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all duration-300 flex items-center justify-center gap-2">
                   Call Now: (+234) 813 893 9107
                 </button>

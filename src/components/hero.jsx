@@ -108,9 +108,9 @@ const Hero = () => {
 
                 {/* Dropdown Menu */}
                 {isPracticeDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-[600px] bg-secondary-950 border border-primary/20 rounded-xl shadow-2xl overflow-hidden z-50 animate-fadeIn">
-                    <div className="p-6">
-                      <div className="grid grid-cols-2 gap-6">
+                  <div className="absolute top-full left-0 sm:left-auto sm:right-0 mt-2 w-[calc(100vw-2rem)] sm:w-[500px] lg:w-[600px] max-h-[70vh] bg-secondary-950 border border-primary/20 rounded-xl shadow-2xl overflow-hidden z-50 animate-fadeIn">
+                    <div className="p-4 sm:p-6 max-h-[calc(70vh-4rem)] overflow-y-auto custom-scrollbar">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                         {/* Column 1 */}
                         <div className="space-y-2">
                           {practiceAreas.column1.map((area, index) => (
@@ -248,6 +248,20 @@ const Hero = () => {
         }
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #EE7B30;
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #ff8c42;
         }
       `}</style>
     </div>

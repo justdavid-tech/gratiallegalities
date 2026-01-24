@@ -76,17 +76,7 @@ const Commercial = () => {
   ];
 
   const additionalServices = [
-    {
-      category: 'E-commerce & Digital Commerce',
-      items: [
-        'Online terms of service and privacy policies',
-        'Digital payment system agreements',
-        'Platform user agreements',
-        'Data protection for e-commerce',
-        'Cross-border e-commerce compliance'
-      ],
-      icon: <Globe className="w-5 h-5" />
-    },
+    
     {
       category: 'Trade & Distribution',
       items: [
@@ -132,10 +122,8 @@ const Commercial = () => {
   const industriesServed = [
     'Retail & Consumer Goods',
     'Manufacturing',
-    'Technology & SaaS',
     'Healthcare & Pharmaceuticals',
     'Food & Beverage',
-    'Automotive',
     'Energy & Utilities',
     'Telecommunications',
     'Hospitality & Tourism',
@@ -185,7 +173,7 @@ const Commercial = () => {
         tagline="Navigating Business Transactions with Legal Precision"
         customContent={customHeroContent}
         contactPerson="Commercial Practice Partners"
-        contactEmail="commercial@aluko-oyebode.com"
+        contactEmail="gratialegals@gmail.com"
         keyFeatures={[
           "Drafting and negotiation of complex commercial agreements",
           "Regulatory compliance across multiple industries",
@@ -195,9 +183,9 @@ const Commercial = () => {
           "E-commerce and digital transaction compliance"
         ]}
         stats={[
-          { value: "1,000+", label: "Contracts" },
-          { value: "200+", label: "Industries" },
-          { value: "98%", label: "Success Rate" }
+          { value: "74+", label: "Contracts" },
+          { value: "37+", label: "Industries" },
+          { value: "95%", label: "Success Rate" }
         ]}
       />
       
@@ -276,48 +264,11 @@ const Commercial = () => {
                     </h3>
                   </div>
                   
-                  <div className="space-y-2">
-                    {service.items.slice(0, 3).map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-300 text-sm">{item}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Stats & Recent Work */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <div>
-              <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                    <BarChart3 className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Commercial Impact</h3>
-                    <p className="text-gray-400">Our commercial law achievements</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-6">
-                  {commercialStats.map((stat, index) => (
-                    <div 
-                      key={index}
-                      className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 text-center border border-primary/20"
-                    >
-                      <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                      <div className="text-lg text-white font-medium mb-1">{stat.label}</div>
-                      <div className="text-sm text-gray-400">{stat.description}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* Industries Served */}
           <div className="mb-16">
@@ -365,7 +316,7 @@ const Commercial = () => {
                   stage: 'Drafting & Strategy',
                   desc: 'Creating tailored agreements aligned with business objectives',
                   icon: <FileText className="w-8 h-8" />,
-                  color: 'from-blue-500/20 to-blue-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 },
                 {
                   stage: 'Negotiation',
@@ -377,13 +328,13 @@ const Commercial = () => {
                   stage: 'Execution',
                   desc: 'Proper execution and implementation of finalized agreements',
                   icon: <Clipboard className="w-8 h-8" />,
-                  color: 'from-green-500/20 to-green-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 },
                 {
                   stage: 'Management & Renewal',
                   desc: 'Ongoing contract administration and renewal optimization',
                   icon: <TrendingUp className="w-8 h-8" />,
-                  color: 'from-purple-500/20 to-purple-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 }
               ].map((item, index) => (
                 <div 
@@ -410,7 +361,7 @@ const Commercial = () => {
               <div className="space-y-6">
                 <p className="text-gray-300 leading-relaxed">
                   Our commercial law practice combines legal excellence with practical business understanding. 
-                  We don't just draft contracts—we create commercial frameworks that facilitate growth, 
+                  We don't just draft contracts, we create commercial frameworks that facilitate growth, 
                   manage risk, and build sustainable business relationships.
                 </p>
                 
@@ -484,16 +435,10 @@ const Commercial = () => {
 
                 <div className="space-y-4">
                   <a 
-                    href="mailto:contracts@aluko-oyebode.com"
+                    href="mailto:gratialegals@gmail.com"
                     className="block w-full py-3 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center"
                   >
                     Submit Contract for Review
-                  </a>
-                  <a 
-                    href="#"
-                    className="block w-full py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors text-center"
-                  >
-                    Download Contract Templates
                   </a>
                 </div>
               </div>
@@ -507,19 +452,19 @@ const Commercial = () => {
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 rounded-xl p-6 border border-blue-500/20">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
                 <h4 className="text-lg font-bold text-white mb-3">Consumer Protection</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Federal Competition & Consumer Protection Act</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Product labeling and safety standards</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Advertising standards compliance</span>
                   </li>
                 </ul>
@@ -543,19 +488,19 @@ const Commercial = () => {
                 </ul>
               </div>
               
-              <div className="bg-gradient-to-br from-green-500/10 to-green-600/5 rounded-xl p-6 border border-green-500/20">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
                 <h4 className="text-lg font-bold text-white mb-3">Industry Specific</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>NAFDAC regulations (food & drugs)</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>SON standards (manufacturing)</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>NCC regulations (telecoms)</span>
                   </li>
                 </ul>
@@ -578,7 +523,7 @@ const Commercial = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a 
-                    href="mailto:commercial@aluko-oyebode.com"
+                    href="mailto:gratialegals@gmail.com"
                     className="group px-8 py-4 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                   >
                     Contact Commercial Team

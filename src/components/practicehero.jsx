@@ -189,10 +189,15 @@ const PracticeHero = ({
                   </ul>
                 </div>
 
-                <button className="w-full mt-6 py-3 bg-gradient-to-r from-primary to-primary-600 text-white rounded-lg font-semibold hover:opacity-90 transition-all flex items-center justify-center gap-2">
-                  Schedule Direct Consultation
+                <a 
+                  href={`https://wa.me/2348138939107?text=Hello%20Gratia%20Legalities%2C%20I%20would%20like%20to%20schedule%20a%20free%20consultation%20for%20${encodeURIComponent(practiceName)}%20services.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full mt-6 py-3 bg-gradient-to-r from-primary to-primary-600 text-white rounded-lg font-semibold hover:opacity-90 transition-all flex items-center justify-center gap-2"
+                >
+                  Schedule {practiceName} Consultation via WhatsApp
                   <ArrowRight className="w-5 h-5" />
-                </button>
+                </a>
               </div>
             </div>
 
@@ -204,14 +209,6 @@ const PracticeHero = ({
               </p>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce cursor-pointer" onClick={scrollToContent}>
-        <div className="flex flex-col items-center gap-2 text-white/60 hover:text-primary transition-colors">
-          <span className="text-sm font-medium">Scroll to explore practice details</span>
-          <ChevronDown className="w-6 h-6" />
         </div>
       </div>
 

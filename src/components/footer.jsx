@@ -79,9 +79,8 @@ const Footer = () => {
                   <div>
                     <p className="text-white font-medium mb-1">Main Office</p>
                     <p className="text-gray-400 text-sm">
-                      123 Justice Avenue<br />
-                      Suite 500<br />
-                      New York, NY 10001
+                      1, Ondo Street, Area 1<br />
+                      Garki, Abuja<br /> 
                     </p>
                   </div>
                 </div>
@@ -90,7 +89,7 @@ const Footer = () => {
                   <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                   <div>
                     <a 
-                      href="tel:+15551234567" 
+                      href="tel:+2348138939107" 
                       className="text-white hover:text-primary transition-colors font-medium"
                     >
                       (+234) 813 893 9107
@@ -102,10 +101,10 @@ const Footer = () => {
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                   <a 
-                    href="mailto:info@sterlinglegal.com" 
+                    href="mailto:gratialegals@gmail.com" 
                     className="text-white hover:text-primary transition-colors font-medium"
                   >
-                    info@sterlinglegal.com
+                    gratialegals@gmail.com
                   </a>
                 </div>
               </div>

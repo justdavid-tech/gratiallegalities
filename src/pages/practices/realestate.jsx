@@ -124,7 +124,7 @@ const RealEstate = () => {
         tagline="Protecting Property Value Through Strategic Legal Expertise"
         customContent={customHeroContent}
         contactPerson="Real Estate Law Team"
-        contactEmail="realestate@aluko-oyebode.com"
+        contactEmail="gratialegals@gmail.com"
         keyFeatures={[
           "Land acquisition and title verification",
           "Property sale and lease documentation",
@@ -197,7 +197,7 @@ const RealEstate = () => {
               </div>
               <div className="flex gap-4">
                 <a 
-                  href="mailto:realestate@aluko-oyebode.com"
+                  href="mailto:gratialegals@gmail.com"
                   className="px-8 py-4 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 flex items-center gap-2"
                 >
                   Contact Real Estate Team

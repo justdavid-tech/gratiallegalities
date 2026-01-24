@@ -81,7 +81,6 @@ const CorporateLaw = () => {
   ];
 
   const industries = [
-    'Technology & Startups',
     'Financial Services',
     'Energy & Natural Resources',
     'Healthcare & Pharmaceuticals',
@@ -136,20 +135,19 @@ const CorporateLaw = () => {
         practiceName="Corporate Law"
         tagline="Strategic Legal Solutions for Business Success"
         customContent={customHeroContent}
-        contactPerson="Corporate Practice Partners"
-        contactEmail="corporate@aluko-oyebode.com"
+        contactPerson="Gratia Legalities"
+        contactEmail="gratialegals@gmail.com"
         keyFeatures={[
           "End-to-end corporate lifecycle support",
           "Mergers, acquisitions, and strategic transactions",
           "Corporate governance and compliance advisory",
           "Commercial contract drafting and negotiation",
-          "Cross-border corporate structuring",
           "Shareholder and stakeholder relations management"
         ]}
         stats={[
-          { value: "500+", label: "Companies" },
-          { value: "$5B+", label: "Deals" },
-          { value: "25+", label: "Years" }
+          { value: "54+", label: "Companies" },
+          { value: "40+", label: "Deals" },
+          { value: "6+", label: "Years" }
         ]}
       />
       
@@ -244,7 +242,7 @@ const CorporateLaw = () => {
               <div className="space-y-6">
                 <p className="text-gray-300 leading-relaxed">
                   Our corporate law practice stands out through our commitment to understanding each client's unique 
-                  business objectives and industry context. We don't just provide legal advice—we become strategic 
+                  business objectives and industry context. We don't just provide legal advice we become strategic 
                   partners in your business journey.
                 </p>
                 
@@ -299,10 +297,10 @@ const CorporateLaw = () => {
                 <div>
                   <div className="text-sm text-gray-400 mb-2">For Corporate Inquiries</div>
                   <a 
-                    href="mailto:corporate@aluko-oyebode.com"
+                    href="mailto:gratialegals@gmail.com"
                     className="text-primary hover:text-primary-400 transition-colors text-lg font-medium block"
                   >
-                    corporate@aluko-oyebode.com
+                    gratialegals@gmail.com
                   </a>
                 </div>
                 
@@ -318,12 +316,12 @@ const CorporateLaw = () => {
                   >
                     Request Consultation
                   </a>
-                  <a 
+                  {/* <a 
                     href="#"
                     className="block w-full py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors text-center"
                   >
                     Download Corporate Services Guide
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
@@ -390,7 +388,7 @@ const CorporateLaw = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a 
-                    href="mailto:corporate@aluko-oyebode.com"
+                    href="mailto:gratialegals@gmail.com"
                     className="group px-8 py-4 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                   >
                     Contact Corporate Team

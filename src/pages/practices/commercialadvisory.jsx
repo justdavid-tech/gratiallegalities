@@ -77,16 +77,6 @@ const CommercialAdvisory = () => {
 
   const industrySolutions = [
     {
-      sector: 'Technology & Digital',
-      solutions: [
-        'SaaS pricing and licensing strategy',
-        'Data monetization advisory',
-        'Platform business model development',
-        'Digital partnership strategies'
-      ],
-      icon: <Zap className="w-5 h-5" />
-    },
-    {
       sector: 'Energy & Infrastructure',
       solutions: [
         'Project commercial structuring',
@@ -119,10 +109,9 @@ const CommercialAdvisory = () => {
   ];
 
   const advisoryStats = [
-    { value: '200+', label: 'Strategic Projects', description: 'Commercial advisory engagements' },
-    { value: '$2B+', label: 'Value Created', description: 'For client businesses' },
+    { value: '30+', label: 'Strategic Projects', description: 'Commercial advisory engagements' },
     { value: '95%', label: 'Client Retention', description: 'Repeat advisory engagements' },
-    { value: '50+', label: 'Industries', description: 'Sector expertise' }
+    { value: '20+', label: 'Industries', description: 'Sector expertise' }
   ];
 
   const methodologies = [
@@ -185,7 +174,7 @@ const CommercialAdvisory = () => {
         tagline="Strategic Insights for Business Excellence"
         customContent={customHeroContent}
         contactPerson="Strategic Advisory Partners"
-        contactEmail="advisory@aluko-oyebode.com"
+        contactEmail="gratialegals@gmail.com"
         keyFeatures={[
           "Strategic business planning and market analysis",
           "Commercial due diligence and opportunity assessment",
@@ -195,8 +184,7 @@ const CommercialAdvisory = () => {
           "Growth strategy and market expansion planning"
         ]}
         stats={[
-          { value: "200+", label: "Projects" },
-          { value: "$2B+", label: "Value Created" },
+          { value: "30+", label: "Projects" },
           { value: "95%", label: "Retention" }
         ]}
       />
@@ -518,7 +506,7 @@ const CommercialAdvisory = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a 
-                    href="mailto:advisory@aluko-oyebode.com"
+                    href="mailto:gratialegals@gmail.com"
                     className="group px-8 py-4 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                   >
                     Schedule Strategy Session
