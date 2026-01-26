@@ -218,9 +218,7 @@ const ContractDrafting = () => {
           "Commercial and corporate contract drafting",
           "Specialized industry-specific agreements",
           "International and cross-border contracts",
-          "Transaction and closing documentation",
-          "Contract template development and customization",
-          "Multi-jurisdictional drafting expertise"
+          "Transaction and closing documentation"
         ]}
         stats={[
           { value: "5,000+", label: "Contracts" },
@@ -709,12 +707,6 @@ const ContractDrafting = () => {
                     className="block w-full py-3 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center"
                   >
                     Request Contract Drafting
-                  </a>
-                  <a 
-                    href="#"
-                    className="block w-full py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors text-center"
-                  >
-                    Access Template Library
                   </a>
                 </div>
               </div>
