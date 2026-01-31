@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import Footer from '../components/footer';
 
 const PrivacyPolicy = () => {
   return (
@@ -115,7 +116,7 @@ const PrivacyPolicy = () => {
                           <div className="bg-primary-100 rounded-full p-1 mr-3 mt-1">
                             <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                           </div>
-                          <span><strong>Contact Information:</strong> Name, email address, phone number, mailing address</span>
+                          <span><strong>Contact Information:</strong> Name, Phone Number, Practice Area, Email address, Mailing address, Subject, Urgency level, Message </span>
                         </li>
                         <li className="flex items-start">
                           <div className="bg-primary-100 rounded-full p-1 mr-3 mt-1">
@@ -127,41 +128,9 @@ const PrivacyPolicy = () => {
                           <div className="bg-primary-100 rounded-full p-1 mr-3 mt-1">
                             <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                           </div>
-                          <span><strong>Identification:</strong> Government-issued ID, date of birth, social security number (when required)</span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="bg-primary-100 rounded-full p-1 mr-3 mt-1">
-                            <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                          </div>
-                          <span><strong>Payment Information:</strong> Billing address, credit card details (processed securely)</span>
+                          <span><strong>Identification:</strong> Government-issued ID, date of birth</span>
                         </li>
                       </ul>
-                    </div>
-
-                    <div className="mt-6">
-                      <h3 className="text-xl font-semibold text-neutral-900 mb-4">Automatically Collected Information</h3>
-                      <div className="bg-neutral-50 rounded-lg p-5">
-                        <ul className="space-y-3">
-                          <li className="flex items-center">
-                            <svg className="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                            Device information (browser type, operating system)
-                          </li>
-                          <li className="flex items-center">
-                            <svg className="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                            Log data (IP address, access times, pages viewed)
-                          </li>
-                          <li className="flex items-center">
-                            <svg className="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                            Cookies and similar tracking technologies
-                          </li>
-                        </ul>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -182,27 +151,22 @@ const PrivacyPolicy = () => {
                     {[
                       {
                         title: "Legal Services",
-                        description: "To provide and manage legal services, communicate about your case, and process transactions.",
-                        icon: "⚖️"
+                        description: "To provide and manage legal services, communicate about your case, and process transactions."
                       },
                       {
                         title: "Communication",
-                        description: "To respond to inquiries, send updates, and provide client support.",
-                        icon: "📧"
+                        description: "To respond to inquiries, send updates, and provide client support."
                       },
                       {
                         title: "Security & Compliance",
-                        description: "To protect against fraud, comply with legal obligations, and enforce our terms.",
-                        icon: "🔒"
+                        description: "To protect against fraud, comply with legal obligations, and enforce our terms."
                       },
                       {
                         title: "Improvement",
-                        description: "To enhance our services, website functionality, and client experience.",
-                        icon: "📈"
+                        description: "To enhance our services, website functionality, and client experience."
                       }
                     ].map((item, index) => (
                       <div key={index} className="bg-neutral-50 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
-                        <div className="text-3xl mb-4">{item.icon}</div>
                         <h3 className="text-xl font-semibold text-neutral-900 mb-2">{item.title}</h3>
                         <p className="text-neutral-600">{item.description}</p>
                       </div>
@@ -229,7 +193,7 @@ const PrivacyPolicy = () => {
                     
                     <div className="mt-6 space-y-6">
                       <div className="flex items-start">
-                        <div className="bg-warning-100 text-warning-800 rounded-full px-3 py-1 text-sm font-semibold mr-4 mt-1">
+                        <div className="bg-success-100 text-success-800 rounded-full px-3 py-1 text-sm font-semibold mr-4 mt-1">
                           Legal Requirement
                         </div>
                         <div>
@@ -239,7 +203,7 @@ const PrivacyPolicy = () => {
                       </div>
                       
                       <div className="flex items-start">
-                        <div className="bg-info-100 text-info-800 rounded-full px-3 py-1 text-sm font-semibold mr-4 mt-1">
+                        <div className="bg-success-100 text-success-800 rounded-full px-3 py-1 text-sm font-semibold mr-4 mt-1">
                           Service Providers
                         </div>
                         <div>
@@ -481,31 +445,7 @@ const PrivacyPolicy = () => {
             </div>
           </div>
         </main>
-
-        {/* Footer */}
-        <footer className="bg-secondary-950 text-white py-12">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex flex-col md:flex-row justify-between items-center">
-                <div className="mb-6 md:mb-0">
-                  <h3 className="text-2xl font-heading font-bold mb-2">[Your Law Firm Name]</h3>
-                  <p className="text-neutral-300">© {new Date().getFullYear()} All rights reserved.</p>
-                </div>
-                <div className="flex space-x-6">
-                  <a href="/terms" className="text-neutral-300 hover:text-white transition-colors duration-200">
-                    Terms of Service
-                  </a>
-                  <a href="/disclaimer" className="text-neutral-300 hover:text-white transition-colors duration-200">
-                    Legal Disclaimer
-                  </a>
-                  <a href="/sitemap" className="text-neutral-300 hover:text-white transition-colors duration-200">
-                    Sitemap
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
+<Footer />
       </div>
     </>
   );
