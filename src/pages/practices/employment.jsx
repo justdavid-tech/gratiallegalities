@@ -122,14 +122,13 @@ const Employment = () => {
   ];
 
   const employmentStats = [
-    { value: '1,000+', label: 'Employment Contracts', description: 'Drafted and reviewed' },
+    { value: '72+', label: 'Employment Contracts', description: 'Drafted and reviewed' },
     { value: '98%', label: 'Compliance Rate', description: 'Regulatory compliance success' },
     { value: '95%', label: 'Dispute Resolution', description: 'Successful settlements' },
     { value: '24/7', label: 'HR Support', description: 'Available for urgent matters' }
   ];
 
   const industriesServed = [
-    'Technology & Startups',
     'Financial Services',
     'Manufacturing & Industrial',
     'Healthcare & Pharmaceuticals',
@@ -216,7 +215,7 @@ const Employment = () => {
           "International employment and expatriate arrangements"
         ]}
         stats={[
-          { value: "1,000+", label: "Contracts" },
+          { value: "72+", label: "Contracts" },
           { value: "98%", label: "Compliance" },
           { value: "95%", label: "Resolution Rate" }
         ]}
@@ -269,110 +268,6 @@ const Employment = () => {
             </div>
           </div>
 
-          {/* Specialized Areas */}
-          <div className="mb-16">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                Specialized <span className="text-primary">Practice Areas</span>
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Targeted employment law solutions for specific workplace needs
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {specializedAreas.map((area, index) => (
-                <div 
-                  key={index}
-                  className="group bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all duration-300 hover:scale-105"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <div className="text-primary">
-                        {area.icon}
-                      </div>
-                    </div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
-                      {area.area}
-                    </h3>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    {area.services.map((service, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-300 text-sm">{service}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Stats & Compliance Areas */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <div>
-              <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                    <BarChart3 className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Employment Excellence</h3>
-                    <p className="text-gray-400">Our commitment to workplace success</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-6">
-                  {employmentStats.map((stat, index) => (
-                    <div 
-                      key={index}
-                      className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 text-center border border-primary/20"
-                    >
-                      <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                      <div className="text-lg text-white font-medium mb-1">{stat.label}</div>
-                      <div className="text-sm text-gray-400">{stat.description}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/20 h-full">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Key Compliance Areas</h3>
-                    <p className="text-gray-400">Critical regulatory focus for Nigerian employers</p>
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  {complianceAreas.map((area, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-start gap-4 p-4 bg-white/5 rounded-xl border border-white/10 hover:border-primary/20 transition-colors"
-                    >
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <div className="text-primary">
-                          {area.icon}
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-bold text-white mb-2">{area.regulation}</h4>
-                        <p className="text-gray-300 text-sm">{area.focus}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Industries Served */}
           <div className="mb-16">
             <div className="text-center mb-8">
@@ -419,7 +314,7 @@ const Employment = () => {
                   stage: 'Recruitment & Hiring',
                   services: ['Offer letters', 'Background checks', 'Employment terms', 'Probation periods'],
                   icon: <Users className="w-8 h-8" />,
-                  color: 'from-blue-500/20 to-blue-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 },
                 {
                   stage: 'Employment Management',
@@ -431,13 +326,13 @@ const Employment = () => {
                   stage: 'Workplace Relations',
                   services: ['Grievance handling', 'Mediation services', 'Union relations', 'Workplace culture'],
                   icon: <Handshake className="w-8 h-8" />,
-                  color: 'from-green-500/20 to-green-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 },
                 {
                   stage: 'Termination & Transition',
                   services: ['Redundancy planning', 'Severance agreements', 'Exit interviews', 'References'],
                   icon: <AlertTriangle className="w-8 h-8" />,
-                  color: 'from-purple-500/20 to-purple-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 }
               ].map((item, index) => (
                 <div 
@@ -535,19 +430,19 @@ const Employment = () => {
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 rounded-xl p-6 border border-blue-500/20">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
                 <h4 className="text-lg font-bold text-white mb-3">Managerial Training</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Employment law for managers</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Performance management best practices</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Disciplinary procedure training</span>
                   </li>
                 </ul>
@@ -571,19 +466,19 @@ const Employment = () => {
                 </ul>
               </div>
               
-              <div className="bg-gradient-to-br from-green-500/10 to-green-600/5 rounded-xl p-6 border border-green-500/20">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
                 <h4 className="text-lg font-bold text-white mb-3">Workplace Culture</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Diversity and inclusion programs</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Employee engagement strategies</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Conflict resolution workshops</span>
                   </li>
                 </ul>
@@ -675,12 +570,6 @@ const Employment = () => {
                   >
                     Request Compliance Audit
                   </a>
-                  <a 
-                    href="#"
-                    className="block w-full py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors text-center"
-                  >
-                    Download Employment Templates
-                  </a>
                 </div>
               </div>
             </div>
@@ -714,35 +603,6 @@ const Employment = () => {
                     Schedule Compliance Review
                   </a>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Services Menu */}
-          <div className="mt-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
-                <h4 className="text-lg font-bold text-white mb-3">Compliance Audit</h4>
-                <p className="text-gray-400 text-sm mb-4">Comprehensive workplace compliance review</p>
-                <a href="#" className="text-primary hover:text-primary-400 text-sm font-medium">
-                  Learn More →
-                </a>
-              </div>
-              
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20 text-center">
-                <h4 className="text-lg font-bold text-white mb-3">Dispute Resolution</h4>
-                <p className="text-gray-400 text-sm mb-4">Employment tribunal representation</p>
-                <a href="#" className="text-primary hover:text-primary-400 text-sm font-medium">
-                  Learn More →
-                </a>
-              </div>
-              
-              <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
-                <h4 className="text-lg font-bold text-white mb-3">Training Programs</h4>
-                <p className="text-gray-400 text-sm mb-4">Customized workplace training</p>
-                <a href="#" className="text-primary hover:text-primary-400 text-sm font-medium">
-                  Learn More →
-                </a>
               </div>
             </div>
           </div>

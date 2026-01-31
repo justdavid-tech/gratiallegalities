@@ -231,7 +231,7 @@ const LegalAdvisory = () => {
           "Continuous legal monitoring and improvement"
         ]}
         stats={[
-          { value: "300+", label: "Clients" },
+          { value: "51+", label: "Clients" },
           { value: "95%", label: "Retention" },
           { value: "24/7", label: "Support" }
         ]}
@@ -328,33 +328,6 @@ const LegalAdvisory = () => {
           {/* Stats & Advisory Methodology */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                    <BarChart3 className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Advisory Excellence</h3>
-                    <p className="text-gray-400">Our commitment to strategic legal partnership</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-6">
-                  {advisoryStats.map((stat, index) => (
-                    <div 
-                      key={index}
-                      className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 text-center border border-primary/20"
-                    >
-                      <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                      <div className="text-lg text-white font-medium mb-1">{stat.label}</div>
-                      <div className="text-sm text-gray-400">{stat.description}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div>
               <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/20 h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
@@ -439,7 +412,7 @@ const LegalAdvisory = () => {
                   description: 'Ongoing strategic legal partnership with dedicated advisor',
                   features: ['Monthly strategy sessions', 'Unlimited email consultation', 'Priority response times', 'Regular legal updates'],
                   icon: <Users className="w-8 h-8" />,
-                  color: 'from-blue-500/20 to-blue-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 },
                 {
                   model: 'Project Advisory',
@@ -453,7 +426,7 @@ const LegalAdvisory = () => {
                   description: 'Immediate legal support for urgent matters and crises',
                   features: ['24/7 availability', 'Rapid response team', 'Crisis management', 'Immediate risk assessment'],
                   icon: <Zap className="w-8 h-8" />,
-                  color: 'from-green-500/20 to-green-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 }
               ].map((model, index) => (
                 <div 
@@ -477,72 +450,6 @@ const LegalAdvisory = () => {
               ))}
             </div>
           </div>
-
-          {/* Strategic Advisory Framework */}
-          <div className="mb-16">
-            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/20">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-6">Strategic Advisory Framework</h3>
-                  <p className="text-gray-300 mb-6">
-                    Our comprehensive framework ensures that legal counsel is integrated 
-                    into your business strategy, providing ongoing guidance that evolves 
-                    with your organization's needs and objectives.
-                  </p>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                        <Brain className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-white font-medium">Strategic Alignment</div>
-                        <div className="text-sm text-gray-400">Legal strategy integrated with business goals</div>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                        <Shield className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-white font-medium">Risk Intelligence</div>
-                        <div className="text-sm text-gray-400">Proactive identification and management</div>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                        <TrendingUp className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-white font-medium">Performance Measurement</div>
-                        <div className="text-sm text-gray-400">Metrics-driven advisory effectiveness</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white/5 rounded-xl p-6">
-                  <h4 className="text-lg font-bold text-white mb-4">Advisory Focus Areas</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { area: 'Governance', score: '95%' },
-                      { area: 'Compliance', score: '98%' },
-                      { area: 'Risk Management', score: '96%' },
-                      { area: 'Strategic Alignment', score: '94%' }
-                    ].map((focus, index) => (
-                      <div key={index} className="p-4 bg-white/10 rounded-lg">
-                        <div className="text-white font-bold text-lg mb-1">{focus.score}</div>
-                        <div className="text-sm text-gray-400">{focus.area} Effectiveness</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Industry Applications */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-white mb-8 text-center">
@@ -550,19 +457,19 @@ const LegalAdvisory = () => {
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 rounded-xl p-6 border border-blue-500/20">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
                 <h4 className="text-lg font-bold text-white mb-3">Startups & Growth Companies</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Legal foundation establishment</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Funding and investment guidance</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Growth strategy legal support</span>
                   </li>
                 </ul>
@@ -586,19 +493,19 @@ const LegalAdvisory = () => {
                 </ul>
               </div>
               
-              <div className="bg-gradient-to-br from-green-500/10 to-green-600/5 rounded-xl p-6 border border-green-500/20">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
                 <h4 className="text-lg font-bold text-white mb-3">Multinational Organizations</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Cross-border legal coordination</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Global compliance management</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>International expansion strategy</span>
                   </li>
                 </ul>
@@ -690,12 +597,6 @@ const LegalAdvisory = () => {
                   >
                     Schedule Strategy Session
                   </a>
-                  <a 
-                    href="#"
-                    className="block w-full py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors text-center"
-                  >
-                    Download Advisory Services Guide
-                  </a>
                 </div>
               </div>
             </div>
@@ -730,23 +631,6 @@ const LegalAdvisory = () => {
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Quick Assessment */}
-          <div className="mt-12 text-center">
-            <div className="inline-block bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 max-w-md">
-              <h4 className="text-lg font-bold text-white mb-3">Legal Advisory Assessment</h4>
-              <p className="text-gray-400 text-sm mb-4">
-                Take our 5-minute assessment to identify your key legal advisory needs
-              </p>
-              <a 
-                href="#"
-                className="inline-flex items-center gap-2 text-primary hover:text-primary-400 transition-colors font-medium"
-              >
-                Start Assessment
-                <ChevronRight className="w-4 h-4" />
-              </a>
             </div>
           </div>
         </div>

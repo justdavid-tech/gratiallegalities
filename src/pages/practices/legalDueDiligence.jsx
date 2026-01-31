@@ -231,7 +231,7 @@ const LegalDueDiligence = () => {
           "Strategic recommendations and action planning"
         ]}
         stats={[
-          { value: "500+", label: "Projects" },
+          { value: "88+", label: "Projects" },
           { value: "99%", label: "Accuracy" },
           { value: "72h", label: "Rapid Assessment" }
         ]}
@@ -325,76 +325,6 @@ const LegalDueDiligence = () => {
             </div>
           </div>
 
-          {/* Stats & Process */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <div>
-              <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                    <BarChart3 className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Due Diligence Excellence</h3>
-                    <p className="text-gray-400">Our track record of successful investigations</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-6">
-                  {diligenceStats.map((stat, index) => (
-                    <div 
-                      key={index}
-                      className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 text-center border border-primary/20"
-                    >
-                      <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                      <div className="text-lg text-white font-medium mb-1">{stat.label}</div>
-                      <div className="text-sm text-gray-400">{stat.description}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/20 h-full">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                    <Award className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Structured Due Diligence Process</h3>
-                    <p className="text-gray-400">Our methodical approach to comprehensive investigations</p>
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  {diligenceProcess.map((phase, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-start gap-4 p-4 bg-white/5 rounded-xl border border-white/10 hover:border-primary/20 transition-colors"
-                    >
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <div className="text-primary">
-                          {phase.icon}
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-bold text-white mb-2">{phase.phase}</h4>
-                        <p className="text-gray-300 text-sm mb-3">{phase.description}</p>
-                        <div className="flex flex-wrap gap-2">
-                          {phase.activities.map((activity, idx) => (
-                            <span key={idx} className="px-2 py-1 bg-white/5 text-xs text-gray-400 rounded">
-                              {activity}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Risk Categories */}
           <div className="mb-16">
             <div className="text-center mb-8">
@@ -446,7 +376,7 @@ const LegalDueDiligence = () => {
                   description: 'Comprehensive examination of all relevant documents and records',
                   features: ['Contract analysis', 'Financial review', 'Regulatory documents', 'Corporate records'],
                   icon: <FileText className="w-8 h-8" />,
-                  color: 'from-blue-500/20 to-blue-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 },
                 {
                   component: 'Verification Process',
@@ -460,14 +390,14 @@ const LegalDueDiligence = () => {
                   description: 'Evaluation and categorization of identified risks',
                   features: ['Risk quantification', 'Impact analysis', 'Probability assessment', 'Mitigation planning'],
                   icon: <Shield className="w-8 h-8" />,
-                  color: 'from-green-500/20 to-green-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 },
                 {
                   component: 'Reporting Structure',
                   description: 'Clear presentation of findings and recommendations',
                   features: ['Executive summary', 'Detailed findings', 'Risk matrix', 'Action recommendations'],
                   icon: <ClipboardCheck className="w-8 h-8" />,
-                  color: 'from-purple-500/20 to-purple-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 }
               ].map((component, index) => (
                 <div 
@@ -563,19 +493,19 @@ const LegalDueDiligence = () => {
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 rounded-xl p-6 border border-blue-500/20">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
                 <h4 className="text-lg font-bold text-white mb-3">Mergers & Acquisitions</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Target company legal assessment</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Purchase agreement due diligence</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
                     <span>Post-merger integration planning</span>
                   </li>
                 </ul>
@@ -599,19 +529,19 @@ const LegalDueDiligence = () => {
                 </ul>
               </div>
               
-              <div className="bg-gradient-to-br from-green-500/10 to-green-600/5 rounded-xl p-6 border border-green-500/20">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
                 <h4 className="text-lg font-bold text-white mb-3">Joint Ventures & Partnerships</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt=2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt=2"></div>
                     <span>Partner capability assessment</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt=2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt=2"></div>
                     <span>JV agreement due diligence</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt=2"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt=2"></div>
                     <span>Operational integration review</span>
                   </li>
                 </ul>
@@ -703,12 +633,6 @@ const LegalDueDiligence = () => {
                   >
                     Request Due Diligence Proposal
                   </a>
-                  <a 
-                    href="#"
-                    className="block w-full py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors text-center"
-                  >
-                    Download Due Diligence Checklist
-                  </a>
                 </div>
               </div>
             </div>
@@ -742,35 +666,6 @@ const LegalDueDiligence = () => {
                     Request Rapid Assessment
                   </a>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Services */}
-          <div className="mt-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
-                <h4 className="text-lg font-bold text-white mb-3">Full Due Diligence</h4>
-                <p className="text-gray-400 text-sm mb-4">Comprehensive investigation for major transactions</p>
-                <a href="#" className="text-primary hover:text-primary-400 text-sm font-medium">
-                  Learn More →
-                </a>
-              </div>
-              
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20 text-center">
-                <h4 className="text-lg font-bold text-white mb-3">Rapid Due Diligence</h4>
-                <p className="text-gray-400 text-sm mb-4">72-hour preliminary assessment</p>
-                <a href="#" className="text-primary hover:text-primary-400 text-sm font-medium">
-                  Learn More →
-                </a>
-              </div>
-              
-              <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
-                <h4 className="text-lg font-bold text-white mb-3">Focused Due Diligence</h4>
-                <p className="text-gray-400 text-sm mb-4">Targeted investigation for specific risk areas</p>
-                <a href="#" className="text-primary hover:text-primary-400 text-sm font-medium">
-                  Learn More →
-                </a>
               </div>
             </div>
           </div>

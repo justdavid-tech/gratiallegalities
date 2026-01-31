@@ -120,7 +120,7 @@ const OnlineBusinessEcommerce = () => {
   ];
 
   const ecommerceStats = [
-    { value: '200+', label: 'E-Commerce Clients', description: 'Online businesses supported' },
+    { value: '29+', label: 'E-Commerce Clients', description: 'Online businesses supported' },
     { value: '99%', label: 'Compliance Rate', description: 'Regulatory compliance success' },
     { value: '48h', label: 'Rapid Setup', description: 'Basic legal framework setup' },
     { value: '24/7', label: 'Digital Support', description: 'Online legal support available' }
@@ -201,7 +201,7 @@ const OnlineBusinessEcommerce = () => {
           "Cross-border e-commerce legal frameworks"
         ]}
         stats={[
-          { value: "200+", label: "Clients" },
+          { value: "29+", label: "Clients" },
           { value: "99%", label: "Compliance" },
           { value: "48h", label: "Rapid Setup" }
         ]}
@@ -254,110 +254,6 @@ const OnlineBusinessEcommerce = () => {
             </div>
           </div>
 
-          {/* Specialized Areas */}
-          <div className="mb-16">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                Specialized <span className="text-primary">Digital Business Areas</span>
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Targeted legal support for specific online business models
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {specializedAreas.map((area, index) => (
-                <div 
-                  key={index}
-                  className="group bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all duration-300 hover:scale-105"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <div className="text-primary">
-                        {area.icon}
-                      </div>
-                    </div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
-                      {area.area}
-                    </h3>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    {area.services.map((service, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-300 text-sm">{service}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Stats & Compliance Areas */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <div>
-              <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                    <BarChart3 className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Digital Business Excellence</h3>
-                    <p className="text-gray-400">Our commitment to online business success</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-6">
-                  {ecommerceStats.map((stat, index) => (
-                    <div 
-                      key={index}
-                      className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 text-center border border-primary/20"
-                    >
-                      <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                      <div className="text-lg text-white font-medium mb-1">{stat.label}</div>
-                      <div className="text-sm text-gray-400">{stat.description}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/20 h-full">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Key Compliance Areas</h3>
-                    <p className="text-gray-400">Critical regulatory focus for online businesses</p>
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  {complianceAreas.map((area, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-start gap-4 p-4 bg-white/5 rounded-xl border border-white/10 hover:border-primary/20 transition-colors"
-                    >
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <div className="text-primary">
-                          {area.icon}
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-bold text-white mb-2">{area.regulation}</h4>
-                        <p className="text-gray-300 text-sm">{area.focus}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* E-Commerce Lifecycle */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-white mb-8 text-center">
@@ -370,7 +266,7 @@ const OnlineBusinessEcommerce = () => {
                   stage: 'Platform Setup',
                   services: ['Website legal framework', 'Domain registration', 'Hosting agreements', 'Payment integration'],
                   icon: <Cloud className="w-8 h-8" />,
-                  color: 'from-blue-500/20 to-blue-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 },
                 {
                   stage: 'Operations & Sales',
@@ -382,13 +278,13 @@ const OnlineBusinessEcommerce = () => {
                   stage: 'Fulfillment & Delivery',
                   services: ['Shipping agreements', 'Warehouse contracts', 'Delivery partnerships', 'Returns management'],
                   icon: <Truck className="w-8 h-8" />,
-                  color: 'from-green-500/20 to-green-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 },
                 {
                   stage: 'Growth & Scaling',
                   services: ['Market expansion', 'New market compliance', 'Partnership agreements', 'International sales'],
                   icon: <TrendingUp className="w-8 h-8" />,
-                  color: 'from-purple-500/20 to-purple-600/10'
+                  color: 'from-primary/20 to-primary-600/10'
                 }
               ].map((item, index) => (
                 <div 
@@ -409,136 +305,6 @@ const OnlineBusinessEcommerce = () => {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Technology & Digital Solutions */}
-          <div className="mb-16">
-            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/20">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-6">Digital Technology Solutions</h3>
-                  <p className="text-gray-300 mb-6">
-                    We provide legal support for emerging digital technologies and 
-                    innovative e-commerce solutions that are transforming online business.
-                  </p>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                        <Cpu className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-white font-medium">AI & Machine Learning</div>
-                        <div className="text-sm text-gray-400">AI-driven e-commerce legal compliance</div>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                        <Database className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-white font-medium">Big Data Analytics</div>
-                        <div className="text-sm text-gray-400">Data-driven business insights compliance</div>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                        <Lock className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-white font-medium">Blockchain Solutions</div>
-                        <div className="text-sm text-gray-400">Smart contracts and decentralized commerce</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white/5 rounded-xl p-6">
-                  <h4 className="text-lg font-bold text-white mb-4">Emerging Areas</h4>
-                  <div className="space-y-4">
-                    <div className="p-4 bg-white/10 rounded-lg">
-                      <div className="text-white font-bold mb-1">Social Commerce</div>
-                      <div className="text-sm text-gray-400">Social media platform selling regulations</div>
-                    </div>
-                    
-                    <div className="p-4 bg-white/10 rounded-lg">
-                      <div className="text-white font-bold mb-1">Voice Commerce</div>
-                      <div className="text-sm text-gray-400">Voice assistant shopping compliance</div>
-                    </div>
-                    
-                    <div className="p-4 bg-white/10 rounded-lg">
-                      <div className="text-white font-bold mb-1">AR/VR Commerce</div>
-                      <div className="text-sm text-gray-400">Virtual shopping experiences regulation</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Cross-Border E-Commerce */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">
-              Cross-Border <span className="text-primary">E-Commerce Solutions</span>
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 rounded-xl p-6 border border-blue-500/20">
-                <h4 className="text-lg font-bold text-white mb-3">International Compliance</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
-                    <span>Country-specific consumer protection laws</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
-                    <span>International data transfer regulations</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
-                    <span>Cross-border taxation and duties</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
-                <h4 className="text-lg font-bold text-white mb-3">Global Payments</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
-                    <span>Multi-currency payment processing</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
-                    <span>International fraud prevention</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
-                    <span>Cross-border payment regulations</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-gradient-to-br from-green-500/10 to-green-600/5 rounded-xl p-6 border border-green-500/20">
-                <h4 className="text-lg font-bold text-white mb-3">Logistics & Customs</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2"></div>
-                    <span>International shipping agreements</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2"></div>
-                    <span>Customs clearance compliance</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2"></div>
-                    <span>International returns management</span>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
 
@@ -627,12 +393,6 @@ const OnlineBusinessEcommerce = () => {
                   >
                     Request E-Commerce Audit
                   </a>
-                  <a 
-                    href="#"
-                    className="block w-full py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors text-center"
-                  >
-                    Download Compliance Checklist
-                  </a>
                 </div>
               </div>
             </div>
@@ -666,35 +426,6 @@ const OnlineBusinessEcommerce = () => {
                     Request Platform Audit
                   </a>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Services Menu */}
-          <div className="mt-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
-                <h4 className="text-lg font-bold text-white mb-3">Startup Package</h4>
-                <p className="text-gray-400 text-sm mb-4">Complete legal framework for new online businesses</p>
-                <a href="#" className="text-primary hover:text-primary-400 text-sm font-medium">
-                  Learn More →
-                </a>
-              </div>
-              
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20 text-center">
-                <h4 className="text-lg font-bold text-white mb-3">Compliance Audit</h4>
-                <p className="text-gray-400 text-sm mb-4">Comprehensive e-commerce compliance review</p>
-                <a href="#" className="text-primary hover:text-primary-400 text-sm font-medium">
-                  Learn More →
-                </a>
-              </div>
-              
-              <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
-                <h4 className="text-lg font-bold text-white mb-3">International Expansion</h4>
-                <p className="text-gray-400 text-sm mb-4">Cross-border e-commerce legal support</p>
-                <a href="#" className="text-primary hover:text-primary-400 text-sm font-medium">
-                  Learn More →
-                </a>
               </div>
             </div>
           </div>

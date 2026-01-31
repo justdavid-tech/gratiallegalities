@@ -35,14 +35,17 @@ const Contact = () => {
   const [formErrors, setFormErrors] = useState({});
 
   const practiceAreas = [
+    'Commercial Law',
+    'Commercial Advisory',
+    'Commercial Documentation',
+    'Contract Drafting',
     'Corporate Law',
-    'Criminal Defense',
-    'Family Law',
+    'Employment & Labour',
+    'General Legal Advisory',
+    'Legal Due Diligence',
+    'Online Business & E-Commerce',
+    'Property Dispute Resolution',
     'Real Estate Law',
-    'Immigration Law',
-    'Civil Litigation',
-    'Personal Injury',
-    'Employment Law',
     'Not Sure'
   ];
 
@@ -56,36 +59,35 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Phone',
-      details: ['(555) 123-4567', '(555) 987-6543 (Emergency)'],
+      details: ['(234) 8138939107'],
       description: 'Call us directly for immediate assistance',
       cta: 'Call Now',
-      href: 'tel:+15551234567',
+      href: 'tel:+2348138939107',
       color: 'from-primary/20 to-primary/10'
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: 'Email',
-      details: ['info@sterlinglegal.com', 'support@sterlinglegal.com'],
+      details: ['gratialegals@gmail.com'],
       description: 'Send us your questions or documents',
       cta: 'Send Email',
-      href: 'mailto:info@sterlinglegal.com',
+      href: 'mailto:gratialegals@gmail.com',
       color: 'from-primary/20 to-primary/10'
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: 'Visit',
-      details: ['123 Justice Avenue', 'Suite 500, New York, NY 10001'],
+      details: ['1, Ondo Street, Area 1, Garki, Abuja'],
       description: 'Schedule an in-person consultation',
       cta: 'Get Directions',
-      href: '#directions',
+      href: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.3468448860203!2d7.468666399999999!3d9.0320904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b7791750fe1%3A0x546dd2a544dcb21!2sGratia%20Corporate%20Consult%20-RC%207617592!5e0!3m2!1sen!2sng!4v1769680867814!5m2!1sen!2sng',
       color: 'from-primary/20 to-primary/10'
     }
   ];
 
   const officeHours = [
-    { day: 'Monday - Friday', hours: '8:00 AM - 8:00 PM' },
-    { day: 'Saturday', hours: '9:00 AM - 5:00 PM' },
-    { day: 'Sunday', hours: 'Emergency Services Only' },
+    { day: 'Monday - Friday', hours: '8:00 AM - 6:00 PM' },
+    { day: 'Saturday', hours: 'Emergency Services Only' },
     { day: 'Virtual Consultations', hours: 'Available 24/7' }
   ];
 
@@ -380,7 +382,7 @@ const Contact = () => {
                       className={`w-full px-4 py-3 bg-white/5 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 ${
                         formErrors.phone ? 'border-error/50' : 'border-white/10 focus:border-primary'
                       }`}
-                      placeholder="(555) 123-4567"
+                      placeholder="09039977439"
                     />
                     {formErrors.phone && (
                       <p className="mt-2 text-sm text-error flex items-center gap-1">
@@ -421,7 +423,7 @@ const Contact = () => {
                       name="practiceArea"
                       value={formData.practiceArea}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                      className="w-full px-4 py-3 bg-black border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
                     >
                       <option value="">Select a practice area</option>
                       {practiceAreas.map((area, index) => (
@@ -525,31 +527,16 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10">
-                {/* Map Container - Replace with your iframe */}
-                <div className="h-96 bg-secondary-800 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <MapPin className="w-8 h-8 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-2">Map Location</h3>
-                    <p className="text-gray-400 mb-4">Insert your Google Maps iframe here</p>
-                    <div className="text-sm text-gray-500">
-                      {/* Replace this div with your actual map iframe */}
-                      <div className="p-4 bg-white/5 rounded-lg border border-white/10">
-                        {/* Your iframe will go here:
-                        <iframe
-                          src="https://www.google.com/maps/embed?pb=..."
-                          width="100%"
-                          height="100%"
-                          style={{ border: 0 }}
-                          allowFullScreen
-                          loading="lazy"
-                        />
-                        */}
-                        <p className="text-primary">📍 Map placeholder - Add your iframe code</p>
-                      </div>
-                    </div>
-                  </div>
+                {/* Map Container */}
+                <div className="h-96">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.3468448860203!2d7.468666399999999!3d9.0320904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b7791750fe1%3A0x546dd2a544dcb21!2sGratia%20Corporate%20Consult%20-RC%207617592!5e0!3m2!1sen!2sng!4v1769680867814!5m2!1sen!2sng"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                  />
                 </div>
               </div>
             </div>
@@ -561,69 +548,26 @@ const Contact = () => {
                   <div>
                     <div className="text-sm text-gray-400 mb-1">Address</div>
                     <div className="text-white">
-                      123 Justice Avenue<br />
-                      Suite 500<br />
-                      New York, NY 10001
+                      1, Ondo Street, Area 1<br />
+                      Garki, Abuja
                     </div>
                   </div>
                   <div>
                     <div className="text-sm text-gray-400 mb-1">Parking</div>
                     <div className="text-white">Validated parking available in building garage</div>
                   </div>
-                  <div>
-                    <div className="text-sm text-gray-400 mb-1">Accessibility</div>
-                    <div className="text-white">Wheelchair accessible, elevator service</div>
-                  </div>
                 </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4">Before You Visit</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <Check className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                    <span>Please schedule an appointment in advance</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <Check className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                    <span>Bring relevant documents and identification</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <Check className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                    <span>Arrive 10 minutes early for security check-in</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <Check className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                    <span>Free Wi-Fi available in waiting area</span>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Live Chat & Emergency CTA */}
+        {/* Emergency CTA */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/20">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center">
-                <Headphones className="w-8 h-8 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white">Live Chat Support</h3>
-                <p className="text-gray-400">Get instant answers to quick questions</p>
-              </div>
-            </div>
-            <button className="w-full py-3 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
-              Start Live Chat
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-
-          <div className="bg-gradient-to-br from-error/10 to-error/5 rounded-2xl p-8 border border-error/20">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-error/20 rounded-xl flex items-center justify-center">
-                <Phone className="w-8 h-8 text-error" />
+              <div className="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center">
+                <Phone className="w-8 h-8 text-primary" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">Emergency Legal Help</h3>
@@ -631,10 +575,10 @@ const Contact = () => {
               </div>
             </div>
             <a
-              href="tel:+15559876543"
-              className="w-full py-3 bg-error text-white rounded-lg font-semibold hover:bg-error/90 transition-colors flex items-center justify-center gap-2"
+              href="tel:+2348138939107"
+              className="w-full py-3 bg-[#e67e22] text-white rounded-lg font-semibold hover:bg-[#e67e22]/40 transition-colors flex items-center justify-center gap-2"
             >
-              Emergency Call: (555) 987-6543
+              Emergency Call: (234) 8138939107  
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>

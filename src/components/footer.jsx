@@ -1,12 +1,10 @@
 import React from 'react';
+import { FaTiktok } from "react-icons/fa";
 import { 
   Phone, 
   Mail, 
   MapPin, 
   Clock, 
-  Linkedin, 
-  Twitter,
-  Facebook,
   Instagram,
   Scale,
   Shield,
@@ -23,16 +21,17 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const practiceAreas = [
-    { name: 'Corporate Law', href: '/practice-areas/corporate' },
-    { name: 'Criminal Defense', href: '/practice-areas/criminal' },
-    { name: 'Family Law', href: '/practice-areas/family' },
-    { name: 'Real Estate Law', href: '/practice-areas/real-estate' },
-    { name: 'Immigration Law', href: '/practice-areas/immigration' },
-    { name: 'Civil Litigation', href: '/practice-areas/civil' },
-    { name: 'Personal Injury', href: '/practice-areas/personal-injury' },
-    { name: 'Employment Law', href: '/practice-areas/employment' },
-    { name: 'Estate Planning', href: '/practice-areas/estate' },
-    { name: 'Intellectual Property', href: '/practice-areas/ip' }
+    { name: 'Commercial Law', href: '/practices/commercial' },
+    { name: 'Commercial Advisory', href: '/practices/commercial-advisory' },
+    { name: 'Commercial Documentation', href: '/practices/commercial-documentation' },
+    { name: 'Contract Drafting', href: '/practices/contract-drafting' },
+    { name: 'Corporate Law', href: '/practices/corporate-law' },
+    { name: 'Employment & Labour', href: '/practices/employment' },
+    { name: 'General Legal Advisory', href: '/practices/legal-advisory' },
+    { name: 'Legal Due Diligence', href: '/practices/legal-due-diligence' },
+    { name: 'Online Business & E-Commerce', href: '/practices/online-business' },
+    { name: 'Property Dispute Resolution', href: '/practices/property-dispute' },
+    { name: 'Real Estate Law', href: '/practices/real-estate' }
   ];
 
   const legalLinks = [
@@ -44,10 +43,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/firmname', icon: <Linkedin className="w-5 h-5" /> },
-    { name: 'Twitter', href: 'https://twitter.com/firmname', icon: <Twitter className="w-5 h-5" /> },
-    { name: 'Facebook', href: 'https://facebook.com/firmname', icon: <Facebook className="w-5 h-5" /> },
-    { name: 'Instagram', href: 'https://instagram.com/firmname', icon: <Instagram className="w-5 h-5" /> }
+    { name: 'TikTok', href: 'https://linkedin.com/company/firmname', icon: <FaTiktok className="w-5 h-5" /> },
+    { name: 'Instagram', href: 'https://www.instagram.com/gratiacorporate_consult?igsh=MXdncmRlcGJvMWduNQ%3D%3D&utm_source=qr', icon: <Instagram className="w-5 h-5" /> }
   ];
 
   return (
@@ -120,11 +117,11 @@ const Footer = () => {
               <div className="space-y-3 mb-8">
                 <div className="flex justify-between">
                   <span className="text-gray-400">Monday - Friday</span>
-                  <span className="text-white font-medium">8:00 AM - 8:00 PM</span>
+                  <span className="text-white font-medium">8:00 AM - 6:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-400">Saturday</span>
-                  <span className="text-white font-medium">Emergency Only</span>
+                  <span className="text-white font-medium">Emergency Services Only</span>
                 </div>
                 <div className="pt-3 border-t border-white/10">
                   <p className="text-sm text-primary font-medium">
@@ -257,7 +254,6 @@ const Footer = () => {
               
               <div className="text-xs text-gray-500 text-center md:text-right">
                 <p>Gratial Legalities Group is a law firm based in Abuja, Nigeria.</p>
-                <p className="mt-1">Principal office: 123 Justice Avenue, Abuja, Nigeria</p>
               </div>
             </div>
           </div>
@@ -277,7 +273,7 @@ const Footer = () => {
                 </div>
               </div>
               <a 
-                href="tel:+15551234567"
+                href="tel:+2348138939107"
                 className="px-6 py-2 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2"
               >
                 Emergency Call: (+234) 813 893 9107

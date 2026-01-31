@@ -20,6 +20,9 @@ import OnlineBusiness from "./pages/practices/onlinebusiness";
 import PropertyDispute from "./pages/practices/propertydispute";
 import RealEstate from "./pages/practices/realestate";
 
+// Footer Quick Access
+import PrivacyPolicy from "./pages/privacy-policy";
+
 function App() {
   return (
     <>
@@ -45,6 +48,9 @@ function App() {
         <Route path="/practices/online-business" element={<OnlineBusiness />} />
         <Route path="/practices/property-dispute" element={<PropertyDispute />} />
         <Route path="/practices/real-estate" element={<RealEstate />} />
+
+        {/* Footer Quick Access */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </>
   );
