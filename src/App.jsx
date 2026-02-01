@@ -22,6 +22,8 @@ import RealEstate from "./pages/practices/realestate";
 
 // Footer Quick Access
 import PrivacyPolicy from "./pages/privacy-policy";
+import TermsOfService from "./pages/termsofservice";
+import LocationMap from "./pages/locationmap";
 
 function App() {
   return (
@@ -51,6 +53,8 @@ function App() {
 
         {/* Footer Quick Access */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/sitemap" element={<LocationMap />} />
       </Routes>
     </>
   );

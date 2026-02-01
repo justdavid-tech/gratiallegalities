@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Scale, Shield, Users, ChevronDown } from 'lucide-react';
+import { ArrowRight, Scale, Shield, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import PracticeAreasModal from './PracticeAreasModal';
 
 const Hero = () => {
   const [currentWord, setCurrentWord] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [isPracticeDropdownOpen, setIsPracticeDropdownOpen] = useState(false);
+  const [isPracticeModalOpen, setIsPracticeModalOpen] = useState(false);
   
   const rotatingWords = [
     'Excellence',
@@ -91,67 +92,14 @@ const Hero = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               
-              {/* Practice Areas Dropdown */}
-              <div 
-                className="relative"
-                onMouseEnter={() => setIsPracticeDropdownOpen(true)}
-                onMouseLeave={() => setIsPracticeDropdownOpen(false)}
+              {/* Practice Areas Button */}
+              <button
+                onClick={() => setIsPracticeModalOpen(true)}
+                className="px-8 py-4 bg-white/5 backdrop-blur-sm text-white rounded-lg font-semibold border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all duration-300 flex items-center justify-center gap-2"
               >
-                <Link
-                  className="px-8 py-4 bg-white/5 backdrop-blur-sm text-white rounded-lg font-semibold border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all duration-300 flex items-center justify-center gap-2"
-                  aria-expanded={isPracticeDropdownOpen}
-                  aria-haspopup="menu"
-                >
-                  Our Practice Areas
-                  <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isPracticeDropdownOpen ? 'rotate-180' : ''}`} />
-                </Link>
-
-                {/* Dropdown Menu */}
-                {isPracticeDropdownOpen && (
-                  <div className="absolute top-full left-0 sm:left-auto sm:right-0 mt-2 w-[calc(100vw-2rem)] sm:w-[500px] lg:w-[600px] max-h-[70vh] bg-secondary-950 border border-primary/20 rounded-xl shadow-2xl overflow-hidden z-50 animate-fadeIn">
-                    <div className="p-4 sm:p-6 max-h-[calc(70vh-4rem)] overflow-y-auto custom-scrollbar">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                        {/* Column 1 */}
-                        <div className="space-y-2">
-                          {practiceAreas.column1.map((area, index) => (
-                            <Link
-                              key={index}
-                              to={area.path}
-                              className="block px-4 py-3 rounded-lg text-gray-300 hover:bg-primary/10 hover:text-primary transition-all duration-200 text-sm"
-                            >
-                              {area.name}
-                            </Link>
-                          ))}
-                        </div>
-                        
-                        {/* Column 2 */}
-                        <div className="space-y-2">
-                          {practiceAreas.column2.map((area, index) => (
-                            <Link
-                              key={index}
-                              to={area.path}
-                              className="block px-4 py-3 rounded-lg text-gray-300 hover:bg-primary/10 hover:text-primary transition-all duration-200 text-sm"
-                            >
-                              {area.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* View All Link */}
-                      <div className="mt-4 pt-4 border-t border-white/10">
-                        <Link
-                          to="/practice-areas"
-                          className="flex items-center justify-center gap-2 text-primary hover:text-primary-400 transition-colors text-sm font-medium"
-                        >
-                          View All Practice Areas
-                          <ArrowRight className="w-4 h-4" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
+                Our Practice Areas
+                <ArrowRight className="w-5 h-5" />
+              </button>
             </div>
 
             {/* Stats */}
@@ -217,6 +165,13 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Practice Areas Modal */}
+      <PracticeAreasModal 
+        isOpen={isPracticeModalOpen}
+        onClose={() => setIsPracticeModalOpen(false)}
+        practiceAreas={practiceAreas}
+      />
 
       {/* Custom Animations */}
       <style jsx>{`

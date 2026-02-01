@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Footer from '../components/footer';
 
 const PrivacyPolicy = () => {
@@ -12,19 +13,19 @@ const PrivacyPolicy = () => {
 
       <div className="min-h-screen bg-neutral-50">
         {/* Header Section */}
-        <header className="bg-gradient-to-r from-primary-900 to-primary-800 text-white">
-          <div className="container mx-auto px-4 py-16 md:py-20">
-            <div className="max-w-4xl mx-auto">
+        <header className="bg-gradient-to-r from-[#e67e22] to-[#e74c3c] text-white">
+          <div className="container mx-auto px-6 py-28 md:py-27 lg:py-32">
+            <div className="max-w-4xl mx-auto ">
               <nav className="mb-8">
-                <a 
-                  href="/" 
+                <Link 
+                  to="/" 
                   className="text-primary-100 hover:text-white transition-colors duration-200 inline-flex items-center"
                 >
                   <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
                   </svg>
                   Back to Home
-                </a>
+                </Link>
               </nav>
               
               <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">
@@ -75,10 +76,9 @@ const PrivacyPolicy = () => {
                   { id: 'information-sharing', title: '3. Information Sharing & Disclosure' },
                   { id: 'data-security', title: '4. Data Security' },
                   { id: 'your-rights', title: '5. Your Rights & Choices' },
-                  { id: 'children', title: '7. Children\'s Privacy' },
-                  { id: 'international', title: '8. International Data Transfers' },
-                  { id: 'policy-changes', title: '9. Changes to This Policy' },
-                  { id: 'contact', title: '10. Contact Us' }
+                  { id: 'children', title: '6. Children\'s Privacy' },
+                  { id: 'policy-changes', title: '7. Changes to This Policy' },
+                  { id: 'contact', title: '8. Contact Us' }
                 ].map((item) => (
                   <a
                     key={item.id}
@@ -106,7 +106,7 @@ const PrivacyPolicy = () => {
                 <div className="bg-white rounded-xl shadow-sm border border-neutral-200 p-6 md:p-8">
                   <div className="space-y-4 text-neutral-700">
                     <p>
-                      At <span className="font-semibold text-primary-600">Gratial Legalities</span>, we collect information that you provide directly to us, as well as information automatically collected through your use of our services.
+                      At <span className="font-semibold text-[#e67e22]">Gratial Legalities</span>, we collect information that you provide directly to us, as well as information automatically collected through your use of our services.
                     </p>
                     
                     <div className="mt-6">
@@ -239,23 +239,18 @@ const PrivacyPolicy = () => {
                 <div className="bg-white rounded-xl shadow-sm border border-neutral-200 p-6 md:p-8">
                   <div className="flex items-center justify-center mb-8">
                     <div className="bg-primary-100 rounded-full p-4">
-                      <svg className="w-12 h-12 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-12 h-12 text-[#e67e22]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                       </svg>
                     </div>
                   </div>
                   <div className="text-center space-y-4 text-neutral-700">
-                    <p className="text-xl font-semibold text-primary-600">
+                    <p className="text-xl font-semibold text-[#e67e22]">
                       Protecting your information is our top priority
                     </p>
                     <p>
                       We implement industry-standard security measures including encryption, secure servers, access controls, and regular security audits. However, no method of electronic transmission or storage is 100% secure.
                     </p>
-                    <div className="mt-6 pt-6 border-t border-neutral-200">
-                      <p className="text-sm text-neutral-500">
-                        <strong>Attorney-Client Privilege:</strong> Communications with our attorneys are protected by attorney-client privilege to the fullest extent permitted by law.
-                      </p>
-                    </div>
                   </div>
                 </div>
               </section>
@@ -304,36 +299,8 @@ const PrivacyPolicy = () => {
               {/* Sections 6-9 - Condensed for brevity */}
               {[
                 {
-                  id: 'cookies',
-                  number: '6',
-                  title: 'Cookies & Tracking Technologies',
-                  content: (
-                    <div className="space-y-4 text-neutral-700">
-                      <p>We use cookies and similar technologies to enhance your browsing experience, analyze website traffic, and understand user behavior.</p>
-                      <div className="bg-neutral-50 rounded-lg p-5 mt-4">
-                        <h4 className="font-semibold text-neutral-900 mb-2">Cookie Types We Use:</h4>
-                        <ul className="space-y-2">
-                          <li className="flex items-center">
-                            <div className="w-3 h-3 bg-primary-500 rounded-full mr-3"></div>
-                            <span><strong>Essential Cookies:</strong> Required for website functionality</span>
-                          </li>
-                          <li className="flex items-center">
-                            <div className="w-3 h-3 bg-info-500 rounded-full mr-3"></div>
-                            <span><strong>Analytics Cookies:</strong> Help us improve our services</span>
-                          </li>
-                          <li className="flex items-center">
-                            <div className="w-3 h-3 bg-success-500 rounded-full mr-3"></div>
-                            <span><strong>Preference Cookies:</strong> Remember your settings</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="mt-4">You can control cookie preferences through your browser settings.</p>
-                    </div>
-                  )
-                },
-                {
                   id: 'children',
-                  number: '7',
+                  number: '6',
                   title: 'Children\'s Privacy',
                   content: (
                     <div className="space-y-4 text-neutral-700">
@@ -347,18 +314,8 @@ const PrivacyPolicy = () => {
                   )
                 },
                 {
-                  id: 'international',
-                  number: '8',
-                  title: 'International Data Transfers',
-                  content: (
-                    <div className="space-y-4 text-neutral-700">
-                      <p>Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place for such transfers.</p>
-                    </div>
-                  )
-                },
-                {
                   id: 'policy-changes',
-                  number: '9',
+                  number: '7',
                   title: 'Changes to This Policy',
                   content: (
                     <div className="space-y-4 text-neutral-700">
@@ -386,7 +343,7 @@ const PrivacyPolicy = () => {
               <section id="contact" className="scroll-mt-24">
                 <div className="flex items-center mb-6">
                   <div className="bg-primary-500 text-white rounded-lg w-10 h-10 flex items-center justify-center mr-4">
-                    <span className="font-bold">10</span>
+                    <span className="font-bold">8</span>
                   </div>
                   <h2 className="text-3xl font-heading font-semibold text-neutral-900">
                     Contact Us
@@ -410,7 +367,7 @@ const PrivacyPolicy = () => {
                         </svg>
                       </div>
                       <h4 className="font-semibold text-neutral-900 mb-2">By Phone</h4>
-                      <p className="text-primary-600 font-medium">(555) 123-4567</p>
+                      <p className="text-primary-600 font-medium">(234) 813 893 9107</p>
                     </div>
                     
                     <div className="bg-white rounded-lg p-6 text-center shadow-sm">
@@ -420,7 +377,7 @@ const PrivacyPolicy = () => {
                         </svg>
                       </div>
                       <h4 className="font-semibold text-neutral-900 mb-2">By Email</h4>
-                      <p className="text-primary-600 font-medium">privacy@lawfirm.com</p>
+                      <p className="text-primary-600 font-medium">gratialegals@gmail.com</p>
                     </div>
                     
                     <div className="bg-white rounded-lg p-6 text-center shadow-sm">
@@ -430,23 +387,17 @@ const PrivacyPolicy = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                       </div>
-                      <h4 className="font-semibold text-neutral-900 mb-2">By Mail</h4>
-                      <p className="text-neutral-600 text-sm">123 Legal Street<br />Suite 100<br />City, State 12345</p>
+                      <h4 className="font-semibold text-neutral-900 mb-2">Location</h4>
+                      <p className="text-neutral-600 text-sm">1 Ondo Street, Area 1<br />Garki, Abuja</p>
                     </div>
-                  </div>
-                  
-                  <div className="mt-10 pt-8 border-t border-primary-200">
-                    <p className="text-center text-neutral-600">
-                      For data protection officer inquiries, please use the subject line "DPO Inquiry" in your communication.
-                    </p>
                   </div>
                 </div>
               </section>
             </div>
           </div>
         </main>
-<Footer />
       </div>
+<Footer />
     </>
   );
 };

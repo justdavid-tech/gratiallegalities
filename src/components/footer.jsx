@@ -37,8 +37,6 @@ const Footer = () => {
   const legalLinks = [
     { name: 'Privacy Policy', href: '/privacy-policy', icon: <Shield className="w-4 h-4" /> },
     { name: 'Terms of Service', href: '/terms', icon: <FileText className="w-4 h-4" /> },
-    { name: 'Disclaimer', href: '/disclaimer', icon: <Scale className="w-4 h-4" /> },
-    { name: 'Accessibility', href: '/accessibility', icon: <Users className="w-4 h-4" /> },
     { name: 'Sitemap', href: '/sitemap', icon: <Building className="w-4 h-4" /> }
   ];
 
