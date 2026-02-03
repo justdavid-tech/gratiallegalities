@@ -6,10 +6,8 @@ import {
   ShieldCheck, 
   Users, 
   Scale, 
-  Star,
   FileText,
   CheckCircle,
-  BadgeCheck,
   ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -18,7 +16,7 @@ const TrustSignals = () => {
   const trustMetrics = [
     {
       icon: <Briefcase className="w-6 h-6" />,
-      value: "6+",
+      value: "5+",
       label: "Years Experience",
       description: "Dedication years of proven legal expertise",
       gradient: "from-primary/20 to-primary/10"
@@ -31,10 +29,10 @@ const TrustSignals = () => {
       gradient: "from-primary/20 to-primary/10"
     },
     {
-      icon: <Award className="w-6 h-6" />,
-      value: "5+",
-      label: "Awards",
-      description: "Industry recognition & excellence",
+      icon: <Scale className="w-6 h-6" />,
+      value: "10+",
+      label: "Practice Areas",
+      description: "Specialized legal expertise",
       gradient: "from-primary/20 to-primary/10"
     },
     {

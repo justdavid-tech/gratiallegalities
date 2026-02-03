@@ -76,19 +76,6 @@ const WhyChooseUs = () => {
     { feature: 'Multilingual Services', us: true, competitors: 'Limited' }
   ];
 
-  const testimonials = [
-    {
-      quote: "They turned my complex case into a straightforward victory. Their attention to detail was incredible.",
-      author: "Michael R., Corporate Client",
-      role: "CEO, Tech Innovations Inc."
-    },
-    {
-      quote: "Transparent pricing and constant communication. I always knew what was happening with my case.",
-      author: "Sarah L., Individual Client",
-      role: "Real Estate Investor"
-    }
-  ];
-
   return (
     <div className="relative py-20 bg-gradient-to-b from-black to-secondary-950 overflow-hidden">
       {/* Background Elements */}
