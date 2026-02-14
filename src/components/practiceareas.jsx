@@ -142,22 +142,6 @@ const practiceAreas = [
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
             Specialized legal representation across multiple practice areas with proven results
           </p>
-          
-          {/* Practice Areas Stats */}
-          <div className="flex flex-wrap justify-center gap-6 mb-12">
-            <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-2xl font-bold text-primary">10+</div>
-              <div className="text-sm text-gray-400">Practice Areas</div>
-            </div>
-            <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-2xl font-bold text-primary">210+</div>
-              <div className="text-sm text-gray-400">Cases Yearly</div>
-            </div>
-            <div className="px-6 py-3 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-2xl font-bold text-primary">96%</div>
-              <div className="text-sm text-gray-400">Client Satisfaction</div>
-            </div>
-          </div>
         </div>
 
         {/* Practice Areas Grid - 3 rows, 2 columns on lg, 1 column on mobile */}
@@ -216,7 +200,7 @@ const practiceAreas = [
                       Click for detailed information
                     </span>
                     <button className="text-sm font-medium text-primary hover:text-primary-600 transition-colors">
-                      Free Consultation →
+                      Get a Legal Health Check →
                     </button>
                   </div>
                 </div>
@@ -239,7 +223,7 @@ const practiceAreas = [
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact" className="group px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2 whitespace-nowrap">
+                <Link to="/contact" className="group px-8 py-4 bg-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2 whitespace-nowrap">
                   Book Free Consultation
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>

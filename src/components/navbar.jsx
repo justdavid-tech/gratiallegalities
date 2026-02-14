@@ -73,7 +73,7 @@ const Navbar = () => {
                       onMouseEnter={() => setIsPracticesOpen(true)}
                       onMouseLeave={() => setIsPracticesOpen(false)}
                     >
-                      <button className="px-4 py-2 text-gray-700 hover:text-[#e67e22] font-medium transition-colors duration-200 flex items-center group">
+                      <button className="px-4 py-2 text-gray-700 hover:text-primary font-medium transition-colors duration-200 flex items-center group">
                         {link.name}
                         <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isPracticesOpen ? 'rotate-180' : ''}`} />
                       </button>
@@ -81,10 +81,10 @@ const Navbar = () => {
                       {/* Mega Dropdown */}
                       {isPracticesOpen && (
                         <div className="absolute left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-4xl">
-                          <div className="bg-white shadow-xl border-t-4 border-[#e67e22] rounded-b-lg p-8">
+                          <div className="bg-white shadow-xl border-t-4 border-primary rounded-b-lg p-8">
                             <div className="grid grid-cols-2 gap-8">
                               <div>
-                                <h3 className="text-sm font-semibold text-[#e67e22] uppercase tracking-wider mb-4">
+                                <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
                                   Core Practice Areas
                                 </h3>
                                 <ul className="space-y-2">
@@ -92,7 +92,7 @@ const Navbar = () => {
                                     <li key={practice.name}>
                                       <a
                                         href={practice.path}
-                                        className="text-gray-700 hover:text-[#e67e22] text-sm hover:translate-x-1 inline-block transition-all duration-200"
+                                        className="text-gray-700 hover:text-primary text-sm hover:translate-x-1 inline-block transition-all duration-200"
                                       >
                                         {practice.name}
                                       </a>
@@ -101,7 +101,7 @@ const Navbar = () => {
                                 </ul>
                               </div>
                               <div>
-                                <h3 className="text-sm font-semibold text-[#e67e22] uppercase tracking-wider mb-4">
+                                <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
                                   Specialized Practices
                                 </h3>
                                 <ul className="space-y-2">
@@ -109,7 +109,7 @@ const Navbar = () => {
                                     <li key={practice.name}>
                                       <a
                                         href={practice.path}
-                                        className="text-gray-700 hover:text-[#e67e22] text-sm hover:translate-x-1 inline-block transition-all duration-200"
+                                        className="text-gray-700 hover:text-primary text-sm hover:translate-x-1 inline-block transition-all duration-200"
                                       >
                                         {practice.name}
                                       </a>
@@ -125,7 +125,7 @@ const Navbar = () => {
                   ) : (
                     <a
                       href={link.href}
-                      className="px-4 py-2 text-gray-700 hover:text-[#e67e22] font-medium transition-colors duration-200"
+                      className="px-4 py-2 text-gray-700 hover:text-primary font-medium transition-colors duration-200"
                     >
                       {link.name}
                     </a>
@@ -138,7 +138,7 @@ const Navbar = () => {
             <div className="hidden lg:block">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-[#e67e22] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#d35400] transition-colors duration-200 shadow-md hover:shadow-lg"
+                className="bg-primary text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#d35400] transition-colors duration-200 shadow-md hover:shadow-lg"
               >
                 Book Appointment
               </button>
@@ -148,7 +148,7 @@ const Navbar = () => {
             <div className="lg:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 hover:text-[#e67e22] p-2"
+                className="text-gray-700 hover:text-primary p-2"
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -166,7 +166,7 @@ const Navbar = () => {
                     <div>
                       <button
                         onClick={() => setIsMobilePracticesOpen(!isMobilePracticesOpen)}
-                        className="w-full text-left px-3 py-2 text-gray-700 hover:text-[#e67e22] hover:bg-gray-50 font-medium flex justify-between items-center"
+                        className="w-full text-left px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 font-medium flex justify-between items-center"
                       >
                         {link.name}
                         <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isMobilePracticesOpen ? 'rotate-180' : ''}`} />
@@ -174,28 +174,28 @@ const Navbar = () => {
                       {isMobilePracticesOpen && (
                         <div className="pl-4 pr-3 py-2 bg-gray-50 space-y-1">
                           <div className="mb-3">
-                            <p className="text-xs font-semibold text-[#e67e22] uppercase tracking-wider mb-2">
+                            <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
                               Core Practice Areas
                             </p>
                             {practiceAreas.column1.map((practice) => (
                               <a
                                 key={practice.name}
                                 href={practice.path}
-                                className="block px-3 py-1.5 text-sm text-gray-600 hover:text-[#e67e22] hover:bg-white rounded"
+                                className="block px-3 py-1.5 text-sm text-gray-600 hover:text-primary hover:bg-white rounded"
                               >
                                 {practice.name}
                               </a>
                             ))}
                           </div>
                           <div>
-                            <p className="text-xs font-semibold text-[#e67e22] uppercase tracking-wider mb-2">
+                            <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
                               Specialized Practices
                             </p>
                             {practiceAreas.column2.map((practice) => (
                               <a
                                 key={practice.name}
                                 href={practice.path}
-                                className="block px-3 py-1.5 text-sm text-gray-600 hover:text-[#e67e22] hover:bg-white rounded"
+                                className="block px-3 py-1.5 text-sm text-gray-600 hover:text-primary hover:bg-white rounded"
                               >
                                 {practice.name}
                               </a>
@@ -207,7 +207,7 @@ const Navbar = () => {
                   ) : (
                     <a
                       href={link.href}
-                      className="block px-3 py-2 text-gray-700 hover:text-[#e67e22] hover:bg-gray-50 font-medium"
+                      className="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 font-medium"
                     >
                       {link.name}
                     </a>
@@ -219,7 +219,7 @@ const Navbar = () => {
                   setIsModalOpen(true);
                   setIsMenuOpen(false);
                 }}
-                className="block w-full mx-auto md:mx-3 mt-4 text-center bg-[#e67e22] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#d35400] transition-colors duration-200"
+                className="block w-full mx-auto md:mx-3 mt-4 text-center bg-primary text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#d35400] transition-colors duration-200"
               >
                 Book Appointment
               </button>

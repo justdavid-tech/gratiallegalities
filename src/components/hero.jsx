@@ -52,11 +52,11 @@ const Hero = () => {
     <div className="relative min-h-screen bg-black overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-96 h-96 bg-primary/10 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
+        <div className="absolute w-96 h-96 bg-primary rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
         <div className="absolute w-96 h-96 bg-primary/5 rounded-full blur-3xl top-1/2 right-0 animate-pulse delay-1000"></div>
         <div className="absolute w-full h-full opacity-10">
           <div className="absolute top-20 left-10 w-32 h-32 border border-primary/20 rounded-lg rotate-12 animate-float"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 border border-primary/20 rounded-lg -rotate-12 animate-float-delayed"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 border border-primary rounded-lg -rotate-12 animate-float-delayed"></div>
           <div className="absolute bottom-40 left-1/4 w-28 h-28 border border-primary/20 rounded-lg rotate-45 animate-float"></div>
         </div>
       </div>
@@ -73,22 +73,22 @@ const Hero = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Offering Legal Solutions and Protection with
-              <span className="block mt-2 bg-gradient-to-r from-primary via-primary-400 to-primary-600 bg-clip-text text-transparent animate-gradient">
+              <span className="block mt-2 bg-gradient-to-r from-primary via-primary to-primary bg-clip-text text-transparent animate-gradient">
                 {rotatingWords[currentWord]}
               </span>
             </h1>
             
             {/* Subheading */}
-            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
+            <p className="text-lg text-gray-300 leading-relaxed max-w-2xl">
               We deliver strategic legal solutions tailored to your needs. With decades of combined experience, we transform complex challenges into successful outcomes.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link to = "/contact" className="group px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2">
-                Schedule Consultation
+              <Link to = "/contact" className="group px-8 py-4 bg-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2">
+                Legal Health Check 
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               
@@ -105,15 +105,15 @@ const Hero = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
               <div className="text-center sm:text-left">
-                <div className="text-3xl font-bold text-primary">54+</div>
-                <div className="text-sm text-gray-400 mt-1">Cases Won</div>
+                <div className="text-3xl font-bold text-primary">11+</div>
+                <div className="text-sm text-gray-400 mt-1">Practice Areas</div>
               </div>
               <div className="text-center sm:text-left">
                 <div className="text-3xl font-bold text-primary">96%</div>
                 <div className="text-sm text-gray-400 mt-1">Success Rate</div>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-3xl font-bold text-primary">6+</div>
+                <div className="text-3xl font-bold text-primary">7</div>
                 <div className="text-sm text-gray-400 mt-1">Years Experience</div>
               </div>
             </div>
@@ -212,11 +212,11 @@ const Hero = () => {
           border-radius: 3px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #EE7B30;
+          background: #FF0000;
           border-radius: 3px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #ff8c42;
+          background: #FF0000;
         }
       `}</style>
     </div>

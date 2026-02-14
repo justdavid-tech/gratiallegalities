@@ -89,12 +89,12 @@ const PropertyDispute = () => {
       benefits: ['Expert determination', 'Final and binding', 'Flexible process', 'Private proceedings'],
       icon: <Scale className="w-5 h-5" />
     },
-    {
-      method: 'Litigation',
-      description: 'Court proceedings for complex or unresolved disputes',
-      benefits: ['Judicial enforcement', 'Legal precedent', 'Comprehensive discovery', 'Appeal options'],
-      icon: <Gavel className="w-5 h-5" />
-    },
+    // {
+    //   method: 'Litigation',
+    //   description: 'Court proceedings for complex or unresolved disputes',
+    //   benefits: ['Judicial enforcement', 'Legal precedent', 'Comprehensive discovery', 'Appeal options'],
+    //   icon: <Gavel className="w-5 h-5" />
+    // },
     {
       method: 'Alternative Dispute Resolution',
       description: 'Structured settlement conferences and expert determination',
@@ -145,7 +145,7 @@ const PropertyDispute = () => {
       <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
         We provide expert property dispute resolution services that protect your real estate 
         interests while seeking efficient, cost-effective solutions to property conflicts 
-        through negotiation, mediation, and when necessary, litigation.
+        through negotiation, mediation, and when necessary.
       </p>
       
       <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
@@ -171,8 +171,7 @@ const PropertyDispute = () => {
           "Title and ownership conflict management",
           "Lease and tenancy dispute settlement",
           "Construction and development conflict resolution",
-          "Alternative dispute resolution methods",
-          "Court representation for property litigation"
+          "Alternative dispute resolution methods"
         ]}
         stats={[
           { value: "95%", label: "Success Rate" },

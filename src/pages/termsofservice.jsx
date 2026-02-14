@@ -19,7 +19,7 @@ const TermsOfService = () => {
 
       <div className="min-h-screen bg-neutral-50">
         {/* Header Section */}
-        <header className="bg-gradient-to-r from-[#e67e22] to-[#e74c3c] text-white">
+        <header className="bg-gradient-to-r from-primary to-primary text-white">
           <div className="container mx-auto px-6 py-28 md:py-27 lg:py-32">
             <div className="max-w-5xl mx-auto">
               <nav className="mb-8">
@@ -102,14 +102,14 @@ const TermsOfService = () => {
               {/* Section 1: Agreement */}
               <section id="agreement" className="scroll-mt-28 bg-white rounded-xl shadow-sm border border-neutral-200 p-8">
                 <div className="flex items-start mb-8">
-                  <div className="bg-[#e67e22] text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
+                  <div className="bg-primary text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
                     <span className="text-xl font-bold">1</span>
                   </div>
                   <div>
                     <h2 className="text-3xl font-heading font-semibold text-neutral-900 mb-3">
                       Agreement to Terms
                     </h2>
-                    <div className="w-20 h-1 bg-[#e67e22]"></div>
+                    <div className="w-20 h-1 bg-primary"></div>
                   </div>
                 </div>
                 
@@ -152,14 +152,14 @@ const TermsOfService = () => {
               {/* Section 2: Legal Services */}
               <section id="services" className="scroll-mt-28 bg-white rounded-xl shadow-sm border border-neutral-200 p-8">
                 <div className="flex items-start mb-8">
-                  <div className="bg-[#e67e22] text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
+                  <div className="bg-primary text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
                     <span className="text-xl font-bold">2</span>
                   </div>
                   <div>
                     <h2 className="text-3xl font-heading font-semibold text-neutral-900 mb-3">
                       Legal Services Description
                     </h2>
-                    <div className="w-20 h-1 bg-[#e67e22]"></div>
+                    <div className="w-20 h-1 bg-primary"></div>
                   </div>
                 </div>
                 
@@ -210,14 +210,14 @@ const TermsOfService = () => {
               {/* Section 3: User Obligations */}
               <section id="user-obligations" className="scroll-mt-28 bg-white rounded-xl shadow-sm border border-neutral-200 p-8">
                 <div className="flex items-start mb-8">
-                  <div className="bg-[#e67e22] text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
+                  <div className="bg-primary text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
                     <span className="text-xl font-bold">3</span>
                   </div>
                   <div>
                     <h2 className="text-3xl font-heading font-semibold text-neutral-900 mb-3">
                       Your Obligations
                     </h2>
-                    <div className="w-20 h-1 bg-[#e67e22]"></div>
+                    <div className="w-20 h-1 bg-primary"></div>
                   </div>
                 </div>
                 
@@ -267,21 +267,21 @@ const TermsOfService = () => {
               {/* Section 4: Fees & Payments */}
               <section id="fees" className="scroll-mt-28 bg-white rounded-xl shadow-sm border border-neutral-200 p-8">
                 <div className="flex items-start mb-8">
-                  <div className="bg-[#e67e22] text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
+                  <div className="bg-primary text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
                     <span className="text-xl font-bold">4</span>
                   </div>
                   <div>
                     <h2 className="text-3xl font-heading font-semibold text-neutral-900 mb-3">
                       Fees & Payments
                     </h2>
-                    <div className="w-20 h-1 bg-[#e67e22]"></div>
+                    <div className="w-20 h-1 bg-primary"></div>
                   </div>
                 </div>
                 
                 <div className="space-y-6 text-neutral-700">
                   <div className="grid md:grid-cols-3 gap-6">
-                    <div className="border border-[#e67e22] rounded-lg p-6 text-center">
-                      <h4 className="font-semibold text-[#e67e22] mb-2">Engagement Agreement</h4>
+                    <div className="border border-primary rounded-lg p-6 text-center">
+                      <h4 className="font-semibold text-primary mb-2">Engagement Agreement</h4>
                       <p className="text-sm text-neutral-600">All fees are detailed in a signed engagement agreement before services begin.</p>
                     </div>
                     
@@ -308,14 +308,14 @@ const TermsOfService = () => {
               {/* Section 5: Confidentiality */}
               <section id="confidentiality" className="scroll-mt-28 bg-white rounded-xl shadow-sm border border-neutral-200 p-8">
                 <div className="flex items-start mb-8">
-                  <div className="bg-[#e67e22] text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
+                  <div className="bg-primary text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
                     <span className="text-xl font-bold">5</span>
                   </div>
                   <div>
                     <h2 className="text-3xl font-heading font-semibold text-neutral-900 mb-3">
                       Confidentiality
                     </h2>
-                    <div className="w-20 h-1 bg-[#e67e22]"></div>
+                    <div className="w-20 h-1 bg-primary"></div>
                   </div>
                 </div>
                 
@@ -354,14 +354,14 @@ const TermsOfService = () => {
               {/* Section 6: Limitation of Liability */}
               <section id="liability" className="scroll-mt-28 bg-white rounded-xl shadow-sm border border-neutral-200 p-8">
                 <div className="flex items-start mb-8">
-                  <div className="bg-[#e67e22] text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
+                  <div className="bg-primary text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
                     <span className="text-xl font-bold">6</span>
                   </div>
                   <div>
                     <h2 className="text-3xl font-heading font-semibold text-neutral-900 mb-3">
                       Limitation of Liability
                     </h2>
-                    <div className="w-20 h-1 bg-[#e67e22]"></div>
+                    <div className="w-20 h-1 bg-primary"></div>
                   </div>
                 </div>
                 
@@ -402,14 +402,14 @@ const TermsOfService = () => {
               {/* Section 7: Termination */}
               <section id="termination" className="scroll-mt-28 bg-white rounded-xl shadow-sm border border-neutral-200 p-8">
                 <div className="flex items-start mb-8">
-                  <div className="bg-[#e67e22] text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
+                  <div className="bg-primary text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
                     <span className="text-xl font-bold">7</span>
                   </div>
                   <div>
                     <h2 className="text-3xl font-heading font-semibold text-neutral-900 mb-3">
                       Termination
                     </h2>
-                    <div className="w-20 h-1 bg-[#e67e22]"></div>
+                    <div className="w-20 h-1 bg-primary"></div>
                   </div>
                 </div>
                 
@@ -443,14 +443,14 @@ const TermsOfService = () => {
               {/* Section 8: Governing Law */}
               <section id="governing-law" className="scroll-mt-28 bg-white rounded-xl shadow-sm border border-neutral-200 p-8">
                 <div className="flex items-start mb-8">
-                  <div className="bg-[#e67e22] text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
+                  <div className="bg-primary text-white rounded-lg w-12 h-12 flex items-center justify-center mr-6 flex-shrink-0">
                     <span className="text-xl font-bold">8</span>
                   </div>
                   <div>
                     <h2 className="text-3xl font-heading font-semibold text-neutral-900 mb-3">
                       Governing Law & Jurisdiction
                     </h2>
-                    <div className="w-20 h-1 bg-[#e67e22]"></div>
+                    <div className="w-20 h-1 bg-primary"></div>
                   </div>
                 </div>
                 
@@ -467,7 +467,7 @@ const TermsOfService = () => {
                     </div>
                   </div>
                   
-                  <div className="bg-[#e67e22] border border-info-200 rounded-lg p-6">
+                  <div className="bg-primary border border-info-200 rounded-lg p-6">
                     <h4 className="font-semibold text-white mb-2">Choice of Law</h4>
                     <p className="text-white">
                       This choice of law provision applies regardless of your location or where you access our services.

@@ -500,7 +500,7 @@ const Contact = () => {
                   </div>
                   <button
                     type="submit"
-                    className="group px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2"
+                    className="group px-8 py-4 bg-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2"
                   >
                     <Send className="w-5 h-5" />
                     Send Message
@@ -576,7 +576,7 @@ const Contact = () => {
             </div>
             <a
               href="tel:+2348138939107"
-              className="w-full py-3 bg-[#e67e22] text-white rounded-lg font-semibold hover:bg-[#e67e22]/40 transition-colors flex items-center justify-center gap-2"
+              className="w-full py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/40 transition-colors flex items-center justify-center gap-2"
             >
               Emergency Call: (234) 8138939107  
               <ArrowRight className="w-5 h-5" />

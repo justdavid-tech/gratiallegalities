@@ -5,8 +5,6 @@ import {
   Award, 
   Users, 
   DollarSign,
-  Gavel,
-  Clock,
   MessageSquare,
   CheckCircle,
   Star,
@@ -29,7 +27,7 @@ const WhyChooseUs = () => {
       icon: <Award className="w-6 h-6" />,
       title: 'Proven Track Record',
       description: 'Results that speak for themselves. Our success stories are your assurance.',
-      features: ['56+ Cases Won', '6+ Years Experience', 'Industry Recognition', 'Repeat Clients'],
+      features: ['Fully Licensed', '7 Years Experience', 'Industry Recognition', 'Repeat Clients'],
       metric: '96% Success Rate',
       gradient: 'from-primary/20 to-primary/10'
     },
@@ -50,11 +48,11 @@ const WhyChooseUs = () => {
       gradient: 'from-primary/20 to-primary/10'
     },
     {
-      icon: <Gavel className="w-6 h-6" />,
-      title: 'Strong Courtroom Advocacy',
-      description: 'Aggressive representation when it matters most. We never back down.',
-      features: ['Trial Experience', 'Persuasive Advocacy', 'Quick Thinking', 'Jury Rapport'],
-      metric: 'Courtroom Wins',
+      icon: <MessageSquare className="w-6 h-6" />,
+      title: 'Expert Negotiation Skills',
+      description: 'Strategic negotiation that delivers favorable outcomes. We secure the best deals.',
+      features: ['Settlement Expertise', 'Win-Win Solutions', 'Strategic Positioning', 'Dispute Resolution'],
+      metric: 'Favorable Settlements',
       gradient: 'from-primary/20 to-primary/10'
     },
     {
@@ -68,7 +66,7 @@ const WhyChooseUs = () => {
   ];
 
   const comparisonData = [
-    { feature: 'Free Initial Consultation', us: true, competitors: 'Limited' },
+    { feature: 'Legal Health Check', us: true, competitors: 'Limited' },
     { feature: 'Flat Fee Pricing Available', us: true, competitors: 'Rarely' },
     { feature: '24/7 Client Support', us: true, competitors: 'Business Hours' },
     { feature: 'Case Management Portal', us: true, competitors: 'Sometimes' },
@@ -181,7 +179,7 @@ const WhyChooseUs = () => {
                   <tr className="border-b border-white/10">
                     <th className="text-left py-4 px-4 text-gray-400 font-semibold">Feature</th>
                     <th className="text-center py-4 px-4">
-                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-primary text-white rounded-lg">
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg">
                         <Star className="w-4 h-4" />
                         <span>Our Firm</span>
                       </div>
@@ -219,7 +217,6 @@ const WhyChooseUs = () => {
             <ShieldCheck className="w-5 h-5 text-primary" />
             <span className="text-white">
               <span className="font-semibold">100% Satisfaction Guarantee</span>
-              <span className="text-gray-400 ml-2">or your money back*</span>
             </span>
           </div>
         </div>

@@ -26,7 +26,7 @@ const LocationMap = () => {
 
       <div className="min-h-screen bg-neutral-50">
         {/* Header */}
-        <header className="bg-gradient-to-r from-[#e67e22] to-[#e74c3c] text-white">
+        <header className="bg-gradient-to-r from-primary to-primary text-white">
           <div className="container mx-auto px-6 py-16 md:py-20">
             <div className="max-w-6xl mx-auto">
               <nav className="mb-8">
@@ -80,7 +80,7 @@ const LocationMap = () => {
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${officeLocation.address}, ${officeLocation.city}, ${officeLocation.country}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center bg-[#e67e22] hover:bg-[#d35400] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+                    className="inline-flex items-center bg-primary hover:bg-[#d35400] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
                   >
                     <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
@@ -89,7 +89,7 @@ const LocationMap = () => {
                   </a>
                   <a 
                     href={`tel:${officeLocation.phone}`}
-                    className="inline-flex items-center bg-white hover:bg-neutral-50 border-2 border-[#e67e22] text-[#e67e22] px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+                    className="inline-flex items-center bg-white hover:bg-neutral-50 border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
                   >
                     <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -115,8 +115,8 @@ const LocationMap = () => {
               {/* Address Card */}
               <div className="bg-white rounded-xl shadow-sm border border-neutral-200 p-6">
                 <div className="flex items-start">
-                  <div className="bg-[#e67e22] bg-opacity-10 p-3 rounded-lg mr-4">
-                    <svg className="w-6 h-6 text-[#e67e22]" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                    <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -132,20 +132,20 @@ const LocationMap = () => {
               {/* Contact Card */}
               <div className="bg-white rounded-xl shadow-sm border border-neutral-200 p-6">
                 <div className="flex items-start">
-                  <div className="bg-[#e67e22] bg-opacity-10 p-3 rounded-lg mr-4">
-                    <svg className="w-6 h-6 text-[#e67e22]" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                    <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-neutral-900 mb-2">Contact</h3>
                     <p className="text-neutral-700 mb-1">
-                      <a href={`tel:${officeLocation.phone}`} className="hover:text-[#e67e22] transition-colors">
+                      <a href={`tel:${officeLocation.phone}`} className="hover:text-primary transition-colors">
                         {officeLocation.phone}
                       </a>
                     </p>
                     <p className="text-neutral-700">
-                      <a href={`mailto:${officeLocation.email}`} className="hover:text-[#e67e22] transition-colors">
+                      <a href={`mailto:${officeLocation.email}`} className="hover:text-primary transition-colors">
                         {officeLocation.email}
                       </a>
                     </p>
@@ -156,8 +156,8 @@ const LocationMap = () => {
               {/* Hours Card */}
               <div className="bg-white rounded-xl shadow-sm border border-neutral-200 p-6">
                 <div className="flex items-start">
-                  <div className="bg-[#e67e22] bg-opacity-10 p-3 rounded-lg mr-4">
-                    <svg className="w-6 h-6 text-[#e67e22]" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                    <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -171,7 +171,7 @@ const LocationMap = () => {
             </div>
 
             {/* Why Visit Us Section */}
-            <div className="bg-gradient-to-r from-[#e67e22] to-[#e74c3c] rounded-xl shadow-lg p-8 text-white">
+            <div className="bg-gradient-to-r from-primary to-primary rounded-xl shadow-lg p-8 text-white">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-heading font-bold mb-6">
                   Schedule Your Consultation Today
@@ -182,7 +182,7 @@ const LocationMap = () => {
                 
                 <div className="grid md:grid-cols-3 gap-6 mb-8">
                   <div className="bg-white bg-opacity-10 backdrop-blur text-black rounded-lg p-6">
-                    <div className="bg-[#e67e22] bg-opacity-20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                    <div className="bg-primary bg-opacity-20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
                       <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                       </svg>
@@ -192,7 +192,7 @@ const LocationMap = () => {
                   </div>
                   
                   <div className="bg-white bg-opacity-10 backdrop-blur text-black rounded-lg p-6">
-                    <div className="bg-[#e67e22] bg-opacity-20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                    <div className="bg-primary bg-opacity-20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
                       <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                       </svg>
@@ -202,7 +202,7 @@ const LocationMap = () => {
                   </div>
                   
                   <div className="bg-white bg-opacity-10 backdrop-blur text-black rounded-lg p-6">
-                    <div className="bg-[#e67e22] bg-opacity-20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                    <div className="bg-primary bg-opacity-20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
                       <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
@@ -214,7 +214,7 @@ const LocationMap = () => {
 
                 <Link 
                   to="/contact"
-                  className="inline-block bg-white text-[#e67e22] px-8 py-4 rounded-lg font-bold text-lg hover:bg-neutral-100 transition-colors duration-200 shadow-lg"
+                  className="inline-block bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-neutral-100 transition-colors duration-200 shadow-lg"
                 >
                   Book Your Appointment Now
                 </Link>

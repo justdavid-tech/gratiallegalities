@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowRight, ChevronDown, Target, Shield, CheckCircle } from 'lucide-react';
 
 const PracticeHero = ({ 
@@ -123,18 +123,6 @@ const PracticeHero = ({
                 Learn More About This Practice
               </button>
             </div>
-
-            {/* Stats */}
-            {stats.length > 0 && (
-              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center sm:text-left">
-                    <div className="text-3xl font-bold text-primary">{stat.value}</div>
-                    <div className="text-sm text-gray-400 mt-1">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
 
           {/* Right Column - Contact Card */}

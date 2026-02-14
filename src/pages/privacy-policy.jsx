@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
 
       <div className="min-h-screen bg-neutral-50">
         {/* Header Section */}
-        <header className="bg-gradient-to-r from-[#e67e22] to-[#e74c3c] text-white">
+        <header className="bg-gradient-to-r from-primary to-primary text-white">
           <div className="container mx-auto px-6 py-28 md:py-27 lg:py-32">
             <div className="max-w-4xl mx-auto ">
               <nav className="mb-8">
@@ -106,7 +106,7 @@ const PrivacyPolicy = () => {
                 <div className="bg-white rounded-xl shadow-sm border border-neutral-200 p-6 md:p-8">
                   <div className="space-y-4 text-neutral-700">
                     <p>
-                      At <span className="font-semibold text-[#e67e22]">Gratial Legalities</span>, we collect information that you provide directly to us, as well as information automatically collected through your use of our services.
+                      At <span className="font-semibold text-primary">Gratial Legalities</span>, we collect information that you provide directly to us, as well as information automatically collected through your use of our services.
                     </p>
                     
                     <div className="mt-6">
@@ -239,13 +239,13 @@ const PrivacyPolicy = () => {
                 <div className="bg-white rounded-xl shadow-sm border border-neutral-200 p-6 md:p-8">
                   <div className="flex items-center justify-center mb-8">
                     <div className="bg-primary-100 rounded-full p-4">
-                      <svg className="w-12 h-12 text-[#e67e22]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                       </svg>
                     </div>
                   </div>
                   <div className="text-center space-y-4 text-neutral-700">
-                    <p className="text-xl font-semibold text-[#e67e22]">
+                    <p className="text-xl font-semibold text-primary">
                       Protecting your information is our top priority
                     </p>
                     <p>

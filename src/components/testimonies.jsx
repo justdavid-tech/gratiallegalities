@@ -144,7 +144,7 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div className="flex flex-col gap-8 mb-12">
           {/* Main Testimonial Carousel */}
           <div className="lg:col-span-2">
             <div className="relative bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full">
@@ -195,7 +195,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Navigation Arrows */}
-                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-4">
+                <div className="absolute -bottom-25 left-1/2 transform -translate-x-1/2 flex items-center gap-4">
                   <button 
                     onClick={prevTestimonial}
                     className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/10 hover:bg-white/20 hover:border-primary/50 transition-all"
@@ -220,56 +220,6 @@ const Testimonials = () => {
                     <ChevronRight className="w-5 h-5 text-white" />
                   </button>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Additional Testimonials Sidebar */}
-          <div className="space-y-4">
-            {testimonials.slice(0, 3).map((testimonial, index) => (
-              <div 
-                key={testimonial.id}
-                onClick={() => goToTestimonial(index)}
-                className={`group cursor-pointer bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border transition-all duration-300 ${
-                  index === activeIndex ? 'border-primary/50 bg-primary/5' : 'border-white/10 hover:border-primary/30'
-                }`}
-              >
-                <div className="flex items-start gap-3">
-                  <div className={`w-12 h-12 ${testimonial.avatarColor} rounded-full flex items-center justify-center flex-shrink-0`}>
-                    <span className="font-bold text-white">{testimonial.initials}</span>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-1 mb-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className="w-3 h-3 text-primary fill-primary" 
-                        />
-                      ))}
-                    </div>
-                    <div className="text-sm text-white font-medium mb-1 line-clamp-2">
-                      "{testimonial.quote.substring(0, 80)}..."
-                    </div>
-                    <div className="text-xs text-gray-400">{testimonial.caseType}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            {/* Verification Badge */}
-            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                  <Shield className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <div className="text-white font-bold">Verified Reviews</div>
-                  <div className="text-gray-400 text-sm">All testimonials verified</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-gray-300">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                <span>Authentic client experiences</span>
               </div>
             </div>
           </div>

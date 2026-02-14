@@ -161,7 +161,7 @@ const LegalDueDiligence = () => {
   const riskCategories = [
     {
       category: 'Legal & Regulatory Risks',
-      examples: ['Compliance violations', 'Pending litigation', 'Regulatory penalties', 'License deficiencies'],
+      examples: ['Compliance violations', 'Regulatory penalties', 'License deficiencies'],
       icon: <Scale className="w-5 h-5" />
     },
     {

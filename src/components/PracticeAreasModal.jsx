@@ -85,7 +85,7 @@ const PracticeAreasModal = ({ isOpen, onClose, practiceAreas }) => {
                 <Link
                   to="/contact"
                   onClick={onClose}
-                  className="px-6 py-2 bg-gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-all duration-200 flex items-center gap-2"
+                  className="px-6 py-2 bg-primary text-white rounded-lg font-medium hover:opacity-90 transition-all duration-200 flex items-center gap-2"
                 >
                   Reach Us
                   <ArrowRight className="w-4 h-4" />

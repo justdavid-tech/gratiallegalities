@@ -41,8 +41,7 @@ const About = () => {
   ];
 
   const serviceStats = [
-    { icon: <Scale className="w-6 h-6" />, value: '5+', label: 'Years Experience' },
-    { icon: <Users className="w-6 h-6" />, value: '54+', label: 'Cases Won' },
+    { icon: <Scale className="w-6 h-6" />, value: '7', label: 'Years Experience' },
     { icon: <CheckCircle className="w-6 h-6" />, value: '96%', label: 'Success Rate' },
     { icon: <Building className="w-6 h-6" />, value: '11', label: 'Practice Areas' }
   ];
@@ -72,7 +71,7 @@ const About = () => {
           </div>
 
           {/* Stats Banner */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="flex justify-center gap-6 mb-16">
             {serviceStats.map((stat, index) => (
               <div 
                 key={index}
@@ -99,7 +98,7 @@ const About = () => {
           
           <div className="max-w-4xl mx-auto space-y-6">
             <p className="text-gray-300 text-lg leading-relaxed text-center">
-              Founded in 2022, Gratial Legalities began with a simple yet powerful vision: to provide exceptional legal 
+              Founded in 2022, Gratial Legalities began with a simple yet powerful vision to provide exceptional legal 
               services that prioritize client success above all else. Based in Abuja, Nigeria, we've built a reputation 
               for delivering strategic legal solutions tailored to our clients' unique needs.
             </p>
@@ -168,13 +167,19 @@ const About = () => {
                   </div>
 
                   <div className="space-y-4 text-gray-300 leading-relaxed">
+                    <p>Hi, I’m Grace Sani, a corporate and business lawyer and the Principal Consultant at Gratia Legalities and Gratia Corporate Consult.
+
+                    I work with entrepreneurs, companies, and property investors to help them avoid legal pitfalls, structure their dealings properly, and operate with confidence.
+
+                    My approach is simple and helps clients to get clear advice, practical solutions, and a genuine commitment to protecting their business interests.
+                    </p>
                     <p>
-                      With over 5 years of legal expertise, Barrister Grace leads Gratial Legalities with a commitment to 
-                      excellence and client-focused service. Her vision has shaped the firm into a trusted partner for 
+                      With over 7 years of legal expertise, I lead Gratial Legalities with a commitment to 
+                      excellence and client-focused service. My vision has shaped the firm into a trusted partner for 
                       individuals and businesses seeking comprehensive legal solutions.
                     </p>
                     <p>
-                      Under her leadership, the firm has maintained an exceptional track record of success, combining 
+                      Under my leadership, the firm has maintained an exceptional track record of success, combining 
                       traditional legal expertise with modern, innovative approaches to meet the evolving needs of our clients.
                     </p>
                   </div>

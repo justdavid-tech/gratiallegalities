@@ -16,21 +16,14 @@ const TrustSignals = () => {
   const trustMetrics = [
     {
       icon: <Briefcase className="w-6 h-6" />,
-      value: "5+",
+      value: "7",
       label: "Years Experience",
       description: "Dedication years of proven legal expertise",
       gradient: "from-primary/20 to-primary/10"
     },
     {
-      icon: <Trophy className="w-6 h-6" />,
-      value: "54+",
-      label: "Cases Won",
-      description: "Successful outcomes for our clients",
-      gradient: "from-primary/20 to-primary/10"
-    },
-    {
       icon: <Scale className="w-6 h-6" />,
-      value: "10+",
+      value: "11",
       label: "Practice Areas",
       description: "Specialized legal expertise",
       gradient: "from-primary/20 to-primary/10"
@@ -85,11 +78,11 @@ const TrustSignals = () => {
         </div>
 
         {/* Main Metrics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="flex flex-col md:flex-row justify-center items-center md:items-stretch gap-6 md:gap-6 mb-16">
           {trustMetrics.map((metric, index) => (
             <div 
               key={index}
-              className="group relative bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-brand-lg"
+              className="w-full max-w-sm md:max-w-none md:w-auto group relative bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-brand-lg"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${metric.gradient} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
               <div className="relative z-10">
@@ -126,7 +119,7 @@ const TrustSignals = () => {
                   <p className="text-gray-400">Get a confidential assessment of your case</p>
                 </div>
               </div>
-              <Link to = "/contact" className="group px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2 whitespace-nowrap">
+              <Link to = "/contact" className="group px-8 py-4 bg-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2 whitespace-nowrap">
                 Request Consultation
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
