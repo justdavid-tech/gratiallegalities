@@ -19,19 +19,19 @@ const Navbar = () => {
 
   const practiceAreas = {
     column1: [
-      { name: 'Commercial Law', path: '/practices/commercial' },
-      { name: 'Commercial Advisory', path: '/practices/commercial-advisory' },
-      { name: 'Commercial Documentation', path: '/practices/commercial-documentation' },
-      { name: 'Contract Drafting', path: '/practices/contract-drafting' },
       { name: 'Corporate Law', path: '/practices/corporate-law' },
-      { name: 'Employment & Labour', path: '/practices/employment' }
+      { name: 'Contracts & Legal Documentation', path: '/practices/contracts-legal-documentation' },
+      { name: 'Commercial Law', path: '/practices/commercial' },
+      { name: 'Real Estate Law', path: '/practices/real-estate' },
+      { name: 'Commercial Advisory', path: '/practices/commercial-advisory' },
+      { name: 'Contract Drafting', path: '/practices/contract-drafting' }
     ],
     column2: [
-      { name: 'General Legal Advisory', path: '/practices/legal-advisory' },
+      { name: 'Employment Law', path: '/practices/employment' },
+      { name: 'Legal Advisory', path: '/practices/legal-advisory' },
       { name: 'Legal Due Diligence', path: '/practices/legal-due-diligence' },
-      { name: 'Online Business & E-Commerce', path: '/practices/online-business' },
-      { name: 'Property Dispute Resolution', path: '/practices/property-dispute' },
-      { name: 'Real Estate Law', path: '/practices/real-estate' }
+      { name: 'Online Business Law', path: '/practices/online-business' },
+      { name: 'Property Dispute Resolution', path: '/practices/property-dispute' }
     ]
   };
 

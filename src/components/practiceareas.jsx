@@ -21,9 +21,18 @@ const practiceAreas = [
     slug: 'corporate-law',
     icon: <Briefcase className="w-6 h-6" />,
     title: 'Corporate Law',
-    description: 'Business formation, mergers & acquisitions, contracts, and corporate governance for companies of all sizes.',
+    description: 'Business name & company registration(CAC), Company Structuring & shareholding advisory, Partnership and shareholder agreement.',
     gradient: 'from-primary/20 to-primary/10',
     features: ['Business Formation', 'M&A', 'Contracts', 'Compliance']
+  },
+    {
+    id: 'Contracts & Legal-documentation',
+    slug: 'contracts-legal-documentation',
+    icon: <FileText className="w-6 h-6" />,
+    title: 'Contracts & Legal-documentation',
+    description: 'Client service agreements, vendor & supplier contracts, Non-disclosure agreements(NDAs), Partnership & collaboration agreements ',
+    gradient: 'from-primary/20 to-primary/10',
+    features: ['Agreements', 'Contracts', 'Documentation', 'Reviews']
   },
   {
     id: 'commercial',
@@ -34,9 +43,18 @@ const practiceAreas = [
     gradient: 'from-primary/20 to-primary/10',
     features: ['Transactions', 'Operations', 'Disputes', 'Regulations']
   },
+    {
+    id: 'real-estate',
+    slug: 'real-estate',
+    icon: <Building className="w-6 h-6" />,
+    title: 'Real Estate Law',
+    description: 'Property transactions, zoning issues, landlord-tenant disputes, and real estate development.',
+    gradient: 'from-primary/20 to-primary/10',
+    features: ['Transactions', 'Zoning', 'Disputes', 'Development']
+  },
   {
     id: 'commercial-advisory',
-    slug: 'commercialadvisory',
+    slug: 'commercial-advisory',
     icon: <Scale className="w-6 h-6" />,
     title: 'Commercial Advisory',
     description: 'Strategic legal advice for business decisions, risk management, and commercial strategy.',
@@ -44,17 +62,8 @@ const practiceAreas = [
     features: ['Strategic Advice', 'Risk Management', 'Business Decisions', 'Compliance']
   },
   {
-    id: 'commercial-documentation',
-    slug: 'commercialdocumentation',
-    icon: <FileText className="w-6 h-6" />,
-    title: 'Commercial Documentation',
-    description: 'Drafting and reviewing commercial agreements, contracts, and business documentation.',
-    gradient: 'from-primary/20 to-primary/10',
-    features: ['Agreements', 'Contracts', 'Documentation', 'Reviews']
-  },
-  {
     id: 'contract-drafting',
-    slug: 'contractdrafting',
+    slug: 'contract-drafting',
     icon: <FileEdit className="w-6 h-6" />,
     title: 'Contract Drafting',
     description: 'Professional drafting, review, and negotiation of various types of contracts and agreements.',
@@ -72,7 +81,7 @@ const practiceAreas = [
   },
   {
     id: 'legal-advisory',
-    slug: 'legaladvisory',
+    slug: 'legal-advisory',
     icon: <MessageSquare className="w-6 h-6" />,
     title: 'Legal Advisory',
     description: 'Comprehensive legal advice and counsel for various personal and business matters.',
@@ -90,7 +99,7 @@ const practiceAreas = [
   },
   {
     id: 'online-business',
-    slug: 'onlinebusiness',
+    slug: 'online-business',
     icon: <Globe className="w-6 h-6" />,
     title: 'Online Business Law',
     description: 'Legal services for e-commerce, digital businesses, online contracts, and internet law.',
@@ -99,21 +108,12 @@ const practiceAreas = [
   },
   {
     id: 'property-dispute',
-    slug: 'propertydispute',
+    slug: 'property-dispute',
     icon: <Home className="w-6 h-6" />,
     title: 'Property Dispute Resolution',
     description: 'Resolution of property conflicts, boundary disputes, title issues, and real estate litigation.',
     gradient: 'from-primary/20 to-primary/10',
     features: ['Dispute Resolution', 'Boundary Issues', 'Title Disputes', 'Litigation']
-  },
-  {
-    id: 'real-estate',
-    slug: 'realestate',
-    icon: <Building className="w-6 h-6" />,
-    title: 'Real Estate Law',
-    description: 'Property transactions, zoning issues, landlord-tenant disputes, and real estate development.',
-    gradient: 'from-primary/20 to-primary/10',
-    features: ['Transactions', 'Zoning', 'Disputes', 'Development']
   }
 ];
 

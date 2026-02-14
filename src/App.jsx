@@ -41,7 +41,7 @@ function App() {
         {/* Practice Area Subpages */}
         <Route path="/practices/commercial" element={<Commercial />} />
         <Route path="/practices/commercial-advisory" element={<CommercialAdvisory />} />
-        <Route path="/practices/commercial-documentation" element={<CommercialDocumentation />} />
+        <Route path="/practices/contracts-legal-documentation" element={<CommercialDocumentation />} />
         <Route path="/practices/contract-drafting" element={<ContractDrafting />} />
         <Route path="/practices/corporate-law" element={<CorporateLaw />} />
         <Route path="/practices/employment" element={<Employment />} />
