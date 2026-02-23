@@ -1,0 +1,1 @@
+Storing the previous hero section of the project
