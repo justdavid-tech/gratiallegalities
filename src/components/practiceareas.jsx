@@ -136,7 +136,7 @@ const practiceAreas = [
             <Scale className="w-4 h-4 text-primary" />
             <span className="text-primary text-sm font-medium">Legal Expertise</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-tight font-black">
             Comprehensive <span className="text-primary">Legal Services</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">

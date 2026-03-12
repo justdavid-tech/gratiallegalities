@@ -69,7 +69,7 @@ const TrustSignals = () => {
             <CheckCircle className="w-4 h-4 text-primary" />
             <span className="text-primary text-sm font-medium">Trust & Credibility</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-tight font-black">
             Why Clients <span className="text-primary">Trust</span> Us
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">

@@ -59,7 +59,7 @@ const CallToAction = () => {
               <span className="text-primary text-sm font-medium">Limited Time Offer</span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-white leading-tight font-black mb-6">
               Need <span className="text-primary">Legal Assistance</span>?
             </h1>
             

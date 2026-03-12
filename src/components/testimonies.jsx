@@ -90,13 +90,6 @@ const Testimonials = () => {
     }
   ];
 
-  const stats = [
-    { value: "110+", label: "5-Star Reviews" },
-    { value: "94%", label: "Recommendation Rate" },
-    { value: "4.9/5", label: "Average Rating" },
-    { value: "1h", label: "Response Time" }
-  ];
-
   const nextTestimonial = () => {
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
   };
@@ -128,25 +121,12 @@ const Testimonials = () => {
             <Quote className="w-4 h-4 text-primary" />
             <span className="text-primary text-sm font-medium">Client Stories</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-tight font-black mb-4">
             Trusted by <span className="text-primary">500+ Clients</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Real stories from clients who trusted us with their most important legal matters
           </p>
-        </div>
-
-        {/* Stats Banner */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          {stats.map((stat, index) => (
-            <div 
-              key={index}
-              className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center"
-            >
-              <div className="text-3xl font-bold text-primary mb-2">{stat.value}</div>
-              <div className="text-sm text-gray-400">{stat.label}</div>
-            </div>
-          ))}
         </div>
 
         <div className="flex flex-col gap-8 mb-12">

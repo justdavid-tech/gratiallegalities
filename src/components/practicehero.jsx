@@ -49,7 +49,7 @@ const PracticeHero = ({
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-tight font-black">
               {practiceName}
             </h1>
             

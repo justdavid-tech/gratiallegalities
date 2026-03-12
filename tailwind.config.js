@@ -9,7 +9,7 @@ export default {
       colors: {
         // Brand Colors
         primary: {
-          DEFAULT: '#FF0000',
+          DEFAULT: '#F95738',
           50: '#fef5ee',
           100: '#fde8d7',
           200: '#fbcdae',

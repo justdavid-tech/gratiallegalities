@@ -6,6 +6,7 @@ import WhyChooseUs from "../components/whychooseus";
 import Testimonials from "../components/testimonies";
 import CallToAction from "../components/calltoaction";
 import Footer from "../components/footer";
+import InsightsPreview from "../components/insightspreview";
 
 function Home() {
     return (
@@ -16,6 +17,7 @@ function Home() {
             <PracticeAreas />
             <WhyChooseUs />
             <Testimonials />
+            <InsightsPreview />
             <CallToAction />
             <Footer />
         </>

@@ -39,7 +39,7 @@ const Navbar = () => {
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
     { name: 'Practice Areas', href: '/practices', hasDropdown: true },
-    { name: 'Insights', href: '/blog' },
+    { name: 'Insights', href: '/insights' },
     { name: 'Contact', href: '/contact' }
   ];
 

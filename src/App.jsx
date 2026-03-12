@@ -6,6 +6,8 @@ import Practices from "./pages/practices";
 import Blog from "./pages/blog";
 import Contact from "./pages/contact";
 import FindUs from "./pages/findus";
+import ArticlePage from "./pages/articlepage";
+import InsightsPage from "./pages/insightspage";
 
 // Practice Area Pages
 import Commercial from "./pages/practices/commercial";
@@ -37,6 +39,8 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/find-us" element={<FindUs />} />
+        <Route path="/insights" element={<InsightsPage />} />
+        <Route path="/insights/:slug" element={<ArticlePage />} />
 
         {/* Practice Area Subpages */}
         <Route path="/practices/commercial" element={<Commercial />} />

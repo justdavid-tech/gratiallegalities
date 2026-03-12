@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
+
+html,
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}

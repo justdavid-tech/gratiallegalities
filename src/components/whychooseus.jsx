@@ -38,31 +38,31 @@ const WhyChooseUs = () => {
       features: ['Secure Communication', 'NDA Protection', 'Private Consultation', 'Data Encryption'],
       metric: 'Zero Breaches',
       gradient: 'from-primary/20 to-primary/10'
-    },
-    {
-      icon: <DollarSign className="w-6 h-6" />,
-      title: 'Transparent Pricing',
-      description: 'No surprises, just clarity. Know exactly what you’re paying for.',
-      features: ['Fixed Fees Available', 'Itemized Billing', 'No Hidden Costs', 'Payment Plans'],
-      metric: 'Upfront Quotes',
-      gradient: 'from-primary/20 to-primary/10'
-    },
-    {
-      icon: <MessageSquare className="w-6 h-6" />,
-      title: 'Expert Negotiation Skills',
-      description: 'Strategic negotiation that delivers favorable outcomes. We secure the best deals.',
-      features: ['Settlement Expertise', 'Win-Win Solutions', 'Strategic Positioning', 'Dispute Resolution'],
-      metric: 'Favorable Settlements',
-      gradient: 'from-primary/20 to-primary/10'
-    },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: 'Speed & Efficiency',
-      description: 'Rapid response times without compromising quality or attention to detail.',
-      features: ['Same-Day Responses', 'Streamlined Processes', 'Quick Turnaround', 'E-Filing'],
-      metric: '48h Response Guarantee',
-      gradient: 'from-primary/20 to-primary/10'
     }
+    // {
+    //   icon: <DollarSign className="w-6 h-6" />,
+    //   title: 'Transparent Pricing',
+    //   description: 'No surprises, just clarity. Know exactly what you’re paying for.',
+    //   features: ['Fixed Fees Available', 'Itemized Billing', 'No Hidden Costs', 'Payment Plans'],
+    //   metric: 'Upfront Quotes',
+    //   gradient: 'from-primary/20 to-primary/10'
+    // },
+    // {
+    //   icon: <MessageSquare className="w-6 h-6" />,
+    //   title: 'Expert Negotiation Skills',
+    //   description: 'Strategic negotiation that delivers favorable outcomes. We secure the best deals.',
+    //   features: ['Settlement Expertise', 'Win-Win Solutions', 'Strategic Positioning', 'Dispute Resolution'],
+    //   metric: 'Favorable Settlements',
+    //   gradient: 'from-primary/20 to-primary/10'
+    // },
+    // {
+    //   icon: <Zap className="w-6 h-6" />,
+    //   title: 'Speed & Efficiency',
+    //   description: 'Rapid response times without compromising quality or attention to detail.',
+    //   features: ['Same-Day Responses', 'Streamlined Processes', 'Quick Turnaround', 'E-Filing'],
+    //   metric: '48h Response Guarantee',
+    //   gradient: 'from-primary/20 to-primary/10'
+    // }
   ];
 
   const comparisonData = [
@@ -93,7 +93,7 @@ const WhyChooseUs = () => {
             <Target className="w-4 h-4 text-primary" />
             <span className="text-primary text-sm font-medium">Competitive Edge</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-tight font-black mb-4">
             Why <span className="text-primary">Leading Clients</span> Choose Us
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
@@ -166,7 +166,7 @@ const WhyChooseUs = () => {
         {/* Comparison Section */}
         <div className="mb-16">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-white mb-2">
+            <h3 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-tight font-black">
               How We <span className="text-primary">Compare</span>
             </h3>
             <p className="text-gray-400">A side-by-side look at how our client-first approach stacks up against industry standards.</p>
