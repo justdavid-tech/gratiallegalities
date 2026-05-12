@@ -83,7 +83,7 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[100%] max-w-7xl transition-all duration-500 ${
+        className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl transition-all duration-500 ${
           scrolled ? 'scale-[0.98]' : 'scale-100'
         }`}
       >

@@ -106,7 +106,7 @@ const globalStyles = `
     position: absolute; right: 6%; top: 50%; transform: translateY(-50%);
     z-index: 8; width: clamp(180px, 26vw, 380px); aspect-ratio: 3/4;
     border: 1px solid rgba(201,168,76,0.22); pointer-events: none;
-    opacity: 0; animation: lfFadeIn 1.4s 1s forwards;
+    opacity: 0;
   }
   .lf-accent::before {
     content: ''; position: absolute; inset: 14px;
@@ -171,6 +171,8 @@ const globalStyles = `
   .lf-eyebrow {
     display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.8rem;
     opacity: 0; transform: translateY(18px);
+  }
+  .started .lf-eyebrow {
     animation: lfFadeUp 0.9s 0.4s forwards;
   }
   .lf-eyebrow-line { width: 44px; height: 1px; background: #d47f11; flex-shrink: 0; }
@@ -185,6 +187,8 @@ const globalStyles = `
     font-size: clamp(3rem, 7vw, 6.6rem);
     line-height: 1.04; color: #f5f0e8; max-width: 68%;
     opacity: 0; transform: translateY(26px);
+  }
+  .started .lf-headline {
     animation: lfFadeUp 1s 0.6s forwards;
   }
   .lf-headline em { font-style: italic; color: #d47f11; font-weight: 300; }
@@ -196,12 +200,16 @@ const globalStyles = `
     color: #fff; max-width: 380px;
     margin-top: 2rem; white-space: pre-line;
     opacity: 0; transform: translateY(20px);
+  }
+  .started .lf-sub {
     animation: lfFadeUp 1s 0.9s forwards;
   }
 
   .lf-actions {
     display: flex; gap: 1.4rem; margin-top: 2.8rem; align-items: center;
     opacity: 0; transform: translateY(20px);
+  }
+  .started .lf-actions {
     animation: lfFadeUp 1s 1.15s forwards;
   }
 
@@ -235,7 +243,10 @@ const globalStyles = `
   .lf-counter {
     position: absolute; bottom: 4.5rem; left: 8vw; z-index: 10;
     display: flex; align-items: center; gap: 1.2rem;
-    opacity: 0; animation: lfFadeUp 1s 1.4s forwards;
+    opacity: 0;
+  }
+  .started .lf-counter {
+    animation: lfFadeUp 1s 1.4s forwards;
   }
   .lf-counter-cur {
     font-family: 'Cormorant Garamond', serif; font-size: 2.2rem;
@@ -252,7 +263,10 @@ const globalStyles = `
   .lf-dots {
     position: absolute; bottom: 4.5rem; right: 8vw; z-index: 10;
     display: flex; flex-direction: column; gap: 0.7rem;
-    opacity: 0; animation: lfFadeIn 1s 1.5s forwards;
+    opacity: 0;
+  }
+  .started .lf-dots {
+    animation: lfFadeIn 1s 1.5s forwards;
   }
   .lf-dot {
     width: 2px; height: 24px; background: rgba(201,168,76,0.2);
@@ -397,7 +411,7 @@ function ArrowIcon() {
   );
 }
 
-export default function Hero() {
+export default function Hero({ isStarted = true }) {
   const [current, setCurrent] = useState(0);
   const [dotKey, setDotKey] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
@@ -426,7 +440,7 @@ export default function Hero() {
     <>
       <style>{globalStyles}</style>
 
-      <section className="lf-hero">
+      <section className={`lf-hero ${isStarted ? 'started' : ''}`}>
 
         {/* ── SLIDES (real images) ── */}
         {slides.map((s, i) => (
@@ -513,7 +527,7 @@ export default function Hero() {
               onClick={() => goTo(i)}
               aria-label={`Go to slide ${i + 1}`}
             >
-              {i === current && <div className="lf-dot-fill" />}
+              {i === current && isStarted && <div className="lf-dot-fill" />}
             </button>
           ))}
         </div>
