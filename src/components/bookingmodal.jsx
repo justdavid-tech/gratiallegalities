@@ -137,7 +137,7 @@ const BookingModal = ({ isOpen, onClose }) => {
           }}
         >
           {/* Gold top accent */}
-          <div style={{ position: 'absolute', top: 0, left: 0, width: '56px', height: '2px', background: '#F95738' }} />
+          <div style={{ position: 'absolute', top: 0, left: 0, width: '56px', height: '2px', background: '#d47f11' }} />
 
           {/* Close */}
           <button
@@ -148,7 +148,7 @@ const BookingModal = ({ isOpen, onClose }) => {
               color: 'rgba(245,240,232,0.35)', fontSize: '1.1rem',
               lineHeight: 1, transition: 'color 0.2s',
             }}
-            onMouseEnter={e => e.currentTarget.style.color = '#F95738'}
+            onMouseEnter={e => e.currentTarget.style.color = '#d47f11'}
             onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,240,232,0.35)'}
             aria-label="Close"
           >

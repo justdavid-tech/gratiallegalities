@@ -74,7 +74,7 @@ const CallToAction = () => {
             {/* Primary CTA Button */}
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="group relative px-12 py-5 bg-primary text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 min-w-[280px] shadow-brand-lg animate-pulse-slow"
+              className="group relative px-12 py-5 bg-[#d47f11] text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 min-w-[280px] shadow-brand-lg animate-pulse-slow"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/10 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <Calendar className="w-6 h-6 relative z-10" />

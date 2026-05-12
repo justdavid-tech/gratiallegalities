@@ -246,7 +246,7 @@ export default function InsightsPreview() {
             <div className="flex justify-center pt-12">
               <Link 
                 to="/insights" 
-                className="group relative inline-flex items-center gap-4 bg-secondary text-white px-10 py-5 text-xs font-bold tracking-[0.2em] uppercase overflow-hidden transition-all hover:bg-primary"
+                className="group relative inline-flex items-center gap-4 bg-[#d47f11] text-white px-10 py-5 text-xs font-bold tracking-[0.2em] uppercase overflow-hidden transition-all hover:bg-primary"
               >
                 <span className="relative z-10">Explore All Insights</span>
                 <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-2 transition-transform" />

@@ -59,7 +59,7 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Phone',
-      details: ['(234) 8138939107'],
+      details: ['+234 813 893 9107'],
       description: 'Call us directly for immediate assistance',
       cta: 'Call Now',
       href: 'tel:+2348138939107',
@@ -149,9 +149,9 @@ const Contact = () => {
 
   return (
     <>
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[#030930]">
       {/* Hero Section */}
-      <div className="relative py-26 overflow-hidden">
+      <div className="relative pt-34 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5"></div>
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
         
@@ -162,11 +162,11 @@ const Contact = () => {
               <span className="text-primary text-sm font-medium">Get In Touch</span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6">
               Contact <span className="text-primary">Gratial Legalities</span>
             </h1>
             
-            <p className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-1xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Your first step toward expert legal guidance. We're here to listen and help.
             </p>
           </div>
@@ -423,7 +423,7 @@ const Contact = () => {
                       name="practiceArea"
                       value={formData.practiceArea}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-black border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                      className="w-full px-4 py-3 bg-[#030930] border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
                     >
                       <option value="">Select a practice area</option>
                       {practiceAreas.map((area, index) => (
@@ -494,8 +494,8 @@ const Contact = () => {
                 </div>
 
                 {/* Submit Button */}
-                <div className="flex items-center justify-between pt-6 border-t border-white/10">
-                  <div className="text-sm text-gray-400">
+                <div className="flex flex-col gap-5 items-center justify-between order pt-6 border-t border-white/10">
+                  <div className="text-sm text-gray-400 order-2">
                     By submitting, you agree to our Privacy Policy
                   </div>
                   <button
@@ -578,7 +578,7 @@ const Contact = () => {
               href="tel:+2348138939107"
               className="w-full py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/40 transition-colors flex items-center justify-center gap-2"
             >
-              Emergency Call: (234) 8138939107  
+              Emergency Call: +234 813 893 9107  
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>

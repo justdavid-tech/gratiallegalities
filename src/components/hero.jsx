@@ -549,13 +549,6 @@ export default function Hero() {
             </div>
 
             <div className="lf-modal-footer">
-              <Link
-                to="/practices"
-                className="lf-btn-primary"
-                onClick={() => setModalOpen(false)}
-              >
-                <span>View All Practice Areas</span>
-              </Link>
               <button
                 className="lf-btn-ghost"
                 style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
