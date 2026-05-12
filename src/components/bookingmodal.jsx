@@ -55,7 +55,7 @@ const modalStyles = `
   .bm-submit {
     width: 100%;
     padding: 0.9rem 1.5rem;
-    background: #F95738;
+    background: #d47f11;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -81,7 +81,7 @@ const modalStyles = `
     transform-origin: right;
     transition: transform 0.35s ease;
   }
-  .bm-submit:hover { color: #F95738; }
+  .bm-submit:hover { color: #d47f11; }
   .bm-submit:hover::before { transform: scaleX(1); transform-origin: left; }
   .bm-submit:disabled { opacity: 0.5; cursor: not-allowed; }
   .bm-submit span, .bm-submit svg { position: relative; z-index: 1; }
@@ -163,7 +163,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                 border: '1px solid rgba(201,168,76,0.4)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}>
-                <CheckCircle size={28} color="#C9A84C" />
+                <CheckCircle size={28} color="#d47f11" />
               </div>
               <p style={{ fontFamily: "'Jost'", fontSize: '0.62rem', letterSpacing: '0.32em', textTransform: 'uppercase', color: '#C9A84C', marginBottom: '0.7rem' }}>
                 Confirmed
@@ -179,7 +179,7 @@ const BookingModal = ({ isOpen, onClose }) => {
             <>
               {/* ── Header ── */}
               <div style={{ marginBottom: '2rem' }}>
-                <p style={{ fontFamily: "'Jost'", fontSize: '0.6rem', letterSpacing: '0.36em', textTransform: 'uppercase', color: '#F95738', marginBottom: '0.5rem' }}>
+                <p style={{ fontFamily: "'Jost'", fontSize: '0.6rem', letterSpacing: '0.36em', textTransform: 'uppercase', color: '#d47f11', marginBottom: '0.5rem' }}>
                   Gratia Legalities
                 </p>
                 <h3 style={{ fontFamily: "'Cormorant Garamond'", fontWeight: 300, fontSize: '1.9rem', color: '#f5f0e8', lineHeight: 1.1, marginBottom: '0.4rem' }}>
@@ -216,8 +216,8 @@ const BookingModal = ({ isOpen, onClose }) => {
                   <select className="bm-input" name="preferred_time">
                     <option value="">Select a time slot</option>
                     <option value="morning">Morning — 9 AM to 12 PM</option>
-                    <option value="afternoon">Afternoon — 1 PM to 5 PM</option>
-                    <option value="evening">Evening — 6 PM to 8 PM</option>
+                    <option value="afternoon">Afternoon — 1 PM to 3 PM</option>
+                    <option value="evening">Evening — 3 PM to 6 PM</option>
                     <option value="urgent">Urgent — Need Immediate Help</option>
                   </select>
                 </div>

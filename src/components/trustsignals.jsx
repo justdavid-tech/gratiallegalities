@@ -1,131 +1,125 @@
 import React from 'react';
 import { 
-  Award, 
   Briefcase, 
-  Trophy, 
-  ShieldCheck, 
   Users, 
   Scale, 
   FileText,
   CheckCircle,
-  ArrowRight
+  ArrowRight,
+  ShieldCheck
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const TrustSignals = () => {
   const trustMetrics = [
     {
-      icon: <Briefcase className="w-6 h-6" />,
-      value: "7",
+      icon: <Briefcase className="w-5 h-5" />,
+      value: "7+",
       label: "Years Experience",
-      description: "Dedication years of proven legal expertise",
-      gradient: "from-primary/20 to-primary/10"
+      description: "Dedicated years of proven legal expertise",
     },
     {
-      icon: <Scale className="w-6 h-6" />,
+      icon: <Scale className="w-5 h-5" />,
       value: "11",
       label: "Practice Areas",
-      description: "Specialized legal expertise",
-      gradient: "from-primary/20 to-primary/10"
+      description: "Specialized legal expertise across sectors",
     },
     {
-      icon: <Users className="w-6 h-6" />,
+      icon: <Users className="w-5 h-5" />,
       value: "96%",
       label: "Client Satisfaction",
-      description: "Positive feedback & referrals",
-      gradient: "from-primary/20 to-primary/10"
+      description: "Positive feedback & referrals from clients",
     }
   ];
 
   const certifications = [
     {
       name: "Nigeria Bar Association",
-      icon: <Scale className="w-5 h-5" />,
-      verified: true
+      icon: <Scale className="w-4 h-4" />,
     },
     {
       name: "Institute of Chartered Mediators and Conciliators",
-      icon: <ShieldCheck className="w-5 h-5" />,
-      verified: true
+      icon: <ShieldCheck className="w-4 h-4" />,
     }
   ];
 
-
   return (
-    <div className="relative py-20 bg-gradient-to-b from-secondary-950 to-black overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-5">
-          <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:20px_20px]"></div>
-        </div>
-      </div>
+    <div className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
-            <CheckCircle className="w-4 h-4 text-primary" />
-            <span className="text-primary text-sm font-medium">Trust & Credibility</span>
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 rounded-full mb-5">
+            <CheckCircle className="w-3.5 h-3.5 text-primary" />
+            <span className="text-primary text-xs font-semibold uppercase tracking-widest">Trust & Credibility</span>
           </div>
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-tight font-black">
+          <h2 className="font-heading text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-4">
             Why Clients <span className="text-primary">Trust</span> Us
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Proven track record of excellence, recognized by clients and industry peers alike
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            Proven track record of excellence, recognised by clients and industry peers alike
           </p>
         </div>
 
-        {/* Main Metrics Grid */}
-        <div className="flex flex-col md:flex-row justify-center items-center md:items-stretch gap-6 md:gap-6 mb-16">
+        {/* Metrics */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
           {trustMetrics.map((metric, index) => (
-            <div 
+            <div
               key={index}
-              className="w-full max-w-sm md:max-w-none md:w-auto group relative bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-brand-lg"
+              className="group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300 text-center"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${metric.gradient} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:from-primary/30 group-hover:to-primary/20 transition-all">
-                  <div className="text-primary">
-                    {metric.icon}
-                  </div>
-                </div>
-                <div className="text-5xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                  {metric.value}
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  {metric.label}
-                </h3>
-                <p className="text-gray-400 text-sm">
-                  {metric.description}
-                </p>
+              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors duration-300">
+                <span className="text-primary">{metric.icon}</span>
               </div>
+              <div className="text-5xl font-black text-gray-900 mb-1 group-hover:text-primary transition-colors duration-300">
+                {metric.value}
+              </div>
+              <h3 className="text-base font-bold text-gray-800 mb-2">
+                {metric.label}
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                {metric.description}
+              </p>
             </div>
           ))}
         </div>
 
-        {/* Testimonial Banner */}
-        <div className="mt-16 relative bg-gradient-to-r from-primary/10 via-primary/5 to-transparent rounded-2xl p-8 border border-primary/20 overflow-hidden">
-          <div className="absolute -right-20 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-          <div className="relative z-10">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                  <FileText className="w-8 h-8 text-primary" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white">Free Case Evaluation</h4>
-                  <p className="text-gray-400">Get a confidential assessment of your case</p>
-                </div>
-              </div>
-              <Link to = "/contact" className="group px-8 py-4 bg-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2 whitespace-nowrap">
-                Request Consultation
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+        {/* Certifications */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {certifications.map((cert, index) => (
+            <div
+              key={index}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-100 rounded-full"
+            >
+              <span className="text-primary">{cert.icon}</span>
+              <span className="text-sm text-gray-600 font-medium">{cert.name}</span>
+              <CheckCircle className="w-3.5 h-3.5 text-green-500" />
             </div>
+          ))}
+        </div>
+
+        {/* CTA Banner */}
+        <div className="bg-gray-50 rounded-2xl border border-gray-100 p-8 md:p-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <FileText className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-gray-900">Free Case Evaluation</h4>
+                <p className="text-sm text-gray-500">Get a confidential assessment of your case at no cost</p>
+              </div>
+            </div>
+            <Link
+              to="/contact"
+              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary text-white rounded-xl font-semibold text-sm hover:opacity-90 transition-all duration-300 whitespace-nowrap flex-shrink-0"
+            >
+              Request Consultation
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
+
       </div>
     </div>
   );

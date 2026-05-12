@@ -5,7 +5,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getLatestPosts, urlFor } from '../lib/sanity';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react';
 
 const CATEGORY_LABELS = {
   'corporate-law':        'Corporate Law',
@@ -146,21 +146,77 @@ export default function InsightsPreview() {
     <section id="insights" className="py-24 bg-neutral-50 relative overflow-hidden">
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-      
+          {/* SECTION HEADER */}
+      <div className="text-center mb-20">
+
+        <div
+          className="
+          inline-flex items-center gap-2
+          px-5 py-2
+          rounded-full
+          border
+          backdrop-blur-xl
+          mb-6
+          "
+           style={{
+        background: '#f1ede7ff',
+            borderColor: '#f1ede7ff',
+          }}
+        >
+          <BookOpen
+            className="w-4 h-4"
+            style={{ color: '#d47f11' }}
+          />
+
+          <span
+            className="
+            text-xs
+            
+            font-bold
+            uppercase
+            tracking-[0.25em]
+            text-[#d47f11]
+            "
+
+          >
+            Knowledge Hub
+          </span>
+        </div>
+
+        <h2
+          className="
+          text-5xl md:text-6xl
+          font-black
+          text-black
+          font-heading
+          leading-[1.1]
+          mb-6
+          "
+        >
+          Legal{' '}
+
+          <span
+            className="relative inline-block"
+            style={{ color: '#d47f11' }}
+          >
+            Perspectives
+          </span>
+        </h2>
+
+        <p
+          className="
+          text-lg
+          text-black
+          max-w-2xl
+          mx-auto
+          leading-relaxed
+          "
+        >
+          Insights that empower and protect your business.
+        </p>
+      </div>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="h-px w-12 bg-primary" />
-              <span className="text-primary text-xs font-bold tracking-[0.3em] uppercase">Knowledge Hub</span>
-            </div>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-secondary leading-tight uppercase font-black">
-              Legal <span className="text-neutral-400 font-light">Perspectives</span>
-            </h2>
-          </div>
-          <p className="text-neutral-500 text-sm leading-relaxed max-w-sm">
-            Expert analysis and practical guidance from our world-class legal team, designed to keep you informed in a changing landscape.
-          </p>
         </div>
 
         {error ? (

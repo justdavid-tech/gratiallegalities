@@ -115,7 +115,7 @@ const globalStyles = `
   .lf-accent::after {
     content: ''; position: absolute;
     top: -1px; left: 50%; width: 48px; height: 1px;
-    background: #F95738; transform: translateX(-50%);
+    background: #d47f11; transform: translateX(-50%);
   }
 
   /* ── TOP BAR ── */
@@ -129,7 +129,7 @@ const globalStyles = `
   .lf-logo-main {
     font-family: 'Cinzel', serif; font-weight: 600;
     font-size: clamp(0.78rem, 1.3vw, 1rem);
-    letter-spacing: 0.26em; color: #F95738; text-transform: uppercase;
+    letter-spacing: 0.26em; color: #d47f11; text-transform: uppercase;
     display: block;
   }
   .lf-logo-sub {
@@ -146,17 +146,17 @@ const globalStyles = `
   }
   .lf-nav a::after {
     content: ''; position: absolute; bottom: -4px; left: 0;
-    width: 0; height: 1px; background: #F95738; transition: width 0.3s;
+    width: 0; height: 1px; background: #d47f11; transition: width 0.3s;
   }
-  .lf-nav a:hover { color: #F95738; }
+  .lf-nav a:hover { color: #d47f11; }
   .lf-nav a:hover::after { width: 100%; }
   .lf-nav-cta {
-    color: #0d0d0d !important; background: #F95738 !important;
+    color: #0d0d0d !important; background: #d47f11 !important;
     padding: 0.62rem 1.5rem; font-weight: 400 !important;
     transition: background 0.3s !important;
   }
   .lf-nav-cta::after { display: none !important; }
-  .lf-nav-cta:hover { background: #F95738 !important; }
+  .lf-nav-cta:hover { background: #d47f11 !important; }
 
   /* ── SLIDE TEXTS ── */
   .lf-text-wrap { position: absolute; inset: 0; z-index: 9; pointer-events: none; }
@@ -173,11 +173,11 @@ const globalStyles = `
     opacity: 0; transform: translateY(18px);
     animation: lfFadeUp 0.9s 0.4s forwards;
   }
-  .lf-eyebrow-line { width: 44px; height: 1px; background: #F95738; flex-shrink: 0; }
+  .lf-eyebrow-line { width: 44px; height: 1px; background: #d47f11; flex-shrink: 0; }
   .lf-eyebrow-text {
     font-family: 'Jost', sans-serif;
     font-size: 0.66rem; font-weight: 300; letter-spacing: 0.36em;
-    color: #F95738; text-transform: uppercase;
+    color: #d47f11; text-transform: uppercase;
   }
 
   .lf-headline {
@@ -187,13 +187,13 @@ const globalStyles = `
     opacity: 0; transform: translateY(26px);
     animation: lfFadeUp 1s 0.6s forwards;
   }
-  .lf-headline em { font-style: italic; color: #F95738; font-weight: 300; }
+  .lf-headline em { font-style: italic; color: #d47f11; font-weight: 300; }
 
   .lf-sub {
     font-family: 'Jost', sans-serif;
-    font-size: clamp(0.76rem, 1.2vw, 0.94rem); font-weight: 200;
+    font-size: clamp(0.87rem, 1.2vw, 0.94rem); font-weight: 200;
     letter-spacing: 0.1em; line-height: 2;
-    color: rgba(245,240,232,0.5); max-width: 380px;
+    color: #fff; max-width: 380px;
     margin-top: 2rem; white-space: pre-line;
     opacity: 0; transform: translateY(20px);
     animation: lfFadeUp 1s 0.9s forwards;
@@ -208,7 +208,7 @@ const globalStyles = `
   .lf-btn-primary {
     font-family: 'Cinzel', serif; font-size: 0.66rem; font-weight: 600;
     letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none;
-    color: #fff; background: #F95738;
+    color: #fff; background: #d47f11;
     padding: 1rem 2.4rem; position: relative; overflow: hidden;
     transition: color 0.4s; display: inline-block;
   }
@@ -216,7 +216,7 @@ const globalStyles = `
     content: ''; position: absolute; inset: 0; background: #0d0d0d;
     transform: scaleX(0); transform-origin: right; transition: transform 0.4s ease;
   }
-  .lf-btn-primary:hover { color: #F95738; }
+  .lf-btn-primary:hover { color: #d47f11; }
   .lf-btn-primary:hover::before { transform: scaleX(1); transform-origin: left; }
   .lf-btn-primary span { position: relative; z-index: 1; }
 
@@ -228,7 +228,7 @@ const globalStyles = `
     display: flex; align-items: center; gap: 0.7rem; transition: color 0.3s;
   }
   .lf-btn-ghost svg { transition: transform 0.3s; }
-  .lf-btn-ghost:hover { color: #F95738; }
+  .lf-btn-ghost:hover { color: #d47f11; }
   .lf-btn-ghost:hover svg { transform: translateX(5px); }
 
   /* ── COUNTER ── */
@@ -239,7 +239,7 @@ const globalStyles = `
   }
   .lf-counter-cur {
     font-family: 'Cormorant Garamond', serif; font-size: 2.2rem;
-    font-weight: 300; color: #F95738; line-height: 1;
+    font-weight: 300; color: #d47f11; line-height: 1;
   }
   .lf-counter-sep { width: 38px; height: 1px; background: rgba(201,168,76,0.32); }
   .lf-counter-tot {
@@ -262,30 +262,11 @@ const globalStyles = `
   .lf-dot.active { height: 46px; background: rgba(201,168,76,0.22); }
   .lf-dot-fill {
     position: absolute; top: 0; left: 0; right: 0;
-    background: #F95738; height: 0%;
+    background: #d47f11; height: 0%;
     animation: lfDotFill 5s linear forwards;
   }
 
-  /* ── SCROLL HINT ── */
-  .lf-scroll {
-    position: absolute; bottom: 4.5rem; left: 50%; transform: translateX(-50%);
-    z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
-    opacity: 0; animation: lfFadeIn 1s 1.8s forwards;
-  }
-  .lf-scroll-mouse {
-    width: 20px; height: 32px; border: 1px solid rgba(201,168,76,0.28);
-    border-radius: 10px; display: flex; justify-content: center; padding-top: 6px;
-  }
-  .lf-scroll-wheel {
-    width: 2px; height: 6px; background: #F95738; border-radius: 1px;
-    animation: lfScrollDown 1.8s ease-in-out infinite;
-  }
-  .lf-scroll-label {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.58rem; font-weight: 300; letter-spacing: 0.32em;
-    color: rgba(245,240,232,0.28); text-transform: uppercase;
-    writing-mode: vertical-rl;
-  }
+  
 
   /* ── KEYFRAMES ── */
   @keyframes lfFadeUp {
@@ -296,11 +277,6 @@ const globalStyles = `
   }
   @keyframes lfDotFill {
     from { height: 0%; } to { height: 100%; }
-  }
-  @keyframes lfScrollDown {
-    0%   { transform: translateY(0); opacity: 1; }
-    75%  { transform: translateY(10px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 0; }
   }
 
   /* ── RESPONSIVE ── */
@@ -337,11 +313,11 @@ const globalStyles = `
     color: rgba(245,240,232,0.4); font-size: 1.4rem;
     line-height: 1; transition: color 0.2s;
   }
-  .lf-modal-close:hover { color: #F95738; }
+  .lf-modal-close:hover { color: #d47f11; }
   .lf-modal-eyebrow {
     font-family: 'Jost', sans-serif;
     font-size: 0.62rem; font-weight: 300; letter-spacing: 0.38em;
-    color: #F95738; text-transform: uppercase; margin-bottom: 0.7rem;
+    color: #d47f11; text-transform: uppercase; margin-bottom: 0.7rem;
   }
   .lf-modal-title {
     font-family: 'Cormorant Garamond', serif; font-weight: 300;
@@ -366,7 +342,7 @@ const globalStyles = `
   .lf-modal-card::after {
     content: ''; position: absolute;
     bottom: 0; left: 0; right: 0;
-    height: 1px; background: #F95738;
+    height: 1px; background: #d47f11;
     transform: scaleX(0); transform-origin: left;
     transition: transform 0.3s ease;
   }
@@ -384,7 +360,7 @@ const globalStyles = `
     margin-bottom: 0.5rem; display: block;
     transition: color 0.25s;
   }
-  .lf-modal-card:hover .lf-modal-card-name { color: #F95738; }
+  .lf-modal-card:hover .lf-modal-card-name { color: #d47f11; }
   .lf-modal-card-desc {
     font-family: 'Jost', sans-serif;
     font-size: 0.7rem; font-weight: 200; letter-spacing: 0.06em;
@@ -500,7 +476,7 @@ export default function Hero() {
               <div className="lf-actions">
                 <button
                   className="lf-btn-primary"
-                  style={{ background: "#F95738", border: "none", cursor: "pointer" }}
+                  style={{ background: "#d47f11", border: "none", cursor: "pointer" }}
                   onClick={() => setBookingOpen(true)}
                 >
                   <span>Book Consultation</span>

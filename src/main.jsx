@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async'
 import './index.css'
 import App from './App.jsx'
 import ScrollToTop from './components/scrollToTop';
+import FloatingActions from "./components/floatingactions";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -12,6 +13,7 @@ createRoot(document.getElementById('root')).render(
       <BrowserRouter>
         <ScrollToTop />
         <App />
+        <FloatingActions />
       </BrowserRouter>
     </HelmetProvider>
   </StrictMode>

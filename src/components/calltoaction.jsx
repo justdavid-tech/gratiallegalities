@@ -34,7 +34,7 @@ const CallToAction = () => {
         onClose={() => setIsModalOpen(false)} 
       />
 
-      <div className="relative py-24 bg-gradient-to-br from-secondary-900 via-black to-secondary-950 overflow-hidden">
+      <div className="relative py-24 bg-[#030930] via-black to-secondary-950 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
@@ -63,7 +63,7 @@ const CallToAction = () => {
               Need <span className="text-primary">Legal Assistance</span>?
             </h1>
             
-            <p className="text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-1xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
               Speak with an experienced attorney today for a <span className="text-primary font-semibold">free case evaluation</span>.
               Your first consultation is on us.
             </p>
@@ -78,20 +78,20 @@ const CallToAction = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/10 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <Calendar className="w-6 h-6 relative z-10" />
-              <span className="relative z-10">Schedule Free Consultation</span>
+              <span className="relative z-10">Schedule Consultation</span>
               <ArrowRight className="w-6 h-6 relative z-10 group-hover:translate-x-2 transition-transform" />
             </button>
 
             {/* Phone CTA */}
             <a 
-              href="tel:+15551234567"
+              href="tel:+2348138939107"
               className="group relative px-10 py-5 bg-white/5 backdrop-blur-sm text-white rounded-2xl font-bold text-lg border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3 min-w-[250px]"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <Phone className="w-6 h-6 relative z-10" />
               <div className="relative z-10 text-left">
                 <div className="text-sm text-gray-400">Click to Call</div>
-                <div className="text-xl">(+234) 813 893 9107</div>
+                <div className="text-xl">+234 813 893 9107</div>
               </div>
             </a>
           </div>

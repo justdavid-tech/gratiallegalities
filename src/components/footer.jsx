@@ -12,7 +12,6 @@ import {
   ChevronRight,
   Copyright,
   Building,
-  Users,
   Briefcase
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -41,242 +40,163 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'TikTok', href: 'https://linkedin.com/company/firmname', icon: <FaTiktok className="w-5 h-5" /> },
-    { name: 'Instagram', href: 'https://www.instagram.com/gratiacorporate_consult?igsh=MXdncmRlcGJvMWduNQ%3D%3D&utm_source=qr', icon: <Instagram className="w-5 h-5" /> }
+    { name: 'TikTok', href: 'https://tiktok.com/@yourprofile', icon: <FaTiktok className="w-5 h-5" /> },
+    { name: 'Instagram', href: 'https://www.instagram.com/gratiacorporate_consult', icon: <Instagram className="w-5 h-5" /> }
   ];
 
   return (
-    <footer className="relative bg-gradient-to-b from-secondary-900 to-black border-t border-white/10">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:30px_30px]"></div>
+    /* Apply your custom bg hex and a subtle gradient to black at the bottom */
+    <footer className="relative bg-[#030930] bg-gradient-to-b from-[#030930] via-[#030930] to-black border-t border-white/5">
+      
+      {/* Background Pattern: Reduced opacity for a "not shouty" vibe */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0 bg-grid-white bg-[size:40px_40px]"></div>
       </div>
 
       <div className="relative z-10">
-        {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-            {/* Column 1: Contact Information */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            
+            {/* Column 1: Identity */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                <div className="w-12 h-12 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center">
                   <Building className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Gratial legalities Group</h3>
-                  <p className="text-sm text-gray-400">Est. 2022</p>
+                  <h3 className="text-xl font-bold text-white tracking-tight">Gratial legalities Group</h3>
+                  <p className="text-xs text-gray-500 uppercase tracking-widest">Est. 2022</p>
                 </div>
               </div>
               
-              <div className="space-y-4">
+              <div className="space-y-5">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="text-white font-medium mb-1">Main Office</p>
-                    <p className="text-gray-400 text-sm">
-                      1, Ondo Street, Area 1<br />
-                      Garki, Abuja<br /> 
-                    </p>
-                  </div>
+                  <MapPin className="w-5 h-5 text-primary/70 mt-1 flex-shrink-0" />
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    1, Ondo Street, Area 1<br />
+                    Garki, Abuja
+                  </p>
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                  <div>
-                    <a 
-                      href="tel:+2348138939107" 
-                      className="text-white hover:text-primary transition-colors font-medium"
-                    >
-                      (+234) 813 893 9107
-                    </a>
-                    <p className="text-gray-400 text-sm">24/7 Emergency Line</p>
-                  </div>
+                  <Phone className="w-5 h-5 text-primary/70 flex-shrink-0" />
+                  <a href="tel:+2348138939107" className="text-gray-300 hover:text-primary transition-colors text-sm font-medium">
+                    +234 813 893 9107
+                  </a>
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                  <a 
-                    href="mailto:gratialegals@gmail.com" 
-                    className="text-white hover:text-primary transition-colors font-medium"
-                  >
+                  <Mail className="w-5 h-5 text-primary/70 flex-shrink-0" />
+                  <a href="mailto:gratialegals@gmail.com" className="text-gray-300 hover:text-primary transition-colors text-sm font-medium">
                     gratialegals@gmail.com
                   </a>
                 </div>
               </div>
             </div>
 
-            {/* Column 2: Office Hours & Practice Areas */}
+            {/* Column 2: Hours */}
             <div>
-              <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                <Clock className="w-5 h-5 text-primary" />
+              <h3 className="text-sm font-bold text-white uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                <Clock className="w-4 h-4 text-primary" />
                 Office Hours
               </h3>
               
-              <div className="space-y-3 mb-8">
-                <div className="flex justify-between">
-                  <span className="text-gray-400">Monday - Friday</span>
-                  <span className="text-white font-medium">8:00 AM - 6:00 PM</span>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between border-b border-white/5 pb-2">
+                  <span className="text-gray-500">Mon - Fri</span>
+                  <span className="text-gray-300">8:00 AM - 6:00 PM</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-400">Saturday</span>
-                  <span className="text-white font-medium">Emergency Services Only</span>
+                <div className="flex justify-between border-b border-white/5 pb-2">
+                  <span className="text-gray-500">Saturday</span>
+                  <span className="text-white font-medium text-xs">Emergency Only</span>
                 </div>
-                <div className="pt-3 border-t border-white/10">
-                  <p className="text-sm text-primary font-medium">
-                    By Appointment Only
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    Virtual consultations available worldwide
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
-                  Quick Links
-                </h4>
-                <Link 
-                  to="/contact" 
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary-400 transition-colors font-medium"
-                >
-                  Book Appointment
-                  <ChevronRight className="w-4 h-4" />
-                </Link>
+                <p className="text-xs text-primary/80 pt-2 font-medium">By Appointment Only</p>
               </div>
             </div>
 
             {/* Column 3: Practice Areas */}
             <div>
-              <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                <Briefcase className="w-5 h-5 text-primary" />
+              <h3 className="text-sm font-bold text-white uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                <Briefcase className="w-4 h-4 text-primary" />
                 Practice Areas
               </h3>
-              
-              <div className="grid grid-cols-2 gap-3">
-                {practiceAreas.map((area, index) => (
-                  <Link 
-                    key={index}
-                    to={area.href}
-                    className="text-gray-400 hover:text-primary transition-colors text-sm group"
-                  >
-                    <span className="flex items-center gap-1">
-                      <div className="w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                      {area.name}
-                    </span>
+              <div className="grid grid-cols-1 gap-2">
+                {practiceAreas.slice(0, 6).map((area, index) => (
+                  <Link key={index} to={area.href} className="text-gray-400 hover:text-primary transition-all text-xs flex items-center gap-2 group">
+                    <span className="w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    {area.name}
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* Column 4: Social & Legal */}
+            {/* Column 4: Connect */}
             <div>
-              <h3 className="text-lg font-bold text-white mb-6">Connect With Us</h3>
-              
-              {/* Social Links */}
-              <div className="flex gap-4 mb-8">
+              <h3 className="text-sm font-bold text-white uppercase tracking-[0.2em] mb-6">Social Connect</h3>
+              <div className="flex gap-3 mb-8">
                 {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 hover:bg-primary/10 hover:border-primary/30 transition-all group"
-                    aria-label={social.name}
-                  >
-                    <div className="text-gray-400 group-hover:text-primary transition-colors">
-                      {social.icon}
-                    </div>
+                  <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/[0.03] border border-white/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:border-primary/50 transition-all text-gray-400 hover:text-white">
+                    {social.icon}
                   </a>
                 ))}
               </div>
-
-
-              {/* Legal Links */}
-              <div>
-                <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
-                  Legal
-                </h4>
-                <div className="space-y-2">
-                  {legalLinks.map((link, index) => (
-                    <Link 
-                      key={index}
-                      to={link.href}
-                      className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors text-sm group"
-                    >
-                      <div className="opacity-50 group-hover:opacity-100">
-                        {link.icon}
-                      </div>
-                      <span>{link.name}</span>
-                    </Link>
-                  ))}
-                </div>
+              <div className="space-y-3">
+                {legalLinks.map((link, index) => (
+                  <Link key={index} to={link.href} className="flex items-center gap-2 text-gray-500 hover:text-gray-300 transition-colors text-xs">
+                    {link.icon}
+                    {link.name}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Divider */}
-          <div className="border-t border-white/10 pt-8">
-            {/* Legal Disclaimer */}
-            <div className="mb-8 p-6 bg-white/5 rounded-xl border border-white/10">
-              <div className="flex items-start gap-3">
-                <Scale className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="text-white font-bold mb-2">Legal Disclaimer</h4>
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    The information on this website is for general informational purposes only and does not constitute legal advice. 
-                    No attorney-client relationship is formed by viewing this website or contacting our firm. Past results do not 
-                    guarantee future outcomes. Each case is unique and must be evaluated individually. 
-                    Attorney advertising. Prior results do not guarantee a similar outcome.
-                  </p>
-                </div>
+          {/* Disclaimer: Muted background so it doesn't shout */}
+          <div className="mt-16 border-t border-white/5 pt-10">
+            <div className="p-6 bg-black/20 rounded-2xl border border-white/5 backdrop-blur-sm">
+              <div className="flex items-start gap-4">
+                <Scale className="w-5 h-5 text-primary/60 mt-1 flex-shrink-0" />
+                <p className="text-[11px] text-gray-500 leading-relaxed uppercase tracking-wider">
+                  <strong className="text-gray-400 block mb-1">Legal Disclaimer</strong>
+                  The information on this website is for general informational purposes only and does not constitute legal advice. 
+                  No attorney-client relationship is formed by viewing this website or contacting our firm. 
+                  Attorney advertising. Prior results do not guarantee a similar outcome.
+                </p>
               </div>
             </div>
 
             {/* Bottom Bar */}
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex items-center gap-2 text-gray-500 text-sm">
-                <Copyright className="w-4 h-4" />
-                <span>{currentYear} Gratial Legalities Group. All rights reserved.</span>
+            <div className="mt-10 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/5 pt-8">
+              <div className="flex items-center gap-2 text-gray-600 text-[10px] uppercase tracking-[0.15em]">
+                <Copyright className="w-3 h-3" />
+                <span>{currentYear} Gratial Legalities Group</span>
               </div>
               
-              <div className="flex items-center gap-6 text-sm">
+              <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
-                  <span className="text-gray-500">Licensed in Nigeria</span>
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.5)]"></div>
+                  <span className="text-gray-600 text-[10px] uppercase tracking-widest">Licensed in Nigeria</span>
                 </div>
-              </div>
-            </div>
-
-            {/* Security & Compliance */}
-            <div className="mt-6 pt-6 border-t border-white/10 flex flex-wrap justify-between items-center gap-4">
-              
-              <div className="text-xs text-gray-500 text-center md:text-right">
-                <p>Gratial Legalities Group is a law firm based in Abuja, Nigeria.</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Emergency Banner */}
-        <div className="bg-gradient-to-r from-primary/20 to-primary/10 border-t border-primary/30 py-4">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                  <Phone className="w-4 h-4 text-primary" />
-                </div>
-                <div>
-                  <span className="text-white font-bold">24/7 Emergency Legal Assistance</span>
-                  <span className="text-gray-300 ml-3">Available for urgent matters</span>
-                </div>
+        {/* Emergency Banner: Slightly higher contrast against the dark navy bg */}
+        <div className="bg-white/[0.02] border-t border-white/10 py-6 backdrop-blur-md">
+          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20">
+                <Phone className="w-5 h-5 text-primary" />
               </div>
-              <a 
-                href="tel:+2348138939107"
-                className="px-6 py-2 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2"
-              >
-                Emergency Call: (+234) 813 893 9107
-              </a>
+              <div className="text-center md:text-left">
+                <p className="text-white font-bold text-sm">24/7 Urgent Assistance</p>
+                <p className="text-gray-500 text-xs">Direct access to legal counsel</p>
+              </div>
             </div>
+            <a href="tel:+2348138939107" className="px-8 py-3 bg-white text-[#030930] rounded-full font-bold text-sm hover:bg-primary hover:text-white transition-all transform hover:scale-105">
+              +234 813 893 9107
+            </a>
           </div>
         </div>
       </div>

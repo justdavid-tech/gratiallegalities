@@ -128,7 +128,7 @@ export default function InsightsPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-secondary relative overflow-hidden">
+      <section className="pt-32 pb-20 bg-[#030930] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-2/3 h-full bg-primary/5 -skew-x-12 translate-x-1/4" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
@@ -136,11 +136,11 @@ export default function InsightsPage() {
               <div className="h-px w-12 bg-primary" />
               <span className="text-primary text-xs font-bold tracking-[0.3em] uppercase">Corporate Library</span>
             </div>
-            <h1 className="font-heading text-5xl md:text-7xl text-white leading-[0.9] uppercase font-black mb-8">
+            <h1 className="font-heading text-4xl md:text-5xl text-white leading-[0.9] uppercase font-black mb-8">
               Legal <span className="text-neutral-500 font-light italic">Insights</span>
               <br /><span className="text-primary">& Developments</span>
             </h1>
-            <p className="text-neutral-400 text-lg leading-relaxed max-w-2xl">
+            <p className="text-neutral-200 text-lg leading-relaxed max-w-2xl">
               Comprehensive analysis of emerging legal trends, landmark case reviews, and strategic guidance across our core practice areas.
             </p>
           </div>
@@ -157,7 +157,7 @@ export default function InsightsPage() {
                 onClick={() => setActiveTab(cat)}
                 className={`px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest transition-all whitespace-nowrap ${
                   activeTab === cat 
-                  ? 'bg-secondary text-white' 
+                  ? 'bg-[#030930] text-white' 
                   : 'bg-neutral-50 text-neutral-400 hover:bg-neutral-100 hover:text-secondary'
                 }`}
               >
@@ -239,7 +239,7 @@ export default function InsightsPage() {
       </main>
 
       {/* CTA Section */}
-      <section className="py-32 bg-secondary text-white relative overflow-hidden">
+      <section className="py-32 bg-[#030930] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <h2 className="font-heading text-4xl md:text-5xl uppercase font-black mb-8 leading-tight">
             Stay Informed with Our <span className="text-primary italic">Global</span> Perspectives

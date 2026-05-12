@@ -4,222 +4,176 @@ import {
   ShieldCheck, 
   Award, 
   Users, 
-  DollarSign,
-  MessageSquare,
   CheckCircle,
   Star,
-  Zap,
-  TrendingUp,
   ArrowRight
 } from 'lucide-react';
 
 const WhyChooseUs = () => {
   const competitiveAdvantages = [
     {
-      icon: <Users className="w-6 h-6" />,
+      icon: <Users className="w-5 h-5" />,
       title: 'Client-First Approach',
       description: 'Every decision starts with your needs. We prioritize your goals above all else.',
       features: ['Personalized Strategies', 'Regular Updates', '24/7 Availability', 'No Hidden Agendas'],
       metric: '98% Client Satisfaction',
-      gradient: 'from-primary/20 to-primary/10'
     },
     {
-      icon: <Award className="w-6 h-6" />,
+      icon: <Award className="w-5 h-5" />,
       title: 'Proven Track Record',
       description: 'Results that speak for themselves. Our success stories are your assurance.',
       features: ['Fully Licensed', '7 Years Experience', 'Industry Recognition', 'Repeat Clients'],
       metric: '96% Success Rate',
-      gradient: 'from-primary/20 to-primary/10'
     },
     {
-      icon: <ShieldCheck className="w-6 h-6" />,
+      icon: <ShieldCheck className="w-5 h-5" />,
       title: 'Confidential Handling',
-      description: 'Your privacy is sacred. We implement military-grade security protocols.',
+      description: 'Your privacy is sacred. We implement strict security protocols on all matters.',
       features: ['Secure Communication', 'NDA Protection', 'Private Consultation', 'Data Encryption'],
       metric: 'Zero Breaches',
-      gradient: 'from-primary/20 to-primary/10'
     }
-    // {
-    //   icon: <DollarSign className="w-6 h-6" />,
-    //   title: 'Transparent Pricing',
-    //   description: 'No surprises, just clarity. Know exactly what you’re paying for.',
-    //   features: ['Fixed Fees Available', 'Itemized Billing', 'No Hidden Costs', 'Payment Plans'],
-    //   metric: 'Upfront Quotes',
-    //   gradient: 'from-primary/20 to-primary/10'
-    // },
-    // {
-    //   icon: <MessageSquare className="w-6 h-6" />,
-    //   title: 'Expert Negotiation Skills',
-    //   description: 'Strategic negotiation that delivers favorable outcomes. We secure the best deals.',
-    //   features: ['Settlement Expertise', 'Win-Win Solutions', 'Strategic Positioning', 'Dispute Resolution'],
-    //   metric: 'Favorable Settlements',
-    //   gradient: 'from-primary/20 to-primary/10'
-    // },
-    // {
-    //   icon: <Zap className="w-6 h-6" />,
-    //   title: 'Speed & Efficiency',
-    //   description: 'Rapid response times without compromising quality or attention to detail.',
-    //   features: ['Same-Day Responses', 'Streamlined Processes', 'Quick Turnaround', 'E-Filing'],
-    //   metric: '48h Response Guarantee',
-    //   gradient: 'from-primary/20 to-primary/10'
-    // }
   ];
 
   const comparisonData = [
-    { feature: 'Legal Health Check', us: true, competitors: 'Limited' },
-    { feature: 'Flat Fee Pricing Available', us: true, competitors: 'Rarely' },
-    { feature: '24/7 Client Support', us: true, competitors: 'Business Hours' },
-    { feature: 'Case Management Portal', us: true, competitors: 'Sometimes' },
-    { feature: 'Monthly Progress Reports', us: true, competitors: 'Upon Request' },
-    { feature: 'Multilingual Services', us: true, competitors: 'Limited' }
+    { feature: 'Legal Health Check', competitors: 'Limited' },
+    { feature: 'Flat Fee Pricing Available', competitors: 'Rarely' },
+    { feature: '24/7 Client Support', competitors: 'Business Hours' },
+    { feature: 'Case Management Portal', competitors: 'Sometimes' },
+    { feature: 'Monthly Progress Reports', competitors: 'Upon Request' },
+    { feature: 'Multilingual Services', competitors: 'Limited' }
   ];
 
   return (
-    <div className="relative py-20 bg-gradient-to-b from-black to-secondary-950 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-1/3 left-10 w-32 h-32 border border-primary/20 rounded-full"></div>
-          <div className="absolute bottom-1/3 right-10 w-40 h-40 border border-primary/20 rounded-full"></div>
-        </div>
-      </div>
+    // 👇 Change this bg color anytime
+    <div className="py-20 bg-[#f9f9f7]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
-            <Target className="w-4 h-4 text-primary" />
-            <span className="text-primary text-sm font-medium">Competitive Edge</span>
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 rounded-full mb-5">
+            <Target className="w-3.5 h-3.5 text-primary" />
+            <span className="text-primary text-xs font-semibold uppercase tracking-widest">Competitive Edge</span>
           </div>
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-tight font-black mb-4">
+          <h2 className="font-heading text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-4">
             Why <span className="text-primary">Leading Clients</span> Choose Us
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
             Experience the difference that sets us apart in the legal industry
           </p>
         </div>
 
-        {/* Main Advantages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {/* Advantage Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
           {competitiveAdvantages.map((advantage, index) => (
-            <div 
+            <div
               key={index}
-              className="group relative bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-brand-lg"
+              className="group bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300"
             >
-              
-              <div className="relative z-10">
-                {/* Icon and Title */}
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all">
-                    <div className="text-primary">
-                      {advantage.icon}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors mb-2">
-                      {advantage.title}
-                    </h3>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full">
-                      <CheckCircle className="w-3 h-3 text-primary" />
-                      <span className="text-xs font-medium text-primary">{advantage.metric}</span>
-                    </div>
-                  </div>
+              {/* Icon + metric */}
+              <div className="flex items-center justify-between mb-5">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                  <span className="text-primary">{advantage.icon}</span>
                 </div>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/5 rounded-full text-xs font-semibold text-primary">
+                  <CheckCircle className="w-3 h-3" />
+                  {advantage.metric}
+                </span>
+              </div>
 
-                {/* Description */}
-                <p className="text-gray-400 mb-6 leading-relaxed">
-                  {advantage.description}
-                </p>
+              {/* Title + description */}
+              <h3 className="text-base font-bold text-gray-900 group-hover:text-primary transition-colors duration-300 mb-2">
+                {advantage.title}
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                {advantage.description}
+              </p>
 
-                {/* Features */}
-                <div className="space-y-2">
-                  {advantage.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                      </div>
-                      <span className="text-sm text-gray-300">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Stats Badge */}
-                <div className="mt-6 pt-6 border-t border-white/10">
-                  <div className="flex items-center justify-between">
-                    <div className="text-sm text-gray-500 group-hover:text-gray-400">
-                      Exclusive Advantage
-                    </div>
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-primary fill-primary" />
-                      ))}
-                    </div>
+              {/* Feature list */}
+              <div className="space-y-2 pt-5 border-t border-gray-100">
+                {advantage.features.map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-2.5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                    <span className="text-sm text-gray-600">{feature}</span>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Comparison Section */}
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-tight font-black">
-              How We <span className="text-primary">Compare</span>
-            </h3>
-            <p className="text-gray-400">A side-by-side look at how our client-first approach stacks up against industry standards.</p>
+        {/* Comparison Table */}
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden mb-10">
+          <div className="px-8 py-6 border-b border-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-2">
+            <div>
+              <h3 className="text-xl font-bold text-gray-900">
+                How We <span className="text-primary">Compare</span>
+              </h3>
+              <p className="text-sm text-gray-500 mt-0.5">
+                A side-by-side look at how our client-first approach stacks up
+              </p>
+            </div>
+            <div className="flex items-center gap-4 text-sm text-gray-400">
+              <div className="flex items-center gap-1.5">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span className="font-medium text-gray-700">Our Firm</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="w-4 h-4 text-center leading-none text-gray-400">~</span>
+                <span>Average Competitor</span>
+              </div>
+            </div>
           </div>
 
-          <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-white/10">
-                    <th className="text-left py-4 px-4 text-gray-400 font-semibold">Feature</th>
-                    <th className="text-center py-4 px-4">
-                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg">
-                        <Star className="w-4 h-4" />
-                        <span>Our Firm</span>
-                      </div>
-                    </th>
-                    <th className="text-center py-4 px-4 text-gray-400">Average Competitor</th>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="bg-gray-50 border-b border-gray-100">
+                  <th className="text-left py-3 px-8 text-xs font-semibold text-gray-400 uppercase tracking-wider">Feature</th>
+                  <th className="text-center py-3 px-6 text-xs font-semibold text-gray-400 uppercase tracking-wider">Our Firm</th>
+                  <th className="text-center py-3 px-6 text-xs font-semibold text-gray-400 uppercase tracking-wider">Competitors</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-50">
+                {comparisonData.map((row, index) => (
+                  <tr key={index} className="hover:bg-gray-50/60 transition-colors">
+                    <td className="py-4 px-8 text-sm font-medium text-gray-700">{row.feature}</td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm">
+                        <CheckCircle className="w-4 h-4" />
+                        Yes
+                      </span>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <span className="text-sm text-gray-400">{row.competitors}</span>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {comparisonData.map((row, index) => (
-                    <tr key={index} className="border-b border-white/10 last:border-0">
-                      <td className="py-4 px-4 text-white font-medium">{row.feature}</td>
-                      <td className="text-center py-4 px-4">
-                        <div className="inline-flex items-center gap-2 text-primary">
-                          <CheckCircle className="w-5 h-5" />
-                          <span className="font-semibold">Yes</span>
-                        </div>
-                      </td>
-                      <td className="text-center py-4 px-4">
-                        <span className={`${row.competitors === 'Limited' || row.competitors === 'Rarely' ? 'text-gray-400' : 'text-gray-300'}`}>
-                          {row.competitors}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Guarantee Banner */}
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 md:p-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <ShieldCheck className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-gray-900">100% Satisfaction Guarantee</h4>
+                <p className="text-sm text-gray-500">We're committed to delivering results you can trust</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 text-primary fill-primary" />
+              ))}
+              <span className="ml-2 text-sm font-semibold text-gray-700">5.0 Rated</span>
             </div>
           </div>
         </div>
 
-
-        {/* Guarantee Banner */}
-        <div className="mt-8 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 border border-primary/20 rounded-full">
-            <ShieldCheck className="w-5 h-5 text-primary" />
-            <span className="text-white">
-              <span className="font-semibold">100% Satisfaction Guarantee</span>
-            </span>
-          </div>
-        </div>
       </div>
     </div>
   );

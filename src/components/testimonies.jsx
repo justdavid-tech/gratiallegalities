@@ -2,14 +2,9 @@ import React, { useState } from 'react';
 import { 
   Star, 
   Quote, 
-  UserCheck, 
-  Award, 
   ChevronLeft, 
   ChevronRight,
   CheckCircle,
-  ThumbsUp,
-  Shield,
-  ArrowRight
 } from 'lucide-react';
 
 const Testimonials = () => {
@@ -25,8 +20,6 @@ const Testimonials = () => {
       outcome: "Successful Completion",
       rating: 5,
       date: "March 2025",
-      industry: "Technology",
-      avatarColor: "bg-primary/20"
     },
     {
       id: 2,
@@ -37,8 +30,6 @@ const Testimonials = () => {
       outcome: "Favorable Agreement",
       rating: 5,
       date: "February 2025",
-      industry: "Manufacturing",
-      avatarColor: "bg-primary/20"
     },
     {
       id: 3,
@@ -49,8 +40,6 @@ const Testimonials = () => {
       outcome: "Project Approved",
       rating: 5,
       date: "April 2025",
-      industry: "Real Estate Development",
-      avatarColor: "bg-primary/20"
     },
     {
       id: 4,
@@ -61,8 +50,6 @@ const Testimonials = () => {
       outcome: "Full Compliance",
       rating: 5,
       date: "December 2025",
-      industry: "Financial Services",
-      avatarColor: "bg-primary/20"
     },
     {
       id: 5,
@@ -73,8 +60,6 @@ const Testimonials = () => {
       outcome: "Favorable Settlement",
       rating: 5,
       date: "November 2025",
-      industry: "Retail",
-      avatarColor: "bg-primary/20"
     },
     {
       id: 6,
@@ -85,133 +70,569 @@ const Testimonials = () => {
       outcome: "Successful Acquisition",
       rating: 5,
       date: "October 2025",
-      industry: "Real Estate Investment",
-      avatarColor: "bg-primary/20"
     }
   ];
 
-  const nextTestimonial = () => {
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
-  };
+  const next = () => setActiveIndex((prev) => (prev + 1) % testimonials.length);
+  const prev = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const active = testimonials[activeIndex];
 
-  const prevTestimonial = () => {
-    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  // Show 3 preview cards (excluding active)
+  const previews = testimonials
+    .filter((_, i) => i !== activeIndex)
+    .slice(0, 3);
 
-  const goToTestimonial = (index) => {
-    setActiveIndex(index);
-  };
+return (
+  <div className="relative py-24 overflow-hidden bg-[#030930]">
 
-  return (
-    <div className="relative py-20 bg-gradient-to-b from-black to-secondary-900 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/3 left-1/3 w-64 h-64 border border-primary/20 rounded-full"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-48 h-48 border border-primary/20 rounded-full"></div>
+    <div
+      className="absolute bottom-0 right-0 w-[32rem] h-[32rem] rounded-full blur-3xl opacity-10"
+      style={{ background: '#1e40ff' }}
+    />
+
+    {/* GRID PATTERN */}
+    <div
+      className="absolute inset-0 opacity-[0.03]"
+      style={{
+        backgroundImage:
+          'linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)',
+        backgroundSize: '50px 50px',
+      }}
+    />
+
+    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      {/* SECTION HEADER */}
+      <div className="text-center mb-20">
+
+        <div
+          className="
+          inline-flex items-center gap-2
+          px-5 py-2
+          rounded-full
+          border
+          backdrop-blur-xl
+          mb-6
+          "
+          style={{
+            background: 'rgba(255,255,255,0.05)',
+            borderColor: 'rgba(255,255,255,0.08)',
+          }}
+        >
+          <Quote
+            className="w-4 h-4"
+            style={{ color: '#d47f11' }}
+          />
+
+          <span
+            className="
+            text-xs
+            font-bold
+            uppercase
+            tracking-[0.25em]
+            text-white/80
+            "
+            style={{
+              fontFamily: "'Manrope', sans-serif",
+            }}
+          >
+            Client Stories
+          </span>
         </div>
+
+        <h2
+          className="
+          text-5xl md:text-6xl
+          font-black
+          text-white
+          font-heading
+          leading-[1.1]
+          mb-6
+          "
+        >
+          Trusted by{' '}
+
+          <span
+            className="relative inline-block"
+            style={{ color: '#d47f11' }}
+          >
+            500+ Clients
+
+            {/* Underline */}
+            {/* <svg
+              viewBox="0 0 120 10"
+              className="absolute -bottom-3 left-0 w-full"
+              preserveAspectRatio="none"
+              style={{ height: '10px' }}
+            >
+              <path
+                d="M0 6 Q30 0 60 6 Q90 12 120 6"
+                fill="none"
+                stroke="#d47f11"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
+            </svg> */}
+          </span>
+        </h2>
+
+        <p
+          className="
+          text-lg
+          text-white/60
+          max-w-2xl
+          mx-auto
+          leading-relaxed
+          "
+        >
+          Real stories from clients who trusted us
+          with their most important legal matters.
+        </p>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
-            <Quote className="w-4 h-4 text-primary" />
-            <span className="text-primary text-sm font-medium">Client Stories</span>
-          </div>
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-tight font-black mb-4">
-            Trusted by <span className="text-primary">500+ Clients</span>
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Real stories from clients who trusted us with their most important legal matters
-          </p>
-        </div>
+      {/* MAIN GRID */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        <div className="flex flex-col gap-8 mb-12">
-          {/* Main Testimonial Carousel */}
-          <div className="lg:col-span-2">
-            <div className="relative bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full">
-              {/* Quote Icon */}
-              <div className="absolute top-6 right-6 text-primary/20">
-                <Quote className="w-16 h-16" />
-              </div>
+        {/* FEATURED TESTIMONIAL */}
+        <div
+          className="
+          lg:col-span-2
+          relative overflow-hidden
+          rounded-[32px]
+          border
+          p-8 md:p-10
+          "
+          style={{
+            background: 'rgba(255,255,255,0.04)',
+            borderColor: 'rgba(255,255,255,0.08)',
+            backdropFilter: 'blur(20px)',
+            boxShadow:
+              '0 10px 40px rgba(0,0,0,0.18)',
+          }}
+        >
+          {/* CARD GLOW */}
+          <div
+            className="
+            absolute top-0 right-0
+            w-72 h-72
+            rounded-full
+            blur-3xl
+            opacity-10
+            "
+            style={{ background: '#d47f11' }}
+          />
 
-              {/* Testimonial Content */}
-              <div className="relative">
-                {/* Rating */}
-                <div className="flex items-center gap-1 mb-6">
+          <div className="relative z-10 flex flex-col justify-between h-full">
+
+            {/* TOP */}
+            <div>
+
+              {/* STARS + DATE */}
+              <div className="flex items-center justify-between mb-8">
+
+                <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      className="w-5 h-5 text-primary fill-primary" 
+                    <Star
+                      key={i}
+                      className="w-4 h-4"
+                      style={{
+                        color: '#d47f11',
+                        fill: '#d47f11',
+                      }}
                     />
                   ))}
-                  <span className="ml-2 text-sm text-gray-400">{testimonials[activeIndex].date}</span>
                 </div>
 
-                {/* Quote */}
-                <blockquote className="text-2xl text-white italic mb-8 leading-relaxed">
-                  "{testimonials[activeIndex].quote}"
-                </blockquote>
+                <span
+                  className="text-xs text-white/40 font-medium"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                  }}
+                >
+                  {active.date}
+                </span>
+              </div>
 
-                {/* Author Info */}
+              {/* QUOTE ICON */}
+              <div
+                className="
+                w-16 h-16
+                rounded-2xl
+                flex items-center justify-center
+                mb-6
+                "
+                style={{
+                  background:
+                    'linear-gradient(135deg, rgba(212,127,17,0.15), rgba(255,255,255,0.03))',
+                  border:
+                    '1px solid rgba(255,255,255,0.05)',
+                }}
+              >
+                <Quote
+                  className="w-7 h-7"
+                  style={{ color: '#d47f11' }}
+                />
+              </div>
+
+              {/* TESTIMONIAL */}
+              <blockquote
+                className="
+                text-2xl md:text-3xl
+                text-white
+                leading-relaxed
+                font-medium
+                mb-10
+                "
+                style={{
+                  fontFamily: "'Clash Display', sans-serif",
+                }}
+              >
+                "{active.quote}"
+              </blockquote>
+            </div>
+
+            {/* BOTTOM */}
+            <div>
+
+              {/* DIVIDER */}
+              <div
+                className="mb-6 border-t"
+                style={{
+                  borderColor:
+                    'rgba(255,255,255,0.06)',
+                }}
+              />
+
+              <div className="flex items-center justify-between flex-wrap gap-6">
+
+                {/* AUTHOR */}
                 <div className="flex items-center gap-4">
-                  <div className={`w-16 h-16 ${testimonials[activeIndex].avatarColor} rounded-full flex items-center justify-center`}>
-                    <span className="text-2xl font-bold text-white">
-                      {testimonials[activeIndex].initials}
+
+                  {/* INITIALS */}
+                  <div
+                    className="
+                    w-14 h-14
+                    rounded-full
+                    flex items-center justify-center
+                    "
+                    style={{
+                      background:
+                        'linear-gradient(135deg, rgba(212,127,17,0.2), rgba(255,255,255,0.05))',
+                      border:
+                        '1px solid rgba(255,255,255,0.06)',
+                    }}
+                  >
+                    <span
+                      className="text-sm font-bold"
+                      style={{
+                        color: '#d47f11',
+                        fontFamily:
+                          "'Clash Display', sans-serif",
+                      }}
+                    >
+                      {active.initials}
                     </span>
                   </div>
+
+                  {/* DETAILS */}
                   <div>
-                    <div className="text-xl font-bold text-white">
-                      {testimonials[activeIndex].author}
-                    </div>
-                    <div className="flex items-center gap-2 mt-1">
-                      <div className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
-                        {testimonials[activeIndex].caseType}
-                      </div>
-                      <div className="flex items-center gap-1 text-gray-400">
-                        <CheckCircle className="w-4 h-4" />
-                        <span className="text-sm">{testimonials[activeIndex].outcome}</span>
-                      </div>
+
+                    <p
+                      className="text-base font-bold text-white"
+                      style={{
+                        fontFamily:
+                          "'Manrope', sans-serif",
+                      }}
+                    >
+                      {active.author}
+                    </p>
+
+                    <div className="flex items-center gap-2 mt-1 flex-wrap">
+
+                      <span
+                        className="
+                        px-3 py-1
+                        rounded-full
+                        text-xs
+                        "
+                        style={{
+                          background:
+                            'rgba(212,127,17,0.12)',
+                          color: '#d47f11',
+                          border:
+                            '1px solid rgba(212,127,17,0.15)',
+                          fontFamily:
+                            "'Manrope', sans-serif",
+                        }}
+                      >
+                        {active.caseType}
+                      </span>
+
+                      <span
+                        className="
+                        flex items-center gap-1
+                        text-xs
+                        text-white/50
+                        "
+                        style={{
+                          fontFamily:
+                            "'Manrope', sans-serif",
+                        }}
+                      >
+                        <CheckCircle
+                          className="w-3 h-3"
+                          style={{ color: '#22c55e' }}
+                        />
+
+                        {active.outcome}
+                      </span>
                     </div>
                   </div>
                 </div>
 
-                {/* Navigation Arrows */}
-                <div className="absolute -bottom-25 left-1/2 transform -translate-x-1/2 flex items-center gap-4">
-                  <button 
-                    onClick={prevTestimonial}
-                    className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/10 hover:bg-white/20 hover:border-primary/50 transition-all"
+                {/* NAVIGATION */}
+                <div className="flex items-center gap-3">
+
+                  <button
+                    onClick={prev}
+                    className="
+                    w-11 h-11
+                    rounded-full
+                    flex items-center justify-center
+                    transition-all duration-300
+                    hover:scale-105
+                    "
+                    style={{
+                      background:
+                        'rgba(255,255,255,0.05)',
+                      border:
+                        '1px solid rgba(255,255,255,0.06)',
+                      color: 'white',
+                    }}
                   >
-                    <ChevronLeft className="w-5 h-5 text-white" />
+                    <ChevronLeft className="w-4 h-4" />
                   </button>
-                  <div className="flex items-center gap-2">
-                    {testimonials.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => goToTestimonial(index)}
-                        className={`w-2 h-2 rounded-full transition-all ${
-                          index === activeIndex ? 'bg-primary w-8' : 'bg-white/30'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <button 
-                    onClick={nextTestimonial}
-                    className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/10 hover:bg-white/20 hover:border-primary/50 transition-all"
+
+                  <span
+                    className="
+                    text-xs
+                    text-white/40
+                    font-medium
+                    tabular-nums
+                    "
+                    style={{
+                      fontFamily:
+                        "'Manrope', sans-serif",
+                    }}
                   >
-                    <ChevronRight className="w-5 h-5 text-white" />
+                    {activeIndex + 1} / {testimonials.length}
+                  </span>
+
+                  <button
+                    onClick={next}
+                    className="
+                    w-11 h-11
+                    rounded-full
+                    flex items-center justify-center
+                    transition-all duration-300
+                    hover:scale-105
+                    "
+                    style={{
+                      background:
+                        'rgba(255,255,255,0.05)',
+                      border:
+                        '1px solid rgba(255,255,255,0.06)',
+                      color: 'white',
+                    }}
+                  >
+                    <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
+
               </div>
             </div>
+
           </div>
         </div>
+
+        {/* SIDE PREVIEW CARDS */}
+        <div className="flex flex-col gap-4">
+
+          {previews.map((t) => {
+            const realIndex = testimonials.findIndex(
+              (x) => x.id === t.id
+            );
+
+            return (
+              <button
+                key={t.id}
+                onClick={() => setActiveIndex(realIndex)}
+                className="
+                text-left
+                group
+                relative overflow-hidden
+                rounded-[28px]
+                border
+                p-5
+                transition-all duration-500
+                hover:-translate-y-1
+                "
+                style={{
+                  background: 'rgba(255,255,255,0.04)',
+                  borderColor: 'rgba(255,255,255,0.08)',
+                  backdropFilter: 'blur(20px)',
+                }}
+              >
+                {/* HOVER GLOW */}
+                <div
+                  className="
+                  absolute inset-0 opacity-0
+                  group-hover:opacity-100
+                  transition-opacity duration-500
+                  "
+                  style={{
+                    background:
+                      'linear-gradient(135deg, rgba(212,127,17,0.08), transparent)',
+                  }}
+                />
+
+                <div className="relative z-10">
+
+                  {/* STARS */}
+                  <div className="flex items-center gap-1 mb-4">
+
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-3 h-3"
+                        style={{
+                          color: '#d47f11',
+                          fill: '#d47f11',
+                        }}
+                      />
+                    ))}
+
+                    <span
+                      className="
+                      ml-auto
+                      text-xs
+                      text-white/40
+                      "
+                      style={{
+                        fontFamily:
+                          "'Manrope', sans-serif",
+                      }}
+                    >
+                      {t.date}
+                    </span>
+                  </div>
+
+                  {/* QUOTE */}
+                  <p
+                    className="
+                    text-sm
+                    text-white/65
+                    leading-relaxed
+                    line-clamp-3
+                    mb-5
+                    "
+                    style={{
+                      fontFamily:
+                        "'Manrope', sans-serif",
+                    }}
+                  >
+                    "{t.quote}"
+                  </p>
+
+                  {/* AUTHOR */}
+                  <div className="flex items-center gap-3">
+
+                    <div
+                      className="
+                      w-10 h-10
+                      rounded-full
+                      flex items-center justify-center
+                      "
+                      style={{
+                        background:
+                          'rgba(212,127,17,0.12)',
+                        border:
+                          '1px solid rgba(212,127,17,0.15)',
+                      }}
+                    >
+                      <span
+                        className="text-xs font-bold"
+                        style={{
+                          color: '#d47f11',
+                          fontFamily:
+                            "'Clash Display', sans-serif",
+                        }}
+                      >
+                        {t.initials}
+                      </span>
+                    </div>
+
+                    <div>
+
+                      <p
+                        className="
+                        text-sm font-bold text-white
+                        group-hover:text-[#d47f11]
+                        transition-colors
+                        "
+                        style={{
+                          fontFamily:
+                            "'Manrope', sans-serif",
+                        }}
+                      >
+                        {t.author}
+                      </p>
+
+                      <p
+                        className="
+                        text-xs text-white/40
+                        "
+                        style={{
+                          fontFamily:
+                            "'Manrope', sans-serif",
+                        }}
+                      >
+                        {t.caseType}
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              </button>
+            );
+          })}
+
+          {/* DOT INDICATORS */}
+          <div className="flex items-center justify-center gap-2 pt-2">
+
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveIndex(i)}
+                className="rounded-full transition-all duration-300"
+                style={{
+                  width: i === activeIndex ? '22px' : '7px',
+                  height: '7px',
+                  background:
+                    i === activeIndex
+                      ? '#d47f11'
+                      : 'rgba(255,255,255,0.2)',
+                }}
+              />
+            ))}
+
+          </div>
+        </div>
+
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default Testimonials;
