@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
   return (
     <>
       <Helmet>
-        <title>Privacy Policy | Gratial Legalities</title>
+        <title>Privacy Policy | Gratia Corporate Consult</title>
         <meta name="description" content="Our commitment to protecting your privacy and handling your personal information with care and confidentiality." />
       </Helmet>
 
@@ -106,7 +106,7 @@ const PrivacyPolicy = () => {
                 <div className="bg-white rounded-xl shadow-sm border border-neutral-200 p-6 md:p-8">
                   <div className="space-y-4 text-neutral-700">
                     <p>
-                      At <span className="font-semibold text-primary">Gratial Legalities</span>, we collect information that you provide directly to us, as well as information automatically collected through your use of our services.
+                      At <span className="font-semibold text-primary">Gratia Corporate Consult</span>, we collect information that you provide directly to us, as well as information automatically collected through your use of our services.
                     </p>
                     
                     <div className="mt-6">
@@ -377,7 +377,7 @@ const PrivacyPolicy = () => {
                         </svg>
                       </div>
                       <h4 className="font-semibold text-neutral-900 mb-2">By Email</h4>
-                      <p className="text-primary-600 font-medium">gratialegals@gmail.com</p>
+                      <p className="text-primary-600 font-medium">info@gratiacorporateconsult.com</p>
                     </div>
                     
                     <div className="bg-white rounded-lg p-6 text-center shadow-sm">

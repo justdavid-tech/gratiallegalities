@@ -39,8 +39,10 @@ const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
   { name: 'Practice Areas', href: '/practices', hasDropdown: true },
+  { name: 'Gratia Legalities', href: '/legalities' },
   { name: 'Insights', href: '/insights' },
   { name: 'Contact', href: '/contact' },
+  { name: 'Portal', href: '/portal' },
 ];
 
 const Navbar = () => {
@@ -128,8 +130,8 @@ const Navbar = () => {
               >
                 <img
                   src="/assets/logo-transparent.png"
-                  alt="Gratial Legalities"
-                  className="h-16 w-auto object-contain"
+                  alt="Gratia Corporate Consult"
+                  className="h-16 w-auto scale-[1.8] object-contain"
                 />
               </Link>
 
@@ -375,22 +377,6 @@ const Navbar = () => {
 
               {/* RIGHT ACTIONS */}
               <div className="hidden lg:flex items-center gap-4">
-     <a
-                  href="tel:+2348138939107"
-                  className="flex items-center gap-2 text-sm font-semibold"
-                  style={{
-                    color: NAVY,
-                    fontFamily: "'Manrope', sans-serif",
-                  }}
-                >
-                  <Phone
-                    className="w-4 h-4"
-                    style={{ color: GOLD }}
-                  />
-
-                  +234 813 893 9107
-                </a>
-
                 <button
                   onClick={() => setModalOpen(true)}
                   className="

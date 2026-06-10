@@ -5,7 +5,7 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'gratialegalities',
+  title: 'Gratia Corporate Consult',
 
   projectId: 'mazmuq7d',
   dataset: 'production',

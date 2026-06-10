@@ -174,7 +174,7 @@ const CommercialAdvisory = () => {
         tagline="Strategic Insights for Business Excellence"
         customContent={customHeroContent}
         contactPerson="Strategic Advisory Partners"
-        contactEmail="gratialegals@gmail.com"
+        contactEmail="info@gratiacorporateconsult.com"
         keyFeatures={[
           "Strategic business planning and market analysis",
           "Commercial due diligence and opportunity assessment",
@@ -456,7 +456,7 @@ const CommercialAdvisory = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a 
-                    href="mailto:gratialegals@gmail.com"
+                    href="mailto:info@gratiacorporateconsult.com"
                     className="group px-8 py-4 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                   >
                     Schedule Strategy Session

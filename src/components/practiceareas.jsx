@@ -96,14 +96,6 @@ const PracticeAreas = () => {
       title: 'Online Business Law',
       description: 'Legal services for e-commerce, digital businesses, online contracts, and internet law.',
       features: ['E-commerce', 'Digital Contracts', 'Online Compliance', 'Internet Law']
-    },
-    {
-      id: 'property-dispute',
-      slug: 'property-dispute',
-      icon: <Home className="w-5 h-5" />,
-      title: 'Property Dispute Resolution',
-      description: 'Resolution of property conflicts, boundary disputes, title issues, and real estate litigation.',
-      features: ['Dispute Resolution', 'Boundary Issues', 'Title Disputes', 'Litigation']
     }
   ];
 
@@ -188,9 +180,6 @@ return (
           mx-auto
           leading-relaxed
           "
-          // style={{
-          //   fontFamily: "'Manrope', sans-serif",
-          // }}
         >
           Specialized legal representation across multiple
           practice areas with strategic solutions,

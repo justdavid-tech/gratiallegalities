@@ -72,7 +72,7 @@ const About = () => {
 
           <div className="max-w-3xl mx-auto space-y-5 text-center">
             <p className="text-gray-600 text-lg leading-relaxed">
-              Founded in 2022, Gratial Legalities began with a simple yet powerful vision — to provide exceptional legal
+              Founded in 2022, Gratia Corporate Consult began with a simple yet powerful vision — to provide exceptional legal
               services that prioritise client success above all else. Based in Abuja, Nigeria, we've built a reputation
               for delivering strategic legal solutions tailored to our clients' unique needs.
             </p>
@@ -124,10 +124,10 @@ const About = () => {
                 <div className="p-8 md:p-10 flex flex-col justify-center">
                   <p className="text-xs font-semibold uppercase tracking-widest mb-2"
                     style={{ color: GOLD }}>
-                    Chief Executive Officer & Lead Counsel
+                    Founder & Senior Partner
                   </p>
                   <h3 className="text-2xl md:text-3xl font-black mb-1" style={{ color: NAVY }}>
-                    Barrister Grace Idoko
+                    Grace Enenu Sani-Odeh Esq.
                   </h3>
                   <div className="w-12 h-1 rounded-full mb-6" style={{ background: GOLD }} />
 
@@ -139,7 +139,7 @@ const About = () => {
                       properly, and operate with confidence.
                     </p>
                     <p>
-                      With over 7 years of legal expertise, I lead Gratial Legalities with a commitment to
+                      With over 7 years of legal expertise, I lead Gratia Corporate Consult and Gratia Legalities with a commitment to
                       excellence and client-focused service. My approach is simple: clear advice, practical
                       solutions, and genuine commitment to protecting your business interests.
                     </p>
@@ -168,7 +168,7 @@ const About = () => {
               Our <span style={{ color: GOLD }}>Core Values</span>
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              The principles that guide every decision and action at Gratial Legalities
+              The principles that guide every decision and action at Gratia Corporate Consult
             </p>
           </div>
 
@@ -247,7 +247,7 @@ const About = () => {
                   Ready to Work With Us?
                 </h3>
                 <p className="text-gray-500">
-                  Experience the Gratial Legalities difference for yourself.
+                  Experience the Gratia corporate consult difference for yourself.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
@@ -275,8 +275,8 @@ const About = () => {
                 {
                   icon: <Mail className="w-4 h-4" />,
                   label: 'Email Us',
-                  value: 'gratialegals@gmail.com',
-                  href: 'mailto:gratialegals@gmail.com'
+                  value: 'info@gratiacorporateconsult.com',
+                  href: 'mailto:info@gratiacorporateconsult.com'
                 },
                 {
                   icon: <MapPin className="w-4 h-4" />,

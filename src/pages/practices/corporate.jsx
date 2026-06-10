@@ -74,7 +74,7 @@ const CorporateLaw = () => {
   ];
 
   const corporateStats = [
-    { value: '500+', label: 'Companies Served', description: 'From startups to multinationals' },
+    { value: '120+', label: 'Companies Served', description: 'From startups to multinationals' },
     { value: '$5B+', label: 'Transaction Value', description: 'M&A and corporate deals' },
     { value: '25+', label: 'Years Experience', description: 'Corporate legal expertise' },
     { value: '95%', label: 'Deal Success Rate', description: 'Transaction completion' }
@@ -136,7 +136,7 @@ const CorporateLaw = () => {
         tagline="Strategic Legal Solutions for Business Success"
         customContent={customHeroContent}
         contactPerson="Gratia Legalities"
-        contactEmail="gratialegals@gmail.com"
+        contactEmail="info@gratiacorporateconsult.com"
         keyFeatures={[
           "End-to-end corporate lifecycle support",
           "Mergers, acquisitions, and strategic transactions",
@@ -297,10 +297,10 @@ const CorporateLaw = () => {
                 <div>
                   <div className="text-sm text-gray-400 mb-2">For Corporate Inquiries</div>
                   <a 
-                    href="mailto:gratialegals@gmail.com"
+                    href="mailto:info@gratiacorporateconsult.com"
                     className="text-primary hover:text-primary-400 transition-colors text-lg font-medium block"
                   >
-                    gratialegals@gmail.com
+                    info@gratiacorporateconsult.com
                   </a>
                 </div>
                 
@@ -388,7 +388,7 @@ const CorporateLaw = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a 
-                    href="mailto:gratialegals@gmail.com"
+                    href="mailto:info@gratiacorporateconsult.com"
                     className="group px-8 py-4 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                   >
                     Contact Corporate Team

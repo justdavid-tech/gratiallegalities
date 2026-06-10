@@ -6,12 +6,12 @@ import Footer from '../components/footer';
 
 const LocationMap = () => {
   const officeLocation = {
-    name: 'Gratial Legalities',
+    name: 'Gratia Corporate Consults',
     address: '1, Ondo Street, Area 1',
     city: 'Garki, Abuja',
     country: 'Nigeria',
     phone: '(234) 813 893 9107',
-    email: 'gratialegals@gmail.com',
+    email: 'info@gratiacorporateconsult.com',
     hours: 'Mon-Fri: 9:00 AM - 6:00 PM',
     description: 'Legal expertise you can trust',
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.9346!2d7.4897!3d9.0354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDInMDcuNCJOIDfCsDI5JzIyLjkiRQ!5e0!3m2!1sen!2sng!4v1234567890'
@@ -20,8 +20,8 @@ const LocationMap = () => {
   return (
     <>
       <Helmet>
-        <title>Find Us | Gratial Legalities</title>
-        <meta name="description" content="Visit Gratial Legalities at our office in Garki, Abuja. Get directions and contact information." />
+        <title>Find Us | Gratia Corporate Consult</title>
+        <meta name="description" content="Visit Gratia Corporate Consult at our office in Garki, Abuja. Get directions and contact information." />
       </Helmet>
 
       <div className="min-h-screen bg-neutral-50">
@@ -69,7 +69,7 @@ const LocationMap = () => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="w-full"
-                  title="Gratial Legalities Office Location"
+                  title="Gratia Corporate Consult Office Location"
                 ></iframe>
               </div>
               

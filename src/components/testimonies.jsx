@@ -13,7 +13,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      quote: "Gratial Legalities took the stress out of my land documentation. They handled the entire process with incredible speed and precision, ensuring my title was secured without a single hitch. If you need property papers done right, this is the firm to call.",
+      quote: "Gratia Corporate Consult took the stress out of my land documentation. They handled the entire process with incredible speed and precision, ensuring my title was secured without a single hitch. If you need property papers done right, this is the firm to call.",
       author: "Chukwuma Eze",
       initials: "CE",
       caseType: "Land Documentation",
@@ -156,7 +156,7 @@ return (
             className="relative inline-block"
             style={{ color: '#d47f11' }}
           >
-            500+ Clients
+            120+ Clients
 
             {/* Underline */}
             {/* <svg

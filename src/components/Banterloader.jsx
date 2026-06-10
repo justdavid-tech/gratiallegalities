@@ -218,23 +218,15 @@ const BanterLoader = ({ onComplete }) => {
         <p
           className="text-white text-sm font-semibold uppercase tracking-[0.3em] mb-16 opacity-60"
         >
-          Gratial Legalities
+          Gratia Corporate Consult
         </p>
 
         {/* The loader */}
-        <div className="banter-loader">
+        <div className="banter-loader pt-13">
           {Array.from({ length: 9 }).map((_, i) => (
             <div key={i} className="banter-loader__box" />
           ))}
         </div>
-
-        {/* Loading label below */}
-        <p
-          className="mt-16 text-xs uppercase tracking-widest"
-          style={{ color: '#d47f11', opacity: 0.7 }}
-        >
-          Loading…
-        </p>
       </div>
     </>
   );

@@ -27,8 +27,8 @@ const slides = [
 ];
 
 const PRACTICE_AREAS = [
-  { title: "Corporate Law", desc: "Entity formation, governance, M&A and shareholder matters.", path: "/practices/corporate-law" },
-  { title: "Contract Drafting", desc: "Bespoke, enforceable agreements tailored to your needs.", path: "/practices/contract-drafting" },
+  { title: "Corporate Law", desc: " Pre-incorporation(registration of business name, company, NGO, Association) and post incorporation (alterations or changes to registered entities)", path: "/practices/corporate-law" },
+  { title: "Contract Drafting", desc: "Bespoke, enforceable agreements tailored to your transaction needs.", path: "/practices/contract-drafting" },
   { title: "Real Estate Law", desc: "Acquisitions, disposals, leases and title verification.", path: "/practices/real-estate" },
   { title: "Commercial Law", desc: "Trade, finance and supply-chain legal frameworks.", path: "/practices/commercial" },
   { title: "Commercial Advisory", desc: "Strategic legal advice for your commercial decisions.", path: "/practices/commercial-advisory" },
@@ -36,8 +36,7 @@ const PRACTICE_AREAS = [
   { title: "Employment Law", desc: "Workplace policies, disputes and regulatory compliance.", path: "/practices/employment" },
   { title: "Legal Advisory", desc: "General counsel services and risk management guidance.", path: "/practices/legal-advisory" },
   { title: "Legal Due Diligence", desc: "Thorough investigation before deals and investments.", path: "/practices/legal-due-diligence" },
-  { title: "Online Business Law", desc: "E-commerce, data privacy and digital contracts.", path: "/practices/online-business" },
-  { title: "Property Dispute", desc: "Boundary, ownership and landlord-tenant litigation.", path: "/practices/property-dispute" },
+  { title: "Online Business Law", desc: "E-commerce, data privacy and digital contracts.", path: "/practices/online-business" }
 ];
 
 const INTERVAL = 5000;
@@ -544,7 +543,7 @@ export default function Hero({ isStarted = true }) {
             <button className="lf-modal-close" onClick={() => setModalOpen(false)} aria-label="Close">
               ✕
             </button>
-            <p className="lf-modal-eyebrow">Gratia Legalities</p>
+            <p className="lf-modal-eyebrow">Gratia Corporate Consult</p>
             <h2 className="lf-modal-title">Our Practice Areas</h2>
 
             <div className="lf-modal-grid">

@@ -173,7 +173,7 @@ const Commercial = () => {
         tagline="Navigating Business Transactions with Legal Precision"
         customContent={customHeroContent}
         contactPerson="Commercial Practice Partners"
-        contactEmail="gratialegals@gmail.com"
+        contactEmail="info@gratiacorporateconsult.com"
         keyFeatures={[
           "Drafting and negotiation of complex commercial agreements",
           "Regulatory compliance across multiple industries",
@@ -435,7 +435,7 @@ const Commercial = () => {
 
                 <div className="space-y-4">
                   <a 
-                    href="mailto:gratialegals@gmail.com"
+                    href="mailto:info@gratiacorporateconsult.com"
                     className="block w-full py-3 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center"
                   >
                     Submit Contract for Review
@@ -523,7 +523,7 @@ const Commercial = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a 
-                    href="mailto:gratialegals@gmail.com"
+                    href="mailto:info@gratiacorporateconsult.com"
                     className="group px-8 py-4 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                   >
                     Contact Commercial Team

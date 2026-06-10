@@ -12,8 +12,8 @@ const Practices = () => {
         practiceName="Our Practice Areas"
         tagline="Expert Legal Solutions"
         description="Comprehensive legal representation tailored to your specific needs. From corporate law to real estate, our team is dedicated to your success."
-        contactPerson="Barrister Grace Idoko"
-        contactEmail="gratialegals@gmail.com"
+        contactPerson="Grace Enenu Sani-Odeh Esq."
+        contactEmail="info@gratiacorporateconsult.com"
         keyFeatures={[
           "Corporate & Commercial Law",
           "Real Estate & Property",

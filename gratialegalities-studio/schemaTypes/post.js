@@ -66,8 +66,7 @@ export default {
           { title: 'Employment Law', value: 'employment' },
           { title: 'Legal Advisory', value: 'legal-advisory' },
           { title: 'Legal Due Diligence', value: 'legalDueDiligence' },
-          { title: 'Online Business Law', value: 'online-business' },
-          { title: 'Property Dispute Resolution', value: 'property-dispute' },
+          { title: 'Online Business Law', value: 'online-business' }
         ],
         layout: 'dropdown',
       },

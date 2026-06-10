@@ -78,9 +78,8 @@ const RealEstate = () => {
 
   const practiceStats = [
     { value: '95%', label: 'Client Satisfaction', description: 'Successful engagements' },
-    { value: '500+', label: 'Transactions Handled', description: 'Real estate matters' },
+    { value: '120+', label: 'Transactions Handled', description: 'Real estate matters' },
     { value: '30+', label: 'Combined Experience', description: 'Industry expertise' },
-    { value: '₦5B+', label: 'Property Value', description: 'Transactions managed' }
   ];
 
   const customHeroContent = (
@@ -124,14 +123,13 @@ const RealEstate = () => {
         tagline="Protecting Property Value Through Strategic Legal Expertise"
         customContent={customHeroContent}
         contactPerson="Real Estate Law Team"
-        contactEmail="gratialegals@gmail.com"
+        contactEmail="info@gratiacorporateconsult.com"
         keyFeatures={[
           "Land acquisition and title verification",
           "Property sale and lease documentation",
           "Real estate development advisory",
           "Regulatory and compliance support",
           "Risk mitigation and value protection",
-          "Property dispute management"
         ]}
         stats={[
           { value: "95%", label: "Satisfaction" },
@@ -456,10 +454,10 @@ const RealEstate = () => {
                 <div>
                   <div className="text-sm text-gray-400 mb-2">For Property Matters</div>
                   <a 
-                    href="mailto:gratialegals@gmail.com"
+                    href="mailto:info@gratiacorporateconsult.com"
                     className="text-primary hover:text-primary-400 transition-colors text-lg font-medium block"
                   >
-                    gratialegals@gmail.com
+                    info@gratiacorporateconsult.com
                   </a>
                 </div>
                 
@@ -494,8 +492,8 @@ const RealEstate = () => {
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a 
-                    href="mailto:gratialegals@gmail.com"
+                  <a  
+                    href="mailto:info@gratiacorporateconsult.com"
                     className="group px-8 py-4 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                   >
                     Contact Real Estate Team

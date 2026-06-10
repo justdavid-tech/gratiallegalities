@@ -40,7 +40,8 @@ const WhyChooseUs = () => {
     { feature: '24/7 Client Support', competitors: 'Business Hours' },
     { feature: 'Case Management Portal', competitors: 'Sometimes' },
     { feature: 'Monthly Progress Reports', competitors: 'Upon Request' },
-    { feature: 'Multilingual Services', competitors: 'Limited' }
+    { feature: 'Multilingual Services', competitors: 'Limited' },
+    { feature: 'Due Diligence Passport', competitors: 'Limited' }
   ];
 
   return (

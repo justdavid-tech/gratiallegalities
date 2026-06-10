@@ -180,7 +180,7 @@ const BookingModal = ({ isOpen, onClose }) => {
               {/* ── Header ── */}
               <div style={{ marginBottom: '2rem' }}>
                 <p style={{ fontFamily: "'Jost'", fontSize: '0.6rem', letterSpacing: '0.36em', textTransform: 'uppercase', color: '#d47f11', marginBottom: '0.5rem' }}>
-                  Gratia Legalities
+                  Gratia Corporate Consult
                 </p>
                 <h3 style={{ fontFamily: "'Cormorant Garamond'", fontWeight: 300, fontSize: '1.9rem', color: '#f5f0e8', lineHeight: 1.1, marginBottom: '0.4rem' }}>
                   Schedule a Consultation
@@ -209,7 +209,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                 </div>
                 <div>
                   <label className="bm-label">Phone Number</label>
-                  <input className="bm-input" type="tel" name="user_phone" required placeholder="+1 (555) 000-0000" />
+                  <input className="bm-input" type="tel" name="user_phone" required placeholder="+234 90 344 748 3472" />
                 </div>
                 <div>
                   <label className="bm-label">Preferred Time</label>

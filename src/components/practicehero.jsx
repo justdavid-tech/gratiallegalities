@@ -178,7 +178,7 @@ const PracticeHero = ({
                 </div>
 
                 <a 
-                  href={`https://wa.me/2348138939107?text=Hello%20Gratia%20Legalities%2C%20I%20would%20like%20to%20schedule%20a%20free%20consultation%20for%20${encodeURIComponent(practiceName)}%20services.`}
+                  href={`https://wa.me/2348138939107?text=Hello%20Gratia%20Corporate%20Consult%2C%20I%20would%20like%20to%20schedule%20a%20free%20consultation%20for%20${encodeURIComponent(practiceName)}%20services.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full mt-6 py-3 bg-gradient-to-r from-primary to-primary-600 text-white rounded-lg font-semibold hover:opacity-90 transition-all flex items-center justify-center gap-2"

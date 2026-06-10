@@ -211,7 +211,7 @@ const ContractDrafting = () => {
         tagline="Precision Drafting for Enforceable Agreements"
         customContent={customHeroContent}
         contactPerson="Contract Drafting Specialists"
-        contactEmail="gratialegals@gmail.com"
+        contactEmail="info@gratiacorporateconsult.com"
         keyFeatures={[
           "Commercial and corporate contract drafting",
           "Specialized industry-specific agreements",
@@ -514,10 +514,10 @@ const ContractDrafting = () => {
                 <div>
                   <div className="text-sm text-gray-400 mb-2">For Drafting Requests</div>
                   <a 
-                    href="mailto:gratialegals@gmail.com"
+                    href="mailto:info@gratiacorporateconsult.com"
                     className="text-primary hover:text-primary-400 transition-colors text-lg font-medium block"
                   >
-                    gratialegals@gmail.com
+                    info@gratiacorporateconsult.com
                   </a>
                 </div>
                 
@@ -553,7 +553,7 @@ const ContractDrafting = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a 
-                    href="mailto:gratialegals@gmail.com"
+                    href="mailto:info@gratiacorporateconsult.com"
                     className="group px-8 py-4 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                   >
                     Request Contract Drafting

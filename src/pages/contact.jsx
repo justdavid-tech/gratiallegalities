@@ -16,6 +16,7 @@ import {
   AlertCircle,
   Calendar,
   Headphones,
+  X,
   Check
 } from 'lucide-react';
 import Footer from '../components/footer';
@@ -33,6 +34,7 @@ const Contact = () => {
 
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const practiceAreas = [
     'Commercial Law',
@@ -68,10 +70,10 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: 'Email',
-      details: ['gratialegals@gmail.com'],
+      details: ['info@gratiacorporateconsult.com'],
       description: 'Send us your questions or documents',
       cta: 'Send Email',
-      href: 'mailto:gratialegals@gmail.com',
+      href: 'mailto:info@gratiacorporateconsult.com',
       color: 'from-primary/20 to-primary/10'
     },
     {
@@ -80,7 +82,7 @@ const Contact = () => {
       details: ['1, Ondo Street, Area 1, Garki, Abuja'],
       description: 'Schedule an in-person consultation',
       cta: 'Get Directions',
-      href: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.3468448860203!2d7.468666399999999!3d9.0320904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b7791750fe1%3A0x546dd2a544dcb21!2sGratia%20Corporate%20Consult%20-RC%207617592!5e0!3m2!1sen!2sng!4v1769680867814!5m2!1sen!2sng',
+      href: 'https://www.google.com/maps/search/?api=1&query=Gratia+Corporate+Consult+RC+7617592+Area+1+1+Ondo+Street+Garki+Abuja+900103',
       color: 'from-primary/20 to-primary/10'
     }
   ];
@@ -120,32 +122,36 @@ const Contact = () => {
     return errors;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const errors = validateForm();
-    
-    if (Object.keys(errors).length === 0) {
-      // Handle form submission - integrate with your backend or email service
-      console.log('Form submitted:', formData);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const errors = validateForm();
+
+  if (Object.keys(errors).length > 0) {
+    setFormErrors(errors);
+    return;
+  }
+
+  setIsSubmitting(true);
+  try {
+    const res = await fetch("https://formspree.io/f/xojzljvl", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
       setFormSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
-        practiceArea: '',
-        urgency: 'standard'
-      });
-      
-      // Auto-hide success message after 5 seconds
-      setTimeout(() => {
-        setFormSubmitted(false);
-      }, 5000);
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '', practiceArea: '', urgency: 'standard' });
+      setTimeout(() => setFormSubmitted(false), 5000);
     } else {
-      setFormErrors(errors);
+      alert("Something went wrong. Please try again or call us directly.");
     }
-  };
+  } catch {
+    alert("Network error. Please check your connection.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <>
@@ -163,7 +169,7 @@ const Contact = () => {
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6">
-              Contact <span className="text-primary">Gratial Legalities</span>
+              Contact <span className="text-primary">Gratia Corporate Consult</span>
             </h1>
             
             <p className="text-1xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -196,22 +202,43 @@ const Contact = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         {/* Success Message */}
-        {formSubmitted && (
-          <div className="mb-8 bg-gradient-to-r from-success/20 to-success/10 border border-success/30 rounded-2xl p-8 text-center animate-fade-in">
-            <div className="inline-flex items-center gap-3 mb-4">
-              <div className="w-16 h-16 bg-success/20 rounded-full flex items-center justify-center">
-                <CheckCircle className="w-8 h-8 text-success" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Message Sent Successfully!</h3>
-            <p className="text-gray-300 mb-4">
-              Thank you for contacting Sterling Legal. Our team will reach out to you shortly.
-            </p>
-            <p className="text-sm text-gray-400">
-              For urgent matters, please call us directly at <a href="tel:+15551234567" className="text-primary hover:underline">(555) 123-4567</a>
-            </p>
-          </div>
-        )}
+      {formSubmitted && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm animate-fade-in">
+    <div className="relative bg-[#030930] border border-success/30 rounded-2xl p-12 max-w-lg w-full mx-4 text-center shadow-2xl">
+      
+      {/* X button */}
+      <button
+        onClick={() => setFormSubmitted(false)}
+        className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+      >
+        <X className="w-5 h-5" />
+      </button>
+
+      {/* Icon */}
+      <div className="inline-flex items-center justify-center w-20 h-20 bg-success/20 rounded-full mb-6">
+        <CheckCircle className="w-10 h-10 text-success" />
+      </div>
+
+      <h3 className="text-3xl font-bold text-white mb-3">Message Sent!</h3>
+      <p className="text-gray-300 mb-2">
+        Thank you for contacting Gratia Corporate Consult. Our team will reach out to you shortly.
+      </p>
+      <p className="text-sm text-gray-400 mb-8">
+        For urgent matters, call us directly at{" "}
+        <a href="tel:+2348138939107" className="text-primary hover:underline">
+          +234 813 893 9107
+        </a>
+      </p>
+
+      <button
+        onClick={() => setFormSubmitted(false)}
+        className="px-10 py-3 bg-primary hover:bg-primary-600 text-white font-semibold rounded-lg transition-colors"
+      >
+        Done
+      </button>
+    </div>
+  </div>
+)}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {/* Contact Information Sidebar */}
@@ -354,7 +381,7 @@ const Contact = () => {
                       className={`w-full px-4 py-3 bg-white/5 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 ${
                         formErrors.email ? 'border-error/50' : 'border-white/10 focus:border-primary'
                       }`}
-                      placeholder="your.email@example.com"
+                      placeholder="your.email@gmail.com"
                     />
                     {formErrors.email && (
                       <p className="mt-2 text-sm text-error flex items-center gap-1">
@@ -498,14 +525,27 @@ const Contact = () => {
                   <div className="text-sm text-gray-400 order-2">
                     By submitting, you agree to our Privacy Policy
                   </div>
-                  <button
-                    type="submit"
-                    className="group px-8 py-4 bg-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2"
-                  >
-                    <Send className="w-5 h-5" />
-                    Send Message
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                 <button
+  type="submit"
+  disabled={isSubmitting}
+  className="group px-8 py-4 bg-primary text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-brand-lg hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
+>
+  {isSubmitting ? (
+    <>
+      <svg className="animate-spin w-5 h-5" viewBox="0 0 24 24" fill="none">
+        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+      </svg>
+      Sending...
+    </>
+  ) : (
+    <>
+      <Send className="w-5 h-5" />
+      Send Message
+      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+    </>
+  )}
+</button>
                 </div>
               </form>
             </div>

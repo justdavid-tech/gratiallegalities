@@ -22,7 +22,6 @@ const CATEGORY_LABELS = {
   'legal-advisory':               'Legal Advisory',
   'legalDueDiligence':            'Legal Due Diligence',
   'online-business':              'Online Business Law',
-  'property-dispute':             'Property Dispute Resolution',
 };
 
 function formatDate(iso) {

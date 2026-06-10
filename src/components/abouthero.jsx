@@ -76,7 +76,7 @@ const AboutHero = () => {
             </h1>
 
             <p className="text-black text-lg leading-relaxed mb-8 max-w-lg">
-              Based in Abuja, Nigeria, Gratial Legalities delivers strategic, client-first legal
+              Based in Abuja, Nigeria, Gratia Corporate Consult delivers strategic, client-first legal
               solutions across corporate, commercial, and property law with clarity and care at
               every step.
             </p>
@@ -152,8 +152,8 @@ const AboutHero = () => {
                   GI
                 </div>
                 <div>
-                  <p className="text-white text-sm font-semibold">Barrister Grace Idoko</p>
-                  <p className="text-blue-200 text-xs">CEO & Lead Counsel</p>
+                  <p className="text-white text-sm font-semibold">Grace Enenu Sani-Odeh Esq.</p>
+                  <p className="text-blue-200 text-xs">Founder & Senior Partner</p>
                 </div>
               </div>
             </div>
