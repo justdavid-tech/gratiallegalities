@@ -12,9 +12,9 @@ import { PortableText } from '@portabletext/react';
 import { getPostBySlug, urlFor } from '../lib/sanity';
 import { Calendar, Clock, ArrowLeft, ArrowRight, Share2, Bookmark } from 'lucide-react';
 
-const SITE_URL = 'https://gratiallegalities.vercel.app';
+const SITE_URL = 'https://gratiacorporateconsult.com';
 const SITE_NAME = 'Gratia Corporate Consult';
-const FALLBACK_IMAGE = `${SITE_URL}/images/og-image.png`;
+const FALLBACK_IMAGE = `${SITE_URL}/assets/logo-dark.jpeg`;
 
 // ── Dynamic SEO / JSON-LD injector ───────────────────────────────────────────
 function useSeoHead(post) {

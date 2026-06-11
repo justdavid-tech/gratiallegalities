@@ -81,8 +81,19 @@ export default function GratiaLegalities() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
+
+    
     <div className="min-h-screen font-sans"
     >
+      <title>Gratia Legalities — Legal Representation in Abuja and across Nigeria</title>
+      <meta name="description" content="Gratia Legalities provides expert legal representation, dispute resolution, and advocacy services in Abuja, Nigeria. Civil litigation, commercial disputes, real estate, and more." />
+      <meta property="og:title" content="Gratia Legalities — Legal Representation in Abuja and across Nigeria" />
+      <meta property="og:description" content="Strategic legal representation for businesses, investors, and individuals in Abuja, Nigeria. Protecting your rights when it matters most." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://gratiacorporateconsult.com/legalities" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content="Gratia Legalities — Legal Representation in Abuja and across Nigeria" />
+      <meta name="twitter:description" content="Strategic legal representation for businesses, investors, and individuals in Abuja, Nigeria." />
       {/* ── HERO ── */}
       <section className="relative overflow-hidden" 
         style={{
