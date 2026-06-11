@@ -110,11 +110,7 @@ const About = () => {
                   style={{ background: `${NAVY}08` }}>
                   {/* Replace the block below with an <img> when you have the photo */}
                   <div className="text-center">
-                    <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3"
-                      style={{ background: `${NAVY}15` }}>
-                      <Users className="w-10 h-10" style={{ color: NAVY }} />
-                    </div>
-                    <p className="text-sm text-gray-400">Add CEO photo here</p>
+                    <img src="/assets/ceo.jpeg" className='w-full h-full object-cover' alt="" />
                   </div>
                   {/* Gold accent bar on the right edge */}
                   <div className="absolute right-0 top-0 bottom-0 w-1" style={{ background: GOLD }} />
@@ -133,8 +129,8 @@ const About = () => {
 
                   <div className="space-y-4 text-gray-600 text-sm leading-relaxed mb-6">
                     <p>
-                      Hi, I'm Grace Sani — a corporate and business lawyer and Principal Consultant at
-                      Gratia Legalities and Gratia Corporate Consult. I work with entrepreneurs, companies,
+                      Hi, I'm a corporate and business lawyer and Principal Consultant at
+                      Gratia Corporate Consult and Gratia Legalities. I work with entrepreneurs, companies,
                       and property investors to help them avoid legal pitfalls, structure their dealings
                       properly, and operate with confidence.
                     </p>

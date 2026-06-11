@@ -30,7 +30,7 @@ const AboutHero = () => {
       <div
         className="absolute inset-0 z-0"
         style={{
-          background: 'linear-gradient(to right, rgba(255,255,255,0.97) 45%, rgba(255,255,255,0.75) 70%, rgba(255,255,255,0.4) 100%)',
+          background: 'linear-gradient(to right, rgba(255,255,255,0.77) 35%, rgba(255,255,255,0.75) 70%, rgba(255,255,255,0.4) 100%)',
           top: '6px',
         }}
       />
@@ -115,7 +115,7 @@ const AboutHero = () => {
               </Link>
               <a
                 href="tel:+2348138939107"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm border border-gray-200 text-gray-700 hover:border-gray-300 transition-all duration-300 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm border-4 border-[#051c61] text-gray-700 hover:border-gray-300 transition-all duration-300 whitespace-nowrap"
               >
                 <Phone className="w-4 h-4" />
                 (+234) 813 893 9107
