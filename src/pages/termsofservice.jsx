@@ -332,7 +332,7 @@ const TermsOfService = () => {
                       Client Privilege
                     </h3>
                     <p className="text-neutral-700">
-                      Communications between you and our attorneys are protected by attorney-client privilege to the fullest extent permitted by law.
+                      Communications between you and our lawyers are protected by lawyer-client privilege to the fullest extent permitted by law.
                     </p>
                   </div>
                   

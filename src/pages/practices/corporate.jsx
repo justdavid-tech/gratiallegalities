@@ -132,7 +132,7 @@ const CorporateLaw = () => {
       <Navbar />
       
       <PracticeHero
-        practiceName="Corporate Law"
+        practiceName="Business & Corporate Structuring"
         tagline="Strategic Legal Solutions for Business Success"
         customContent={customHeroContent}
         contactPerson="Gratia Legalities"

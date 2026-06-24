@@ -201,7 +201,7 @@ const Employment = () => {
       <Navbar />
       
       <PracticeHero
-        practiceName="Employment & Labour Law"
+        practiceName="Employment & Workplace Compliance"
         tagline="Building Compliant and Productive Workplaces"
         customContent={customHeroContent}
         contactPerson="Employment Practice Partners"

@@ -84,7 +84,7 @@ function ArticleCard({ post, featured = false }) {
                   {post.author?.name?.[0] || 'A'}
                 </div>
               )}
-              <span className="text-xs font-semibold text-secondary uppercase tracking-tight">{post.author?.name || 'Firm Attorney'}</span>
+              <span className="text-xs font-semibold text-secondary uppercase tracking-tight">{post.author?.name || 'Firm Business Lawyer'}</span>
             </div>
             <ArrowRight className="w-5 h-5 text-primary group-hover:translate-x-2 transition-transform" />
           </div>
@@ -230,7 +230,7 @@ export default function InsightsPreview() {
         ) : posts.length === 0 ? (
           <div className="text-center py-24 bg-white border border-dashed border-neutral-200">
             <h3 className="font-heading text-2xl text-secondary uppercase mb-2">New Insights Brewing</h3>
-            <p className="text-neutral-400 text-sm">Our attorneys are currently drafting new updates for you.</p>
+            <p className="text-neutral-400 text-sm">Our Business lawyers are currently drafting new updates for you.</p>
           </div>
         ) : (
           <div className="space-y-8">

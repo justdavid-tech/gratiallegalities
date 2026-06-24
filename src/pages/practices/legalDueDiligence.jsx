@@ -216,7 +216,7 @@ const LegalDueDiligence = () => {
       <Navbar />
       
       <PracticeHero
-        practiceName="Legal Due Diligence"
+        practiceName="Legal Due Diligence & Risk Assessment"
         tagline="Uncovering Risks, Validating Opportunities"
         customContent={customHeroContent}
         contactPerson="Due Diligence Specialists"

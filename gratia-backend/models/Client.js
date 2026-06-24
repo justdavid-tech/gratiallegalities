@@ -8,6 +8,11 @@ const clientSchema = new mongoose.Schema(
       required: [true, "Client name is required"],
       trim: true,
     },
+    phone: {
+      type: String,
+      trim: true,
+      default: "",
+    },
     referenceNumber: {
       type: String,
       required: [true, "Reference number is required"],

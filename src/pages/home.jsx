@@ -3,6 +3,7 @@ import Navbar from "../components/navbar";
 import Hero from "../components/hero";
 import TrustSignals from "../components/trustsignals";
 import PracticeAreas from "../components/practiceareas";
+import SignatureProtection from "../components/Signatureprotection";
 import WhyChooseUs from "../components/whychooseus";
 import Testimonials from "../components/testimonies";
 import CallToAction from "../components/calltoaction";
@@ -25,6 +26,7 @@ function Home() {
         </div>
         <TrustSignals />
         <PracticeAreas />
+        <SignatureProtection />
         <WhyChooseUs />
         <Testimonials />
         <InsightsPreview />

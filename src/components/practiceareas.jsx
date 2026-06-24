@@ -7,8 +7,6 @@ import {
   Globe, 
   FileText,
   Building,
-  FileEdit,
-  MessageSquare,
   Search,
   ArrowRight,
   Phone
@@ -21,8 +19,8 @@ const PracticeAreas = () => {
       id: 'corporate-law',
       slug: 'corporate-law',
       icon: <Briefcase className="w-5 h-5" />,
-      title: 'Corporate Law',
-      description: 'Business name & company registration (CAC), company structuring & shareholding advisory, partnership and shareholder agreements.',
+      title: 'Business & Corporate Structuring',
+      description: 'Company registration, post-incorporation compliance, governance, restructuring, shareholding changes, and business legal frameworks.',
       features: ['Business Formation', 'M&A', 'Contracts', 'Compliance']
     },
     {
@@ -30,71 +28,55 @@ const PracticeAreas = () => {
       slug: 'contracts-legal-documentation',
       icon: <FileText className="w-5 h-5" />,
       title: 'Contracts & Legal Documentation',
-      description: 'Client service agreements, vendor & supplier contracts, non-disclosure agreements (NDAs), partnership & collaboration agreements.',
+      description: 'Drafting, reviewing, and negotiating contracts that protect your business, investments, and commercial relationships.',
       features: ['Agreements', 'Contracts', 'Documentation', 'Reviews']
-    },
-    {
-      id: 'commercial',
-      slug: 'commercial',
-      icon: <Building className="w-5 h-5" />,
-      title: 'Commercial Law',
-      description: 'Legal services for commercial transactions, business operations, and commercial disputes.',
-      features: ['Transactions', 'Operations', 'Disputes', 'Regulations']
     },
     {
       id: 'real-estate',
       slug: 'real-estate',
       icon: <Building className="w-5 h-5" />,
-      title: 'Real Estate Law',
-      description: 'Property transactions, zoning issues, landlord-tenant disputes, and real estate development.',
+      title: 'Real Estate & Property Transactions',
+      description: 'Property due diligence, title verification, acquisitions, disposals, joint ventures, and transaction support.',
       features: ['Transactions', 'Zoning', 'Disputes', 'Development']
     },
     {
-      id: 'commercial-advisory',
-      slug: 'commercial-advisory',
+      id: 'business-legal-advisory',
+      slug: 'business-legal-advisory',
       icon: <Scale className="w-5 h-5" />,
-      title: 'Commercial Advisory',
+      title: 'Business Legal Advisory',
       description: 'Strategic legal advice for business decisions, risk management, and commercial strategy.',
       features: ['Strategic Advice', 'Risk Management', 'Business Decisions', 'Compliance']
-    },
-    {
-      id: 'contract-drafting',
-      slug: 'contract-drafting',
-      icon: <FileEdit className="w-5 h-5" />,
-      title: 'Contract Drafting',
-      description: 'Professional drafting, review, and negotiation of various types of contracts and agreements.',
-      features: ['Drafting', 'Review', 'Negotiation', 'Enforcement']
     },
     {
       id: 'employment',
       slug: 'employment',
       icon: <Users className="w-5 h-5" />,
-      title: 'Employment Law',
-      description: 'Workplace discrimination, wrongful termination, wage disputes, and employment contracts.',
+      title: 'Employment & Workplace Compliance',
+      description: 'Employment contracts, staff policies, workplace compliance, disciplinary procedures, and HR legal support.',
       features: ['Discrimination', 'Termination', 'Wages', 'Contracts']
     },
-    {
-      id: 'legal-advisory',
-      slug: 'legal-advisory',
-      icon: <MessageSquare className="w-5 h-5" />,
-      title: 'Legal Advisory',
-      description: 'Comprehensive legal advice and counsel for various personal and business matters.',
-      features: ['Legal Counsel', 'Advice', 'Guidance', 'Consultation']
-    },
+    // {
+    //   id: 'legal-advisory',
+    //   slug: 'legal-advisory',
+    //   icon: <MessageSquare className="w-5 h-5" />,
+    //   title: 'Legal Advisory',
+    //   description: 'Comprehensive legal advice and counsel for various personal and business matters.',
+    //   features: ['Legal Counsel', 'Advice', 'Guidance', 'Consultation']
+    // },
     {
       id: 'legal-due-diligence',
       slug: 'legalDueDiligence',
       icon: <Search className="w-5 h-5" />,
-      title: 'Legal Due Diligence',
-      description: 'Thorough investigation and assessment of legal risks in transactions and business operations.',
+      title: 'Legal Due Diligence & Risk Assessment',
+      description: 'Comprehensive investigations and risk assessments for properties, businesses, investments, and major transactions.',
       features: ['Risk Assessment', 'Investigations', 'Compliance', 'Reporting']
     },
     {
       id: 'online-business',
       slug: 'online-business',
       icon: <Globe className="w-5 h-5" />,
-      title: 'Online Business Law',
-      description: 'Legal services for e-commerce, digital businesses, online contracts, and internet law.',
+      title: 'Online Business & Digital Compliance',
+      description: 'Privacy compliance, website terms, digital business documentation, intellectual property protection, and e-commerce legal support.',
       features: ['E-commerce', 'Digital Contracts', 'Online Compliance', 'Internet Law']
     }
   ];

@@ -234,7 +234,7 @@ export default function ArticlePage() {
                     </div>
                   )}
                   <div>
-                    <h4 className="text-[11px] font-bold text-secondary uppercase tracking-wider">{post.author?.name || 'Firm Attorney'}</h4>
+                    <h4 className="text-[11px] font-bold text-secondary uppercase tracking-wider">{post.author?.name || 'Gratia Business Lawyer'}</h4>
                     <p className="text-[10px] text-neutral-400 font-medium uppercase tracking-widest">{post.author?.role || 'Legal Counsel'}</p>
                   </div>
                 </div>

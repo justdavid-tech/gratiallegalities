@@ -3,178 +3,149 @@ import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
 import PracticeHero from '../../components/practicehero';
 import { 
-  Scale, 
   Target, 
-  Shield, 
+  TrendingUp, 
+  BarChart3, 
   Users, 
   Brain,
   Lightbulb,
   Zap,
+  Shield,
   Globe,
-  Clock,
+  FileText,
   CheckCircle,
   Award,
   ArrowRight,
   ChevronRight,
   PieChart,
+  DollarSign,
+  Building,
   Network,
   Search,
   Lock,
-  TrendingUp,
+  ThumbsUp,
   ClipboardCheck,
-  FileText,
-  BarChart3,
-  DollarSign
+  Scale,
+  Clock
 } from 'lucide-react';
 
-const LegalAdvisory = () => {
+const BusinessLegalAdvisory = () => {
   const advisoryServices = [
     {
-      category: 'Strategic Legal Counsel',
+      category: 'Strategic Legal & Business Counsel',
       items: [
         'Business strategy legal alignment',
-        'Regulatory compliance roadmap development',
-        'Risk management framework design',
+        'Market entry and expansion strategy development',
+        'Business model optimization and transformation',
         'Corporate governance advisory',
-        'Legal due diligence for strategic decisions'
+        'Growth strategy formulation and implementation'
       ],
       icon: <Target className="w-6 h-6" />
     },
     {
-      category: 'Operational Legal Support',
+      category: 'Due Diligence & Risk Management',
       items: [
-        'Day-to-day operational legal guidance',
-        'Contract review and management advisory',
-        'Regulatory compliance monitoring',
-        'Internal policy development',
-        'Legal process optimization'
-      ],
-      icon: <Scale className="w-6 h-6" />
-    },
-    {
-      category: 'Risk Assessment & Mitigation',
-      items: [
+        'Pre-transaction commercial viability assessment',
         'Comprehensive legal risk assessments',
-        'Compliance gap analysis',
+        'Market opportunity and risk analysis',
         'Dispute prevention strategies',
-        'Liability minimization planning',
-        'Crisis management legal preparation'
+        'Liability minimization planning'
       ],
       icon: <Shield className="w-6 h-6" />
     },
     {
-      category: 'Business Transformation Advisory',
+      category: 'Contract Strategy & Optimization',
       items: [
-        'Digital transformation legal support',
-        'Market expansion legal strategy',
-        'Organizational restructuring guidance',
-        'Merger and acquisition preparation',
-        'Innovation and R&D legal framework'
+        'Commercial agreement strategy development',
+        'Contract portfolio analysis and optimization',
+        'Risk allocation and pricing strategy',
+        'Performance monitoring framework design',
+        'Renewal and renegotiation strategy'
       ],
-      icon: <Lightbulb className="w-6 h-6" />
+      icon: <FileText className="w-6 h-6" />
+    },
+    {
+      category: 'Regulatory Strategy & Compliance',
+      items: [
+        'Regulatory impact assessment and strategy',
+        'Compliance program development and roadmap',
+        'Government relations and advocacy strategy',
+        'Internal control systems and audits',
+        'Regulatory risk management framework'
+      ],
+      icon: <ClipboardCheck className="w-6 h-6" />
     }
   ];
 
-  const advisoryAreas = [
+  const industrySolutions = [
     {
-      area: 'Regulatory Advisory',
-      services: [
-        'Regulatory compliance assessments',
-        'Licensing and permit guidance',
-        'Government relations strategy',
-        'Policy interpretation and application',
-        'Regulatory reporting requirements'
+      sector: 'Energy & Infrastructure',
+      solutions: [
+        'Project commercial structuring',
+        'PPA and offtake agreement strategy',
+        'Regulatory compliance roadmap',
+        'Stakeholder management strategy'
       ],
-      icon: <FileText className="w-5 h-5" />
+      icon: <Building className="w-5 h-5" />
     },
     {
-      area: 'Compliance Management',
-      services: [
-        'Compliance program development',
-        'Internal control systems',
-        'Audit and monitoring frameworks',
-        'Training and awareness programs',
-        'Compliance reporting structures'
-      ],
-      icon: <ClipboardCheck className="w-5 h-5" />
-    },
-    {
-      area: 'Legal Operations',
-      services: [
-        'Legal department optimization',
-        'Outside counsel management',
-        'Legal technology implementation',
-        'Budget and resource planning',
-        'Performance metrics development'
-      ],
-      icon: <BarChart3 className="w-5 h-5" />
-    },
-    {
-      area: 'Stakeholder Advisory',
-      services: [
-        'Board and committee support',
-        'Shareholder relations guidance',
-        'Management team legal counsel',
-        'Employee legal awareness programs',
-        'External stakeholder engagement'
+      sector: 'Consumer Goods & Retail',
+      solutions: [
+        'Distribution channel optimization',
+        'Pricing and promotion strategy',
+        'Supplier relationship strategy',
+        'Customer experience enhancement'
       ],
       icon: <Users className="w-5 h-5" />
+    },
+    {
+      sector: 'Financial Services',
+      solutions: [
+        'Product commercialization strategy',
+        'Partnership and alliance advisory',
+        'Regulatory compliance strategy',
+        'Market expansion planning'
+      ],
+      icon: <DollarSign className="w-5 h-5" />
+    },
+    {
+      sector: 'Technology & Startups',
+      solutions: [
+        'Digital transformation legal support',
+        'Innovation and R&D legal framework',
+        'Funding and investment guidance',
+        'Intellectual property strategy'
+      ],
+      icon: <Lightbulb className="w-5 h-5" />
     }
   ];
 
   const advisoryStats = [
     { value: '300+', label: 'Advisory Clients', description: 'Businesses and organizations' },
+    { value: '30+', label: 'Strategic Projects', description: 'Complex commercial engagements' },
     { value: '95%', label: 'Client Retention', description: 'Long-term advisory relationships' },
-    { value: '24/7', label: 'Legal Support', description: 'Available for urgent matters' },
-    { value: '50+', label: 'Industries Served', description: 'Cross-sector expertise' }
-  ];
-
-  const advisoryMethodology = [
-    {
-      step: 'Assessment & Analysis',
-      description: 'Comprehensive evaluation of legal needs and risks',
-      activities: ['Situation analysis', 'Risk identification', 'Stakeholder mapping'],
-      icon: <Search className="w-6 h-6" />
-    },
-    {
-      step: 'Strategy Development',
-      description: 'Creating tailored legal strategies and solutions',
-      activities: ['Option development', 'Risk assessment', 'Implementation planning'],
-      icon: <Brain className="w-6 h-6" />
-    },
-    {
-      step: 'Implementation Support',
-      description: 'Practical guidance for strategy execution',
-      activities: ['Process implementation', 'Training delivery', 'Monitoring setup'],
-      icon: <Zap className="w-6 h-6" />
-    },
-    {
-      step: 'Continuous Improvement',
-      description: 'Ongoing evaluation and strategy refinement',
-      activities: ['Performance review', 'Strategy adjustment', 'Best practices updating'],
-      icon: <TrendingUp className="w-6 h-6" />
-    }
+    { value: '24/7', label: 'Support', description: 'Available for urgent matters' }
   ];
 
   const valueDimensions = [
     {
       dimension: 'Proactive Guidance',
-      description: 'Anticipating legal challenges before they arise',
+      description: 'Anticipating legal and commercial challenges before they arise',
       icon: <Target className="w-5 h-5" />
     },
     {
       dimension: 'Strategic Alignment',
-      description: 'Aligning legal strategy with business objectives',
+      description: 'Aligning legal strategy with business objectives and growth',
       icon: <PieChart className="w-5 h-5" />
     },
     {
       dimension: 'Risk Optimization',
-      description: 'Balancing risk management with business growth',
+      description: 'Balancing robust risk management with aggressive business growth',
       icon: <Shield className="w-5 h-5" />
     },
     {
       dimension: 'Cost Efficiency',
-      description: 'Optimizing legal spending and resource allocation',
+      description: 'Optimizing legal spending and commercial resource allocation',
       icon: <DollarSign className="w-5 h-5" />
     }
   ];
@@ -182,24 +153,24 @@ const LegalAdvisory = () => {
   const customHeroContent = (
     <div className="space-y-6">
       <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-        We provide comprehensive general legal advisory services that serve as your strategic 
-        legal compass, guiding your business through complex regulatory landscapes while 
-        aligning legal strategy with your commercial objectives.
+        We provide strategic business and legal advisory services that serve as your 
+        compass, guiding your enterprise through complex regulatory landscapes while 
+        optimizing commercial operations.
       </p>
       
       <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
-        Our general legal advisory practice functions as your trusted legal partner, 
-        providing ongoing counsel that helps you make informed decisions, manage risks effectively, 
-        and capitalize on opportunities with confidence.
+        By blending deep industry insight with practical legal wisdom, we function as your 
+        trusted partner, helping you navigate challenges, manage risks effectively, 
+        and capitalize on emerging market opportunities.
       </p>
 
       <div className="pt-4">
         <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
           <Brain className="w-5 h-5 text-primary" />
-          Strategic Legal Partnership
+          Strategic Focus Areas
         </h3>
         <div className="flex flex-wrap gap-2">
-          {['Proactive Counsel', 'Risk Management', 'Strategic Alignment', 'Compliance Excellence', 'Business Integration'].map((item, index) => (
+          {['Market Strategy', 'Proactive Counsel', 'Risk Mitigation', 'Compliance Excellence', 'Digital Transformation'].map((item, index) => (
             <span 
               key={index}
               className="px-3 py-1 bg-white/5 text-sm text-gray-300 rounded-full border border-white/10 hover:border-primary/20 hover:text-primary transition-all"
@@ -217,21 +188,22 @@ const LegalAdvisory = () => {
       <Navbar />
       
       <PracticeHero
-        practiceName="General Legal Advisory"
-        tagline="Your Strategic Legal Compass for Business Success"
+        practiceName="Business Legal Advisory"
+        tagline="Strategic Legal and Commercial Insights for Business Excellence"
         customContent={customHeroContent}
-        contactPerson="General Advisory Partners"
+        contactPerson="Strategic Advisory Partners"
         contactEmail="info@gratiacorporateconsult.com"
         keyFeatures={[
-          "Strategic legal counsel and business alignment",
-          "Comprehensive risk assessment and management",
+          "Strategic legal counsel and business planning",
+          "Commercial due diligence and risk assessment",
+          "Contract strategy and commercial optimization",
           "Regulatory compliance and governance advisory",
-          "Operational legal support and optimization",
-          "Business transformation legal guidance",
+          "Digital transformation and innovation legal guidance",
           "Continuous legal monitoring and improvement"
         ]}
         stats={[
-          { value: "51+", label: "Clients" },
+          { value: "300+", label: "Clients" },
+          { value: "30+", label: "Projects" },
           { value: "95%", label: "Retention" },
           { value: "24/7", label: "Support" }
         ]}
@@ -248,7 +220,7 @@ const LegalAdvisory = () => {
                 Comprehensive <span className="text-primary">Advisory Services</span>
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Strategic legal guidance across all aspects of your business operations
+                Integrated legal and commercial solutions that drive business growth and competitive advantage
               </p>
             </div>
 
@@ -284,90 +256,6 @@ const LegalAdvisory = () => {
             </div>
           </div>
 
-          {/* Advisory Areas */}
-          <div className="mb-16">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                Specialized <span className="text-primary">Advisory Areas</span>
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Focused legal advisory services for specific business needs
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {advisoryAreas.map((area, index) => (
-                <div 
-                  key={index}
-                  className="group bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all duration-300 hover:scale-105"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <div className="text-primary">
-                        {area.icon}
-                      </div>
-                    </div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
-                      {area.area}
-                    </h3>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    {area.services.map((service, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-300 text-sm">{service}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Stats & Advisory Methodology */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <div>
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/20 h-full">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                    <Award className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Advisory Methodology</h3>
-                    <p className="text-gray-400">Our structured approach to legal counsel</p>
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  {advisoryMethodology.map((step, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-start gap-4 p-4 bg-white/5 rounded-xl border border-white/10 hover:border-primary/20 transition-colors"
-                    >
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <div className="text-primary">
-                          {step.icon}
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-bold text-white mb-2">{step.step}</h4>
-                        <p className="text-gray-300 text-sm mb-3">{step.description}</p>
-                        <div className="flex flex-wrap gap-2">
-                          {step.activities.map((activity, idx) => (
-                            <span key={idx} className="px-2 py-1 bg-white/5 text-xs text-gray-400 rounded">
-                              {activity}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Value Dimensions */}
           <div className="mb-16">
             <div className="text-center mb-8">
@@ -375,7 +263,7 @@ const LegalAdvisory = () => {
                 Value <span className="text-primary">Dimensions</span>
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Comprehensive benefits of our general legal advisory services
+                Comprehensive benefits of our integrated business legal advisory
               </p>
             </div>
 
@@ -399,6 +287,47 @@ const LegalAdvisory = () => {
             </div>
           </div>
 
+          {/* Industry-Specific Solutions */}
+          <div className="mb-16">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Industry <span className="text-primary">Solutions</span>
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Tailored commercial and legal advisory for key industry sectors
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {industrySolutions.map((solution, index) => (
+                <div 
+                  key={index}
+                  className="group bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all duration-300 hover:scale-105"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <div className="text-primary">
+                        {solution.icon}
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
+                      {solution.sector}
+                    </h3>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    {solution.solutions.map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-300 text-sm">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Advisory Delivery Models */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-white mb-8 text-center">
@@ -416,7 +345,7 @@ const LegalAdvisory = () => {
                 },
                 {
                   model: 'Project Advisory',
-                  description: 'Focused legal counsel for specific initiatives or projects',
+                  description: 'Focused legal and commercial counsel for specific initiatives',
                   features: ['Defined scope and timeline', 'Specialized expertise', 'Milestone-based delivery', 'Comprehensive reporting'],
                   icon: <Target className="w-8 h-8" />,
                   color: 'from-primary/20 to-primary-600/10'
@@ -450,68 +379,6 @@ const LegalAdvisory = () => {
               ))}
             </div>
           </div>
-          {/* Industry Applications */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">
-              Industry <span className="text-primary">Applications</span>
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
-                <h4 className="text-lg font-bold text-white mb-3">Startups & Growth Companies</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
-                    <span>Legal foundation establishment</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
-                    <span>Funding and investment guidance</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
-                    <span>Growth strategy legal support</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
-                <h4 className="text-lg font-bold text-white mb-3">Established Enterprises</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
-                    <span>Operational legal optimization</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
-                    <span>Compliance program enhancement</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
-                    <span>Strategic transformation support</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
-                <h4 className="text-lg font-bold text-white mb-3">Multinational Organizations</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
-                    <span>Cross-border legal coordination</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
-                    <span>Global compliance management</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
-                    <span>International expansion strategy</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
 
           {/* Value Proposition */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
@@ -522,7 +389,7 @@ const LegalAdvisory = () => {
               
               <div className="space-y-6">
                 <p className="text-gray-300 leading-relaxed">
-                  Our general legal advisory practice serves as your strategic legal partner, 
+                  Our business legal advisory practice serves as your strategic partner, 
                   providing comprehensive counsel that integrates legal considerations into 
                   your business decision-making process, ensuring both compliance and competitive advantage.
                 </p>
@@ -609,7 +476,7 @@ const LegalAdvisory = () => {
               <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
                 <div className="text-center lg:text-left">
                   <h3 className="text-3xl font-bold text-white mb-3">
-                    Transform Your Legal Strategy with Expert Advisory Guidance
+                    Transform Your Business Strategy with Expert Advisory
                   </h3>
                   <p className="text-gray-300 text-lg">
                     Make informed decisions, manage risks effectively, and achieve business objectives with confidence
@@ -633,6 +500,7 @@ const LegalAdvisory = () => {
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -641,4 +509,4 @@ const LegalAdvisory = () => {
   );
 };
 
-export default LegalAdvisory;
+export default BusinessLegalAdvisory;

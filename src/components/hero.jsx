@@ -27,16 +27,15 @@ const slides = [
 ];
 
 const PRACTICE_AREAS = [
-  { title: "Corporate Law", desc: " Pre-incorporation(registration of business name, company, NGO, Association) and post incorporation (alterations or changes to registered entities)", path: "/practices/corporate-law" },
+  { title: "Business & Corporate Structuring", desc: "Company registration, post-incorporation compliance, governance, restructuring, shareholding changes, and business legal frameworks.", path: "/practices/corporate-law" },
   { title: "Contract Drafting", desc: "Bespoke, enforceable agreements tailored to your transaction needs.", path: "/practices/contract-drafting" },
-  { title: "Real Estate Law", desc: "Acquisitions, disposals, leases and title verification.", path: "/practices/real-estate" },
+  { title: "Real Estate & Property Transactions", desc: "Property due diligence, title verification, acquisitions, disposals, joint ventures, and transaction support.", path: "/practices/real-estate" },
   { title: "Commercial Law", desc: "Trade, finance and supply-chain legal frameworks.", path: "/practices/commercial" },
-  { title: "Commercial Advisory", desc: "Strategic legal advice for your commercial decisions.", path: "/practices/commercial-advisory" },
-  { title: "Contracts & Legal Documentation", desc: "End-to-end documentation for complex transactions.", path: "/practices/contracts-legal-documentation" },
-  { title: "Employment Law", desc: "Workplace policies, disputes and regulatory compliance.", path: "/practices/employment" },
-  { title: "Legal Advisory", desc: "General counsel services and risk management guidance.", path: "/practices/legal-advisory" },
-  { title: "Legal Due Diligence", desc: "Thorough investigation before deals and investments.", path: "/practices/legal-due-diligence" },
-  { title: "Online Business Law", desc: "E-commerce, data privacy and digital contracts.", path: "/practices/online-business" }
+  { title: "Business Legal Advisory", desc: "Strategic legal and commercial insights for your business operations.", path: "/practices/business-legal-advisory" },
+  { title: "Contracts & Legal Documentation", desc: "Drafting, reviewing, and negotiating contracts that protect your business, investments, and commercial relationships.", path: "/practices/contracts-legal-documentation" },
+  { title: "Employment & Workplace Compliance", desc: "Employment contracts, staff policies, workplace compliance, disciplinary procedures, and HR legal support.", path: "/practices/employment" },
+  { title: "Legal Due Diligence & Risk Assessment", desc: "Comprehensive investigations and risk assessments for properties, businesses, investments, and major transactions.", path: "/practices/legal-due-diligence" },
+  { title: "Online Business & Digital Compliance", desc: "Privacy compliance, website terms, digital business documentation, intellectual property protection, and e-commerce legal support.", path: "/practices/online-business" }
 ];
 
 const INTERVAL = 5000;
@@ -229,9 +228,9 @@ const globalStyles = `
 
   .lf-btn-ghost {
     font-family: 'Jost', sans-serif;
-    font-size: 0.7rem; font-weight: 300; letter-spacing: 0.2em;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em;
     text-transform: uppercase; text-decoration: none;
-    color: rgba(245,240,232,0.58);
+    color: #fff;
     display: flex; align-items: center; gap: 0.7rem; transition: color 0.3s;
   }
   .lf-btn-ghost svg { transition: transform 0.3s; }
@@ -376,8 +375,8 @@ const globalStyles = `
   .lf-modal-card:hover .lf-modal-card-name { color: #d47f11; }
   .lf-modal-card-desc {
     font-family: 'Jost', sans-serif;
-    font-size: 0.7rem; font-weight: 200; letter-spacing: 0.06em;
-    color: rgba(245,240,232,0.38); line-height: 1.7;
+    font-size: 0.9rem; font-weight: 400; letter-spacing: 0.06em;
+    color: #fff; line-height: 1.7;
   }
   .lf-modal-footer {
     margin-top: 2.4rem;

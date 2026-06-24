@@ -10,13 +10,10 @@ import ArticlePage from "./pages/articlepage";
 import InsightsPage from "./pages/insightspage";
 
 // Practice Area Pages
-import Commercial from "./pages/practices/commercial";
-import CommercialAdvisory from "./pages/practices/commercialadvisory";
+import BusinessLegalAdvisory from "./pages/practices/businesslegaladvisory";
 import CommercialDocumentation from "./pages/practices/commercialdocumentation";
-import ContractDrafting from "./pages/practices/contractdrafting";
 import CorporateLaw from "./pages/practices/corporate";
 import Employment from "./pages/practices/employment";
-import LegalAdvisory from "./pages/practices/legaladvisory";
 import LegalDueDiligence from "./pages/practices/legalDueDiligence";
 import OnlineBusiness from "./pages/practices/onlinebusiness";
 import RealEstate from "./pages/practices/realestate";
@@ -57,13 +54,10 @@ function App() {
         <Route path="/insights/:slug" element={<ArticlePage />} />
 
         {/* Practice Area Subpages */}
-        <Route path="/practices/commercial" element={<Commercial />} />
-        <Route path="/practices/commercial-advisory" element={<CommercialAdvisory />} />
+        <Route path="/practices/business-legal-advisory" element={<BusinessLegalAdvisory />} />
         <Route path="/practices/contracts-legal-documentation" element={<CommercialDocumentation />} />
-        <Route path="/practices/contract-drafting" element={<ContractDrafting />} />
         <Route path="/practices/corporate-law" element={<CorporateLaw />} />
         <Route path="/practices/employment" element={<Employment />} />
-        <Route path="/practices/legal-advisory" element={<LegalAdvisory />} />
         <Route path="/practices/legal-due-diligence" element={<LegalDueDiligence />} />
         <Route path="/practices/online-business" element={<OnlineBusiness />} />
         <Route path="/practices/real-estate" element={<RealEstate />} />

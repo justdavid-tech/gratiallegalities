@@ -18,19 +18,16 @@ const GOLD = '#d47f11';
 
 const practiceAreas = {
   column1: [
-    { name: 'Corporate Law', path: '/practices/corporate-law' },
+    { name: 'Business & Corporate Structuring', path: '/practices/corporate-law' },
     { name: 'Contracts & Legal Documentation', path: '/practices/contracts-legal-documentation' },
-    { name: 'Commercial Law', path: '/practices/commercial' },
-    { name: 'Real Estate Law', path: '/practices/real-estate' },
-    { name: 'Commercial Advisory', path: '/practices/commercial-advisory' },
-    { name: 'Contract Drafting', path: '/practices/contract-drafting' },
+    { name: 'Real Estate & Property Transactions', path: '/practices/real-estate' },
+    { name: 'Business Legal Advisory', path: '/practices/business-legal-advisory' },
   ],
 
   column2: [
-    { name: 'Employment Law', path: '/practices/employment' },
-    { name: 'Legal Advisory', path: '/practices/legal-advisory' },
-    { name: 'Legal Due Diligence', path: '/practices/legal-due-diligence' },
-    { name: 'Online Business Law', path: '/practices/online-business' },
+    { name: 'Employment & Workplace Compliance', path: '/practices/employment' },
+    { name: 'Legal Due Diligence & Risk Assessment', path: '/practices/legal-due-diligence' },
+    { name: 'Online Business & Digital Compliance', path: '/practices/online-business' },
     { name: 'Property Dispute Resolution', path: '/practices/property-dispute' },
   ],
 };
@@ -320,7 +317,7 @@ const Navbar = () => {
                                   fontFamily: "'Manrope', sans-serif",
                                 }}
                               >
-                                11 Specialized Legal Services
+                                10 Specialized Legal Services
                               </p>
 
                               <Link

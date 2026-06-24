@@ -20,7 +20,7 @@ const TrustSignals = () => {
     },
     {
       icon: <Scale className="w-5 h-5" />,
-      value: "11",
+      value: "11+",
       label: "Practice Areas",
       description: "Specialized legal expertise across sectors",
     },

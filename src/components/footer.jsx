@@ -21,12 +21,11 @@ const Footer = () => {
 
   const practiceAreas = [
     { name: 'Commercial Law', href: '/practices/commercial' },
-    { name: 'Commercial Advisory', href: '/practices/commercial-advisory' },
+    { name: 'Business Legal Advisory', href: '/practices/business-legal-advisory' },
     { name: 'Commercial Documentation', href: '/practices/commercial-documentation' },
     { name: 'Contract Drafting', href: '/practices/contract-drafting' },
     { name: 'Corporate Law', href: '/practices/corporate-law' },
     { name: 'Employment & Labour', href: '/practices/employment' },
-    { name: 'General Legal Advisory', href: '/practices/legal-advisory' },
     { name: 'Legal Due Diligence', href: '/practices/legal-due-diligence' },
     { name: 'Online Business & E-Commerce', href: '/practices/online-business' },
     { name: 'Real Estate Law', href: '/practices/real-estate' }
@@ -158,8 +157,8 @@ const Footer = () => {
                 <p className="text-[11px] text-white leading-relaxed uppercase tracking-wider">
                   <strong className="text-white block mb-1">Legal Disclaimer</strong>
                   The information on this website is for general informational purposes only and does not constitute legal advice. 
-                  No attorney-client relationship is formed by viewing this website or contacting our firm. 
-                  Attorney advertising. Prior results do not guarantee a similar outcome.
+                  No lawyer-client relationship is formed by viewing this website or contacting our firm. 
+                  Prior results do not guarantee a similar outcome.
                 </p>
               </div>
             </div>

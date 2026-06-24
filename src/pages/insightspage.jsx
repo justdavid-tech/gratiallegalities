@@ -72,7 +72,7 @@ function ArticleCard({ post }) {
                 {post.author?.name?.[0] || 'A'}
               </div>
             )}
-            <span className="text-[10px] font-bold text-secondary uppercase tracking-wider">{post.author?.name || 'Firm Attorney'}</span>
+            <span className="text-[10px] font-bold text-secondary uppercase tracking-wider">{post.author?.name || 'Business Lawyer'}</span>
           </div>
           <ArrowRight className="w-5 h-5 text-primary group-hover:translate-x-2 transition-transform" />
         </div>

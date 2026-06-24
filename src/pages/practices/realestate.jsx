@@ -119,10 +119,10 @@ const RealEstate = () => {
       <Navbar />
 
       <PracticeHero
-        practiceName="Real Estate Law"
+        practiceName="Real Estate & Property Transactions"
         tagline="Protecting Property Value Through Strategic Legal Expertise"
         customContent={customHeroContent}
-        contactPerson="Real Estate Law Team"
+        contactPerson="Real Estate & Property Transactions Team"
         contactEmail="info@gratiacorporateconsult.com"
         keyFeatures={[
           "Land acquisition and title verification",

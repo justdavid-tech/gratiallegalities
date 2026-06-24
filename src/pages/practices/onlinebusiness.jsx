@@ -187,7 +187,7 @@ const OnlineBusinessEcommerce = () => {
       <Navbar />
       
       <PracticeHero
-        practiceName="Online Business & E-Commerce Law"
+        practiceName="Online Business & Digital Compliance"
         tagline="Legal Solutions for the Digital Economy"
         customContent={customHeroContent}
         contactPerson="Digital Business Legal Specialists"

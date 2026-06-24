@@ -17,7 +17,7 @@ const CallToAction = () => {
   const benefits = [
     { icon: <Clock className="w-5 h-5" />, text: 'Free Initial Consultation', highlight: true },
     { icon: <Shield className="w-5 h-5" />, text: 'Confidential Assessment', highlight: false },
-    { icon: <Users className="w-5 h-5" />, text: 'Expert Attorney Match', highlight: false },
+    { icon: <Users className="w-5 h-5" />, text: 'Expert Business Lawyer', highlight: false },
     { icon: <Award className="w-5 h-5" />, text: 'No Obligation', highlight: true }
   ];
 
@@ -64,7 +64,7 @@ const CallToAction = () => {
             </h1>
             
             <p className="text-1xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Speak with an experienced attorney today for a <span className="text-primary font-semibold">free case evaluation</span>.
+              Speak with an experienced business lawyer today for a <span className="text-primary font-semibold">free case evaluation</span>.
               Your first consultation is on us.
             </p>
           </div>

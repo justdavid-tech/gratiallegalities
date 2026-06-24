@@ -151,7 +151,7 @@ const CommercialDocumentation = () => {
       <Navbar />
       
       <PracticeHero
-        practiceName="Commercial Documentation"
+        practiceName="Contracts & Legal Documentation"
         tagline="Precision Documentation for Business Certainty"
         customContent={customHeroContent}
         contactPerson="Documentation Practice Partners"

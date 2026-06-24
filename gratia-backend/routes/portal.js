@@ -27,11 +27,11 @@ router.post("/verify", async (req, res) => {
     }
 
     if (client.status === "expired") {
-      return res.status(403).json({ message: "Your access has expired. Please contact your attorney." });
+      return res.status(403).json({ message: "Your access has expired. Please contact your business lawyer." });
     }
 
     if (client.status === "pending" || !client.pdfPath) {
-      return res.status(403).json({ message: "Your document is not ready yet. Please contact your attorney." });
+      return res.status(403).json({ message: "Your document is not ready yet. Please contact your business lawyer." });
     }
 
     const isMatch = await client.verifyPassword(password);

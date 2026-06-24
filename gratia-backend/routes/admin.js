@@ -6,6 +6,7 @@ const fs = require("fs");
 const path = require("path");
 
 const Client = require("../models/Client");
+const Admin = require("../models/Admin");
 const requireAdmin = require("../middleware/requireAdmin");
 const upload = require("../middleware/upload");
 
@@ -18,15 +19,26 @@ router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    if (
-      email !== process.env.ADMIN_EMAIL ||
-      password !== process.env.ADMIN_PASSWORD
-    ) {
-      return res.status(401).json({ message: "Invalid admin credentials." });
+    let admin = await Admin.findOne({ email: email.toLowerCase() });
+
+    if (admin) {
+      const isMatch = await admin.verifyPassword(password);
+      if (!isMatch) {
+        return res.status(401).json({ message: "Invalid admin credentials." });
+      }
+    } else {
+      if (
+        email !== process.env.ADMIN_EMAIL ||
+        password !== process.env.ADMIN_PASSWORD
+      ) {
+        return res.status(401).json({ message: "Invalid admin credentials." });
+      }
+      // Seed admin credentials into database
+      admin = await Admin.create({ email: email.toLowerCase(), password });
     }
 
     const token = jwt.sign(
-      { role: "admin", email },
+      { role: "admin", email: admin.email },
       process.env.JWT_SECRET,
       { expiresIn: process.env.JWT_EXPIRES_IN || "8h" }
     );
@@ -39,6 +51,44 @@ router.post("/login", async (req, res) => {
 
 // All routes below require a valid admin JWT
 router.use(requireAdmin);
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PUT /api/admin/change-password
+// Body: { currentPassword, newPassword }
+// Updates admin password
+// ─────────────────────────────────────────────────────────────────────────────
+router.put("/change-password", async (req, res) => {
+  try {
+    const { currentPassword, newPassword } = req.body;
+
+    if (!newPassword || newPassword.length < 6) {
+      return res.status(400).json({ message: "New password must be at least 6 characters." });
+    }
+
+    let admin = await Admin.findOne({ email: req.admin.email.toLowerCase() });
+    
+    // Fallback seed in case admin was logged in via env but not seeded in DB yet
+    if (!admin && req.admin.email === process.env.ADMIN_EMAIL) {
+      admin = await Admin.create({ email: req.admin.email.toLowerCase(), password: currentPassword });
+    }
+
+    if (!admin) {
+      return res.status(404).json({ message: "Admin account not found." });
+    }
+
+    const isMatch = await admin.verifyPassword(currentPassword);
+    if (!isMatch) {
+      return res.status(400).json({ message: "Incorrect current password." });
+    }
+
+    admin.password = newPassword;
+    await admin.save();
+
+    res.json({ message: "Admin password updated successfully." });
+  } catch (err) {
+    res.status(500).json({ message: "Server error.", error: err.message });
+  }
+});
 
 // ─────────────────────────────────────────────────────────────────────────────
 // GET /api/admin/clients
@@ -60,14 +110,14 @@ router.get("/clients", async (req, res) => {
 // ─────────────────────────────────────────────────────────────────────────────
 router.post("/clients", async (req, res) => {
   try {
-    const { name, referenceNumber, password, status } = req.body;
+    const { name, referenceNumber, password, status, phone } = req.body;
 
     const existing = await Client.findOne({ referenceNumber: referenceNumber.toUpperCase() });
     if (existing) {
       return res.status(400).json({ message: "Reference number already exists." });
     }
 
-    const client = await Client.create({ name, referenceNumber, password, status });
+    const client = await Client.create({ name, referenceNumber, password, status, phone });
     res.status(201).json(client);
   } catch (err) {
     if (err.name === "ValidationError") {
@@ -84,10 +134,10 @@ router.post("/clients", async (req, res) => {
 // ─────────────────────────────────────────────────────────────────────────────
 router.put("/clients/:ref", async (req, res) => {
   try {
-    const { name, status } = req.body;
+    const { name, status, phone } = req.body;
     const client = await Client.findOneAndUpdate(
       { referenceNumber: req.params.ref.toUpperCase() },
-      { name, status },
+      { name, status, phone },
       { new: true, runValidators: true }
     );
     if (!client) return res.status(404).json({ message: "Client not found." });
