@@ -15,7 +15,7 @@ const allowedOrigins = [
   "http://localhost:5173",          // local dev (Vite)
   "http://localhost:5174",          // local dev alternate port
   // ↓ When deploying, replace/add your production URL here:
-  "https://gratiallegalities.vercel.app",
+  "https://gratiacorporateconsult.com",
 ];
 
 if (process.env.FRONTEND_URL) {
