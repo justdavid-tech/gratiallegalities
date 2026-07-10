@@ -171,30 +171,82 @@ router.put("/clients/:ref/password", async (req, res) => {
   }
 });
 
-// ─────────────────────────────────────────────────────────────────────────────
-// POST /api/admin/clients/:ref/upload
-// Form-data: file (PDF)
-// Uploads and links a PDF to a client
-// ─────────────────────────────────────────────────────────────────────────────
-router.post("/clients/:ref/upload", upload.single("file"), async (req, res) => {
+router.post("/clients/:ref/upload", (req, res, next) => {
+  upload.array("files")(req, res, (err) => {
+    if (err) {
+      // Clean up any partially-uploaded files
+      if (req.files) req.files.forEach(f => { try { fs.unlinkSync(f.path); } catch (_) {} });
+      return res.status(400).json({ message: err.message || "File upload error." });
+    }
+    next();
+  });
+}, async (req, res) => {
   try {
     const client = await Client.findOne({ referenceNumber: req.params.ref.toUpperCase() });
     if (!client) {
-      if (req.file) fs.unlinkSync(req.file.path);
+      if (req.files) {
+        req.files.forEach(f => { try { fs.unlinkSync(f.path); } catch (_) {} });
+      }
       return res.status(404).json({ message: "Client not found." });
     }
 
-    // Delete old PDF if it exists
-    if (client.pdfPath && fs.existsSync(client.pdfPath)) {
-      fs.unlinkSync(client.pdfPath);
+    if (!req.files || req.files.length === 0) {
+      return res.status(400).json({ message: "No files uploaded." });
     }
 
-    client.pdfPath = req.file.path;
-    client.pdfOriginalName = req.file.originalname;
+    const newDocs = req.files.map(f => ({
+      path: f.path,
+      originalName: f.originalname,
+      uploadedAt: new Date()
+    }));
+
+    client.documents.push(...newDocs);
+
+    // Maintain backward compatibility for pdfPath with the first document
+    if (client.documents.length > 0) {
+      client.pdfPath = client.documents[0].path;
+      client.pdfOriginalName = client.documents[0].originalName;
+    }
+
     if (client.status === "pending") client.status = "active";
     await client.save();
 
-    res.json({ message: "PDF uploaded successfully.", client });
+    res.json({ message: "Files uploaded successfully.", client });
+  } catch (err) {
+    res.status(500).json({ message: "Server error.", error: err.message });
+  }
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DELETE /api/admin/clients/:ref/documents/:docId
+// Deletes a specific document file and removes it from the client array
+// ─────────────────────────────────────────────────────────────────────────────
+router.delete("/clients/:ref/documents/:docId", async (req, res) => {
+  try {
+    const client = await Client.findOne({ referenceNumber: req.params.ref.toUpperCase() });
+    if (!client) return res.status(404).json({ message: "Client not found." });
+
+    const docIndex = client.documents.findIndex(d => d._id.toString() === req.params.docId);
+    if (docIndex === -1) return res.status(404).json({ message: "Document not found." });
+
+    const doc = client.documents[docIndex];
+    if (doc.path && fs.existsSync(doc.path)) {
+      fs.unlinkSync(doc.path);
+    }
+
+    client.documents.splice(docIndex, 1);
+
+    // Update legacy fields
+    if (client.documents.length > 0) {
+      client.pdfPath = client.documents[0].path;
+      client.pdfOriginalName = client.documents[0].originalName;
+    } else {
+      client.pdfPath = null;
+      client.pdfOriginalName = null;
+    }
+
+    await client.save();
+    res.json({ message: "Document deleted successfully.", client });
   } catch (err) {
     res.status(500).json({ message: "Server error.", error: err.message });
   }
@@ -202,15 +254,25 @@ router.post("/clients/:ref/upload", upload.single("file"), async (req, res) => {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // DELETE /api/admin/clients/:ref
-// Deletes a client and their PDF
+// Deletes a client and all their documents
 // ─────────────────────────────────────────────────────────────────────────────
 router.delete("/clients/:ref", async (req, res) => {
   try {
     const client = await Client.findOneAndDelete({ referenceNumber: req.params.ref.toUpperCase() });
     if (!client) return res.status(404).json({ message: "Client not found." });
 
+    // Delete legacy file
     if (client.pdfPath && fs.existsSync(client.pdfPath)) {
       fs.unlinkSync(client.pdfPath);
+    }
+
+    // Delete all document files
+    if (client.documents && client.documents.length > 0) {
+      client.documents.forEach(doc => {
+        if (doc.path && fs.existsSync(doc.path)) {
+          fs.unlinkSync(doc.path);
+        }
+      });
     }
 
     res.json({ message: "Client deleted successfully." });

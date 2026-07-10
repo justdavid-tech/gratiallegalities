@@ -38,6 +38,13 @@ const clientSchema = new mongoose.Schema(
       type: String,
       default: null,
     },
+    documents: [
+      {
+        path: { type: String, required: true },
+        originalName: { type: String, required: true },
+        uploadedAt: { type: Date, default: Date.now },
+      }
+    ],
     accessLog: [
       {
         action: { type: String }, // "view" | "download" | "login"

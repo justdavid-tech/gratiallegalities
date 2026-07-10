@@ -36,11 +36,14 @@ export default function AdminDashboard() {
   const [newPass, setNewPass] = useState("");
   const [showNewPass, setShowNewPass] = useState(false);
   const [uploadClientRef, setUploadClientRef] = useState("");
-  const [uploadFile, setUploadFile] = useState(null);
+  const [uploadFiles, setUploadFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const [editingMessageId, setEditingMessageId] = useState(null);
+  const [editingContent, setEditingContent] = useState("");
 
   const [currAdminPass, setCurrAdminPass] = useState("");
   const [newAdminPass, setNewAdminPass] = useState("");
@@ -246,17 +249,79 @@ export default function AdminDashboard() {
   };
 
   const handleUpload = async () => {
-    if (!uploadClientRef || !uploadFile) { showToast("Select a client and a PDF first"); return; }
+    if (!uploadClientRef || uploadFiles.length === 0) { showToast("Select a client and at least one PDF first"); return; }
     setUploading(true);
     try {
       const formData = new FormData();
-      formData.append("file", uploadFile);
+      uploadFiles.forEach(file => {
+        formData.append("files", file);
+      });
       const res = await authFetch(`${API_BASE}/api/admin/clients/${uploadClientRef}/upload`, { method: "POST", body: formData });
       const data = await res.json();
       if (!res.ok) { showToast(data.message || "Upload failed"); return; }
-      await fetchClients(); setUploadFile(null); setUploadClientRef(""); showToast("Report uploaded successfully");
+      await fetchClients(); setUploadFiles([]); showToast("Documents uploaded successfully");
     } catch (err) { showToast(err.message); }
     finally { setUploading(false); }
+  };
+
+  const deleteMessage = async (msgId) => {
+    if (!window.confirm("Are you sure you want to delete this message?")) return;
+    try {
+      const res = await authFetch(`${API_BASE}/api/messages/admin/message/${msgId}`, { method: "DELETE" });
+      if (res.ok) {
+        setThreadMessages((prev) => prev.filter((m) => m._id !== msgId));
+        showToast("Message deleted");
+      } else {
+        const data = await res.json();
+        showToast(data.message || "Failed to delete message");
+      }
+    } catch (err) { showToast(err.message); }
+  };
+
+  const startEditMessage = (msg) => {
+    setEditingMessageId(msg._id);
+    setEditingContent(msg.content);
+  };
+
+  const cancelEditMessage = () => {
+    setEditingMessageId(null);
+    setEditingContent("");
+  };
+
+  const saveEditMessage = async (msgId) => {
+    if (!editingContent.trim()) return;
+    try {
+      const res = await authFetch(`${API_BASE}/api/messages/admin/message/${msgId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ content: editingContent.trim() }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setThreadMessages((prev) => prev.map((m) => m._id === msgId ? { ...m, content: data.content } : m));
+        cancelEditMessage();
+        showToast("Message updated");
+      } else {
+        showToast(data.message || "Failed to update message");
+      }
+    } catch (err) { showToast(err.message); }
+  };
+
+  const deleteThread = async (ref) => {
+    if (!window.confirm(`Are you sure you want to delete the entire conversation with ${threadClient?.name || ref}? This cannot be undone.`)) return;
+    try {
+      const res = await authFetch(`${API_BASE}/api/messages/admin/thread/${ref}`, { method: "DELETE" });
+      if (res.ok) {
+        setSelectedThread(null);
+        setThreadMessages([]);
+        setThreadClient(null);
+        await fetchThreads();
+        showToast("Conversation deleted");
+      } else {
+        const data = await res.json();
+        showToast(data.message || "Failed to delete conversation");
+      }
+    } catch (err) { showToast(err.message); }
   };
 
   const formatTime = (dateStr) => {
@@ -424,32 +489,91 @@ export default function AdminDashboard() {
           {page === "upload" && (
             <>
               <div style={s.pageTitle}>Upload report</div>
-              <div style={s.pageSub}>Attach a PDF report to an existing client reference.</div>
-              <div style={{ ...s.sectionCard, maxWidth: 480 }}>
-                <div style={{ padding: 20 }}>
-                  <div style={s.field}>
-                    <label style={s.label}>Select client</label>
-                    <select style={s.input} value={uploadClientRef} onChange={(e) => setUploadClientRef(e.target.value)}>
-                      <option value="">Choose a client</option>
-                      {clients.map((c) => <option key={c._id} value={c.referenceNumber}>{c.name} ({c.referenceNumber})</option>)}
-                    </select>
+              <div style={s.pageSub}>Attach PDF reports to an existing client reference.</div>
+              <div style={{ display: "flex", gap: 20, flexDirection: isMobile ? "column" : "row", alignItems: "flex-start" }}>
+                <div style={{ ...s.sectionCard, width: "100%", maxWidth: 480 }}>
+                  <div style={{ padding: 20 }}>
+                    <div style={s.field}>
+                      <label style={s.label}>Select client</label>
+                      <select style={s.input} value={uploadClientRef} onChange={(e) => { setUploadClientRef(e.target.value); setUploadFiles([]); }}>
+                        <option value="">Choose a client</option>
+                        {clients.map((c) => <option key={c._id} value={c.referenceNumber}>{c.name} ({c.referenceNumber})</option>)}
+                      </select>
+                    </div>
+                    <div style={s.field}>
+                      <label style={s.label}>PDF report(s)</label>
+                      <label style={{ ...s.uploadZone, ...(uploadFiles.length > 0 ? s.uploadZoneActive : {}) }}>
+                        <div style={{ display: "flex", justifyContent: "center", marginBottom: 8, color: uploadFiles.length > 0 ? "#10b981" : "#d47f11" }}>
+                          {uploadFiles.length > 0 ? <Check size={28} /> : <UploadCloud size={28} />}
+                        </div>
+                        <p style={{ fontSize: 13, color: uploadFiles.length > 0 ? "#065f46" : "#888", margin: 0 }}>
+                          {uploadFiles.length > 0 ? `${uploadFiles.length} file(s) selected` : "Click to select PDF(s)"}
+                        </p>
+                        {uploadFiles.length > 0 && (
+                          <div style={{ marginTop: 10, fontSize: 11, color: "#666", textAlign: "left", maxHeight: 100, overflowY: "auto" }}>
+                            {uploadFiles.map((f, i) => (
+                              <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "2px 0", borderBottom: "0.5px solid #f0f0f0" }}>
+                                <span style={{ textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap", maxWidth: 260 }}>{f.name}</span>
+                                <span>({(f.size / 1024 / 1024).toFixed(2)} MB)</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        {!uploadFiles.length && <p style={{ fontSize: 11, color: "#aaa", margin: "4px 0 0" }}>Maximum 50 MB per file</p>}
+                        <input type="file" accept=".pdf" multiple style={{ display: "none" }} onChange={(e) => setUploadFiles(Array.from(e.target.files))} />
+                      </label>
+                    </div>
+                    <button style={{ ...s.btnPrimary, width: "100%", justifyContent: "center", opacity: uploading ? 0.7 : 1 }} onClick={handleUpload} disabled={uploading}>
+                      {uploading ? "Uploading..." : <><UploadCloud size={16} /> Upload reports</>}
+                    </button>
                   </div>
-                  <div style={s.field}>
-                    <label style={s.label}>PDF report</label>
-                    <label style={{ ...s.uploadZone, ...(uploadFile ? s.uploadZoneActive : {}) }}>
-                      <div style={{ display: "flex", justifyContent: "center", marginBottom: 8, color: uploadFile ? "#10b981" : "#d47f11" }}>
-                        {uploadFile ? <Check size={28} /> : <UploadCloud size={28} />}
-                      </div>
-                      <p style={{ fontSize: 13, color: uploadFile ? "#065f46" : "#888", margin: 0 }}>{uploadFile ? uploadFile.name : "Click to select PDF"}</p>
-                      {uploadFile && <p style={{ fontSize: 11, color: "#aaa", margin: "4px 0 0" }}>{(uploadFile.size / 1024 / 1024).toFixed(2)} MB</p>}
-                      {!uploadFile && <p style={{ fontSize: 11, color: "#aaa", margin: "4px 0 0" }}>Maximum 50 MB</p>}
-                      <input type="file" accept=".pdf" style={{ display: "none" }} onChange={(e) => setUploadFile(e.target.files[0] || null)} />
-                    </label>
-                  </div>
-                  <button style={{ ...s.btnPrimary, width: "100%", justifyContent: "center", opacity: uploading ? 0.7 : 1 }} onClick={handleUpload} disabled={uploading}>
-                    {uploading ? "Uploading..." : <><UploadCloud size={16} /> Upload report</>}
-                  </button>
                 </div>
+
+                {/* Existing documents management */}
+                {uploadClientRef && (() => {
+                  const selectedClientObj = clients.find(c => c.referenceNumber === uploadClientRef);
+                  return (
+                    <div style={{ ...s.sectionCard, width: "100%", maxWidth: 400, padding: 20 }}>
+                      <h4 style={{ fontSize: 14, fontWeight: 600, color: "#111", margin: "0 0 12px" }}>
+                        Existing Documents ({selectedClientObj?.documents?.length || 0})
+                      </h4>
+                      {selectedClientObj?.documents && selectedClientObj.documents.length > 0 ? (
+                        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                          {selectedClientObj.documents.map((doc) => (
+                            <div key={doc._id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#f9f9f9", padding: "8px 12px", borderRadius: 6, border: "0.5px solid #eee" }}>
+                              <span style={{ fontSize: 12, color: "#333", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: "80%" }} title={doc.originalName}>
+                                📄 {doc.originalName}
+                              </span>
+                              <button
+                                onClick={async () => {
+                                  if (!window.confirm(`Delete document "${doc.originalName}"?`)) return;
+                                  try {
+                                    const res = await authFetch(`${API_BASE}/api/admin/clients/${uploadClientRef}/documents/${doc._id}`, { method: "DELETE" });
+                                    const data = await res.json();
+                                    if (res.ok) {
+                                      showToast("Document deleted successfully");
+                                      await fetchClients();
+                                    } else {
+                                      showToast(data.message || "Failed to delete document");
+                                    }
+                                  } catch (err) {
+                                    showToast(err.message);
+                                  }
+                                }}
+                                style={{ background: "none", border: "none", color: "#ef4444", cursor: "pointer", display: "inline-flex", alignItems: "center", padding: 4 }}
+                                title="Delete"
+                              >
+                                <Trash2 size={14} />
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div style={{ fontSize: 12, color: "#aaa" }}>No documents uploaded yet for this client.</div>
+                      )}
+                    </div>
+                  );
+                })()}
               </div>
             </>
           )}
@@ -504,44 +628,56 @@ export default function AdminDashboard() {
                     ) : (
                       <>
                         {/* Thread header */}
-                        <div style={{ ...s.sectionHead, flexDirection: "column", alignItems: "flex-start", gap: 8 }}>
-                          {isMobile && (
-                            <button 
-                              onClick={() => setSelectedThread(null)} 
-                              style={{ 
-                                display: "inline-flex", 
-                                alignItems: "center", 
-                                gap: 6, 
-                                background: "none", 
-                                border: "none", 
-                                color: "#d47f11", 
-                                cursor: "pointer", 
-                                fontSize: 13, 
-                                fontWeight: 500,
-                                padding: 0,
-                                marginBottom: 4 
-                              }}
-                            >
-                              <ArrowLeft size={16} /> Back to conversations
-                            </button>
-                          )}
-                          <span style={s.sectionTitle}>{threadClient?.name || selectedThread}</span>
-                          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
-                            <span style={{ fontSize: 11, fontFamily: "monospace", color: "#aaa" }}>{selectedThread}</span>
-                            {threadClient && (
-                              <>
-                                <a href={`https://wa.me/${(threadClient.phone || "").replace(/\D/g, "")}?text=Hello ${encodeURIComponent(threadClient.name)}`}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  style={{ fontSize: 11, color: "#25D366", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4 }}>
-                                  <MessageSquare size={12} /> WhatsApp
-                                </a>
-                                <a href={`tel:${threadClient.phone || ""}`}
-                                  style={{ fontSize: 11, color: "#3b82f6", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4 }}>
-                                  <Phone size={12} /> Call
-                                </a>
-                              </>
+                        <div style={{ ...s.sectionHead, flexWrap: "wrap", gap: 12 }}>
+                          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 4 }}>
+                            {isMobile && (
+                              <button 
+                                onClick={() => setSelectedThread(null)} 
+                                style={{ 
+                                  display: "inline-flex", 
+                                  alignItems: "center", 
+                                  gap: 6, 
+                                  background: "none", 
+                                  border: "none", 
+                                  color: "#d47f11", 
+                                  cursor: "pointer", 
+                                  fontSize: 13, 
+                                  fontWeight: 500,
+                                  padding: 0,
+                                  marginBottom: 4 
+                                }}
+                              >
+                                <ArrowLeft size={16} /> Back to conversations
+                              </button>
                             )}
+                            <span style={s.sectionTitle}>
+                              {threadClient?.name ? `${threadClient.name} (${selectedThread})` : selectedThread}
+                            </span>
+                            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+                              <span style={{ fontSize: 11, fontFamily: "monospace", color: "#aaa" }}>{selectedThread}</span>
+                              {threadClient && (
+                                <>
+                                  <a href={`https://wa.me/${(threadClient.phone || "").replace(/\D/g, "")}?text=Hello ${encodeURIComponent(threadClient.name)}`}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{ fontSize: 11, color: "#25D366", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4 }}>
+                                    <MessageSquare size={12} /> WhatsApp
+                                  </a>
+                                  <a href={`tel:${threadClient.phone || ""}`}
+                                    style={{ fontSize: 11, color: "#3b82f6", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4 }}>
+                                    <Phone size={12} /> Call
+                                  </a>
+                                </>
+                              )}
+                            </div>
+                          </div>
+                          <div>
+                            <button
+                              onClick={() => deleteThread(selectedThread)}
+                              style={{ ...s.btnGhost, borderColor: "#fca5a5", color: "#ef4444", display: "inline-flex", alignItems: "center", gap: 6, fontSize: 12 }}
+                            >
+                              <Trash2 size={13} /> Delete Conversation
+                            </button>
                           </div>
                         </div>
 
@@ -560,10 +696,36 @@ export default function AdminDashboard() {
                             border: msg.sender === "admin" ? "none" : "0.5px solid #e5e5e5",
                           }}>
                             <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", opacity: 0.65, marginBottom: 4 }}>
-                              {msg.sender === "admin" ? "You" : threadClient?.name || "Client"}
+                              {msg.sender === "admin" ? "You" : (threadClient?.name || "Client")}
                             </div>
-                            <div style={{ wordBreak: "break-word" }}>{msg.content}</div>
-                            <div style={{ fontSize: 10, opacity: 0.55, marginTop: 5, textAlign: "right" }}>{formatTime(msg.createdAt)}</div>
+                            {editingMessageId === msg._id ? (
+                              <div style={{ marginTop: 6 }}>
+                                <textarea
+                                  style={{ ...s.input, minHeight: 60, marginBottom: 8, fontSize: 13, background: "#fff", border: "1px solid #d47f11" }}
+                                  value={editingContent}
+                                  onChange={(e) => setEditingContent(e.target.value)}
+                                />
+                                <div style={{ display: "flex", gap: 6, justifyContent: "flex-end" }}>
+                                  <button style={{ ...s.btnGhost, padding: "4px 8px", fontSize: 11 }} onClick={cancelEditMessage}>Cancel</button>
+                                  <button style={{ ...s.btnPrimary, padding: "4px 8px", fontSize: 11 }} onClick={() => saveEditMessage(msg._id)}>Save</button>
+                                </div>
+                              </div>
+                            ) : (
+                              <>
+                                <div style={{ wordBreak: "break-word" }}>{msg.content}</div>
+                                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 6, gap: 12 }}>
+                                   {msg.sender === "admin" ? (
+                                     <div style={{ display: "flex", gap: 8 }}>
+                                       <button style={{ background: "none", border: "none", color: "#ffd39b", cursor: "pointer", padding: 0, display: "inline-flex", alignItems: "center" }} onClick={() => startEditMessage(msg)} title="Edit"><Edit2 size={12} /></button>
+                                       <button style={{ background: "none", border: "none", color: "#ef4444", cursor: "pointer", padding: 0, display: "inline-flex", alignItems: "center" }} onClick={() => deleteMessage(msg._id)} title="Delete"><Trash2 size={12} /></button>
+                                     </div>
+                                   ) : (
+                                     <div style={{ width: 1 }} />
+                                   )}
+                                   <div style={{ fontSize: 10, opacity: 0.55 }}>{formatTime(msg.createdAt)}</div>
+                                </div>
+                              </>
+                            )}
                           </div>
                         ))}
                       </div>

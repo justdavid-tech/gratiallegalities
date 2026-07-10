@@ -91,6 +91,46 @@ router.post("/send", requireClient, async (req, res) => {
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
+// PUT /api/messages/client/message/:msgId
+// Client edits their own message
+// ─────────────────────────────────────────────────────────────────────────────
+router.put("/client/message/:msgId", requireClient, async (req, res) => {
+  try {
+    const { content } = req.body;
+    if (!content || !content.trim()) {
+      return res.status(400).json({ message: "Content is required." });
+    }
+    const message = await Message.findOneAndUpdate(
+      { _id: req.params.msgId, referenceNumber: req.client.ref, sender: "client" },
+      { content: content.trim() },
+      { new: true }
+    );
+    if (!message) return res.status(404).json({ message: "Message not found or unauthorized." });
+    res.json(message);
+  } catch (err) {
+    res.status(500).json({ message: "Server error.", error: err.message });
+  }
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DELETE /api/messages/client/message/:msgId
+// Client deletes their own message
+// ─────────────────────────────────────────────────────────────────────────────
+router.delete("/client/message/:msgId", requireClient, async (req, res) => {
+  try {
+    const message = await Message.findOneAndDelete({
+      _id: req.params.msgId,
+      referenceNumber: req.client.ref,
+      sender: "client"
+    });
+    if (!message) return res.status(404).json({ message: "Message not found or unauthorized." });
+    res.json({ message: "Message deleted successfully." });
+  } catch (err) {
+    res.status(500).json({ message: "Server error.", error: err.message });
+  }
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
 // ADMIN ROUTES (protected by admin JWT)
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -128,7 +168,12 @@ router.get("/admin/all", requireAdmin, async (req, res) => {
     // Populate client names
     const populated = await Promise.all(
       threads.map(async (thread) => {
-        const client = await Client.findOne({ referenceNumber: thread._id });
+        let client = await Client.findOne({ referenceNumber: thread._id.toUpperCase() });
+        if (!client) {
+          const cleanId = thread._id.replace(/[^a-zA-Z0-9]/g, "").toUpperCase();
+          const allClients = await Client.find({});
+          client = allClients.find(c => c.referenceNumber.replace(/[^a-zA-Z0-9]/g, "").toUpperCase() === cleanId);
+        }
         return {
           ...thread,
           clientName: client ? client.name : "Unknown Client",
@@ -158,7 +203,12 @@ router.get("/admin/thread/:ref", requireAdmin, async (req, res) => {
       { readByAdmin: true }
     );
 
-    const client = await Client.findOne({ referenceNumber: req.params.ref.toUpperCase() });
+    let client = await Client.findOne({ referenceNumber: req.params.ref.toUpperCase() });
+    if (!client) {
+      const cleanRef = req.params.ref.replace(/[^a-zA-Z0-9]/g, "").toUpperCase();
+      const allClients = await Client.find({});
+      client = allClients.find(c => c.referenceNumber.replace(/[^a-zA-Z0-9]/g, "").toUpperCase() === cleanRef);
+    }
 
     res.json({ messages, client: client || null });
   } catch (err) {
@@ -203,6 +253,55 @@ router.get("/admin/unread-count", requireAdmin, async (req, res) => {
   try {
     const count = await Message.countDocuments({ sender: "client", readByAdmin: false });
     res.json({ count });
+  } catch (err) {
+    res.status(500).json({ message: "Server error.", error: err.message });
+  }
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PUT /api/messages/admin/message/:msgId
+// Admin edits a message
+// ─────────────────────────────────────────────────────────────────────────────
+router.put("/admin/message/:msgId", requireAdmin, async (req, res) => {
+  try {
+    const { content } = req.body;
+    if (!content || !content.trim()) {
+      return res.status(400).json({ message: "Content is required." });
+    }
+    const message = await Message.findOneAndUpdate(
+      { _id: req.params.msgId, sender: "admin" },
+      { content: content.trim() },
+      { new: true }
+    );
+    if (!message) return res.status(404).json({ message: "Message not found or unauthorized to edit." });
+    res.json(message);
+  } catch (err) {
+    res.status(500).json({ message: "Server error.", error: err.message });
+  }
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DELETE /api/messages/admin/message/:msgId
+// Admin deletes a message
+// ─────────────────────────────────────────────────────────────────────────────
+router.delete("/admin/message/:msgId", requireAdmin, async (req, res) => {
+  try {
+    const message = await Message.findOneAndDelete({ _id: req.params.msgId, sender: "admin" });
+    if (!message) return res.status(404).json({ message: "Message not found or unauthorized to delete." });
+    res.json({ message: "Message deleted successfully." });
+  } catch (err) {
+    res.status(500).json({ message: "Server error.", error: err.message });
+  }
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DELETE /api/messages/admin/thread/:ref
+// Admin deletes an entire thread
+// ─────────────────────────────────────────────────────────────────────────────
+router.delete("/admin/thread/:ref", requireAdmin, async (req, res) => {
+  try {
+    await Message.deleteMany({ referenceNumber: req.params.ref.toUpperCase() });
+    res.json({ message: "Thread deleted successfully." });
   } catch (err) {
     res.status(500).json({ message: "Server error.", error: err.message });
   }

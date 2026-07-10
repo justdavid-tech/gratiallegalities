@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Lock, FileText, AlertTriangle, Eye, EyeOff, Info, CheckCircle, BookOpen, Send, MessageCircle } from "lucide-react";
+import { Lock, FileText, AlertTriangle, Eye, EyeOff, Info, CheckCircle, BookOpen, Send, MessageCircle, Edit2, Trash2 } from "lucide-react";
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
 const WHATSAPP_NUMBER = "2348138939107";
@@ -22,6 +22,8 @@ export default function Portal() {
   const [msgError, setMsgError] = useState("");
   const [msgSuccess, setMsgSuccess] = useState("");
   const [msgLoading, setMsgLoading] = useState(false);
+  const [editingMessageId, setEditingMessageId] = useState(null);
+  const [editingContent, setEditingContent] = useState("");
   const threadRef = useRef(null);
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -53,10 +55,12 @@ export default function Portal() {
     }
   };
 
-  const openPdf = async (action) => {
+  const openPdf = async (action, docId, originalName) => {
     setPdfLoading(true);
     try {
-      const res = await fetch(`${API_BASE}/api/portal/document?action=${action}`, {
+      const urlParams = new URLSearchParams({ action });
+      if (docId) urlParams.append("docId", docId);
+      const res = await fetch(`${API_BASE}/api/portal/document?${urlParams.toString()}`, {
         headers: { Authorization: `Bearer ${session.accessToken}` },
       });
       if (res.status === 401) { setError("Your session has expired. Please log in again."); setSession(null); return; }
@@ -66,7 +70,7 @@ export default function Portal() {
       if (action === "download") {
         const a = document.createElement("a");
         a.href = url;
-        a.download = session.client.pdfOriginalName || "report.pdf";
+        a.download = originalName || "report.pdf";
         a.click();
       } else {
         window.open(url, "_blank");
@@ -138,6 +142,57 @@ export default function Portal() {
     } finally {
       setMsgSending(false);
     }
+  };
+
+  const deleteMessage = async (msgId) => {
+    if (!window.confirm("Are you sure you want to delete this message?")) return;
+    try {
+      const res = await fetch(`${API_BASE}/api/messages/client/message/${msgId}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${session.accessToken}` }
+      });
+      if (res.ok) {
+        setMessages((prev) => prev.filter((m) => m._id !== msgId));
+        setMsgSuccess("Message deleted");
+        setTimeout(() => setMsgSuccess(""), 3000);
+      } else {
+        const data = await res.json();
+        setMsgError(data.message || "Failed to delete message");
+      }
+    } catch { setMsgError("Failed to delete message."); }
+  };
+
+  const startEditMessage = (msg) => {
+    setEditingMessageId(msg._id);
+    setEditingContent(msg.content);
+  };
+
+  const cancelEditMessage = () => {
+    setEditingMessageId(null);
+    setEditingContent("");
+  };
+
+  const saveEditMessage = async (msgId) => {
+    if (!editingContent.trim()) return;
+    try {
+      const res = await fetch(`${API_BASE}/api/messages/client/message/${msgId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${session.accessToken}`
+        },
+        body: JSON.stringify({ content: editingContent.trim() }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setMessages((prev) => prev.map((m) => m._id === msgId ? { ...m, content: data.content } : m));
+        cancelEditMessage();
+        setMsgSuccess("Message updated");
+        setTimeout(() => setMsgSuccess(""), 3000);
+      } else {
+        setMsgError(data.message || "Failed to update message");
+      }
+    } catch { setMsgError("Failed to update message."); }
   };
 
   const formatTime = (dateStr) => {
@@ -217,24 +272,48 @@ export default function Portal() {
               <h3 style={s.successTitle}>Access granted</h3>
               <p style={s.successSub}>Welcome, {session.client.name}. Your report is ready.</p>
 
-              {/* Document card — your original */}
-              <div style={s.docCard}>
-                <div style={s.docIcon}><BookOpen size={28} color="#d47f11" /></div>
-                <div style={{ flex: "1 1 150px", textAlign: "left", minWidth: 0 }}>
-                  <p style={{ fontWeight: 600, fontSize: 14, color: "#111", margin: 0 }}>Report</p>
-                  <span style={{ fontSize: 12, color: "#aaa", display: "block", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                    {session.client.pdfOriginalName} · PDF
-                  </span>
+              {/* Document list */}
+              {session.client.documents && session.client.documents.length > 0 ? (
+                session.client.documents.map((doc, idx) => (
+                  <div key={doc._id} style={s.docCard}>
+                    <div style={s.docIcon}><BookOpen size={28} color="#d47f11" /></div>
+                    <div style={{ flex: "1 1 150px", textAlign: "left", minWidth: 0 }}>
+                      <p style={{ fontWeight: 600, fontSize: 14, color: "#111", margin: 0 }}>Document {idx + 1}</p>
+                      <span style={{ fontSize: 12, color: "#aaa", display: "block", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }} title={doc.originalName}>
+                        {doc.originalName}
+                      </span>
+                    </div>
+                    <div style={s.docActions}>
+                      <button style={s.btnView} onClick={() => openPdf("view", doc._id, doc.originalName)} disabled={pdfLoading}>
+                        {pdfLoading ? "…" : "View"}
+                      </button>
+                      <button style={s.btnDownload} onClick={() => openPdf("download", doc._id, doc.originalName)} disabled={pdfLoading}>
+                        {pdfLoading ? "…" : "Download"}
+                      </button>
+                    </div>
+                  </div>
+                ))
+              ) : session.client.pdfOriginalName ? (
+                <div style={s.docCard}>
+                  <div style={s.docIcon}><BookOpen size={28} color="#d47f11" /></div>
+                  <div style={{ flex: "1 1 150px", textAlign: "left", minWidth: 0 }}>
+                    <p style={{ fontWeight: 600, fontSize: 14, color: "#111", margin: 0 }}>Report</p>
+                    <span style={{ fontSize: 12, color: "#aaa", display: "block", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                      {session.client.pdfOriginalName} · PDF
+                    </span>
+                  </div>
+                  <div style={s.docActions}>
+                    <button style={s.btnView} onClick={() => openPdf("view", null, session.client.pdfOriginalName)} disabled={pdfLoading}>
+                      {pdfLoading ? "…" : "View"}
+                    </button>
+                    <button style={s.btnDownload} onClick={() => openPdf("download", null, session.client.pdfOriginalName)} disabled={pdfLoading}>
+                      {pdfLoading ? "…" : "Download"}
+                    </button>
+                  </div>
                 </div>
-                <div style={s.docActions}>
-                  <button style={s.btnView} onClick={() => openPdf("view")} disabled={pdfLoading}>
-                    {pdfLoading ? "…" : "View"}
-                  </button>
-                  <button style={s.btnDownload} onClick={() => openPdf("download")} disabled={pdfLoading}>
-                    {pdfLoading ? "…" : "Download"}
-                  </button>
-                </div>
-              </div>
+              ) : (
+                <div style={{ padding: "16px", color: "#888", fontSize: "13px" }}>No documents uploaded.</div>
+              )}
 
               {error && <div style={{ ...s.errorBox, marginTop: 12 }}><AlertTriangle size={15} /><span>{error}</span></div>}
 
@@ -266,8 +345,34 @@ export default function Portal() {
                       <div style={s.bubbleSender}>
                         {msg.sender === "client" ? "You" : "Your Business Lawyer"}
                       </div>
-                      <div style={s.bubbleContent}>{msg.content}</div>
-                      <div style={s.bubbleTime}>{formatTime(msg.createdAt)}</div>
+                      {editingMessageId === msg._id ? (
+                        <div style={{ marginTop: 6 }}>
+                          <textarea
+                            style={{ ...s.msgTextarea, minHeight: 60, marginBottom: 8, fontSize: 13, background: "#fff", color: "#111" }}
+                            value={editingContent}
+                            onChange={(e) => setEditingContent(e.target.value)}
+                          />
+                          <div style={{ display: "flex", gap: 6, justifyContent: "flex-end" }}>
+                            <button style={{ ...s.btnWhatsApp, background: "#888", color: "#fff", padding: "4px 8px", fontSize: 11 }} onClick={cancelEditMessage}>Cancel</button>
+                            <button style={{ ...s.btnSend, padding: "4px 8px", fontSize: 11 }} onClick={() => saveEditMessage(msg._id)}>Save</button>
+                          </div>
+                        </div>
+                      ) : (
+                        <>
+                          <div style={s.bubbleContent}>{msg.content}</div>
+                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 6, gap: 12 }}>
+                            {msg.sender === "client" ? (
+                              <div style={{ display: "flex", gap: 8 }}>
+                                <button style={{ background: "none", border: "none", color: "#ffd39b", cursor: "pointer", padding: 0, display: "inline-flex", alignItems: "center" }} onClick={() => startEditMessage(msg)} title="Edit"><Edit2 size={12} /></button>
+                                <button style={{ background: "none", border: "none", color: "#ef4444", cursor: "pointer", padding: 0, display: "inline-flex", alignItems: "center" }} onClick={() => deleteMessage(msg._id)} title="Delete"><Trash2 size={12} /></button>
+                              </div>
+                            ) : (
+                              <div style={{ width: 1 }} />
+                            )}
+                            <div style={s.bubbleTime}>{formatTime(msg.createdAt)}</div>
+                          </div>
+                        </>
+                      )}
                     </div>
                   ))
                 )}

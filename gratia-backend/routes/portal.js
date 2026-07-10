@@ -60,6 +60,7 @@ router.post("/verify", async (req, res) => {
         name: client.name,
         referenceNumber: client.referenceNumber,
         pdfOriginalName: client.pdfOriginalName,
+        documents: client.documents || [],
       },
     });
   } catch (err) {
@@ -94,15 +95,33 @@ router.get("/document", async (req, res) => {
     }
 
     const client = await Client.findOne({ referenceNumber: decoded.ref });
-    if (!client || !client.pdfPath || !fs.existsSync(client.pdfPath)) {
-      return res.status(404).json({ message: "Document not found." });
+    if (!client) {
+      return res.status(404).json({ message: "Client not found." });
+    }
+
+    const docId = req.query.docId;
+    let filePath = "";
+    let filename = "";
+
+    if (docId) {
+      const doc = client.documents.find(d => d._id.toString() === docId);
+      if (!doc || !doc.path || !fs.existsSync(doc.path)) {
+        return res.status(404).json({ message: "Document not found." });
+      }
+      filePath = doc.path;
+      filename = doc.originalName || "document.pdf";
+    } else {
+      if (!client.pdfPath || !fs.existsSync(client.pdfPath)) {
+        return res.status(404).json({ message: "Document not found." });
+      }
+      filePath = client.pdfPath;
+      filename = client.pdfOriginalName || "report.pdf";
     }
 
     const action = req.query.action || "view";
-    const filename = client.pdfOriginalName || "report.pdf";
 
     // Log access
-    client.accessLog.push({ action, ip: req.ip });
+    client.accessLog.push({ action: `${action}_doc_${docId || "legacy"}`, ip: req.ip });
     await client.save();
 
     res.setHeader("Content-Type", "application/pdf");
@@ -112,7 +131,7 @@ router.get("/document", async (req, res) => {
       res.setHeader("Content-Disposition", `inline; filename="${filename}"`);
     }
 
-    const stream = fs.createReadStream(client.pdfPath);
+    const stream = fs.createReadStream(filePath);
     stream.pipe(res);
   } catch (err) {
     res.status(500).json({ message: "Server error.", error: err.message });
