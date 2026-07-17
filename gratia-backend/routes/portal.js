@@ -113,7 +113,7 @@ router.post("/refresh-token", async (req, res) => {
 // ─────────────────────────────────────────────────────────────────────────────
 // GET /api/portal/document?action=view|download&docId=optional
 // Header: Authorization: Bearer <accessToken>
-// Fetches the PDF from Cloudinary and streams it to the client
+// Returns a signed Supabase Storage URL for the PDF
 // ─────────────────────────────────────────────────────────────────────────────
 router.get("/document", async (req, res) => {
   try {
@@ -142,7 +142,7 @@ router.get("/document", async (req, res) => {
     }
 
     const docId = req.query.docId;
-    let fileUrl = "";
+    let filePath = "";
     let filename = "";
 
     if (docId) {
@@ -150,13 +150,13 @@ router.get("/document", async (req, res) => {
       if (!doc || !doc.path) {
         return res.status(404).json({ message: "Document not found." });
       }
-      fileUrl = doc.path;
+      filePath = doc.path;
       filename = doc.originalName || "document.pdf";
     } else {
       if (!client.pdfPath) {
         return res.status(404).json({ message: "Document not found." });
       }
-      fileUrl = client.pdfPath;
+      filePath = client.pdfPath;
       filename = client.pdfOriginalName || "report.pdf";
     }
 
@@ -165,11 +165,17 @@ router.get("/document", async (req, res) => {
     client.accessLog.push({ action: `${action}_doc_${docId || "main"}`, ip: req.ip });
     await client.save();
 
-    if (!fileUrl.startsWith("http://") && !fileUrl.startsWith("https://")) {
+    if (!filePath) {
       return res.status(410).json({ message: "This document is no longer available. Please contact your business lawyer." });
     }
 
-    res.json({ fileUrl, filename, action });
+    const { data: signedData, error: signedError } = await getSupabaseSignedUrl(filePath);
+    if (signedError || !signedData?.signedUrl) {
+      console.error("Supabase signed URL error:", signedError?.message);
+      return res.status(502).json({ message: "Failed to fetch document from storage. Please contact your business lawyer." });
+    }
+
+    res.json({ fileUrl: signedData.signedUrl, filename, action });
 
   } catch (err) {
     console.error("Document fetch error:", err.message);

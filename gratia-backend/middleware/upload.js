@@ -1,23 +1,17 @@
 const multer = require("multer");
-const cloudinary = require("cloudinary").v2;
+const { createClient } = require("@supabase/supabase-js");
 
-const requiredCloudinaryVars = [
-  "CLOUDINARY_CLOUD_NAME",
-  "CLOUDINARY_API_KEY",
-  "CLOUDINARY_API_SECRET",
-];
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+);
 
-for (const varName of requiredCloudinaryVars) {
+const requiredSupabaseVars = ["SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "SUPABASE_BUCKET"];
+for (const varName of requiredSupabaseVars) {
   if (!process.env[varName]) {
-    console.error(`Missing Cloudinary env var: ${varName}`);
+    console.error(`Missing Supabase env var: ${varName}`);
   }
 }
-
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key:    process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
 
 const storage = multer.memoryStorage();
 
@@ -35,24 +29,30 @@ const upload = multer({
   limits: { fileSize: 50 * 1024 * 1024 },
 });
 
-const uploadToCloudinary = (buffer, filename) => {
+const uploadToSupabase = (buffer, filename, contentType = "application/pdf") => {
   return new Promise((resolve, reject) => {
-    const stream = cloudinary.uploader.upload_stream(
-      {
-        folder: "gratia-documents",
-        resource_type: "raw",
-        public_id: filename,
-        format: "pdf",
-        access_mode: "public",
-      },
-      (error, result) => {
+    const path = `${Date.now()}_${filename}`;
+    supabase.storage
+      .from(process.env.SUPABASE_BUCKET || "gratia-documents")
+      .upload(path, buffer, { contentType, upsert: true })
+      .then(({ data, error }) => {
         if (error) reject(error);
-        else resolve(result);
-      }
-    );
-    stream.on("error", reject);
-    stream.end(buffer);
+        else resolve({ ...data, path });
+      })
+      .catch(reject);
   });
 };
 
-module.exports = { upload, cloudinary, uploadToCloudinary };
+const getSupabaseSignedUrl = (path) => {
+  return supabase.storage
+    .from(process.env.SUPABASE_BUCKET || "gratia-documents")
+    .createSignedUrl(path, 3600);
+};
+
+const deleteFromSupabase = (path) => {
+  return supabase.storage
+    .from(process.env.SUPABASE_BUCKET || "gratia-documents")
+    .remove([path]);
+};
+
+module.exports = { upload, supabase, uploadToSupabase, getSupabaseSignedUrl, deleteFromSupabase };

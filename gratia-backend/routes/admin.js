@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const Client = require("../models/Client");
 const Admin = require("../models/Admin");
 const requireAdmin = require("../middleware/requireAdmin");
-const { upload, cloudinary, uploadToCloudinary } = require("../middleware/upload");
+const { upload, supabase, uploadToSupabase, getSupabaseSignedUrl, deleteFromSupabase } = require("../middleware/upload");
 
 // ─────────────────────────────────────────────────────────────────────────────
 // POST /api/admin/login
@@ -191,18 +191,19 @@ router.post("/clients/:ref/upload", (req, res, next) => {
     const newDocs = [];
     for (const f of req.files) {
       const ref = req.params.ref.replace(/[^a-zA-Z0-9-]/g, "");
-      const filename = `${ref}_${Date.now()}`;
-      console.log("Uploading to Cloudinary:", filename, "size:", f.size);
+      const ext = f.originalname.split(".").pop() || "pdf";
+      const filename = `${ref}_${Date.now()}.${ext}`;
+      console.log("Uploading to Supabase:", filename, "size:", f.size);
       try {
-        const result = await uploadToCloudinary(f.buffer, filename);
-        console.log("Cloudinary upload result:", result.secure_url);
+        const result = await uploadToSupabase(f.buffer, filename, f.mimetype);
+        console.log("Supabase upload result:", result.path);
         newDocs.push({
-          path: result.secure_url,
+          path: result.path,
           originalName: f.originalname,
           uploadedAt: new Date(),
         });
       } catch (uploadErr) {
-        console.error("Cloudinary upload failed for", filename, ":", uploadErr.message);
+        console.error("Supabase upload failed for", filename, ":", uploadErr.message);
         throw uploadErr;
       }
     }
@@ -238,15 +239,11 @@ router.delete("/clients/:ref/documents/:docId", async (req, res) => {
 
     const doc = client.documents[docIndex];
 
-    // Delete from Cloudinary using the public_id extracted from the URL
     if (doc.path) {
       try {
-        const urlParts = doc.path.split("/");
-        const filename = urlParts[urlParts.length - 1].split(".")[0];
-        const publicId = `gratia-documents/${filename}`;
-        await cloudinary.uploader.destroy(publicId, { resource_type: "raw" });
+        await deleteFromSupabase(doc.path);
       } catch (e) {
-        console.error("Cloudinary delete failed:", e.message);
+        console.error("Supabase delete failed:", e.message);
       }
     }
 
@@ -276,16 +273,13 @@ router.delete("/clients/:ref", async (req, res) => {
     const client = await Client.findOneAndDelete({ referenceNumber: req.params.ref.toUpperCase() });
     if (!client) return res.status(404).json({ message: "Client not found." });
 
-    // Delete all documents from Cloudinary
     const allDocs = client.documents || [];
     for (const doc of allDocs) {
       if (doc.path) {
         try {
-          const urlParts = doc.path.split("/");
-          const filename = urlParts[urlParts.length - 1].split(".")[0];
-          await cloudinary.uploader.destroy(`gratia-documents/${filename}`, { resource_type: "raw" });
+          await deleteFromSupabase(doc.path);
         } catch (e) {
-          console.error("Cloudinary delete failed:", e.message);
+          console.error("Supabase delete failed:", e.message);
         }
       }
     }
