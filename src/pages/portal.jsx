@@ -63,8 +63,9 @@ export default function Portal() {
       const res = await fetch(`${API_BASE}/api/portal/document?${urlParams.toString()}`, {
         headers: { Authorization: `Bearer ${session.accessToken}` },
       });
+      const data = await res.json().catch(() => ({}));
       if (res.status === 401) { setError("Your session has expired. Please log in again."); setSession(null); return; }
-      if (!res.ok) { setError("Could not load the document. Please try again."); return; }
+      if (!res.ok) { setError(data.message || "Could not load the document. Please try again."); return; }
       const blob = await res.blob();
       const url = URL.createObjectURL(blob);
       if (action === "download") {
