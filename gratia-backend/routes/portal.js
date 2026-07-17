@@ -169,30 +169,11 @@ router.get("/document", async (req, res) => {
       return res.status(410).json({ message: "This document is no longer available. Please contact your business lawyer." });
     }
 
-    console.log("DOCUMENT REQUEST:", decoded.ref, "docId:", docId, "fileUrl:", fileUrl);
-
-    res.setHeader("Content-Type", "application/pdf");
-    if (action === "download") {
-      res.setHeader("Content-Disposition", `attachment; filename="${filename}"`);
-    } else {
-      res.setHeader("Content-Disposition", `inline; filename="${filename}"`);
-    }
-
-    try {
-      const response = await axios.get(fileUrl, { responseType: "stream" });
-      response.data.pipe(res);
-    } catch (downloadErr) {
-      console.error("Cloudinary download failed:", downloadErr.message);
-      if (!res.headersSent) {
-        res.status(502).json({ message: "Failed to fetch document from storage. Please contact your business lawyer." });
-      }
-    }
+    res.json({ fileUrl, filename, action });
 
   } catch (err) {
     console.error("Document fetch error:", err.message);
-    if (!res.headersSent) {
-      res.status(500).json({ message: "Server error.", error: err.message });
-    }
+    res.status(500).json({ message: "Server error.", error: err.message });
   }
 });
 

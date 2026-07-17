@@ -104,21 +104,22 @@ export default function Portal() {
       const urlParams = new URLSearchParams({ action });
       if (docId) urlParams.append("docId", docId);
       const res = await authFetch(`${API_BASE}/api/portal/document?${urlParams.toString()}`);
+      const data = await res.json();
       if (res.status === 401) { setError("Your session has expired. Please log in again."); setSession(null); return; }
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        setError(data.message || "Could not load the document. Please try again.");
-        return;
-      }
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      if (action === "download") {
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = originalName || "report.pdf";
-        a.click();
+      if (!res.ok) { setError(data.message || "Could not load the document. Please try again."); return; }
+      if (data.fileUrl) {
+        if (action === "download") {
+          const a = document.createElement("a");
+          a.href = data.fileUrl;
+          a.download = data.filename || originalName || "report.pdf";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        } else {
+          window.open(data.fileUrl, "_blank");
+        }
       } else {
-        window.open(url, "_blank");
+        setError("Could not load the document. Please try again.");
       }
     } catch {
       setError("Failed to load document.");
