@@ -171,21 +171,12 @@ router.get("/document", async (req, res) => {
       return res.status(410).json({ message: "This document is no longer available. Please contact your business lawyer." });
     }
 
-    const response = await axios.get(fileUrl, { responseType: "stream" });
-
-    res.setHeader("Content-Type", "application/pdf");
-    if (action === "download") {
-      res.setHeader("Content-Disposition", `attachment; filename="${filename}"`);
-    } else {
-      res.setHeader("Content-Disposition", `inline; filename="${filename}"`);
-    }
-
-    response.data.pipe(res);
+    res.redirect(fileUrl);
 
   } catch (err) {
     console.error("Document fetch error:", err.message);
     console.error("Full error:", err);
-    res.status(500).json({ message: "Server error.", error: err.message, stack: err.stack });
+    res.status(500).json({ message: "Server error.", error: err.message });
   }
 });
 

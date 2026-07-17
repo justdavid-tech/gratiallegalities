@@ -74,14 +74,13 @@ router.post("/send", requireClient, async (req, res) => {
       readByClient: true,
     });
 
-    // Send email notification to admin
     const client = await Client.findOne({ referenceNumber: req.client.ref });
     if (client) {
-      await notifyAdminNewMessage({
+      notifyAdminNewMessage({
         clientName: client.name,
         referenceNumber: client.referenceNumber,
         message: content.trim(),
-      });
+      }).catch(err => console.error("Background email notification failed:", err.message));
     }
 
     res.status(201).json(message);
