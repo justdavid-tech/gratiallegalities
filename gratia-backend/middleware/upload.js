@@ -1,19 +1,25 @@
 const multer = require("multer");
-const path = require("path");
-const fs = require("fs");
+const cloudinary = require("cloudinary").v2;
 
-const uploadDir = path.join(__dirname, "../uploads");
-if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+const requiredCloudinaryVars = [
+  "CLOUDINARY_CLOUD_NAME",
+  "CLOUDINARY_API_KEY",
+  "CLOUDINARY_API_SECRET",
+];
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, uploadDir),
-  filename: (req, file, cb) => {
-    // e.g. DD-2024-0042_1712345678.pdf
-    const ref = (req.params.ref || "doc").replace(/[^a-zA-Z0-9-]/g, "");
-    const timestamp = Date.now();
-    cb(null, `${ref}_${timestamp}.pdf`);
-  },
+for (const varName of requiredCloudinaryVars) {
+  if (!process.env[varName]) {
+    console.error(`Missing Cloudinary env var: ${varName}`);
+  }
+}
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key:    process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
+
+const storage = multer.memoryStorage();
 
 const fileFilter = (req, file, cb) => {
   if (file.mimetype === "application/pdf") {
@@ -23,8 +29,29 @@ const fileFilter = (req, file, cb) => {
   }
 };
 
-module.exports = multer({
+const upload = multer({
   storage,
   fileFilter,
-  limits: { fileSize: 50 * 1024 * 1024 }, // 50 MB
+  limits: { fileSize: 50 * 1024 * 1024 },
 });
+
+const uploadToCloudinary = (buffer, filename) => {
+  return new Promise((resolve, reject) => {
+    const stream = cloudinary.uploader.upload_stream(
+      {
+        folder: "gratia-documents",
+        resource_type: "raw",
+        public_id: filename,
+        format: "pdf",
+      },
+      (error, result) => {
+        if (error) reject(error);
+        else resolve(result);
+      }
+    );
+    stream.on("error", reject);
+    stream.end(buffer);
+  });
+};
+
+module.exports = { upload, cloudinary, uploadToCloudinary };

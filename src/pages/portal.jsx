@@ -244,7 +244,7 @@ export default function Portal() {
               <form onSubmit={handleLogin}>
                 <div style={s.field}>
                   <label style={s.label}>Reference number</label>
-                  <input style={s.input} type="text" placeholder="e.g. GG-2026-0025" value={ref} onChange={(e) => setRef(e.target.value)} autoComplete="off" />
+                  <input style={s.input} type="text" placeholder="e.g. GCC-26-025" value={ref} onChange={(e) => setRef(e.target.value)} autoComplete="off" />
                   <div style={s.hint}>Provided in your engagement letter</div>
                 </div>
                 <div style={s.field}>

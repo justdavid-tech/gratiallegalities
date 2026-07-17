@@ -2,13 +2,11 @@ const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const fs = require("fs");
-const path = require("path");
 
 const Client = require("../models/Client");
 const Admin = require("../models/Admin");
 const requireAdmin = require("../middleware/requireAdmin");
-const upload = require("../middleware/upload");
+const { upload, cloudinary, uploadToCloudinary } = require("../middleware/upload");
 
 // ─────────────────────────────────────────────────────────────────────────────
 // POST /api/admin/login
@@ -173,20 +171,15 @@ router.put("/clients/:ref/password", async (req, res) => {
 
 router.post("/clients/:ref/upload", (req, res, next) => {
   upload.array("files")(req, res, (err) => {
-    if (err) {
-      // Clean up any partially-uploaded files
-      if (req.files) req.files.forEach(f => { try { fs.unlinkSync(f.path); } catch (_) {} });
-      return res.status(400).json({ message: err.message || "File upload error." });
-    }
+    if (err) return res.status(400).json({ message: err.message || "File upload error." });
     next();
   });
 }, async (req, res) => {
   try {
+    console.log("Files received:", req.files);
     const client = await Client.findOne({ referenceNumber: req.params.ref.toUpperCase() });
     if (!client) {
-      if (req.files) {
-        req.files.forEach(f => { try { fs.unlinkSync(f.path); } catch (_) {} });
-      }
+      if (req.files) req.files.forEach(f => { try { f.buffer = null; } catch (_) {} });
       return res.status(404).json({ message: "Client not found." });
     }
 
@@ -194,15 +187,22 @@ router.post("/clients/:ref/upload", (req, res, next) => {
       return res.status(400).json({ message: "No files uploaded." });
     }
 
-    const newDocs = req.files.map(f => ({
-      path: f.path,
-      originalName: f.originalname,
-      uploadedAt: new Date()
-    }));
+    const newDocs = [];
+    for (const f of req.files) {
+      const ref = req.params.ref.replace(/[^a-zA-Z0-9-]/g, "");
+      const filename = `${ref}_${Date.now()}`;
+      console.log("Uploading to Cloudinary:", filename, "size:", f.size);
+      const result = await uploadToCloudinary(f.buffer, filename);
+      console.log("Cloudinary upload result:", result.secure_url);
+      newDocs.push({
+        path: result.secure_url,
+        originalName: f.originalname,
+        uploadedAt: new Date(),
+      });
+    }
 
     client.documents.push(...newDocs);
 
-    // Maintain backward compatibility for pdfPath with the first document
     if (client.documents.length > 0) {
       client.pdfPath = client.documents[0].path;
       client.pdfOriginalName = client.documents[0].originalName;
@@ -213,6 +213,7 @@ router.post("/clients/:ref/upload", (req, res, next) => {
 
     res.json({ message: "Files uploaded successfully.", client });
   } catch (err) {
+    console.error("Upload error:", err);
     res.status(500).json({ message: "Server error.", error: err.message });
   }
 });
@@ -230,13 +231,21 @@ router.delete("/clients/:ref/documents/:docId", async (req, res) => {
     if (docIndex === -1) return res.status(404).json({ message: "Document not found." });
 
     const doc = client.documents[docIndex];
-    if (doc.path && fs.existsSync(doc.path)) {
-      fs.unlinkSync(doc.path);
+
+    // Delete from Cloudinary using the public_id extracted from the URL
+    if (doc.path) {
+      try {
+        const urlParts = doc.path.split("/");
+        const filename = urlParts[urlParts.length - 1].split(".")[0];
+        const publicId = `gratia-documents/${filename}`;
+        await cloudinary.uploader.destroy(publicId, { resource_type: "raw" });
+      } catch (e) {
+        console.error("Cloudinary delete failed:", e.message);
+      }
     }
 
     client.documents.splice(docIndex, 1);
 
-    // Update legacy fields
     if (client.documents.length > 0) {
       client.pdfPath = client.documents[0].path;
       client.pdfOriginalName = client.documents[0].originalName;
@@ -261,18 +270,18 @@ router.delete("/clients/:ref", async (req, res) => {
     const client = await Client.findOneAndDelete({ referenceNumber: req.params.ref.toUpperCase() });
     if (!client) return res.status(404).json({ message: "Client not found." });
 
-    // Delete legacy file
-    if (client.pdfPath && fs.existsSync(client.pdfPath)) {
-      fs.unlinkSync(client.pdfPath);
-    }
-
-    // Delete all document files
-    if (client.documents && client.documents.length > 0) {
-      client.documents.forEach(doc => {
-        if (doc.path && fs.existsSync(doc.path)) {
-          fs.unlinkSync(doc.path);
+    // Delete all documents from Cloudinary
+    const allDocs = client.documents || [];
+    for (const doc of allDocs) {
+      if (doc.path) {
+        try {
+          const urlParts = doc.path.split("/");
+          const filename = urlParts[urlParts.length - 1].split(".")[0];
+          await cloudinary.uploader.destroy(`gratia-documents/${filename}`, { resource_type: "raw" });
+        } catch (e) {
+          console.error("Cloudinary delete failed:", e.message);
         }
-      });
+      }
     }
 
     res.json({ message: "Client deleted successfully." });
@@ -280,5 +289,4 @@ router.delete("/clients/:ref", async (req, res) => {
     res.status(500).json({ message: "Server error.", error: err.message });
   }
 });
-
 module.exports = router;

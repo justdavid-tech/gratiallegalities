@@ -851,7 +851,7 @@ export default function AdminDashboard() {
               </div>
               <div style={s.field}>
                 <label style={s.label}>Reference number</label>
-                <input style={{ ...s.input, ...(editClient ? { color: "#aaa" } : {}) }} value={form.ref} onChange={(e) => !editClient && setForm((f) => ({ ...f, ref: e.target.value }))} placeholder="e.g. GL-2026-0045" disabled={!!editClient} />
+                <input style={{ ...s.input, ...(editClient ? { color: "#aaa" } : {}) }} value={form.ref} onChange={(e) => !editClient && setForm((f) => ({ ...f, ref: e.target.value }))} placeholder="e.g. GCC-26-025" disabled={!!editClient} />
                 {editClient && <div style={{ fontSize: 11, color: "#aaa", marginTop: 4 }}>Reference cannot be changed after creation</div>}
               </div>
               <div style={s.field}>

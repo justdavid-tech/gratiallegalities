@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
-const fs = require("fs");
+const axios = require("axios");
 
 const Client = require("../models/Client");
 const requireAdmin = require("../middleware/requireAdmin");
@@ -21,7 +20,6 @@ router.post("/verify", async (req, res) => {
 
     const client = await Client.findOne({ referenceNumber: referenceNumber.toUpperCase() });
 
-    // Use the same error for wrong ref AND wrong password (security: no guessing)
     if (!client) {
       return res.status(401).json({ message: "Invalid reference number or password." });
     }
@@ -36,17 +34,14 @@ router.post("/verify", async (req, res) => {
 
     const isMatch = await client.verifyPassword(password);
     if (!isMatch) {
-      // Log failed attempt
       client.accessLog.push({ action: "failed_login", ip: req.ip });
       await client.save();
       return res.status(401).json({ message: "Invalid reference number or password." });
     }
 
-    // Log successful login
     client.accessLog.push({ action: "login", ip: req.ip });
     await client.save();
 
-    // Issue a short-lived JWT for PDF access (1 hour)
     const jwt = require("jsonwebtoken");
     const accessToken = jwt.sign(
       { ref: client.referenceNumber, role: "client" },
@@ -69,9 +64,9 @@ router.post("/verify", async (req, res) => {
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
-// GET /api/portal/document?action=view|download
+// GET /api/portal/document?action=view|download&docId=optional
 // Header: Authorization: Bearer <accessToken>
-// Streams the PDF to the client (view in browser or force download)
+// Fetches the PDF from Cloudinary and streams it to the client
 // ─────────────────────────────────────────────────────────────────────────────
 router.get("/document", async (req, res) => {
   try {
@@ -100,29 +95,34 @@ router.get("/document", async (req, res) => {
     }
 
     const docId = req.query.docId;
-    let filePath = "";
+    let fileUrl = "";
     let filename = "";
 
     if (docId) {
-      const doc = client.documents.find(d => d._id.toString() === docId);
-      if (!doc || !doc.path || !fs.existsSync(doc.path)) {
+      const doc = client.documents && client.documents.find(d => d._id.toString() === docId);
+      if (!doc || !doc.path) {
         return res.status(404).json({ message: "Document not found." });
       }
-      filePath = doc.path;
+      fileUrl = doc.path;
       filename = doc.originalName || "document.pdf";
     } else {
-      if (!client.pdfPath || !fs.existsSync(client.pdfPath)) {
+      if (!client.pdfPath) {
         return res.status(404).json({ message: "Document not found." });
       }
-      filePath = client.pdfPath;
+      fileUrl = client.pdfPath;
       filename = client.pdfOriginalName || "report.pdf";
     }
 
     const action = req.query.action || "view";
 
-    // Log access
-    client.accessLog.push({ action: `${action}_doc_${docId || "legacy"}`, ip: req.ip });
+    client.accessLog.push({ action: `${action}_doc_${docId || "main"}`, ip: req.ip });
     await client.save();
+
+    if (!fileUrl.startsWith("http://") && !fileUrl.startsWith("https://")) {
+      return res.status(410).json({ message: "This document is no longer available. Please contact your business lawyer." });
+    }
+
+    const response = await axios.get(fileUrl, { responseType: "stream" });
 
     res.setHeader("Content-Type", "application/pdf");
     if (action === "download") {
@@ -131,15 +131,16 @@ router.get("/document", async (req, res) => {
       res.setHeader("Content-Disposition", `inline; filename="${filename}"`);
     }
 
-    const stream = fs.createReadStream(filePath);
-    stream.pipe(res);
+    response.data.pipe(res);
+
   } catch (err) {
+    console.error("Document fetch error:", err.message);
     res.status(500).json({ message: "Server error.", error: err.message });
   }
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
-// GET /api/portal/access-log/:ref  (Admin only — view access log for a client)
+// GET /api/portal/access-log/:ref  (Admin only)
 // ─────────────────────────────────────────────────────────────────────────────
 router.get("/access-log/:ref", requireAdmin, async (req, res) => {
   try {
