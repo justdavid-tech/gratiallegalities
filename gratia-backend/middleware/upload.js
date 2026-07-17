@@ -37,16 +37,13 @@ const uploadToSupabase = (buffer, filename, contentType = "application/pdf") => 
       .upload(path, buffer, { contentType, upsert: true })
       .then(({ data, error }) => {
         if (error) reject(error);
-        else resolve({ ...data, path });
+        else {
+          const publicUrl = `${process.env.SUPABASE_URL}/storage/v1/object/public/${process.env.SUPABASE_BUCKET || "gratia-documents"}/${path}`;
+          resolve({ ...data, path, publicUrl });
+        }
       })
       .catch(reject);
   });
-};
-
-const getSupabaseSignedUrl = (path) => {
-  return supabase.storage
-    .from(process.env.SUPABASE_BUCKET || "gratia-documents")
-    .createSignedUrl(path, 3600);
 };
 
 const deleteFromSupabase = (path) => {
@@ -55,4 +52,4 @@ const deleteFromSupabase = (path) => {
     .remove([path]);
 };
 
-module.exports = { upload, supabase, uploadToSupabase, getSupabaseSignedUrl, deleteFromSupabase };
+module.exports = { upload, supabase, uploadToSupabase, deleteFromSupabase };

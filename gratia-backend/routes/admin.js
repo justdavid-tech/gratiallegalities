@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const Client = require("../models/Client");
 const Admin = require("../models/Admin");
 const requireAdmin = require("../middleware/requireAdmin");
-const { upload, supabase, uploadToSupabase, getSupabaseSignedUrl, deleteFromSupabase } = require("../middleware/upload");
+const { upload, supabase, uploadToSupabase, deleteFromSupabase } = require("../middleware/upload");
 
 // ─────────────────────────────────────────────────────────────────────────────
 // POST /api/admin/login
@@ -196,9 +196,9 @@ router.post("/clients/:ref/upload", (req, res, next) => {
       console.log("Uploading to Supabase:", filename, "size:", f.size);
       try {
         const result = await uploadToSupabase(f.buffer, filename, f.mimetype);
-        console.log("Supabase upload result:", result.path);
+        console.log("Supabase upload result:", result.publicUrl);
         newDocs.push({
-          path: result.path,
+          path: result.publicUrl,
           originalName: f.originalname,
           uploadedAt: new Date(),
         });
@@ -241,7 +241,9 @@ router.delete("/clients/:ref/documents/:docId", async (req, res) => {
 
     if (doc.path) {
       try {
-        await deleteFromSupabase(doc.path);
+        const urlParts = doc.path.split("/");
+        const filename = urlParts[urlParts.length - 1];
+        await deleteFromSupabase(filename);
       } catch (e) {
         console.error("Supabase delete failed:", e.message);
       }
@@ -277,7 +279,9 @@ router.delete("/clients/:ref", async (req, res) => {
     for (const doc of allDocs) {
       if (doc.path) {
         try {
-          await deleteFromSupabase(doc.path);
+          const urlParts = doc.path.split("/");
+          const filename = urlParts[urlParts.length - 1];
+          await deleteFromSupabase(filename);
         } catch (e) {
           console.error("Supabase delete failed:", e.message);
         }

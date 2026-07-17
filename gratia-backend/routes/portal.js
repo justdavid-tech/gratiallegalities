@@ -142,7 +142,7 @@ router.get("/document", async (req, res) => {
     }
 
     const docId = req.query.docId;
-    let filePath = "";
+    let fileUrl = "";
     let filename = "";
 
     if (docId) {
@@ -150,13 +150,13 @@ router.get("/document", async (req, res) => {
       if (!doc || !doc.path) {
         return res.status(404).json({ message: "Document not found." });
       }
-      filePath = doc.path;
+      fileUrl = doc.path;
       filename = doc.originalName || "document.pdf";
     } else {
       if (!client.pdfPath) {
         return res.status(404).json({ message: "Document not found." });
       }
-      filePath = client.pdfPath;
+      fileUrl = client.pdfPath;
       filename = client.pdfOriginalName || "report.pdf";
     }
 
@@ -165,17 +165,11 @@ router.get("/document", async (req, res) => {
     client.accessLog.push({ action: `${action}_doc_${docId || "main"}`, ip: req.ip });
     await client.save();
 
-    if (!filePath) {
+    if (!fileUrl || !fileUrl.startsWith("http")) {
       return res.status(410).json({ message: "This document is no longer available. Please contact your business lawyer." });
     }
 
-    const { data: signedData, error: signedError } = await getSupabaseSignedUrl(filePath);
-    if (signedError || !signedData?.signedUrl) {
-      console.error("Supabase signed URL error:", signedError?.message);
-      return res.status(502).json({ message: "Failed to fetch document from storage. Please contact your business lawyer." });
-    }
-
-    res.json({ fileUrl: signedData.signedUrl, filename, action });
+    res.json({ fileUrl, filename, action });
 
   } catch (err) {
     console.error("Document fetch error:", err.message);
