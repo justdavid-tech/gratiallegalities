@@ -113,6 +113,8 @@ router.get("/document", async (req, res) => {
       filename = client.pdfOriginalName || "report.pdf";
     }
 
+    console.log("DOCUMENT REQUEST:", decoded.ref, "docId:", docId, "fileUrl:", fileUrl);
+
     const action = req.query.action || "view";
 
     client.accessLog.push({ action: `${action}_doc_${docId || "main"}`, ip: req.ip });
