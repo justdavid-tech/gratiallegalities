@@ -43,6 +43,7 @@ const uploadToCloudinary = (buffer, filename) => {
         resource_type: "raw",
         public_id: filename,
         format: "pdf",
+        access_mode: "public",
       },
       (error, result) => {
         if (error) reject(error);
