@@ -160,8 +160,6 @@ router.get("/document", async (req, res) => {
       filename = client.pdfOriginalName || "report.pdf";
     }
 
-    console.log("DOCUMENT REQUEST:", decoded.ref, "docId:", docId, "fileUrl:", fileUrl);
-
     const action = req.query.action || "view";
 
     client.accessLog.push({ action: `${action}_doc_${docId || "main"}`, ip: req.ip });
@@ -171,11 +169,10 @@ router.get("/document", async (req, res) => {
       return res.status(410).json({ message: "This document is no longer available. Please contact your business lawyer." });
     }
 
-    res.redirect(fileUrl);
+    res.json({ fileUrl, filename, action });
 
   } catch (err) {
     console.error("Document fetch error:", err.message);
-    console.error("Full error:", err);
     res.status(500).json({ message: "Server error.", error: err.message });
   }
 });
