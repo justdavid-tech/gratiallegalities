@@ -49,8 +49,19 @@ router.post("/verify", async (req, res) => {
       { expiresIn: "1h" }
     );
 
+    const refreshToken = jwt.sign(
+      { ref: client.referenceNumber, role: "client", type: "refresh" },
+      process.env.JWT_SECRET,
+      { expiresIn: "30d" }
+    );
+
+    client.refreshToken = refreshToken;
+    client.refreshTokenExpires = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
+    await client.save();
+
     res.json({
       accessToken,
+      refreshToken,
       client: {
         name: client.name,
         referenceNumber: client.referenceNumber,
@@ -58,6 +69,42 @@ router.post("/verify", async (req, res) => {
         documents: client.documents || [],
       },
     });
+  } catch (err) {
+    res.status(500).json({ message: "Server error.", error: err.message });
+  }
+});
+
+router.post("/refresh-token", async (req, res) => {
+  try {
+    const { refreshToken } = req.body;
+    if (!refreshToken) {
+      return res.status(401).json({ message: "Refresh token required." });
+    }
+
+    const jwt = require("jsonwebtoken");
+    let decoded;
+    try {
+      decoded = jwt.verify(refreshToken, process.env.JWT_SECRET);
+    } catch {
+      return res.status(403).json({ message: "Invalid or expired refresh token. Please log in again." });
+    }
+
+    if (decoded.type !== "refresh") {
+      return res.status(403).json({ message: "Invalid token type." });
+    }
+
+    const client = await Client.findOne({ referenceNumber: decoded.ref });
+    if (!client || client.refreshToken !== refreshToken || !client.refreshTokenExpires || client.refreshTokenExpires < new Date()) {
+      return res.status(403).json({ message: "Refresh token invalid or expired. Please log in again." });
+    }
+
+    const newAccessToken = jwt.sign(
+      { ref: client.referenceNumber, role: "client" },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+
+    res.json({ accessToken: newAccessToken });
   } catch (err) {
     res.status(500).json({ message: "Server error.", error: err.message });
   }
@@ -137,7 +184,8 @@ router.get("/document", async (req, res) => {
 
   } catch (err) {
     console.error("Document fetch error:", err.message);
-    res.status(500).json({ message: "Server error.", error: err.message });
+    console.error("Full error:", err);
+    res.status(500).json({ message: "Server error.", error: err.message, stack: err.stack });
   }
 });
 

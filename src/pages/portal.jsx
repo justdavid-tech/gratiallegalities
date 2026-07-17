@@ -48,6 +48,9 @@ export default function Portal() {
       const data = await res.json();
       if (!res.ok) { setError(data.message || "Invalid reference number or PIN."); return; }
       setSession(data);
+      if (data.refreshToken) {
+        localStorage.setItem("gratia_refresh_token", data.refreshToken);
+      }
     } catch {
       setError("Could not reach the server. Please try again.");
     } finally {
@@ -55,14 +58,52 @@ export default function Portal() {
     }
   };
 
+  const refreshAccessToken = async () => {
+    const refreshToken = localStorage.getItem("gratia_refresh_token");
+    if (!refreshToken) return null;
+    try {
+      const res = await fetch(`${API_BASE}/api/portal/refresh-token`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ refreshToken }),
+      });
+      const data = await res.json();
+      if (!res.ok) { localStorage.removeItem("gratia_refresh_token"); return null; }
+      return data.accessToken;
+    } catch {
+      return null;
+    }
+  };
+
+  const authFetch = async (url, options = {}) => {
+    const headers = {
+      ...(options.headers || {}),
+      Authorization: `Bearer ${session?.accessToken}`,
+    };
+    let res = await fetch(url, { ...options, headers });
+    if (res.status === 401 && session?.accessToken) {
+      const newToken = await refreshAccessToken();
+      if (newToken) {
+        setSession(prev => ({ ...prev, accessToken: newToken }));
+        const newHeaders = {
+          ...(options.headers || {}),
+          Authorization: `Bearer ${newToken}`,
+        };
+        res = await fetch(url, { ...options, headers: newHeaders });
+      } else {
+        setError("Your session has expired. Please log in again.");
+        setSession(null);
+      }
+    }
+    return res;
+  };
+
   const openPdf = async (action, docId, originalName) => {
     setPdfLoading(true);
     try {
       const urlParams = new URLSearchParams({ action });
       if (docId) urlParams.append("docId", docId);
-      const res = await fetch(`${API_BASE}/api/portal/document?${urlParams.toString()}`, {
-        headers: { Authorization: `Bearer ${session.accessToken}` },
-      });
+      const res = await authFetch(`${API_BASE}/api/portal/document?${urlParams.toString()}`);
       const data = await res.json().catch(() => ({}));
       if (res.status === 401) { setError("Your session has expired. Please log in again."); setSession(null); return; }
       if (!res.ok) { setError(data.message || "Could not load the document. Please try again."); return; }
@@ -86,6 +127,7 @@ export default function Portal() {
   const handleLogout = () => {
     setSession(null); setRef(""); setPin(""); setError("");
     setMessages([]); setMsgInput(""); setMsgError(""); setMsgSuccess("");
+    localStorage.removeItem("gratia_refresh_token");
   };
 
   // ── Fetch messages ────────────────────────────────────────────────────────
@@ -93,9 +135,7 @@ export default function Portal() {
     if (!session) return;
     setMsgLoading(true);
     try {
-      const res = await fetch(`${API_BASE}/api/messages/thread`, {
-        headers: { Authorization: `Bearer ${session.accessToken}` },
-      });
+      const res = await authFetch(`${API_BASE}/api/messages/thread`);
       const data = await res.json();
       if (res.ok) setMessages(data);
     } catch {}
@@ -124,12 +164,9 @@ export default function Portal() {
     setMsgError(""); setMsgSuccess("");
     setMsgSending(true);
     try {
-      const res = await fetch(`${API_BASE}/api/messages/send`, {
+      const res = await authFetch(`${API_BASE}/api/messages/send`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${session.accessToken}`,
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ content: msgInput.trim() }),
       });
       const data = await res.json();
@@ -148,10 +185,7 @@ export default function Portal() {
   const deleteMessage = async (msgId) => {
     if (!window.confirm("Are you sure you want to delete this message?")) return;
     try {
-      const res = await fetch(`${API_BASE}/api/messages/client/message/${msgId}`, {
-        method: "DELETE",
-        headers: { Authorization: `Bearer ${session.accessToken}` }
-      });
+      const res = await authFetch(`${API_BASE}/api/messages/client/message/${msgId}`, { method: "DELETE" });
       if (res.ok) {
         setMessages((prev) => prev.filter((m) => m._id !== msgId));
         setMsgSuccess("Message deleted");
@@ -176,12 +210,9 @@ export default function Portal() {
   const saveEditMessage = async (msgId) => {
     if (!editingContent.trim()) return;
     try {
-      const res = await fetch(`${API_BASE}/api/messages/client/message/${msgId}`, {
+      const res = await authFetch(`${API_BASE}/api/messages/client/message/${msgId}`, {
         method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${session.accessToken}`
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ content: editingContent.trim() }),
       });
       const data = await res.json();

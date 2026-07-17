@@ -176,7 +176,8 @@ router.post("/clients/:ref/upload", (req, res, next) => {
   });
 }, async (req, res) => {
   try {
-    console.log("Files received:", req.files);
+    console.log("UPLOAD REQUEST for ref:", req.params.ref);
+    console.log("Files received:", req.files ? req.files.map(f => ({ name: f.originalname, size: f.size, mimetype: f.mimetype })) : "none");
     const client = await Client.findOne({ referenceNumber: req.params.ref.toUpperCase() });
     if (!client) {
       if (req.files) req.files.forEach(f => { try { f.buffer = null; } catch (_) {} });
@@ -192,13 +193,18 @@ router.post("/clients/:ref/upload", (req, res, next) => {
       const ref = req.params.ref.replace(/[^a-zA-Z0-9-]/g, "");
       const filename = `${ref}_${Date.now()}`;
       console.log("Uploading to Cloudinary:", filename, "size:", f.size);
-      const result = await uploadToCloudinary(f.buffer, filename);
-      console.log("Cloudinary upload result:", result.secure_url);
-      newDocs.push({
-        path: result.secure_url,
-        originalName: f.originalname,
-        uploadedAt: new Date(),
-      });
+      try {
+        const result = await uploadToCloudinary(f.buffer, filename);
+        console.log("Cloudinary upload result:", result.secure_url);
+        newDocs.push({
+          path: result.secure_url,
+          originalName: f.originalname,
+          uploadedAt: new Date(),
+        });
+      } catch (uploadErr) {
+        console.error("Cloudinary upload failed for", filename, ":", uploadErr.message);
+        throw uploadErr;
+      }
     }
 
     client.documents.push(...newDocs);

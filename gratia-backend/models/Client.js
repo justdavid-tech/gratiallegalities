@@ -52,6 +52,8 @@ const clientSchema = new mongoose.Schema(
         timestamp: { type: Date, default: Date.now },
       },
     ],
+    refreshToken: { type: String, default: null },
+    refreshTokenExpires: { type: Date, default: null },
   },
   { timestamps: true }
 );
