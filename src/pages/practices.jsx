@@ -3,6 +3,7 @@ import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import PracticeHero from '../components/practicehero';
 import PracticeAreas from '../components/practiceareas';
+import LitigationSection from '../components/litigationsection';
 
 const Practices = () => {
   return (
@@ -10,19 +11,20 @@ const Practices = () => {
       <Navbar />
       <PracticeHero 
         practiceName="Our Practice Areas"
-        tagline="Expert Legal Solutions"
-        description="Comprehensive legal representation tailored to your specific needs. From corporate law to real estate, our team is dedicated to your success."
+        tagline="Corporate Advisory & Dispute Resolution"
+        description="Comprehensive legal solutions tailored to your specific needs. From corporate governance and transaction protection to commercial litigation and advocacy before the courts."
         contactPerson="Grace Enenu Sani-Odeh Esq."
-        contactEmail="info@gratiacorporateconsult.com"
+        contactEmail="info@gratialegalities.com"
         keyFeatures={[
           "Corporate & Commercial Law",
-          "Real Estate & Property",
-          "Legal Advisory",
-          "Due Diligence"
+          "Real Estate & Property Disputes",
+          "Civil & Commercial Litigation",
+          "Due Diligence & Compliance"
         ]}
       />
-      <div className="py-20">
+      <div className="py-12">
         <PracticeAreas />
+        <LitigationSection />
       </div>
       <Footer />
     </div>

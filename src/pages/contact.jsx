@@ -70,10 +70,10 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: 'Email',
-      details: ['info@gratiacorporateconsult.com'],
+      details: ['info@gratialegalities.com'],
       description: 'Send us your questions or documents',
       cta: 'Send Email',
-      href: 'mailto:info@gratiacorporateconsult.com',
+      href: 'mailto:info@gratialegalities.com',
       color: 'from-primary/20 to-primary/10'
     },
     {
@@ -169,7 +169,7 @@ const handleSubmit = async (e) => {
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6">
-              Contact <span className="text-primary">Gratia Corporate Consult</span>
+              Contact <span className="text-primary">Gratia Legalities</span>
             </h1>
             
             <p className="text-1xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -221,7 +221,7 @@ const handleSubmit = async (e) => {
 
       <h3 className="text-3xl font-bold text-white mb-3">Message Sent!</h3>
       <p className="text-gray-300 mb-2">
-        Thank you for contacting Gratia Corporate Consult. Our team will reach out to you shortly.
+        Thank you for contacting Gratia Legalities. Our team will reach out to you shortly.
       </p>
       <p className="text-sm text-gray-400 mb-8">
         For urgent matters, call us directly at{" "}

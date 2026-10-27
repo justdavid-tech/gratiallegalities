@@ -123,7 +123,7 @@ const RealEstate = () => {
         tagline="Protecting Property Value Through Strategic Legal Expertise"
         customContent={customHeroContent}
         contactPerson="Real Estate & Property Transactions Team"
-        contactEmail="info@gratiacorporateconsult.com"
+        contactEmail="info@gratialegalities.com"
         keyFeatures={[
           "Land acquisition and title verification",
           "Property sale and lease documentation",
@@ -454,10 +454,10 @@ const RealEstate = () => {
                 <div>
                   <div className="text-sm text-gray-400 mb-2">For Property Matters</div>
                   <a 
-                    href="mailto:info@gratiacorporateconsult.com"
+                    href="mailto:info@gratialegalities.com"
                     className="text-primary hover:text-primary-400 transition-colors text-lg font-medium block"
                   >
-                    info@gratiacorporateconsult.com
+                    info@gratialegalities.com
                   </a>
                 </div>
                 
@@ -493,7 +493,7 @@ const RealEstate = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a  
-                    href="mailto:info@gratiacorporateconsult.com"
+                    href="mailto:info@gratialegalities.com"
                     className="group px-8 py-4 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                   >
                     Contact Real Estate Team

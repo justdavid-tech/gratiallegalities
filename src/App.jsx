@@ -1,9 +1,8 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Practices from "./pages/practices";
-import GratiaLegalities from "./pages/legalities";
 import Contact from "./pages/contact";
 import FindUs from "./pages/findus";
 import ArticlePage from "./pages/articlepage";
@@ -48,7 +47,7 @@ function App() {
         <Route path="/practices" element={<Practices />} />
 
         <Route path="/contact" element={<Contact />} />
-        <Route path="/legalities" element={<GratiaLegalities />} />
+        <Route path="/legalities" element={<Navigate to="/" replace />} />
         <Route path="/find-us" element={<FindUs />} />
         <Route path="/insights" element={<InsightsPage />} />
         <Route path="/insights/:slug" element={<ArticlePage />} />

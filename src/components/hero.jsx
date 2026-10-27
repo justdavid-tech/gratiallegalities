@@ -41,7 +41,7 @@ const PRACTICE_AREAS = [
 const INTERVAL = 5000;
 
 const globalStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;900&family=Jost:wght@200;300;400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;900&family=Jost:wght@200;300;400&display=swap');
 
   .lf-hero {
     position: relative; width: 100vw; height: 100vh;
@@ -181,7 +181,7 @@ const globalStyles = `
   }
 
   .lf-headline {
-    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-family: 'Righteous', sans-serif; font-weight: 400;
     font-size: clamp(3rem, 7vw, 6.6rem);
     line-height: 1.04; color: #f5f0e8; max-width: 68%;
     opacity: 0; transform: translateY(26px);
@@ -542,7 +542,7 @@ export default function Hero({ isStarted = true }) {
             <button className="lf-modal-close" onClick={() => setModalOpen(false)} aria-label="Close">
               ✕
             </button>
-            <p className="lf-modal-eyebrow">Gratia Corporate Consult</p>
+            <p className="lf-modal-eyebrow">Gratia Legalities</p>
             <h2 className="lf-modal-title">Our Practice Areas</h2>
 
             <div className="lf-modal-grid">

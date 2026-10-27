@@ -144,48 +144,19 @@ export default function InsightsPreview() {
 
   return (
     <section id="insights" className="py-24 bg-neutral-50 relative overflow-hidden">
-      {/* Decorative background element */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          {/* SECTION HEADER */}
-      <div className="text-center mb-20">
-
-        <div
-          className="
-          inline-flex items-center gap-2
-          px-5 py-2
-          rounded-full
-          border
-          backdrop-blur-xl
-          mb-6
-          "
-           style={{
-        background: '#f1ede7ff',
-            borderColor: '#f1ede7ff',
-          }}
-        >
-          <BookOpen
-            className="w-4 h-4"
-            style={{ color: '#d47f11' }}
-          />
-
-          <span
-            className="
-            text-xs
-            
-            font-bold
-            uppercase
-            tracking-[0.25em]
-            text-[#d47f11]
-            "
-
-          >
-            Knowledge Hub
+      {/* SECTION HEADER */}
+      <div className="text-center mb-16">
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <div className="h-px w-8 bg-primary/60" />
+          <span className="text-primary text-xs font-semibold uppercase tracking-[0.25em]">
+            Legal Perspectives & Analysis
           </span>
+          <div className="h-px w-8 bg-primary/60" />
         </div>
 
         <h2
           className="
-          text-5xl md:text-6xl
+          text-4xl md:text-5xl lg:text-6xl
           font-black
           text-black
           font-heading

@@ -36,7 +36,6 @@ const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
   { name: 'Practice Areas', href: '/practices', hasDropdown: true },
-  { name: 'Gratia Legalities', href: '/legalities' },
   { name: 'Insights', href: '/insights' },
   { name: 'Contact', href: '/contact' },
   { name: 'Portal', href: '/portal' },
@@ -86,17 +85,6 @@ const Navbar = () => {
           scrolled ? 'scale-[0.98]' : 'scale-100'
         }`}
       >
-        {/* Floating Glow Effects */}
-        <div
-          className="absolute -top-10 left-10 w-40 h-40 rounded-full blur-3xl opacity-20"
-          style={{ background: GOLD }}
-        />
-
-        <div
-          className="absolute -right-10 top-0 w-40 h-40 rounded-full blur-3xl opacity-10"
-          style={{ background: NAVY }}
-        />
-
         {/* Glass Wrapper */}
         <div
           className="relative rounded-[28px] border backdrop-blur-2xl"
@@ -127,8 +115,8 @@ const Navbar = () => {
               >
                 <img
                   src="/assets/logo-transparent.png"
-                  alt="Gratia Corporate Consult"
-                  className="h-16 w-auto scale-[1.8] object-contain"
+                  alt="Gratia Legalities"
+                  className="h-16 w-auto scale-[1] object-contain"
                 />
               </Link>
 
@@ -455,17 +443,11 @@ const Navbar = () => {
             fixed inset-0 z-40 lg:hidden
             pt-28 pb-10 px-6
             flex flex-col overflow-y-auto
+            bg-[#030930]
             "
-            style={{
-              background: 'linear-gradient(135deg, #051c61 0%, #030d2e 100%)',
-              backdropFilter: 'blur(10px)',
-            }}
           >
-            {/* Background Accent */}
-            <div 
-              className="absolute top-0 right-0 w-64 h-64 rounded-full blur-[100px] opacity-20 pointer-events-none"
-              style={{ background: GOLD }}
-            />
+            {/* Background Gradient from Contact page */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 pointer-events-none" />
 
             <div className="relative z-10 flex flex-col h-full">
               {/* NAVIGATION LINKS */}

@@ -38,7 +38,7 @@ const TermsOfService = () => {
                 Terms of Service
               </h1>
               <p className="text-xl text-neutral-200 max-w-4xl">
-                These terms govern your use of Gratia Corporate Consult's services and website. By accessing our services, you agree to these terms.
+                These terms govern your use of Gratia Legalities's services and website. By accessing our services, you agree to these terms.
               </p>
             </div>
           </div>
@@ -115,7 +115,7 @@ const TermsOfService = () => {
                 
                 <div className="space-y-6 text-neutral-700">
                   <p>
-                    These Terms of Service ("Terms") constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and <span className="font-semibold text-primary-600">Gratia Corporate Consult</span> ("we," "us," or "our"), concerning your access to and use of our legal services and website.
+                    These Terms of Service ("Terms") constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and <span className="font-semibold text-primary-600">Gratia Legalities</span> ("we," "us," or "our"), concerning your access to and use of our legal services and website.
                   </p>
                   
                   <div className="bg-primary-50 border-l-4 border-primary-500 p-6 rounded-r-lg">
@@ -501,7 +501,7 @@ const TermsOfService = () => {
                         <svg className="w-5 h-5 text-primary-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-lg font-semibold">Gratia Corporate Consult</span>
+                        <span className="text-lg font-semibold">Gratia Legalities</span>
                       </div>
                       <div className="flex items-center justify-center">
                         <svg className="w-5 h-5 text-primary-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -513,7 +513,7 @@ const TermsOfService = () => {
                         <svg className="w-5 h-5 text-primary-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M2.94 6.412A2 2 0 002 8.108V16a2 2 0 002 2h12a2 2 0 002-2V8.108a2 2 0 00-.94-1.696l-6-3.75a2 2 0 00-2.12 0l-6 3.75zm2.615 2.423a1 1 0 10-1.11 1.664l5 3.333a1 1 0 001.11 0l5-3.333a1 1 0 00-1.11-1.664L10 11.798 5.555 8.835z" clipRule="evenodd" />
                         </svg>
-                        <span>info@gratiacorporateconsult.com</span>
+                        <span>info@gratialegalities.com</span>
                       </div>
                       <div className="flex items-center justify-center">
                         <svg className="w-5 h-5 text-primary-600 mr-3" fill="currentColor" viewBox="0 0 20 20">

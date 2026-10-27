@@ -55,14 +55,6 @@ const PracticeAreas = () => {
       description: 'Employment contracts, staff policies, workplace compliance, disciplinary procedures, and HR legal support.',
       features: ['Discrimination', 'Termination', 'Wages', 'Contracts']
     },
-    // {
-    //   id: 'legal-advisory',
-    //   slug: 'legal-advisory',
-    //   icon: <MessageSquare className="w-5 h-5" />,
-    //   title: 'Legal Advisory',
-    //   description: 'Comprehensive legal advice and counsel for various personal and business matters.',
-    //   features: ['Legal Counsel', 'Advice', 'Guidance', 'Consultation']
-    // },
     {
       id: 'legal-due-diligence',
       slug: 'legalDueDiligence',
@@ -99,41 +91,17 @@ return (
       {/* SECTION HEADER */}
       <div className="text-center mb-20">
 
-        <div
-          className="
-          inline-flex items-center gap-2
-          px-5 py-2
-          rounded-full
-          border
-          backdrop-blur-xl
-          mb-6
-          "
-          style={{
-            background: 'rgba(255,255,255,0.05)',
-            borderColor: 'rgba(255,255,255,0.08)',
-          }}
-        >
-          <Scale
-            className="w-4 h-4"
-            style={{ color: '#d47f11' }}
-          />
-
-          <span
-            className="
-            text-xs
-            font-bold
-            uppercase
-            tracking-[0.25em]
-            text-white/80
-            "
-          >
-            Legal Expertise
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <div className="h-px w-8 bg-primary" />
+          <span className="text-primary text-xs font-semibold uppercase tracking-[0.25em]">
+            Areas of Practice
           </span>
+          <div className="h-px w-8 bg-primary" />
         </div>
 
         <h2
           className="
-          text-5xl md:text-6xl
+          text-4xl md:text-5xl lg:text-6xl
           font-black
           leading-[1.1]
           mb-6

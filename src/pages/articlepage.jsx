@@ -12,9 +12,9 @@ import { PortableText } from '@portabletext/react';
 import { getPostBySlug, urlFor } from '../lib/sanity';
 import { Calendar, Clock, ArrowLeft, ArrowRight, Share2, Bookmark } from 'lucide-react';
 
-const SITE_URL = 'https://gratiacorporateconsult.com';
-const SITE_NAME = 'Gratia Corporate Consult';
-const FALLBACK_IMAGE = `${SITE_URL}/assets/logo-dark.jpeg`;
+const SITE_URL = 'https://gratialegalities.com';
+const SITE_NAME = 'Gratia Legalities';
+const FALLBACK_IMAGE = `${SITE_URL}/assets/logo.jpg`;
 
 // ── Dynamic SEO / JSON-LD injector ───────────────────────────────────────────
 function useSeoHead(post) {
@@ -24,7 +24,7 @@ function useSeoHead(post) {
     const slug     = post.slug?.current ?? '';
     const pageUrl  = `${SITE_URL}/insights/${slug}`;
     const title    = `${post.title} | ${SITE_NAME}`;
-    const desc     = post.excerpt || `Read ${post.title} on the Gratia Corporate Consult blog.`;
+    const desc     = post.excerpt || `Read ${post.title} on the Gratia Corporate Legalities blog.`;
     const imgUrl   = post.coverImage?.asset
       ? urlFor(post.coverImage).width(1200).height(630).fit('crop').auto('format').url()
       : FALLBACK_IMAGE;
@@ -303,7 +303,7 @@ export default function ArticlePage() {
                     <span className="text-[10px] font-bold text-primary uppercase tracking-[0.3em] mb-4 block">About the Author</span>
                     <h3 className="font-heading text-2xl text-secondary uppercase font-bold mb-4">{post.author.name}</h3>
                     <p className="text-neutral-500 text-sm leading-relaxed mb-6 font-medium">
-                      {post.author.role} at Gratia Corporate Consult. Specialist in complex corporate legal frameworks and strategic advocacy.
+                      {post.author.role} at Gratia Legalities. Specialist in complex corporate legal frameworks and strategic advocacy.
                     </p>
                     <div className="flex flex-wrap justify-center md:justify-start gap-4">
                       <Link to="/contact" className="text-[10px] font-bold text-secondary uppercase tracking-widest flex items-center gap-2 hover:text-primary transition-colors">

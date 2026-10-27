@@ -241,7 +241,7 @@ export default function Portal() {
     <div style={s.page}>
       <div style={{ ...s.topbar, padding: isMobile ? "12px 16px" : "14px 32px" }}>
         <div style={s.topbarLeft}>
-          <span style={{ ...s.logo, fontSize: isMobile ? 15 : 18 }}>Gratia Corporate Consult</span>
+          <span style={{ ...s.logo, fontSize: isMobile ? 15 : 18 }}>Gratia Legalities</span>
           {!isMobile && (
             <>
               <div style={s.dividerV} />
@@ -472,7 +472,7 @@ export default function Portal() {
 
       <div style={s.footerNote}>
         This portal is for authorized clients only. All access is logged.{" "}
-        <a href="mailto:info@gratiacorporateconsult.com" style={{ color: "#d47f11" }}>Contact your business lawyer</a>
+        <a href="mailto:info@gratialegalities.com" style={{ color: "#d47f11" }}>Contact your business lawyer</a>
       </div>
     </div>
   );

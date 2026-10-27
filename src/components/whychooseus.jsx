@@ -1,100 +1,120 @@
 import React from 'react';
 import { 
-  Target, 
   ShieldCheck, 
   Award, 
   Users, 
-  CheckCircle,
-  Star,
+  CheckCircle2, 
+  Scale, 
+  FileCheck2,
+  Lock,
+  Building2,
   ArrowRight
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const WhyChooseUs = () => {
-  const competitiveAdvantages = [
+  const practicePillars = [
     {
       icon: <Users className="w-5 h-5" />,
-      title: 'Client-First Approach',
-      description: 'Every decision starts with your needs. We prioritize your goals above all else.',
-      features: ['Personalized Strategies', 'Regular Updates', '24/7 Availability', 'No Hidden Agendas'],
-      metric: '98% Client Satisfaction',
+      title: 'Partner-Led Oversight',
+      description: 'Your brief is directly steered by experienced practitioners with deep knowledge of Nigerian commercial realities and dispute dynamics.',
+      features: ['Direct access to lead counsel', 'Calculated strategic planning', 'Transparent milestone updates', 'Proactive risk mitigation'],
+      badge: 'Direct Counsel',
     },
     {
       icon: <Award className="w-5 h-5" />,
-      title: 'Proven Track Record',
-      description: 'Results that speak for themselves. Our success stories are your assurance.',
-      features: ['Fully Licensed', '7 Years Experience', 'Industry Recognition', 'Repeat Clients'],
-      metric: '96% Success Rate',
+      title: 'Substantive Track Record',
+      description: 'Seven years of advising high-growth ventures, corporate entities, investors, and individuals on high-stakes transactions and contentious matters.',
+      features: ['CAC & statutory compliance', 'Title due diligence at AGIS', 'Commercial arbitration & litigation', 'Enforceable contract drafting'],
+      badge: 'Proven Advocacy',
     },
     {
       icon: <ShieldCheck className="w-5 h-5" />,
-      title: 'Confidential Handling',
-      description: 'Your privacy is sacred. We implement strict security protocols on all matters.',
-      features: ['Secure Communication', 'NDA Protection', 'Private Consultation', 'Data Encryption'],
-      metric: 'Zero Breaches',
+      title: 'Privilege & Discretion',
+      description: 'Every disclosure, document, and transaction is guarded under strict legal professional privilege and rigorous data protection standards.',
+      features: ['Absolute confidentiality', 'Strict conflict checks', 'Secure document handling', 'Regulatory compliance standards'],
+      badge: 'Legal Privilege',
     }
   ];
 
-  const comparisonData = [
-    { feature: 'Legal Health Check', competitors: 'Limited' },
-    { feature: 'Flat Fee Pricing Available', competitors: 'Rarely' },
-    { feature: '24/7 Client Support', competitors: 'Business Hours' },
-    { feature: 'Case Management Portal', competitors: 'Sometimes' },
-    { feature: 'Monthly Progress Reports', competitors: 'Upon Request' },
-    { feature: 'Multilingual Services', competitors: 'Limited' },
-    { feature: 'Due Diligence Passport', competitors: 'Limited' }
+  const serviceStandards = [
+    {
+      title: 'Comprehensive Legal Health Checks',
+      detail: 'Systematic audits of corporate structure, employment policies, and regulatory exposures before they manifest as costly disputes.'
+    },
+    {
+      title: 'Transparent Fee Architecture',
+      detail: 'Clear, upfront engagement scopes and milestone-based fee arrangements without hidden overheads.'
+    },
+    {
+      title: 'Integrated Practice Model',
+      detail: 'Seamless transition between proactive commercial structuring and court litigation when contentious disputes arise.'
+    },
+    {
+      title: 'Client Matter Portal',
+      detail: 'Centralized, secure digital access for real-time matter tracking, document repositories, and direct messaging.'
+    },
+    {
+      title: 'Rigorous Land & Asset Due Diligence',
+      detail: 'On-ground verification across registries, title histories, and planning authorities to secure property transactions.'
+    },
+    {
+      title: 'Alternative Dispute Resolution (ADR)',
+      detail: 'Certified mediation and negotiation capacity to preserve commercial relationships and achieve cost-effective settlements.'
+    }
   ];
 
   return (
-    // 👇 Change this bg color anytime
-    <div className="py-20 bg-[#f9f9f7]">
+    <div className="py-24 bg-[#fbfbf9] border-t border-b border-stone-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 rounded-full mb-5">
-            <Target className="w-3.5 h-3.5 text-primary" />
-            <span className="text-primary text-xs font-semibold uppercase tracking-widest">Competitive Edge</span>
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-px w-8 bg-primary/60" />
+            <span className="text-primary text-xs font-semibold uppercase tracking-[0.25em]">
+              The Gratia Standard
+            </span>
+            <div className="h-px w-8 bg-primary/60" />
           </div>
           <h2 className="font-heading text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-4">
-            Why <span className="text-primary">Leading Clients</span> Choose Us
+            Why Discerning Clients <span className="text-primary">Rely on Our Counsel</span>
           </h2>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            Experience the difference that sets us apart in the legal industry
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            A practice grounded in legal rigor, meticulous execution, and steadfast commitment to our clients&apos; commercial and personal interests.
           </p>
         </div>
 
-        {/* Advantage Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
-          {competitiveAdvantages.map((advantage, index) => (
+        {/* Practice Pillars */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          {practicePillars.map((pillar, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300"
+              className="bg-white rounded-2xl p-8 border border-stone-200/80 shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
             >
-              {/* Icon + metric */}
-              <div className="flex items-center justify-between mb-5">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                  <span className="text-primary">{advantage.icon}</span>
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                    {pillar.icon}
+                  </div>
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-primary px-3 py-1 bg-primary/5 rounded border border-primary/15">
+                    {pillar.badge}
+                  </span>
                 </div>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/5 rounded-full text-xs font-semibold text-primary">
-                  <CheckCircle className="w-3 h-3" />
-                  {advantage.metric}
-                </span>
+
+                <h3 className="font-heading text-xl font-bold text-gray-900 mb-3">
+                  {pillar.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                  {pillar.description}
+                </p>
               </div>
 
-              {/* Title + description */}
-              <h3 className="text-base font-bold text-gray-900 group-hover:text-primary transition-colors duration-300 mb-2">
-                {advantage.title}
-              </h3>
-              <p className="text-sm text-gray-500 leading-relaxed mb-5">
-                {advantage.description}
-              </p>
-
-              {/* Feature list */}
-              <div className="space-y-2 pt-5 border-t border-gray-100">
-                {advantage.features.map((feature, idx) => (
+              <div className="space-y-2.5 pt-6 border-t border-stone-100">
+                {pillar.features.map((feature, idx) => (
                   <div key={idx} className="flex items-center gap-2.5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                    <span className="text-sm text-gray-600">{feature}</span>
+                    <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                    <span className="text-xs text-gray-700 font-medium">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -102,76 +122,52 @@ const WhyChooseUs = () => {
           ))}
         </div>
 
-        {/* Comparison Table */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden mb-10">
-          <div className="px-8 py-6 border-b border-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-2">
-            <div>
-              <h3 className="text-xl font-bold text-gray-900">
-                How We <span className="text-primary">Compare</span>
-              </h3>
-              <p className="text-sm text-gray-500 mt-0.5">
-                A side-by-side look at how our client-first approach stacks up
-              </p>
-            </div>
-            <div className="flex items-center gap-4 text-sm text-gray-400">
-              <div className="flex items-center gap-1.5">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                <span className="font-medium text-gray-700">Our Firm</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="w-4 h-4 text-center leading-none text-gray-400">~</span>
-                <span>Average Competitor</span>
-              </div>
-            </div>
+        {/* Institutional Standards Grid */}
+        <div className="bg-white rounded-2xl border border-stone-200/80 shadow-sm p-8 sm:p-12 mb-12">
+          <div className="max-w-3xl mb-10">
+            <span className="text-primary text-xs uppercase tracking-[0.25em] font-bold">
+              Our Professional Commitments
+            </span>
+            <h3 className="font-heading text-3xl font-bold text-gray-900 mt-2 mb-3">
+              Institutional Benchmarks in Legal Practice
+            </h3>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              We hold every brief to verified service standards designed to provide certainty, strategic clarity, and dependable counsel.
+            </p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="bg-gray-50 border-b border-gray-100">
-                  <th className="text-left py-3 px-8 text-xs font-semibold text-gray-400 uppercase tracking-wider">Feature</th>
-                  <th className="text-center py-3 px-6 text-xs font-semibold text-gray-400 uppercase tracking-wider">Our Firm</th>
-                  <th className="text-center py-3 px-6 text-xs font-semibold text-gray-400 uppercase tracking-wider">Competitors</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-50">
-                {comparisonData.map((row, index) => (
-                  <tr key={index} className="hover:bg-gray-50/60 transition-colors">
-                    <td className="py-4 px-8 text-sm font-medium text-gray-700">{row.feature}</td>
-                    <td className="py-4 px-6 text-center">
-                      <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm">
-                        <CheckCircle className="w-4 h-4" />
-                        Yes
-                      </span>
-                    </td>
-                    <td className="py-4 px-6 text-center">
-                      <span className="text-sm text-gray-400">{row.competitors}</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {serviceStandards.map((std, i) => (
+              <div key={i} className="border-l-2 border-primary/40 pl-5 space-y-2">
+                <h4 className="font-heading text-base font-bold text-gray-900">
+                  {std.title}
+                </h4>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  {std.detail}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Guarantee Banner */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 md:p-10">
+        {/* Trust Endorsement Strip */}
+        <div className="bg-[#030930] rounded-2xl border border-white/10 p-8 sm:p-10 text-white">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <ShieldCheck className="w-5 h-5 text-primary" />
+              <div className="w-12 h-12 bg-primary/15 border border-primary/30 rounded-xl flex items-center justify-center text-primary shrink-0">
+                <Scale className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="text-lg font-bold text-gray-900">100% Satisfaction Guarantee</h4>
-                <p className="text-sm text-gray-500">We're committed to delivering results you can trust</p>
+                <h4 className="font-heading text-xl font-bold text-white">Admitted to the Supreme Court of Nigeria</h4>
+                <p className="text-xs text-gray-300 mt-0.5">Licensed to practice law and represent clients before all superior courts of record in Nigeria.</p>
               </div>
             </div>
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 text-primary fill-primary" />
-              ))}
-              <span className="ml-2 text-sm font-semibold text-gray-700">5.0 Rated</span>
-            </div>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white rounded-xl text-xs font-semibold uppercase tracking-wider hover:bg-primary-600 transition-all shrink-0"
+            >
+              Consult Counsel <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
 

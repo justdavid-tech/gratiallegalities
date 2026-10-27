@@ -26,26 +26,25 @@ const PracticeHero = ({
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-black via-secondary-900 to-secondary-800 overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-96 h-96 bg-primary/10 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
-        <div className="absolute w-96 h-96 bg-primary/5 rounded-full blur-3xl top-1/2 right-0 animate-pulse delay-1000"></div>
-        <div className="absolute w-full h-full opacity-10">
-          <div className="absolute top-20 left-10 w-32 h-32 border border-primary/20 rounded-lg rotate-12 animate-float"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 border border-primary/20 rounded-lg -rotate-12 animate-float-delayed"></div>
-        </div>
-      </div>
+    <div className="relative min-h-screen bg-[#030930] overflow-hidden border-b border-white/10">
+      {/* Subtle background grid */}
+      <div 
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+        }}
+      />
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-12rem)]">
           {/* Left Column - Text Content */}
           <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            {/* Practice Area Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-              <span className="text-primary text-sm font-medium">Practice Area</span>
+            {/* Practice Area Eyebrow */}
+            <div className="flex items-center gap-3">
+              <div className="h-px w-8 bg-primary" />
+              <span className="text-primary text-xs font-semibold uppercase tracking-[0.25em]">Practice Area</span>
             </div>
 
             {/* Main Heading */}

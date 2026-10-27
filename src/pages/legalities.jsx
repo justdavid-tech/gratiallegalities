@@ -90,7 +90,7 @@ export default function GratiaLegalities() {
       <meta property="og:title" content="Gratia Legalities — Legal Representation in Abuja and across Nigeria" />
       <meta property="og:description" content="Strategic legal representation for businesses, investors, and individuals in Abuja, Nigeria. Protecting your rights when it matters most." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://gratiacorporateconsult.com/legalities" />
+      <meta property="og:url" content="https://gratialegalities.com/" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content="Gratia Legalities — Legal Representation in Abuja and across Nigeria" />
       <meta name="twitter:description" content="Strategic legal representation for businesses, investors, and individuals in Abuja, Nigeria." />
@@ -186,7 +186,7 @@ export default function GratiaLegalities() {
         <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-12">
           <div>
             <p className="text-info-100 text-base leading-relaxed">
-              While Gratia Corporate Consult focuses on helping clients structure, protect, and manage
+              While Gratia Corporate Legalities focuses on helping clients structure, protect, and manage
               their businesses proactively,{" "}
               <span className="text-white font-semibold">Gratia Legalities</span> provides legal
               representation and advocacy where disputes, enforcement actions, or formal legal
@@ -338,7 +338,7 @@ export default function GratiaLegalities() {
             contentious matter, our team is available to assist.
           </p>
           <a
-            href="mailto:info@gratiacorporateconsult.com"
+            href="mailto:info@gratialegalities.com"
             className="inline-flex items-center gap-2 bg-primary hover:bg-primary-600 text-white px-10 py-4 text-sm font-medium uppercase tracking-widest transition-colors"
           >
             Contact Our Team <ArrowRight size={15} />

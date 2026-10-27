@@ -8,6 +8,7 @@ import WhyChooseUs from "../components/whychooseus";
 import Testimonials from "../components/testimonies";
 import CallToAction from "../components/calltoaction";
 import Footer from "../components/footer";
+import LitigationSection from "../components/litigationsection";
 import InsightsPreview from "../components/insightspreview";
 import BanterLoader from "../components/Banterloader";
 
@@ -26,6 +27,7 @@ function Home() {
         </div>
         <TrustSignals />
         <PracticeAreas />
+        <LitigationSection />
         <SignatureProtection />
         <WhyChooseUs />
         <Testimonials />

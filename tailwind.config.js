@@ -106,7 +106,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         serif: ['Merriweather', 'Georgia', 'serif'],
-        heading: ['Playfair Display', 'Georgia', 'serif'],
+        heading: ['Righteous', 'sans-serif'],
       },
       boxShadow: {
         'brand': '0 4px 14px 0 rgba(230, 126, 34, 0.15)',

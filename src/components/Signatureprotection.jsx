@@ -26,7 +26,7 @@ const solutions = [
     color: "from-primary/10 to-primary/5",
     borderHover: "hover:border-primary",
     content: {
-      what: `The GCC Legal Health Check is a comprehensive legal assessment designed to evaluate the legal health of your business, identify hidden risks, and ensure that your business is structured, protected, and positioned for sustainable growth.
+      what: `The Gratia Legal Health Check is a comprehensive legal assessment designed to evaluate the legal health of your business, identify hidden risks, and ensure that your business is structured, protected, and positioned for sustainable growth.
 
 Just as regular health checks help detect medical issues before they become serious, our Legal Health Check helps uncover legal, compliance, contractual, governance, and operational vulnerabilities before they result in disputes, penalties, financial losses, or business disruption.`,
 
@@ -116,7 +116,7 @@ Just as regular health checks help detect medical issues before they become seri
 
       cta: {
         heading: "Is Your Business Legally Healthy?",
-        sub: "Many business owners only discover legal gaps when faced with disputes, regulatory issues, failed transactions, or investor scrutiny. A GCC Legal Health Check helps you identify risks early and position your business for sustainable growth.",
+        sub: "Many business owners only discover legal gaps when faced with disputes, regulatory issues, failed transactions, or investor scrutiny. A Gratia Legal Health Check helps you identify risks early and position your business for sustainable growth.",
         label: "Book a Legal Health Check",
       },
     },
@@ -132,7 +132,7 @@ Just as regular health checks help detect medical issues before they become seri
     color: "from-info-100 to-info-50",
     borderHover: "hover:border-info-400",
     content: {
-      what: `The GCC Due Diligence Passport™ is a proprietary verification and transaction support solution designed to help individuals, businesses, and investors make informed decisions before committing funds to a property, business, investment opportunity, partnership, or major transaction.
+      what: `The Gratia Due Diligence Passport™ is a proprietary verification and transaction support solution designed to help individuals, businesses, and investors make informed decisions before committing funds to a property, business, investment opportunity, partnership, or major transaction.
 
 By combining thorough verification, risk assessment, and structured record management, the Due Diligence Passport™ provides clients with greater clarity, confidence, and accountability throughout the decision-making process. More than a traditional due diligence exercise, it provides a documented pathway to informed investment and transaction decisions.`,
 
@@ -169,7 +169,7 @@ By combining thorough verification, risk assessment, and structured record manag
       ],
 
       receive: [
-        "A GCC Due Diligence Passport™",
+        "A Gratia Due Diligence Passport™",
         "A Due Diligence Findings Report",
         "Verification and Risk Assessment Summary",
         "Professional observations and recommendations",
@@ -184,7 +184,7 @@ By combining thorough verification, risk assessment, and structured record manag
         },
         {
           step: "Verification & Assessment",
-          desc: "Relevant information and documentation are reviewed and assessed using GCC's proprietary due diligence framework.",
+          desc: "Relevant information and documentation are reviewed and assessed using Gratia's proprietary due diligence framework.",
         },
         {
           step: "Findings & Recommendations",
@@ -192,7 +192,7 @@ By combining thorough verification, risk assessment, and structured record manag
         },
         {
           step: "Passport Issuance",
-          desc: "The client receives their GCC Due Diligence Passport™ together with the relevant records and information associated with the engagement.",
+          desc: "The client receives their Gratia Due Diligence Passport™ together with the relevant records and information associated with the engagement.",
         },
       ],
 
@@ -237,9 +237,9 @@ By combining thorough verification, risk assessment, and structured record manag
     color: "from-primary/10 to-primary/5",
     borderHover: "hover:border-primary",
     content: {
-      what: `The Gratia Legal Shield System™ is GCC's proprietary business protection solution designed to help businesses operate with greater confidence, reduce legal exposure, and build stronger foundations for sustainable growth.
+      what: `The Gratia Legal Shield System™ is Gratia's proprietary business protection solution designed to help businesses operate with greater confidence, reduce legal exposure, and build stronger foundations for sustainable growth.
 
-Rather than waiting until problems arise, the Legal Shield System™ provides businesses with ongoing access to strategic legal support and business protection resources designed to help them navigate risks, opportunities, and important decisions more effectively. The system is founded on GCC's philosophy of prevention, protection, and proactive legal guidance.`,
+Rather than waiting until problems arise, the Legal Shield System™ provides businesses with ongoing access to strategic legal support and business protection resources designed to help them navigate risks, opportunities, and important decisions more effectively. The system is founded on Gratia's philosophy of prevention, protection, and proactive legal guidance.`,
 
       whoFor: [
         "Startups and emerging businesses",
@@ -279,7 +279,7 @@ Rather than waiting until problems arise, the Legal Shield System™ provides bu
         "Legal documentation assistance",
         "Compliance support",
         "Professional consultations",
-        "Priority access to GCC services",
+        "Priority access to Gratia services",
         "Business-focused legal resources",
       ],
 
@@ -343,7 +343,7 @@ Rather than waiting until problems arise, the Legal Shield System™ provides bu
     color: "from-info-100 to-info-50",
     borderHover: "hover:border-info-400",
     content: {
-      what: `GCC Business Legal Retainers provide businesses with dedicated, ongoing legal support through a structured retainer arrangement. Rather than engaging legal counsel on a reactive, case-by-case basis, a retainer ensures that professional legal guidance is consistently available when your business needs it.
+      what: `Gratia Business Legal Retainers provide businesses with dedicated, ongoing legal support through a structured retainer arrangement. Rather than engaging legal counsel on a reactive, case-by-case basis, a retainer ensures that professional legal guidance is consistently available when your business needs it.
 
 Our retainer arrangements are designed to give business owners, executives, and teams the confidence of having trusted legal support in place — helping them make informed decisions, review and manage legal documentation, navigate compliance requirements, and handle legal matters efficiently.`,
 
@@ -383,7 +383,7 @@ Our retainer arrangements are designed to give business owners, executives, and 
         "Dedicated legal advisory support",
         "Contract review and drafting assistance",
         "Compliance guidance and support",
-        "Priority access to GCC's legal team",
+        "Priority access to Gratia's legal team",
         "Regular legal updates relevant to your business",
         "Structured legal support tailored to your retainer arrangement",
       ],
@@ -399,7 +399,7 @@ Our retainer arrangements are designed to give business owners, executives, and 
         },
         {
           step: "Engagement Commencement",
-          desc: "Your retainer begins and you gain access to dedicated legal support from GCC's team.",
+          desc: "Your retainer begins and you gain access to dedicated legal support from Gratia's team.",
         },
         {
           step: "Ongoing Advisory",
@@ -410,7 +410,7 @@ Our retainer arrangements are designed to give business owners, executives, and 
       faqs: [
         {
           q: "What is included in a Business Legal Retainer?",
-          a: "The scope of a retainer is tailored to your business needs and will be clearly set out in your retainer agreement. Common inclusions are legal advisory, contract review, compliance support, and priority access to GCC's team.",
+          a: "The scope of a retainer is tailored to your business needs and will be clearly set out in your retainer agreement. Common inclusions are legal advisory, contract review, compliance support, and priority access to Gratia's team.",
         },
         {
           q: "How is a retainer different from engaging a lawyer for a specific matter?",
@@ -432,7 +432,7 @@ Our retainer arrangements are designed to give business owners, executives, and 
 
       cta: {
         heading: "Ready for Consistent Legal Support?",
-        sub: "Stop engaging legal counsel reactively. A GCC Business Legal Retainer gives your business the confidence of having trusted legal support in place — consistently, predictably, and professionally.",
+        sub: "Stop engaging legal counsel reactively. A Gratia Business Legal Retainer gives your business the confidence of having trusted legal support in place — consistently, predictably, and professionally.",
         label: "Enquire About a Retainer",
       },
     },
@@ -672,10 +672,10 @@ export default function SignatureProtection() {
               </span>
             </div>
             <h2 className="font-heading text-4xl md:text-5xl text-neutral-900 mb-5 leading-tight">
-              GCC Signature Business<br />Protection Solutions
+              Gratia Signature Business<br />Protection Solutions
             </h2>
             <p className="text-neutral-500 text-base leading-relaxed">
-              Beyond traditional legal services, GCC has developed proprietary business protection
+              Beyond traditional legal services, Gratia has developed proprietary business protection
               solutions designed to help business owners, investors, and organizations identify risks
               early, protect their interests, and make informed decisions with confidence.
             </p>
@@ -729,7 +729,7 @@ export default function SignatureProtection() {
 
           {/* Bottom note */}
           <p className="text-center text-neutral-400 text-xs mt-10 tracking-wide">
-            Our assessments, recommendations, and support are informed by GCC's proprietary frameworks, methodologies, and professional experience.
+            Our assessments, recommendations, and support are informed by Gratia's proprietary frameworks, methodologies, and professional experience.
           </p>
         </div>
       </section>
