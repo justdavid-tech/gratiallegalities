@@ -344,7 +344,7 @@ export default function AdminDashboard() {
               {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           )}
-          <span style={s.logo}>Gratia Corporate Consult</span>
+          <span style={s.logo}>Gratia Legalities</span>
           {!isMobile && (
             <>
               <div style={s.divV} />
@@ -354,7 +354,7 @@ export default function AdminDashboard() {
         </div>
         <div style={s.topbarRight}>
           {!isMobile && (
-            <div style={s.adminPill}><div style={s.greenDot} /><span style={{ fontSize: 12, color: "#aaa" }}>{localStorage.getItem("gratiacorporateconsult_admin_email") || "Admin"}</span></div>
+            <div style={s.adminPill}><div style={s.greenDot} /><span style={{ fontSize: 12, color: "#aaa" }}>{localStorage.getItem("gratialegalities_admin_email") || "Admin"}</span></div>
           )}
           <button style={s.logoutBtn} onClick={logout}>Sign out</button>
         </div>
@@ -401,7 +401,7 @@ export default function AdminDashboard() {
             {isMobile && (
               <div style={{ padding: "20px 20px 0", borderTop: "0.5px solid #f0f0f0", marginTop: 20 }}>
                 <div style={{ fontSize: 12, color: "#888", marginBottom: 12 }}>Signed in as:</div>
-                <div style={{ ...s.adminPill, background: "#fafafa" }}><div style={s.greenDot} /><span style={{ fontSize: 12, color: "#333" }}>{localStorage.getItem("gratiacorporateconsult_admin_email") || "Admin"}</span></div>
+                <div style={{ ...s.adminPill, background: "#fafafa" }}><div style={s.greenDot} /><span style={{ fontSize: 12, color: "#333" }}>{localStorage.getItem("gratialegalities_admin_email") || "Admin"}</span></div>
               </div>
             )}
           </div>
@@ -827,7 +827,7 @@ export default function AdminDashboard() {
                     <p style={{ fontSize: 13, color: "#888", marginBottom: 16, lineHeight: 1.6 }}>
                       Your email address is set to: <br/>
                       <code style={{ background: "#f5f5f5", padding: "2px 6px", borderRadius: 4, fontSize: 12 }}>
-                        {localStorage.getItem("gratiacorporateconsult_admin_email") || "Admin"}
+                        {localStorage.getItem("gratialegalities_admin_email") || "Admin"}
                       </code>
                     </p>
                     <button style={{ ...s.btnPrimary, background: "#ef4444", width: "100%", justifyContent: "center" }} onClick={logout}>Sign out</button>

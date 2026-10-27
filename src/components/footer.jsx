@@ -37,10 +37,10 @@ const Footer = () => {
     { name: 'Sitemap', href: '/sitemap', icon: <Building className="w-4 h-4" /> }
   ];
 
-  const socialLinks = [
-    { name: 'TikTok', href: 'https://tiktok.com/@yourprofile', icon: <FaTiktok className="w-5 h-5" /> },
-    { name: 'Instagram', href: 'https://www.instagram.com/gratiacorporate_consult', icon: <Instagram className="w-5 h-5" /> }
-  ];
+  // const socialLinks = [
+  //   { name: 'TikTok', href: 'https://tiktok.com/@yourprofile', icon: <FaTiktok className="w-5 h-5" /> },
+  //   { name: 'Instagram', href: 'https://www.instagram.com/gratiacorporate_consult', icon: <Instagram className="w-5 h-5" /> }
+  // ];
 
   return (
     /* Apply your custom bg hex and a subtle gradient to black at the bottom */
@@ -53,7 +53,7 @@ const Footer = () => {
 
       <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
             
             {/* Column 1: Identity */}
             <div>
@@ -62,7 +62,7 @@ const Footer = () => {
                   <Building className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white tracking-tight">Gratia Corporate Consult</h3>
+                  <h3 className="text-xl font-bold text-white tracking-tight">Gratia Legalities</h3>
                   <p className="text-xs text-gray-500 uppercase tracking-widest">Est. 2022</p>
                 </div>
               </div>
@@ -85,8 +85,8 @@ const Footer = () => {
                 
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-primary/70 flex-shrink-0" />
-                  <a href="mailto:info@gratiacorporateconsult.com" className="text-gray-300 hover:text-primary transition-colors text-sm font-medium">
-                    info@gratiacorporateconsult.com
+                  <a href="mailto:info@gratialegalities.com" className="text-gray-300 hover:text-primary transition-colors text-sm font-medium">
+                    info@gratialegalities.com
                   </a>
                 </div>
               </div>
@@ -129,7 +129,7 @@ const Footer = () => {
             </div>
 
             {/* Column 4: Connect */}
-            <div>
+            {/* <div>
               <h3 className="text-sm font-bold text-white uppercase tracking-[0.2em] mb-6">Social Connect</h3>
               <div className="flex gap-3 mb-8">
                 {socialLinks.map((social, index) => (
@@ -146,7 +146,7 @@ const Footer = () => {
                   </Link>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Disclaimer: Muted background so it doesn't shout */}
@@ -167,13 +167,13 @@ const Footer = () => {
             <div className="mt-10 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/5 pt-8">
               <div className="flex items-center gap-2 text-white text-[10px] uppercase tracking-[0.15em]">
                 <Copyright className="w-3 h-3" />
-                <span>{currentYear} Gratia Corporate Consult</span>
+                <span>{currentYear} Gratia Legalities</span>
               </div>
               
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.5)]"></div>
-                  <span className="text-white text-[10px] uppercase tracking-widest">Licensed in Nigeria</span>
+                  <Shield className="w-3.5 h-3.5 text-primary" />
+                  <span className="text-gray-300 text-[10px] uppercase tracking-widest font-medium">Licensed by the Supreme Court of Nigeria</span>
                 </div>
               </div>
             </div>

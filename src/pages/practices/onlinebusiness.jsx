@@ -191,7 +191,7 @@ const OnlineBusinessEcommerce = () => {
         tagline="Legal Solutions for the Digital Economy"
         customContent={customHeroContent}
         contactPerson="Digital Business Legal Specialists"
-        contactEmail="info@gratiacorporateconsult.com"
+        contactEmail="info@gratialegalities.com"
         keyFeatures={[
           "E-commerce platform legal setup and compliance",
           "Digital payment system regulations and security",
@@ -208,7 +208,7 @@ const OnlineBusinessEcommerce = () => {
       />
       
       {/* Main Content Section */}
-      <div className="py-20 bg-gradient-to-b from-black to-secondary-950">
+      <div className="py-20 bg-[#030930]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* E-Commerce Services */}
@@ -374,10 +374,10 @@ const OnlineBusinessEcommerce = () => {
                 <div>
                   <div className="text-sm text-gray-400 mb-2">For Online Business Inquiries</div>
                   <a 
-                    href="mailto:info@gratiacorporateconsult.com"
+                    href="mailto:info@gratialegalities.com"
                     className="text-primary hover:text-primary-400 transition-colors text-lg font-medium block"
                   >
-                    info@gratiacorporateconsult.com
+                    info@gratialegalities.com
                   </a>
                 </div>
                 
@@ -413,7 +413,7 @@ const OnlineBusinessEcommerce = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a 
-                    href="mailto:info@gratiacorporateconsult.com"
+                    href="mailto:info@gratialegalities.com"
                     className="group px-8 py-4 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                   >
                     Contact E-Commerce Team

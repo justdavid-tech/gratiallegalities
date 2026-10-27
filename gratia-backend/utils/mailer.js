@@ -16,13 +16,13 @@ const notifyAdminNewMessage = async ({ clientName, referenceNumber, message }) =
   try {
     const transporter = createTransporter();
     await transporter.sendMail({
-      from: `"Gratiacorporateconsult" <${process.env.NOTIFY_EMAIL}>`,
+      from: `"gratialegalities" <${process.env.NOTIFY_EMAIL}>`,
       to: process.env.ADMIN_EMAIL,
       subject: `New message from ${clientName} (${referenceNumber})`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #f9f9f9; border-radius: 8px; overflow: hidden;">
           <div style="background: #0A1628; padding: 24px 32px;">
-            <h2 style="color: #C9A84C; margin: 0; font-size: 22px; letter-spacing: 1px;">Gratiacorporateconsult</h2>
+            <h2 style="color: #C9A84C; margin: 0; font-size: 22px; letter-spacing: 1px;">Gratialegalities</h2>
             <p style="color: rgba(255,255,255,0.5); margin: 4px 0 0; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;">Client Message Notification</p>
           </div>
           <div style="padding: 32px;">

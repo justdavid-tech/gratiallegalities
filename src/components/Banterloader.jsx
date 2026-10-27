@@ -5,12 +5,12 @@ const BanterLoader = ({ onComplete }) => {
   const [fading, setFading] = useState(false);
 
   useEffect(() => {
-    // Start fade-out at 5.5s, fully gone at 6s
-    const fadeTimer = setTimeout(() => setFading(true), 5500);
+    // Start fade-out at 2.8s, fully finish at 3.3s
+    const fadeTimer = setTimeout(() => setFading(true), 2800);
     const doneTimer = setTimeout(() => {
       setVisible(false);
       onComplete?.();
-    }, 6000);
+    }, 3300);
 
     return () => {
       clearTimeout(fadeTimer);
@@ -23,209 +23,133 @@ const BanterLoader = ({ onComplete }) => {
   return (
     <>
       <style>{`
-        .banter-loader {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          width: 72px;
-          height: 72px;
-          margin-left: -36px;
-          margin-top: -36px;
+        /* From Uiverse.io by mobinkakei */ 
+        .wrapper {
+          width: 200px;
+          height: 60px;
+          position: relative;
+          z-index: 1;
         }
 
-        .banter-loader__box {
-          float: left;
-          position: relative;
+        .circle {
           width: 20px;
           height: 20px;
-          margin-right: 6px;
-        }
-
-        .banter-loader__box:before {
-          content: "";
           position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          background: #d47f11;
+          border-radius: 50%;
+          background-color: #fff;
+          left: 15%;
+          transform-origin: 50%;
+          animation: circle7124 .5s alternate infinite ease;
         }
 
-        .banter-loader__box:nth-child(3n) {
-          margin-right: 0;
-          margin-bottom: 6px;
+        @keyframes circle7124 {
+          0% {
+            top: 60px;
+            height: 5px;
+            border-radius: 50px 50px 25px 25px;
+            transform: scaleX(1.7);
+          }
+
+          40% {
+            height: 20px;
+            border-radius: 50%;
+            transform: scaleX(1);
+          }
+
+          100% {
+            top: 0%;
+          }
         }
 
-        .banter-loader__box:nth-child(1):before,
-        .banter-loader__box:nth-child(4):before {
-          margin-left: 26px;
+        .circle:nth-child(2) {
+          left: 45%;
+          animation-delay: .2s;
+          background-color: #d47f11;
+          box-shadow: 0 0 14px rgba(212, 127, 17, 0.55);
         }
 
-        .banter-loader__box:nth-child(3):before {
-          margin-top: 52px;
+        .circle:nth-child(3) {
+          left: auto;
+          right: 15%;
+          animation-delay: .3s;
         }
 
-        .banter-loader__box:last-child {
-          margin-bottom: 0;
+        .shadow {
+          width: 20px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: rgba(0,0,0,0.9);
+          position: absolute;
+          top: 62px;
+          transform-origin: 50%;
+          z-index: -1;
+          left: 15%;
+          filter: blur(1px);
+          animation: shadow046 .5s alternate infinite ease;
         }
 
-        @keyframes moveBox-1 {
-          9.0909090909%  { transform: translate(-26px, 0); }
-          18.1818181818% { transform: translate(0px, 0); }
-          27.2727272727% { transform: translate(0px, 0); }
-          36.3636363636% { transform: translate(26px, 0); }
-          45.4545454545% { transform: translate(26px, 26px); }
-          54.5454545455% { transform: translate(26px, 26px); }
-          63.6363636364% { transform: translate(26px, 26px); }
-          72.7272727273% { transform: translate(26px, 0px); }
-          81.8181818182% { transform: translate(0px, 0px); }
-          90.9090909091% { transform: translate(-26px, 0px); }
-          100%           { transform: translate(0px, 0px); }
-        }
-        .banter-loader__box:nth-child(1) { animation: moveBox-1 4s infinite; }
+        @keyframes shadow046 {
+          0% {
+            transform: scaleX(1.5);
+          }
 
-        @keyframes moveBox-2 {
-          9.0909090909%  { transform: translate(0, 0); }
-          18.1818181818% { transform: translate(26px, 0); }
-          27.2727272727% { transform: translate(0px, 0); }
-          36.3636363636% { transform: translate(26px, 0); }
-          45.4545454545% { transform: translate(26px, 26px); }
-          54.5454545455% { transform: translate(26px, 26px); }
-          63.6363636364% { transform: translate(26px, 26px); }
-          72.7272727273% { transform: translate(26px, 26px); }
-          81.8181818182% { transform: translate(0px, 26px); }
-          90.9090909091% { transform: translate(0px, 26px); }
-          100%           { transform: translate(0px, 0px); }
-        }
-        .banter-loader__box:nth-child(2) { animation: moveBox-2 4s infinite; }
+          40% {
+            transform: scaleX(1);
+            opacity: .7;
+          }
 
-        @keyframes moveBox-3 {
-          9.0909090909%  { transform: translate(-26px, 0); }
-          18.1818181818% { transform: translate(-26px, 0); }
-          27.2727272727% { transform: translate(0px, 0); }
-          36.3636363636% { transform: translate(-26px, 0); }
-          45.4545454545% { transform: translate(-26px, 0); }
-          54.5454545455% { transform: translate(-26px, 0); }
-          63.6363636364% { transform: translate(-26px, 0); }
-          72.7272727273% { transform: translate(-26px, 0); }
-          81.8181818182% { transform: translate(-26px, -26px); }
-          90.9090909091% { transform: translate(0px, -26px); }
-          100%           { transform: translate(0px, 0px); }
+          100% {
+            transform: scaleX(.2);
+            opacity: .4;
+          }
         }
-        .banter-loader__box:nth-child(3) { animation: moveBox-3 4s infinite; }
 
-        @keyframes moveBox-4 {
-          9.0909090909%  { transform: translate(-26px, 0); }
-          18.1818181818% { transform: translate(-26px, 0); }
-          27.2727272727% { transform: translate(-26px, -26px); }
-          36.3636363636% { transform: translate(0px, -26px); }
-          45.4545454545% { transform: translate(0px, 0px); }
-          54.5454545455% { transform: translate(0px, -26px); }
-          63.6363636364% { transform: translate(0px, -26px); }
-          72.7272727273% { transform: translate(0px, -26px); }
-          81.8181818182% { transform: translate(-26px, -26px); }
-          90.9090909091% { transform: translate(-26px, 0px); }
-          100%           { transform: translate(0px, 0px); }
+        .shadow:nth-child(4) {
+          left: 45%;
+          animation-delay: .2s;
         }
-        .banter-loader__box:nth-child(4) { animation: moveBox-4 4s infinite; }
 
-        @keyframes moveBox-5 {
-          9.0909090909%  { transform: translate(0, 0); }
-          18.1818181818% { transform: translate(0, 0); }
-          27.2727272727% { transform: translate(0, 0); }
-          36.3636363636% { transform: translate(26px, 0); }
-          45.4545454545% { transform: translate(26px, 0); }
-          54.5454545455% { transform: translate(26px, 0); }
-          63.6363636364% { transform: translate(26px, 0); }
-          72.7272727273% { transform: translate(26px, 0); }
-          81.8181818182% { transform: translate(26px, -26px); }
-          90.9090909091% { transform: translate(0px, -26px); }
-          100%           { transform: translate(0px, 0px); }
+        .shadow:nth-child(5) {
+          left: auto;
+          right: 15%;
+          animation-delay: .3s;
         }
-        .banter-loader__box:nth-child(5) { animation: moveBox-5 4s infinite; }
 
-        @keyframes moveBox-6 {
-          9.0909090909%  { transform: translate(0, 0); }
-          18.1818181818% { transform: translate(-26px, 0); }
-          27.2727272727% { transform: translate(-26px, 0); }
-          36.3636363636% { transform: translate(0px, 0); }
-          45.4545454545% { transform: translate(0px, 0); }
-          54.5454545455% { transform: translate(0px, 0); }
-          63.6363636364% { transform: translate(0px, 0); }
-          72.7272727273% { transform: translate(0px, 26px); }
-          81.8181818182% { transform: translate(-26px, 26px); }
-          90.9090909091% { transform: translate(-26px, 0px); }
-          100%           { transform: translate(0px, 0px); }
+        .shadow:nth-child(6) {
+          left: 15%;
+          right: auto;
+          animation-delay: 0s;
         }
-        .banter-loader__box:nth-child(6) { animation: moveBox-6 4s infinite; }
-
-        @keyframes moveBox-7 {
-          9.0909090909%  { transform: translate(26px, 0); }
-          18.1818181818% { transform: translate(26px, 0); }
-          27.2727272727% { transform: translate(26px, 0); }
-          36.3636363636% { transform: translate(0px, 0); }
-          45.4545454545% { transform: translate(0px, -26px); }
-          54.5454545455% { transform: translate(26px, -26px); }
-          63.6363636364% { transform: translate(0px, -26px); }
-          72.7272727273% { transform: translate(0px, -26px); }
-          81.8181818182% { transform: translate(0px, 0px); }
-          90.9090909091% { transform: translate(26px, 0px); }
-          100%           { transform: translate(0px, 0px); }
-        }
-        .banter-loader__box:nth-child(7) { animation: moveBox-7 4s infinite; }
-
-        @keyframes moveBox-8 {
-          9.0909090909%  { transform: translate(0, 0); }
-          18.1818181818% { transform: translate(-26px, 0); }
-          27.2727272727% { transform: translate(-26px, -26px); }
-          36.3636363636% { transform: translate(0px, -26px); }
-          45.4545454545% { transform: translate(0px, -26px); }
-          54.5454545455% { transform: translate(0px, -26px); }
-          63.6363636364% { transform: translate(0px, -26px); }
-          72.7272727273% { transform: translate(0px, -26px); }
-          81.8181818182% { transform: translate(26px, -26px); }
-          90.9090909091% { transform: translate(26px, 0px); }
-          100%           { transform: translate(0px, 0px); }
-        }
-        .banter-loader__box:nth-child(8) { animation: moveBox-8 4s infinite; }
-
-        @keyframes moveBox-9 {
-          9.0909090909%  { transform: translate(-26px, 0); }
-          18.1818181818% { transform: translate(-26px, 0); }
-          27.2727272727% { transform: translate(0px, 0); }
-          36.3636363636% { transform: translate(-26px, 0); }
-          45.4545454545% { transform: translate(0px, 0); }
-          54.5454545455% { transform: translate(0px, 0); }
-          63.6363636364% { transform: translate(-26px, 0); }
-          72.7272727273% { transform: translate(-26px, 0); }
-          81.8181818182% { transform: translate(-52px, 0); }
-          90.9090909091% { transform: translate(-26px, 0); }
-          100%           { transform: translate(0px, 0); }
-        }
-        .banter-loader__box:nth-child(9) { animation: moveBox-9 4s infinite; }
       `}</style>
 
       {/* Full-screen overlay */}
       <div
-        className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#030930]"
+        className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#030930] overflow-hidden"
         style={{
           transition: 'opacity 0.5s ease',
           opacity: fading ? 0 : 1,
           pointerEvents: fading ? 'none' : 'auto',
         }}
       >
-        {/* Firm name above loader */}
-        <p
-          className="text-white text-sm font-semibold uppercase tracking-[0.3em] mb-16 opacity-60"
-        >
-          Gratia Corporate Consult
-        </p>
+        {/* Background gradient from contact.jsx */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 pointer-events-none" />
 
-        {/* The loader */}
-        <div className="banter-loader pt-13">
-          {Array.from({ length: 9 }).map((_, i) => (
-            <div key={i} className="banter-loader__box" />
-          ))}
+        {/* Firm name above loader */}
+        <div className="mb-12 relative z-10 text-center px-4">
+          <p className="font-heading text-white text-sm sm:text-base font-semibold uppercase tracking-[0.3em]">
+            Gratia <span style={{ color: '#d47f11' }}>Legalities</span>
+          </p>
+          <div className="h-[2px] w-6 mx-auto mt-2.5 rounded-full" style={{ background: '#d47f11' }} />
+        </div>
+
+        {/* The bouncing balls loader */}
+        <div className="wrapper relative z-10">
+          <div className="circle" />
+          <div className="circle" />
+          <div className="circle" />
+          <div className="shadow" />
+          <div className="shadow" />
+          <div className="shadow" />
         </div>
       </div>
     </>

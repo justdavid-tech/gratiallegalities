@@ -212,7 +212,7 @@ const LegalDueDiligence = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-secondary-900 to-black">
+    <div className="min-h-screen bg-[#030930]">
       <Navbar />
       
       <PracticeHero
@@ -220,7 +220,7 @@ const LegalDueDiligence = () => {
         tagline="Uncovering Risks, Validating Opportunities"
         customContent={customHeroContent}
         contactPerson="Due Diligence Specialists"
-        contactEmail="info@gratiacorporateconsult.com"
+        contactEmail="info@gratialegalities.com"
         keyFeatures={[
           "Comprehensive transaction due diligence services",
           "Regulatory and compliance investigations",
@@ -237,8 +237,9 @@ const LegalDueDiligence = () => {
       />
       
       {/* Main Content Section */}
-      <div className="py-20 bg-gradient-to-b from-black to-secondary-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative py-20 bg-[#030930] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 pointer-events-none" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Diligence Services */}
           <div className="mb-16">
@@ -613,10 +614,10 @@ const LegalDueDiligence = () => {
                 <div>
                   <div className="text-sm text-gray-400 mb-2">For Due Diligence Inquiries</div>
                   <a 
-                    href="mailto:info@gratiacorporateconsult.com"
+                    href="mailto:info@gratialegalities.com"
                     className="text-primary hover:text-primary-400 transition-colors text-lg font-medium block"
                   >
-                    info@gratiacorporateconsult.com
+                    info@gratialegalities.com
                   </a>
                 </div>
                 
@@ -652,7 +653,7 @@ const LegalDueDiligence = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a 
-                    href="mailto:info@gratiacorporateconsult.com"
+                    href="mailto:info@gratialegalities.com"
                     className="group px-8 py-4 bg-white text-secondary-950 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                   >
                     Contact Due Diligence Team

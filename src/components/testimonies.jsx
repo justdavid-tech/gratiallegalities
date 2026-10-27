@@ -13,7 +13,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      quote: "Gratia Corporate Consult took the stress out of my land documentation. They handled the entire process with incredible speed and precision, ensuring my title was secured without a single hitch. If you need property papers done right, this is the firm to call.",
+      quote: "Gratia Legalities took the stress out of my land documentation. They handled the entire process with incredible speed and precision, ensuring my title was secured without a single hitch. If you need property papers done right, this is the firm to call.",
       author: "Chukwuma Eze",
       initials: "CE",
       caseType: "Land Documentation",
@@ -28,7 +28,7 @@ const Testimonials = () => {
       initials: "AO",
       caseType: "Commercial Contract Law",
       outcome: "Favorable Agreement",
-      rating: 5,
+      rating: 4,
       date: "February 2025",
     },
     {
@@ -48,7 +48,7 @@ const Testimonials = () => {
       initials: "FA",
       caseType: "Corporate Governance",
       outcome: "Full Compliance",
-      rating: 5,
+      rating: 4,
       date: "December 2025",
     },
     {
@@ -58,7 +58,7 @@ const Testimonials = () => {
       initials: "IM",
       caseType: "Commercial Litigation",
       outcome: "Favorable Settlement",
-      rating: 5,
+      rating: 4,
       date: "November 2025",
     },
     {
@@ -68,7 +68,7 @@ const Testimonials = () => {
       initials: "NO",
       caseType: "Commercial Real Estate",
       outcome: "Successful Acquisition",
-      rating: 5,
+      rating: 4,
       date: "October 2025",
     }
   ];
@@ -85,11 +85,6 @@ const Testimonials = () => {
 return (
   <div className="relative py-24 overflow-hidden bg-[#030930]">
 
-    <div
-      className="absolute bottom-0 right-0 w-[32rem] h-[32rem] rounded-full blur-3xl opacity-10"
-      style={{ background: '#1e40ff' }}
-    />
-
     {/* GRID PATTERN */}
     <div
       className="absolute inset-0 opacity-[0.03]"
@@ -105,44 +100,17 @@ return (
       {/* SECTION HEADER */}
       <div className="text-center mb-20">
 
-        <div
-          className="
-          inline-flex items-center gap-2
-          px-5 py-2
-          rounded-full
-          border
-          backdrop-blur-xl
-          mb-6
-          "
-          style={{
-            background: 'rgba(255,255,255,0.05)',
-            borderColor: 'rgba(255,255,255,0.08)',
-          }}
-        >
-          <Quote
-            className="w-4 h-4"
-            style={{ color: '#d47f11' }}
-          />
-
-          <span
-            className="
-            text-xs
-            font-bold
-            uppercase
-            tracking-[0.25em]
-            text-white/80
-            "
-            style={{
-              fontFamily: "'Manrope', sans-serif",
-            }}
-          >
-            Client Stories
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <div className="h-px w-8 bg-primary" />
+          <span className="text-primary text-xs font-semibold uppercase tracking-[0.25em]">
+            Client Experiences
           </span>
+          <div className="h-px w-8 bg-primary" />
         </div>
 
         <h2
           className="
-          text-5xl md:text-6xl
+          text-4xl md:text-5xl lg:text-6xl
           font-black
           text-white
           font-heading
@@ -157,22 +125,6 @@ return (
             style={{ color: '#d47f11' }}
           >
             120+ Clients
-
-            {/* Underline */}
-            {/* <svg
-              viewBox="0 0 120 10"
-              className="absolute -bottom-3 left-0 w-full"
-              preserveAspectRatio="none"
-              style={{ height: '10px' }}
-            >
-              <path
-                d="M0 6 Q30 0 60 6 Q90 12 120 6"
-                fill="none"
-                stroke="#d47f11"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-              />
-            </svg> */}
           </span>
         </h2>
 
@@ -210,18 +162,6 @@ return (
               '0 10px 40px rgba(0,0,0,0.18)',
           }}
         >
-          {/* CARD GLOW */}
-          <div
-            className="
-            absolute top-0 right-0
-            w-72 h-72
-            rounded-full
-            blur-3xl
-            opacity-10
-            "
-            style={{ background: '#d47f11' }}
-          />
-
           <div className="relative z-10 flex flex-col justify-between h-full">
 
             {/* TOP */}
